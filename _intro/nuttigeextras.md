@@ -33,9 +33,9 @@ Ideale manier om programmeren meer in de vingers te krijgen op een speelse manie
 
 * [SoloLearn](https://play.google.com/store/apps/details?id=com.sololearn): Verplichte app! Simple as that!
 * [Enki](https://play.google.com/store/apps/details?id=com.enki.insights&hl=en) Net zoals SoloLearn maar dan anders.
-* [Memrise](https://www.memrise.com/course/700046/learn-c/) (aanrader!) Origineel vooral bedoeld om spreektalen te leren, maar bevat ook tal van andere zaken. Hoofdzakelijk nuttig om nieuwe aspecten te 'drillen'. Enkel dus nuttig indien je de basismaterie eerst hebt verwerkt. Bekijk zeker ook de tal van andere cursussen die er staan. Let er op dat je bij de filter Engels instelt, er zijn nog niet veel (goede) Nederlandstalige C# cursussen naar mijn weten. **Opgelet: je kan je enkel via de browser inschrijven op niet-spreektaal-cursussen. De app toont enkel spreektaalcursussen**.
+* [Memrise](https://www.memrise.com/course/700046/learn-c/) (aanrader!) Origineel vooral bedoeld om spreektalen te leren, maar bevat ook tal van andere zaken. Hoofdzakelijk nuttig om nieuwe aspecten te 'drillen'. Enkel dus nuttig indien je de basismaterie eerst hebt verwerkt.  Bekijk zeker ook de tal van andere cursussen die er staan. Let er op dat je bij de filter Engels instelt, er zijn nog niet veel (goede) Nederlandstalige C# cursussen naar mijn weten. **Opgelet: je kan je enkel via de browser inschrijven op niet-spreektaal-cursussen. De app toont enkel spreektaalcursussen**.
 * [Mimo](https://play.google.com/store/apps/details?id=com.getmimo) Speels en vrij beperkt in gratis versie, maar ideale aanvulling op SoloLearn.
-* [Screeps](https://screeps.com/) Een steam spel om te leren programmeren. Weliswaar Javascript (nuttig voor Web Programming) maar het concept is te cool om niet hier te vermelden en zoals je zal ontdekken: leren programmeren kan je in eender welke taal, en het zal ook je andere programmeer-ervaring verbeteren. Give it a go!
+* [Screeps](https://screeps.com/) Een steam spel om te leren programmeren. Weliswaar JavaScript (nuttig voor Web Programming) maar het concept is te cool om niet hier te vermelden en zoals je zal ontdekken: leren programmeren kan je in eender welke taal, en het zal ook je andere programmeer-ervaring verbeteren. Give it a go!
 
 ### Websites
 
@@ -51,6 +51,9 @@ Ideale manier om programmeren meer in de vingers te krijgen op een speelse manie
 
 ## Tutorials
 
+* [Freecodecamp.org C# tutorial](https://www.youtube.com/watch?v=GhQdlIFylQ8) Zeer erge aanrader!
+* [Microsoft C# tutorial](https://docs.microsoft.com/nl-nl/learn/paths/csharp-first-steps/) Zeer interactief én in het Nederlands. Aanrader.
+* [Johnny does Dotnet](https://www.youtube.com/channel/UCPvA9d7Ji-k8xbAk9KNemew)
 * [Dotnet beginning](http://dot.net/videos)
 * [C# Getting started interactive quickstart tutorials](https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/): Aanrader.
 * [Online video c#  cursus](https://channel9.msdn.com/Series/C-Sharp-Fundamentals-Development-for-Absolute-Beginners):  Zeer aan te raden indien je een bepaald concept uit de les niet begrijpt.
@@ -58,6 +61,7 @@ Ideale manier om programmeren meer in de vingers te krijgen op een speelse manie
 * [Microsoft Virtual Academy](https://mva.microsoft.com/en-us/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949):  Microsoft heeft een virtual academy cursus "C# fundamentals" uitgebracht. Ik kan dit boek zeer erg aanbevelen.
 * [Rob Miles's The C# Programming Yellow book](http://www.robmiles.com/c-yellow-book/): Zeer vermakelijk, vlot geschreven C# boek(je)
 * [Open Source Game Clones](https://osgameclones.com/): "This site tries to gather open-source remakes of great old games in one place." Je vindt er ook tal van C# projecten terug zoals [GTA 2](https://code.google.com/archive/p/gta2net/).Klik bovenaan op "languages" en filter maar eens op C#.
+* [2,000 Things You Should Know About C#](https://csharp.2000things.com/): De auteur is helaas aan "maar" 1219 tips geraakt. De moeite.
 
 ## Oefenvragen
 
@@ -73,7 +77,7 @@ Ideale manier om programmeren meer in de vingers te krijgen op een speelse manie
 
 Ja hoor, ze bestaan. Meer en meer professionele én beginnende programmeurs streamen terwijl te programmeren. Dit is een ideale manier om te zien hoe andere mensen problemen aanpakken. De meeste programming streamers kan je terugvinden op youtube, maar ook op Twitch zijn er steeds meer. Enkele aanraders (bekijk zeker de filmpjes uit de archieven eens):
 
-* [Handmade Hero](https://handmadehero.org/watch#EpisodeGuide): deze programmeur heeft een volledige RPG gemaakt en het hele proces gestreamd.
+* [Handmade Hero](https://handmadehero.org/): deze programmeur heeft een volledige RPG gemaakt en het hele proces gestreamd.
 * [CSharpFrits](http://youtube.com/csharpfritz)
 * [DevChatter](https://www.twitch.tv/devchatter)
 * [Visual Studio Twitch](https://www.twitch.tv/visualstudio)
