@@ -1,0 +1,983 @@
+# Appendix 2: TekstQuest
+
+De prijs voor meest sexy titel gaan we niet winnen. Maar naar de aloude traditie van de klassieke tekst-gebaseerde adventure-games zullen we als toemaatje van dit boek eenvoudig object georiënteerd framework maken dat ons toelaat snel onze eigen games te maken. De eerste versie zal gebaseerd zijn op de kennis tot en met arrays. De versie in het volgende appendix gaat een stapje verder en zal van 0 terug opbouwen, maar deze keer gebruik makend van de kennis van hoofdstukken 8 en verder. 
+
+De nadruk van deze code ligt daarbij niet tot het creëren van een perfecte imitatie, maar wel om aan te tonen dat je met de kennis uit dit boek al best ingewikkelde applicaties kan maken. We hanteren hierbij de principes van "**refactoring**": we gaan onze code steeds verbeteren op gebied van leesbaarheid en onderhoudbaarheid. Bij iedere stap zullen we dan ook extra functionaliteit toevoegen.
+
+Het doel is te komen tot een spel waarbij de gebruiker kan wandelen door een kaart. De kaart zelf is dynamisch, bepaalde ruimtes zijn pas toegankelijk wanneer aan bepaalde voorwaarden is voldaan.
+
+![Hoe het spel er op het einde zal uitzien. Sexy he?!](../assets/oopquest/mazegame/01.png)
+
+
+## Fase 1: Een saai spel 
+
+We gebruiken een array van strings om de opeenvolgende kamers te beschrijven. Door middel van een for-loop doorlopen we de array en tonen we iedere beschrijving van de kamer op het scherm.
+
+Telkens de gebruiker op enter drukt verschijnt de volgende kamer.
+
+Merk op dat de array-lengte geen invloed heeft op de forloop. We kunnen dus eenvoudig kamers toevoegen zonder dat dit invloed heeft op de werking van het programma. We zullen blijven behouden doorheen het hele programma (de speciale kaart uitgezonderd in fase 8).
+
+```java
+string[] Kamers = new string[]
+    {
+        "Je staat voor de ingang.",
+        "Je bent in de hal.",
+        "Je bent in het computerlabo",
+    };
+
+for (int i = 0; i < Kamers.Length; i++)
+{
+    Console.WriteLine(Kamers[i]);
+    Console.ReadLine();
+}
+```
+![We gebruiken ReadLine om de gebruiker nu alvast het gevoel te geven dat hij een interactieve app aan het bedienen is. Ik vrees dat in deze vorm het spel maar weinig punten zal krijgen in de app-stores...](../assets/oopquest/mazegame/1.png)
+
+## Fase 2: Een interactief saai spel 
+
+We bieden de mogelijkheid aan aan de gebruiker om zelf te kiezen naar welke kamer er wordt gegaan. De gebruiker kan dus "vooruit’" of "achteruit" gaan in de array. We houden hiervoor een variabele (``huidigeKamer``) bij die bijhoudt waar de gebruiker zich momenteel bevindt.
+
+Telkens de gebruiker zich wil verplaatsen controleren we of deze verplaatsen toegestaan is. De ``Huidigekamer`` variabele is dus automatisch ook de index van de te tonen kamer in de string-array.
+
+```java
+string[] Kamers = new string[]
+    {
+        "Je staat voor de ingang.",
+        "Je bent in de hal.",
+        "Je bent in het computerlabo",
+    };
+
+int huidigeKamer = 0;
+string keuze = "";
+while (keuze != "q")
+{
+    Console.WriteLine(Kamers[huidigeKamer]);
+
+    Console.WriteLine("Vooruit= V, ACHTERUIT = A, q= quit");
+    keuze = Console.ReadLine();
+    if (keuze == "V" && huidigeKamer != Kamers.Length - 1)
+        huidigeKamer++;
+    else if (keuze == "A" && huidigeKamer != 0)
+        huidigeKamer--;
+    else if (keuze == "q")
+        Console.WriteLine("Byebye");
+    else
+    {
+        Console.WriteLine("Foute invoer");
+    }
+}
+```
+![Onze eerste echte interactie!](../assets/oopquest/mazegame/2.png)
+
+## Fase 3: Een 2D-wereld met lookup-table
+
+### Stap 1: Kaart maken {#stap-1-kaart-maken}
+
+Vervolgens willen we de mogelijkheid om een 2D wereld aan te bieden. Hierbij gebruiken we een zogenaamde **lookup-table** zodat we onze wereld array eenvoudig kunnen houden én kamers kunnen herbruiken.
+
+Eerste definiëren we de verschillende kamers die er bestaan:
+
+```java
+string[] Kamers =
+    {
+        "Onbekend terrein",//0
+        "In een gang", //1
+        "In de lobby", //2
+        "In de bar", //3
+        "In de keuken", //4
+        "Achtertuin"//5
+    };
+```
+
+Vervolgens maken we 2D-array die onze kaart voorstelt. De array is van het type ``int``. Ieder cijfer in de array zal de index bevatten van de kamer die op die plek moet komen. Dit is dus een zogenaamde look-up-table of LuT:
+
+```java
+            int[,] Kaart =
+                {
+                    {1, 2, 1, 3},
+                    {0, 1, 0, 1},
+                    {0, 4, 0, 5}
+                };
+```
+Linksboven beginnen we dus met een Gang, met rechts ervan een lobby, etc.
+
+Plaatsen die we met een 0 (onbekend terrein) definiëren gaan we beschouwen als plaatsen waar de gebruiker niet mag komen.
+
+Merk op dat we dus onze *wereld* zo groot of zo klein kunnen maken als we zelf wensen.
+
+### Stap 2: Wandelen op de kaart 
+Daar we ons nu op een 2D-kaart bevinden hebben we 2 variabelen nodig om onze huidige positie te onthouden:
+
+```java
+int posX = 0;
+int posY = 0;
+```
+
+We spreken af dat de locatie (0,0) zich linksboven in de array bevindt.
+
+We maken een oneindige loop die steeds de volgende stappen zal doen:
+
+1.  Huidige kamertekst op het scherm tonen.
+2.  Aan de gebruiker vragen naar waar hij wil wandelen.
+3.  Positie van gebruiker veranderen.
+
+Eerst gebruiken we dus de LuT om de huidige kamer beschrijving te tonen. We gebruiker de huidige spelerlocatie als index in de Kaart-array en vragen zo de kamerindex op. Die kamerindex gebruiken we om de tekst uit de Kamers-array te tonen.
+
+```java
+while (true)
+{
+    int kamerindex = Kaart[posX, posY];
+    Console.WriteLine(Kamers[kamerindex]);
+```
+
+De gebruiker kan zich naar het noorden, oosten, zuiden of westen begeven (respectievelijk naar boven, links, onder, rechts op de kaart). We vragen dus telkens de gebruiker naar waar hij:
+
+```java
+Console.WriteLine("NOZW? Naar waar wil je?");
+char inp = Convert.ToChar(Console.ReadLine().ToUpper());
+
+```
+
+### Stap 3: Positie aanpassen 
+
+We verwerken de richting in een switch:
+```java
+switch (inp)
+{
+```
+Naargelang de richting die de gebruiker ingeeft moeten we dus telkens 2 zaken controleren:
+
+1.  Bevindt de gebruiker zich momenteel (VOOR we z’n locatie aanpassen) aan de rand van de array (0 of Length-1).
+2.  Probeert de gebruiker zich naar verboden vakje te begeven (een **onbekend terrein** vakje).
+
+Indien aan deze 2 voorwaarden niet is voldaan dan mogen we de huidige locatie van de gebruiker zonder problemen veranderen. Dit behelst dus dat we , naargelang de richting, de posX en posY waarden veranderen, namelijk:
+
+* Noorden: posX met 1 verlagen
+* Zuiden: posX met 1 verhogen
+* Oosten: posY met 1 verhogen
+* Westen: posY met 1 verlagen
+
+
+
+We krijgen in de switch dus:
+
+```java
+    case 'N':
+        if (posX != 0 && Kaart[posX - 1, posY] != 0)
+            posX--;
+        else Console.WriteLine("Kan niet");
+        break;
+    case 'O':
+        if (posY != Kaart.Length(1)-1 && Kaart[posX, posY + 1] != 0)
+            posY++;
+        else Console.WriteLine("Kan niet");
+        break;
+    case 'Z':
+        if (posX != Kaart.GetLength(0)-1 && Kaart[posX + 1, posY] != 0)
+            posX++;
+        else Console.WriteLine("Kan niet");
+        break;
+    case 'W':
+        if (posY != 0 && Kaart[posX, posY - 1] != 0)
+            posY--;
+        else Console.WriteLine("Kan niet");
+        break;
+}
+```
+
+
+
+### Stap 4: Volledige code 
+
+De volledige code van deze fase is dus geworden:
+
+```java
+int[,] Kaart =
+    {
+        {1, 2, 1, 3},
+        {0, 1, 0, 1},
+        {0, 4, 0, 5}
+    };
+
+string[] Kamers =
+    {
+        "Onbekend terrein", //0
+        "In een gang", //1
+        "In de lobby", //2
+        "In de bar", //3
+        "In de keuken", //4
+        "Achtertuin"//5
+    };
+
+int posX = 0;
+int posY = 0;
+
+while (true)
+{
+    int kamerindex = Kaart[posX, posY];
+    Console.WriteLine(Kamers[kamerindex]);
+
+    Console.WriteLine("NOZW? Naar waar wil je?");
+
+    char inp = Convert.ToChar(Console.ReadLine().ToUpper());
+    switch (inp)
+    {
+        case 'N':
+            if (posX != 0 && Kaart[posX - 1, posY] != 0)
+                posX--;
+            else Console.WriteLine("Kan niet");
+            break;
+        case 'O':
+            if (posY != Kaart.GetLength(1)-1 && Kaart[posX, posY + 1] != 0)
+                posY++;
+            else Console.WriteLine("Kan niet");
+            break;
+        case 'Z':
+            if (posX != Kaart.GetLength(0)-1 && Kaart[posX + 1, posY] != 0)
+                posX++;
+            else Console.WriteLine("Kan niet");
+            break;
+        case 'W':
+            if (posY != 0 && Kaart[posX, posY - 1] != 0)
+                posY--;
+            else Console.WriteLine("Kan niet");
+            break;
+    }
+}
+```
+
+## Fase 4: Tekenen van de kaart op het scherm 
+
+We wensen een visuele indicatie van de kaart te tonen aan de gebruiker (zonder dat hij ziet wat voor kamer het is). We voegen daarom een methode ``TekenKaart()`` toe die de kaart iedere keer opnieuw zal tekenen. Deze methode gaat ook de positie van de gebruiker duidelijk maken a.d.h.v. een "X" op de kaart. Onze *game-loop* veranderen we dus naar:
+
+```java
+while (true)
+{
+    Console.Clear();
+    TekenKaart(Kaart, posX, posY);
+
+    int kamerindex = Kaart[posX, posY];
+    Console.WriteLine(Kamers[kamerindex]);
+
+    Console.WriteLine("NOZW? Naar waar wil je?")
+```
+
+De ``TekenKaart()`` methode toont dus de huidige locatie als een "X". Voorts willen we dat enkel bereikbare kamers getoond worden (we gebruiken een "O" hiervoor). Elementen op de kaart die wijzen naar index 0 ("Onbekend terrein") worden niet getoond.
+
+We doorlopen in de ``TekenKaart()`` methode de volledige kaart. Lijn per lijn. Hiervoor gebruiken we 2 geneste for-loops. De outer-loop (index ``i``) zal de X-coördinaat aflopen, oftewel lijn per lijn. De inner loop (index j) zal de Y-coördinaat aflopen, oftewel kolom per kolom:
+
+```java
+private static void TekenKaart(int[,] Kaart, int posX, int posY)
+{
+    for (int i = 0; i < Kaart.GetLength(0); i++)
+    {
+        for (int j = 0; j < Kaart.GetLength(1); j++)
+        {
+```
+
+Merk op dat ook deze methode geen *hardcoded* array-grenzen bevat. We kunnen dus eender welke kaart aan deze methode aanbieden.
+
+Binnen de inner-for gaan we nu element per element van 1 rij op het scherm tonen. Eerst controleren we of de speler zich bevindt in het element dat we op het punt staan te tekenen. Als dat zo is dan plaatsen we een "X":
+```java
+if (posX == i & posY == j)
+    Console.Write("X");
+```
+
+Anders plaatsen we een "o" indien het gaat om gebied waar de speler toegelaten is:
+```java
+else if (Kaart[i, j] != 0)
+    Console.Write("o");
+```
+
+
+Niet toegelaten gebied tonen we niet, we zetten dus een spatie in de plaats:
+```java
+else
+    Console.Write("  ");
+```
+
+Na iedere inner-loop moeten we vervolgens een newline toevoegen, anders worden alle rijen van de kaart naast elkaar gezet. Finaal krijgen we dus:
+```java
+    }
+    Console.Write(Environment.Newline);
+}
+```
+
+Dit resulteert in volgende finale code voor deze fase:
+```java
+static void Main()
+{
+    int[,] Kaart ={ {1, 2, 1, 3},{0, 1, 0, 1},{0, 4, 0, 5}};
+
+    string[] Kamers ={"Onbekend terrein",  "In een gang", "In de lobby", "In de bar", "In de keuken", "Achtertuin"};
+
+    int posX = 0;
+    int posY = 0;
+
+    while (true)
+    {
+        Console.Clear();
+        TekenKaart(Kaart, posX, posY);
+
+        int kamerindex = Kaart[posX, posY];
+        Console.WriteLine(Kamers[kamerindex]);
+        Console.WriteLine("NOZW? Naar waar wil je?");
+
+        char inp = Convert.ToChar(Console.ReadLine().ToUpper());
+        switch (inp)
+        {
+            case 'N':
+                if (posX != 0 && Kaart[posX - 1, posY] != 0)
+                    posX--;
+                else Console.WriteLine("Kan niet");
+                break;
+            case 'O':
+                if (posY != Kaart.GetLength(1)-1 && Kaart[posX, posY + 1] != 0)
+                    posY++;
+                else Console.WriteLine("Kan niet");
+                break;
+            case 'Z':
+                if (posX != Kaart.GetLength(0)-1 && Kaart[posX + 1, posY] != 0)
+                    posX++;
+                else Console.WriteLine("Kan niet");
+                break;
+            case 'W':
+                if (posY != 0 && Kaart[posX, posY - 1] != 0)
+                    posY--;
+                else Console.WriteLine("Kan niet");
+                break;
+        }
+    }
+}
+private static void TekenKaart(int[,] Kaart, int posX, int posY)
+{
+    for (int i = 0; i <= Kaart.GetLength(0); i++)
+    {
+        for (int j = 0; j <= Kaart.GetLength(1); j++)
+        {
+            if (posX == i & posY == j)
+                Console.Write("X");
+            else if (Kaart[i, j] != 0)
+                Console.Write("o");
+            else
+                Console.Write(" ");
+        }
+        Console.Write('\n');
+    }
+}
+```
+
+## Fase 5: Kaart vergroten
+
+Zoals reeds aangehaald staat niets je in de weg om je spel-wereld groter te maken. Hiervoor hoef je enkel (momenteel) de Kamers en Kaart arrays aan te passen. Alle code zal blijven werken.
+
+Bijvoorbeeld:
+```java
+int[,] Kaart =
+    {
+        {1, 2, 1, 3, 0, 0},
+        {0, 1, 0, 1, 0, 0},
+        {0, 4, 0, 1, 0, 0},
+        {0, 1, 0, 1, 0, 0},
+        {0, 7, 0, 6, 1, 8},
+    };
+
+string[] Kamers =
+    {
+        "Onbekend terrein", //0 
+        "In een gang", //1
+        "In de lobby", //2
+        "In de bar", //3
+        "In de keuken", //4
+        "Achtertuin",//5
+        "In de securityroom", //6
+        "In de personeelsruimte", //7
+        "In de folterkamer" //8
+    };
+```
+
+![Een heuse kaart.](../assets/oopquest/mazegame/3.png)
+
+## Fase 6: Een extra look-up-table voor meer wereld-details 
+
+Het principe van een LuT verschilt eigenlijk weinig van een eenvoudige database. We zouden dus meerdere look-up-tables (tabellen) kunnen definiëren en deze gebruiken om meer *informatie* in onze spelwereld te plaatsen.
+
+We kunnen bijvoorbeeld per kamer ook een beschrijving tonen van die kamer. Daar we nog niets kennen van klassen en objecten (indien wel: ga direct naar de volgende appendix!) moeten we ons dus behelpen als volgt: we definiëren een nieuwe array ``Beschrijving`` waarbij ieder element de index heeft van de respectievelijke kamer:
+
+```java
+int[,] Kaart =
+    {
+        {1, 2, 1, 3, 0, 0},
+        {0, 1, 0, 1, 0, 0},
+        {0, 4, 0, 1, 0, 0},
+        {0, 1, 0, 1, 0, 0},
+        {0, 7, 0, 6, 1, 8},
+    };
+
+string[] Kamers =
+    {
+        "Onbekend terrein", //0 
+        "In een gang", //1
+        "In de lobby", //2
+        "In de bar", //3
+        "In de keuken", //4
+        "Achtertuin",//5
+        "In de securityroom", //6
+        "In de personeelsruimte", //7
+        "In de folterkamer" //8
+    };
+
+string[] Beschrijving =
+    {
+        "", //0 
+        "Een ordinaire saaie gang met een mooie vloer", //1
+        "De receptioniste kijkt je verbaast aan. Een plant in de hoek is het enige groen in de purperen ruimte.", //2
+        "2 gasten zitten half beschonken aan de toog. Een verliefd koppel is zachtjes aan het praten", //3
+        "Overal liggen etensresten, maar verder is hier niets of niemand interessant.", //4
+        "Mooie plantjes, enkele bomen en een gezellig terras.",//5
+        "De veiligheidsagent houdt je nauwlettend in het oog", //6
+        "Overal staan kastjes.Hier en daar is er een personeelslid zich aan het omkleden", //7
+        "Wat doet deze vreemde plek in het hotel." //8
+    };
+```
+
+Door 1 extra lijntje (+ eentje voor een visuele scheiding tussen beschrijving en kamertitel) plaatsen we nu steeds de kamerbeschrijving onder de kamertype:
+```java
+Console.WriteLine(Kamers[kamerindex]);
+Console.WriteLine("******");
+Console.WriteLine(Beschrijving[kamerindex]);
+```
+![Hier kan je je schrijflusten op botvieren!](../assets/oopquest/mazegame/4.png)
+
+## Fase 7: Dynamische kaart 
+
+Na iedere actie van de speler verwerken we steeds weer de kaart in zowel de ``TekenKaart()``-methode als tijdens het verwerken van de speler-input. We kunnen dus eenvoudig een *dynamische* kaart maken die zich aanpast naargelang bepaalde acties.
+
+Je met de kennis die we zo meteen tonen bijvoorbeeld aan de start van het programma met een lege kaart: naargelang de speler zich verplaatst in de wereld zal de kaart aangevuld worden. (tip: gebruik hiervoor een array ``VolledigeKaart`` en een array ``ReedsOntdekteKaart`` of iets dergelijks. De speler krijgt steeds de ``ReedsOntdekteKaart`` te zien in ``TekenKaart()``. Naargelang acties van de speler kopieer je dan bepaalde elementen uit VolledigeKaart naar ReedsOntdekteKaart).
+
+We definiëren onze kaart (merk op dat we de folterkamer en geheime gang verwijderen rechts onderaan):
+```java
+int[,] Kaart =
+    {
+        {1, 2, 1, 3, 0, 0},
+        {0, 1, 0, 1, 0, 0},
+        {0, 4, 0, 1, 0, 0},
+        {0, 1, 0, 1, 0, 0},
+        {0, 7, 0, 6, 0, 0},
+    };
+```
+
+We willen volgende functionaliteit inbouwen: 
+"indien de gebruiker in de kamer met index 6 ("SecurityRoom") een bepaalde actie onderneemt dan zal een *geheime gang en kamer* (folterkamer) op de kaart bij verschijnen, rechts van de securityroom."
+
+De actie gaan we nu even eenvoudig beschouwen als volgt: de gebruiker kan in alle kamers "G" als opdracht doorgeven. Echter, enkel wanneer de gebruiker zich in de kamer met index 6 bevind dan zal de geheime kamer zichtbaar worden.
+We voegen daarom een extra case toe aan onze switch:
+
+```java
+case 'G':
+    if (kamerindex != 6)
+    {
+        Console.WriteLine("Dat zal hier niet werken");
+    }
+    else
+    {
+```
+Als de speler wél in de securityroom is dan gaan we de kaart-array aanpassen. We voegen rechtsonder in de array de 2 nieuwe kamers toe:
+
+```java
+Console.WriteLine("Je ontdekt een geheime ruimte");
+Kaart[4, 4] = 1;
+Kaart[4, 5] = 8;
+```
+
+Wanneer we nu de kaart hertekenen dan deze nieuwe ruimte verschijnen en weet de gebruiker dat hij zich daar kan begeven.
+
+
+
+De volledige code wordt dan (we laten de ``TekenKaart``-methode even achterwege):
+```java
+static void Main()
+{
+    int[,] Kaart =
+        {
+            {1, 2, 1, 3, 0, 0},{0, 1, 0, 1, 0, 0},{0, 4, 0, 1, 0, 0},{0, 1, 0, 1, 0, 0},{0, 7, 0, 6, 0, 0},
+        };
+
+    string[] Kamers =
+        {
+            "Onbekend terrein", //0 
+            "In een gang", //1
+            "In de lobby", //2
+            "In de bar", //3
+            "In de keuken", //4
+            "Achtertuin",//5
+            "In de securityroom", //6
+            "In de personeelsruimte", //7
+            "In de folterkamer" //8
+        };
+
+    string[] Beschrijving =
+                        {
+            "", //0 
+            "Een ordinaire saaie gang met een mooie vloer", //1
+            "De receptioniste kijkt je verbaast aan. Een plant in de hoek is het enige groen in de purperen ruimte.", //2
+            "2 gasten zitten half beschonken aan de toog. Een verliefd koppel is zachtjes aan het praten", //3
+            "Overal liggen etensresten, maar verder is hier niets of niemand interessant.", //4
+            "Mooie plantjes, enkele bomen en een gezellig terras.",//5
+            "De veiligheidsagent houdt je nauwlettend in het oog. Typ \"G\" om een geheime ruimte te ontdekken", //6
+            "Overal staan kastjes.Hier en daar is er een personeelslid zich aan het omkleden.", //7
+            "Wat doet deze vreemde plek in het hotel." //8
+        };
+
+    int posX = 0;
+    int posY = 0;
+    char inp='k';
+    while (inp != 'Q')
+    {
+        Console.Clear();
+        TekenKaart(Kaart, posX, posY);
+
+        int kamerindex = Kaart[posX, posY];
+        Console.WriteLine(Kamers[kamerindex]);
+        Console.WriteLine("******");
+        Console.WriteLine(Beschrijving[kamerindex]);
+        Console.WriteLine();
+        Console.WriteLine("NOZW? Naar waar wil je?");
+
+        inp = Convert.ToChar(Console.ReadLine().ToUpper());
+        switch (inp)
+        {
+            case 'N':
+                if (posX != 0 && Kaart[posX - 1, posY] != 0)
+                    posX--;
+                else Console.WriteLine("Kan niet");
+                break;
+            case 'O':
+                if (posY != Kaart.GetLength(1)-1 && Kaart[posX, posY + 1] != 0)
+                    posY++;
+                else Console.WriteLine("Kan niet");
+                break;
+            case 'Z':
+                if (posX != Kaart.GetLength(0)-1 && Kaart[posX + 1, posY] != 0)
+                    posX++;
+                else Console.WriteLine("Kan niet");
+                break;
+            case 'W':
+                if (posY != 0 && Kaart[posX, posY - 1] != 0)
+                    posY--;
+                else Console.WriteLine("Kan niet");
+                break;
+            case 'G':
+                if (kamerindex != 6)
+                {
+                    Console.WriteLine("Dat zal hier niet werken");
+                }
+                else
+                {
+                    Console.WriteLine("Je ontdekt een geheime ruimte");
+                    Kaart[4, 4] = 1;
+                    Kaart[4, 5] = 8;
+                    Console.ReadLine();
+                }
+                break;
+        }
+    }
+}
+```
+![We vinden een geheime kamer!](../assets/oopquest/mazegame/5.png)
+![En kijk, vervolgens wordt de kaart aangepast met de nieuwe informatie.](../assets/oopquest/mazegame/6.png)
+
+## Fase 8: Go nuts
+
+Vanaf dit punt kun je nu al een relatief eenvoudig, toch leuk spel maken, op voorwaarde dat je *verhaal* goed zit. Echter, voor we je hierop loslaten gaan we nog enkele zaken *refactoren* zodat de code wat leesbaarder blijft. In hoofdzaak willen we bepaalde stukken code uit de main-body halen en naar aparte methodes extraheren.
+
+### Stap 1: Kaart initialiseren in aparte methode 
+
+Beeld je in dat je de kaart(en) voor je spel uit een bestand laadt. Op zich is dat niet zo moeilijk , maar het vereist natuurlijk extra lijnen code in je, reeds overbevolkte, Main-methode. We verhuizen daarom de code waarin we onze kaarten initialiseren naar een aparte methode. In onze Main schrijven we dan (merk het gebruik van het ``out`` keyword op, dit wordt in een eerder appendix uitgelegd):
+
+```java
+int[,] Kaart;
+string[] Kamers;
+string[] Beschrijving;
+
+InitialiseerSpel(out Kaart, out Kamers, out Beschrijving);
+```
+
+Deze methode bevat dan gewoon de code van daarnet, mooi verpakt en afgeschermd:
+```java
+private static void InitialiseerSpel(
+    out int[,] Kaart, 
+    out string[] Kamers, 
+    out string[] Beschrijving)
+{
+    Kaart = new int[,]
+        {
+        {1, 2, 1, 3, 0, 0}, 
+        {0, 1, 0, 1, 0, 0}, 
+        {0, 4, 0, 1, 0, 0}, 
+        {0, 1, 0, 1, 0, 0}, 
+        {0, 7, 0, 6, 0, 0}
+        };
+    //Idem voor Kamers en beschrijving
+    //..
+
+```
+
+
+### Stap 2: Input verwerken in aparte methode 
+
+Het verwerken van de userinput kunnen we ook makkelijk extraheren naar aparte methode zodat onze while-loop overzichtelijker wordt :
+
+```java
+while (true)
+{
+    Console.Clear();
+    TekenKaart(Kaart, posX, posY);
+
+    int kamerindex = Kaart[posX, posY];
+    Console.WriteLine(Kamers[kamerindex]);
+
+    Console.WriteLine("******");
+    Console.WriteLine(Beschrijving[kamerindex]);
+    Console.WriteLine();
+    Console.WriteLine("NOZW? Naar waar wil je?");
+
+    VerwerkInput(Kaart, kamerindex, ref posX, ref posY); //NEW
+}
+```
+Merk op dat we zelfs de volledige loop naar een aparte methode op zijn beurt kunnen extraheren. Maar dat laten we aan de lezer over. We dienen de posities van de speler by reference mee te geven, daar we de posities onmiddellijk willen updaten in de ``VerwerkInput()``-methode.
+
+```java
+private static void VerwerkInput(
+    int[,] Kaart, 
+    int kamerindex, 
+    ref int posX, 
+    ref int posY)
+{
+    char inp = Convert.ToChar(Console.ReadLine().ToUpper());
+    switch (inp)
+    {
+            //etc
+
+```
+
+### Stap 3: Een mooier kaartje tekenen 
+
+Als kers op de taart tonen we snel hoe je het kaartje *sexier* kan tonen op het scherm. Hier zijn echter een paar belangrijke opmerkingen aan de orde:
+
+* De code bevat enkele *hardcoded* waarden zoals het plaatsen van de cursor m.b.v. ``Console.SetCursorPosition``. Beter zou zijn als deze waarden als Magic numbers worden behandeld of on-the-fly worden berekend.
+De kaart bevat UNICODE-art met vaste grootte. Dit zal bugs geven indien onze kaart-array groter is dan de dimensies van de UNICODE-art: de art zal over de randen van de UNICODE-art getekend worden. We kunnen dit oplossen door delen van de UNICODE-art te *berekenen* (bv het aantal *lege lijnen* en de breedte van een pagina.
+
+We definiëren de nieuwe Methode en voegen als eerste actie UNICODE-art toe van een kaart:
+
+```java
+private static void TekenKaartCool(int[,] Kaart, int posX, int posY)
+{
+    string background =
+                        @".-/|~~~~~~~MAP~~~~~~~~~\/~~~~~~~~**~~~~~~~~|\-." + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||___________________ : ___________________||||" + "\n" +
+                        @"||/====================\:/====================\||" + "\n" +
+                        @"`---------------------~---~--------------------''";
+```
+Daar we gaan spelen met de kleuren is het aan te raden om steeds volgende acties te ondernemen indien we de kleur van een bepaald karakter of zinnen willen veranderen:
+1.	De huidige kleur van de console  bewaren (fore en/of background) in een tijdelijke variabele.
+2.	Kleur veranderen .
+3.	Karakter of zin op scherm plaatsen.
+4.	Kleur terug naar de huidige kleur aanpassen.
+
+We tonen dit in de volgende code waarin we de background array (die de UNICODE-art bevat) op het scherm willen tekenen. Daarbij willen we dat de karakters donker-cyaan zijn en dat enkel karakters die geen spatie of liggenstreepje zijn een donkergele achtergrond hebben. 
+
+
+
+De commentaar toont de zonet beschreven stappen:
+
+```java
+ConsoleColor oudeKleur = Console.ForegroundColor; //1
+Console.ForegroundColor = ConsoleColor.DarkCyan; //2
+for (int i = 0; i < background.Length; i++)
+{
+    if (background[i] != ' ' && background[i] != '_')
+        Console.Write(background[i]); //3
+    else
+    {
+        ConsoleColor bll = Console.BackgroundColor;//1
+        Console.BackgroundColor = ConsoleColor.DarkYellow;//2
+        Console.Write(background[i]);//3
+        Console.BackgroundColor = bll;//4
+    }
+}
+
+Console.ForegroundColor = oudeKleur;//4
+
+```
+Vervolgens gebruiken we ``SetCursorPosition`` om onze spelerskaart ‘over’ de UNICODE-art te tekenen. Hierbij voegen we nog wat extra kleurtje toe, de speler-X wordt rood gekleurd:
+```java
+ConsoleColor bll2 = Console.BackgroundColor;
+Console.BackgroundColor = ConsoleColor.DarkYellow;
+
+for (int i = 0; i <= Kaart.GetLength(0); i++)
+{
+    Console.SetCursorPosition(7, 3 + i);
+    for (int j = 0; j <= Kaart.GetLength(1); j++)
+    {
+        if (posX == i & posY == j)
+        {
+            ConsoleColor l = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("X");
+            Console.ForegroundColor = l;
+        }
+
+        else
+            if (Kaart[i, j] != 0)
+                Console.Write("o");
+            else
+                Console.Write(" ");
+    }
+    Console.Write('\n');
+
+}
+Console.SetCursorPosition(1, 15);
+Console.BackgroundColor = bll2;
+}
+
+```
+De while-loop in de Main()-methode passen we nu nog aan zodat:
+1.	We de nieuwe DrawCoolMap methode gebruiken.
+2.	De titel van de kamer steeds op de rechterpagina van de kaart UNICODE-art wordt getoond.
+3.	De beschrijving en andere tekst steeds onder map komt en niet erover.
+
+
+```java
+while (true)
+{
+    Console.Clear();
+    TekenKaartCool(Kaart, posX, posY); //a
+
+    int kamerindex = Kaart[posX, posY];
+    Console.SetCursorPosition(26, 6); //b
+    Console.WriteLine(Kamers[kamerindex]);
+
+    Console.SetCursorPosition(1, 16);//c
+    Console.WriteLine("******");
+    Console.WriteLine(Beschrijving[kamerindex]);
+    Console.WriteLine();
+    Console.WriteLine("NOZW? Naar waar wil je?");
+
+    VerwerkInput(Kaart, kamerindex, ref posX, ref posY);
+}
+
+```
+
+We zijn er!
+
+
+![De nieuwe iPhone games zijn hier niets tegen.](../assets/oopquest/mazegame/7.png)
+
+## Alle code samen
+
+
+De volledige code voor dit extra-ordinaire spel wordt dan:
+
+### Main-methode
+```java
+static void Main()
+{
+    int[,] Kaart;
+    string[] Kamers;
+    string[] Beschrijving;
+
+    InitialiseerSpel(out Kaart, out Kamers, out Beschrijving);
+
+    int posX = 0;
+    int posY = 0;
+
+    while (true)
+    {
+        Console.Clear();
+        TekenKaartCool(Kaart, posX, posY); 
+
+        int kamerindex = Kaart[posX, posY];
+        Console.SetCursorPosition(26, 6); 
+        Console.WriteLine(Kamers[kamerindex]);
+
+        Console.SetCursorPosition(1, 16);
+        Console.WriteLine("******");
+        Console.WriteLine(Beschrijving[kamerindex]);
+        Console.WriteLine();
+        Console.WriteLine("NOZW? Naar waar wil je?");
+
+        VerwerkInput(Kaart, kamerindex, ref posX, ref posY);
+    }
+}
+```
+
+
+
+
+### InitialiseerSpel-methode
+
+```java
+private static void InitialiseerSpel(
+    out int[,] Kaart, 
+    out string[] Kamers, 
+    out string[] Beschrijving)
+{
+    Kaart = new int[,]
+        {
+        {1, 2, 1, 3, 0, 0}, 
+        {0, 1, 0, 1, 0, 0}, 
+        {0, 4, 0, 1, 0, 0}, 
+        {0, 1, 0, 1, 0, 0}, 
+        {0, 7, 0, 6, 0, 0}
+        };
+
+    Kamers = new string[]
+        {
+            "Onbekend terrein", "In een gang", "In de lobby", "In de bar", "In de keuken", "Achtertuin",
+            "In de securityroom", "In de personeelsruimte", "In de folterkamer"
+        };
+
+    Beschrijving = new string[]
+        {
+            "", "Een ordinaire saaie gang met een mooie vloer",
+            "De receptioniste kijkt je verbaast aan. Een plant in de hoek is het enige groen in de purperen ruimte.",
+            "2 gasten zitten half beschonken aan de toog. Een verliefd koppel is zachtjes aan het praten",
+            "Overal liggen etensresten, maar verder is hier niets of niemand interessant.",
+            "Mooie plantjes, enkele bomen en een gezellig terras.",
+            "De veiligheidsagent houdt je nauwlettend in het oog. Typ \"G\" om een geheime ruimte te ontdekken",
+            "Overal staan kastjes.Hier en daar is er een personeelslid zich aan het omkleden.",
+            "Wat doet deze vreemde plek in het hotel."
+        };
+}
+```
+
+
+
+
+### VerwerkInput-methode
+```java
+private static void VerwerkInput(
+    int[,] Kaart, 
+    int kamerindex, 
+    ref int posX, 
+    ref int posY)
+{
+    char inp = Convert.ToChar(Console.ReadLine().ToUpper());
+    switch (inp)
+    {
+            //etc
+        case 'N':
+            if (posX != 0 && Kaart[posX - 1, posY] != 0)
+                posX--;
+            else Console.WriteLine("Kan niet");
+            break;
+        case 'O':
+            if (posY != Kaart.GetLength(1) && Kaart[posX, posY + 1] != 0)
+                posY++;
+            else Console.WriteLine("Kan niet");
+            break;
+        case 'Z':
+            if (posX != Kaart.GetLength(0) && Kaart[posX + 1, posY] != 0)
+                posX++;
+            else Console.WriteLine("Kan niet");
+            break;
+        case 'W':
+            if (posY != 0 && Kaart[posX, posY - 1] != 0)
+                posY--;
+            else Console.WriteLine("Kan niet");
+            break;
+        case 'G':
+            if (kamerindex == 6)
+            {
+                Console.WriteLine("Je ontdekt een geheime ruimte");
+                Kaart[4, 4] = 1;
+                Kaart[4, 5] = 8;
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Dat zal hier niet werken");
+            }
+            break;
+    }
+}
+```
+
+
+
+
+### TekenKaartCool-methode
+
+```java
+private static void TekenKaartCool(int[,] Kaart, int posX, int posY)
+{
+    string background =
+                        @".-/|~~~~~~~MAP~~~~~~~~~\/~~~~~~~~**~~~~~~~~|\-." + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||                    :                    ||||" + "\n" +
+                        @"||||___________________ : ___________________||||" + "\n" +
+                        @"||/====================\:/====================\||" + "\n" +
+                        @"`---------------------~---~--------------------''";
+
+    ConsoleColor oudeKleur = Console.ForegroundColor; 
+    Console.ForegroundColor = ConsoleColor.DarkCyan; 
+    for (int i = 0; i < background.Length; i++)
+    {
+        if (background[i] != ' ' && background[i] != '_')
+            Console.Write(background[i]); 
+        else
+        {
+            ConsoleColor bll = Console.BackgroundColor;
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
+            Console.Write(background[i]);
+            Console.BackgroundColor = bll;
+
+        }
+    }
+
+    Console.ForegroundColor = oudeKleur;
+
+    ConsoleColor bll2 = Console.BackgroundColor;
+    Console.BackgroundColor = ConsoleColor.DarkYellow;
+
+    for (int i = 0; i < Kaart.GetLength(0); i++)
+    {
+        Console.SetCursorPosition(7, 3 + i);
+        for (int j = 0; j < Kaart.GetLength(1); j++)
+        {
+            if (posX == i & posY == j)
+            {
+                ConsoleColor l = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("X");
+                Console.ForegroundColor = l;
+            }
+
+            else
+                if (Kaart[i, j] != 0)
+                    Console.Write("o");
+                else
+                    Console.Write(" ");
+        }
+        Console.Write('\n');
+    }
+    Console.SetCursorPosition(1, 15);
+    Console.BackgroundColor = bll2;
+}
+```
+
