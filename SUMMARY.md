@@ -1,7 +1,7 @@
 # Summary
 
 * [Welkom](BookOnly/intro.md)
-* [Dit boek in papier?(papier.md)
+* [Dit boek in papier?](papier.md)
 * [Nuttige extras](_intro/nuttigeextras.md)
 * [Oplijsting videos semester 1](allvideos.md)
 * [Oplijsting videos semester 2](allvideos2.md)
@@ -57,7 +57,7 @@
   * [Strings en arrays](7_arrays/stringarray.md)
   * [Arrays en methoden](7_arrays/3_arrays_en_methoden.md)
   * [N-dimensionale arrays](7_arrays/4_ndimensionalArrays.md)
-  * [jagged arrays](7_arrays/5_jaggedArrays.md)
+  * [Jagged arrays](7_arrays/5_jaggedArrays.md)
 
 ## Semester 2 : OOP
 
