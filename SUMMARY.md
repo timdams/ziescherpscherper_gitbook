@@ -6,7 +6,7 @@
 * [Oplijsting videos semester 1](allvideos.md)
 * [Oplijsting videos semester 2](allvideos2.md)
 
-##  Programming Principles (semester 1)
+##  Programming Principles
 
 * H1: De eerste stappen
   * [Introductie tot C#](0_intro/0_intrototcs.md)
