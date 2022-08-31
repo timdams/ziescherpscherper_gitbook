@@ -21,7 +21,7 @@ Leren programmeren door enkele de opdrachten in dit boek te maken zal je niet ve
 
 ## Cheat sheet
 
-Volgende document bevat een overzicht van de basis C# syntax zaken van het eerste en (deel van het) tweede semester: [download hier](../assets/0_intro/cheat-sheet.pdf)
+Volgende document bevat een overzicht van de basis C# syntax zaken van het eerste en (deel van het) tweede semester: [download hier](https://timdams.files.wordpress.com/2022/08/cheat-sheet.pdf)
 
 ![Cheat sheet preview](../assets/0_intro/cheatprev.jpg)
 
