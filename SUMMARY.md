@@ -3,8 +3,8 @@
 * [Welkom](BookOnly/intro.md)
 * [Dit boek in papier?](papier.md)
 * [Nuttige extras](_intro/nuttigeextras.md)
-* [Oplijsting videos semester 1](allvideos.md)
-* [Oplijsting videos semester 2](allvideos2.md)
+* [Oplijsting videos Programming Principles](allvideos.md)
+* [Oplijsting videos Object Oriented Programming](allvideos2.md)
 
 ##  Programming Principles
 
