@@ -4,7 +4,6 @@ De gepubliceerde versie is identiek aan deze cursus.
 
 Kijk op [https://ziescherp.be](ziescherp.be) waar u deze cursus op verschillende manieren kunt aanschaffen (ebook, pdf of papier, etc.)
 
-
 ![](../assets/boek3.png)
 
 
