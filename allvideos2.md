@@ -29,6 +29,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Escape characters](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e80901c9-0baa-47d3-9c18-ac380085c4d1)
 * [String interpolation](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a054ae85-1e31-44ba-b3fb-ac38008554a1)
 * [Unicode tonen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9b7eb60b-35fd-4f4e-b825-ac3800850087)
+* [Environment bibliotheek](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=72cdbd18-2533-4106-aac5-af0f00809b06)
 
 ## Hoofdstuk 4 - Werken met data
 
@@ -61,6 +62,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 * [Methoden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=61df170d-4f30-486f-a411-ac4f00b06415)
 * [Goede methoden schrijven](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=453d817f-0567-4d1a-bd46-ac8c00a27bfa)
+* [Bestaande bibliotheken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b16047e4-d2b4-4274-b9d9-af0f00843a6a)
 * [Geavanceerde methodetechnieken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=75c9a72b-f485-4660-b71e-ac4f00bb0c38)
 * [Fun with methods](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ab62fdcd-94f3-4028-bee1-ac3600ca414b)
 
