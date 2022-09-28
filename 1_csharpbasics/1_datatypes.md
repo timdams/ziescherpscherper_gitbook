@@ -55,7 +55,7 @@ Ieder type hierboven heeft een bepaald bereik en hoeveelheid geheugen nodig. Je 
 Voor de gehele getallen zijn er volgende datatypes:
 
 | **Type** | **Geheugen** | **Bereik (waardenverzameling)** | 
-| :--- | :--- | :--- | :--|
+| :--- | :--- | :--- | 
 | `sbyte` | 8 bits | -128 tot 127 | 
 | `byte` | 8 bits | 0 tot 255 | 
 | `short` | 16 bits | -32 768 tot 32 767 | 

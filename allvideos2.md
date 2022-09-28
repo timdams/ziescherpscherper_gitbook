@@ -14,6 +14,8 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [WriteLine, Write en ReadLine](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=645c1bae-c84d-47c4-89d6-abe3009410c3)
 * [Fouten in je code oplossen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1dd4ec60-8782-4bc5-8522-ac3200d629cd)
 * [Werken met kleuren in console](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a0446be7-b8f2-4ce7-ba76-abe30094107e)
+* [Howto: alles over solution en project](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cad985c-3546-44a8-8303-af1c00ce5953)
+* [Howto: IntelliCode uitschakelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5b062697-fc35-44ee-8f2e-af1c013b47d7)
 
 ## Hoofdstuk 2 - De basiconcepten van C#
 
