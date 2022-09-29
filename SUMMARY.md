@@ -1,6 +1,5 @@
 # Summary
 
-* [Welkom](BookOnly/intro.md)
 * [Dit boek in papier?](papier.md)
 * [Nuttige extras](_intro/nuttigeextras.md)
 
