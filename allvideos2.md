@@ -14,8 +14,8 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [WriteLine, Write en ReadLine](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=645c1bae-c84d-47c4-89d6-abe3009410c3)
 * [Fouten in je code oplossen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1dd4ec60-8782-4bc5-8522-ac3200d629cd)
 * [Werken met kleuren in console](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a0446be7-b8f2-4ce7-ba76-abe30094107e)
-* [Howto: alles over solution en project](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cad985c-3546-44a8-8303-af1c00ce5953)
-* [Howto: IntelliCode uitschakelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5b062697-fc35-44ee-8f2e-af1c013b47d7)
+* [VS Howto: alles over solutions en project](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cad985c-3546-44a8-8303-af1c00ce5953)
+* [VS Howto: IntelliCode uitschakelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5b062697-fc35-44ee-8f2e-af1c013b47d7)
 
 ## Hoofdstuk 2 - De basiconcepten van C#
 
@@ -23,7 +23,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Datatypes](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1b40cd70-3224-486b-846a-ac38009741af)
 * [Variabelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=17b14f94-5805-4ce1-a4d6-ac3800a51815)
 * [Expressies](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=67287dee-b3b8-49a6-886c-ac3a00a1eb65)
-
+* [VS Howto: Meerdere projecten in 1 solution](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=52e6f50e-d90e-4210-8cb0-af2300a6bbbf)
 
 ## Hoofdstuk 3 - Tekst gebruiken in code
 
@@ -32,6 +32,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [String interpolation](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a054ae85-1e31-44ba-b3fb-ac38008554a1)
 * [Unicode tonen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9b7eb60b-35fd-4f4e-b825-ac3800850087)
 * [Environment bibliotheek](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=72cdbd18-2533-4106-aac5-af0f00809b06)
+* [VS HOWTO: Code layout verbeteren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=dac716be-7613-4de2-997f-af2a00aab1f3)
 
 ## Hoofdstuk 4 - Werken met data
 
