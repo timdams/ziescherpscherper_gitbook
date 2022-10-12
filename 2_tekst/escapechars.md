@@ -44,8 +44,8 @@ Er zijn verschillende escape characters in C# toegelaten, we lijsten hier de bel
 * `\'` : de apostrof zoals zonet besproken.
 * `\"` : een aanhalingsteken zodat je dat ook in je string kunt gebruiken zonder deze af te sluiten.
 * `\\` : een backslash in je tekst tonen. Hoe toon je dan twee backslashes? ``"\\\\"``.
-* ``\n`` : een nieuwe lijn (zogenaamde 'enter' of *newline*).
-* ``\t`` : Horizontale tab.
+* "\n" : een nieuwe lijn (zogenaamde 'enter' of *newline*).
+* "\t" : Horizontale tab.
 * `\uxxxx` : Het ``char`` met als hexadecimale UNICODE waarde xxxx.
 
 
