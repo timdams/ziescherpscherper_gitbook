@@ -17,7 +17,7 @@ Voorbeeldoutput:
 
 #### Array Viewer
 
-Maak een programma dat een methode VisualiseerArray implementeert. De methode zal een array (type int) als parameter hebben en niets teruggeven (``void``). Echter, de methode zal met behulp van Write() de array, van eender welke grootte, op het scherm tonen. Tussen ieder element van dezelfde rij dient een tab (``\t``) gezet te worden. Je dient in de methode gebruik te maken van een for-loop.
+Maak een programma dat een methode VisualiseerArray implementeert. De methode zal een array (type int) als parameter hebben en niets teruggeven (``void``). Echter, de methode zal met behulp van Write() de array, van eender welke grootte, op het scherm tonen. Tussen ieder element van dezelfde rij dient een tab (\t) gezet te worden. Je dient in de methode gebruik te maken van een for-loop.
 Voorbeeld van main:
 
 ```java
@@ -148,7 +148,7 @@ Vervolgens kan de coach een ander rugnummer (of hetzelfde) invoeren en zo verder
 
 Wanneer de coach 99 invoert stopt het programma en worden de finale statistieken getoond: per speler/rugnummer wordt het aantal goede en domme acties getoond, met daarnaast het verschil tussen beide:
 
-(gebruik ``\t`` om goede tabs te zetten tussen de data)
+(gebruik \t om goede tabs te zetten tussen de data)
 ```
 Rugnummer   Goede   Domme   Verschil
 1               5       2        3

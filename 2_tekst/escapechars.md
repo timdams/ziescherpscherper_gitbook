@@ -37,7 +37,7 @@ char apostrof = '\'';
 
 ### Veel gebruikte escape chars
 
-Er zijn echter nog een heleboel andere escape characters die je geregeld zal moeten gebruiken, waaronder ``\n`` om een nieuwe lijn aan te geven en ``\t`` om een tab in de tekst te plaatsen.
+Er zijn echter nog een heleboel andere escape characters die je geregeld zal moeten gebruiken, waaronder \n om een nieuwe lijn aan te geven en \t om een tab in de tekst te plaatsen.
 
 Er zijn verschillende escape characters in C# toegelaten, we lijsten hier de belangrijkste op (voor een totaal overzicht kijk eens op **docs.microsoft.com/dotnet/csharp/programming-guide/strings/**):
 
@@ -87,7 +87,7 @@ Console.WriteLine("Een zin en dan nu de biep\a");
 
 ### Witregels en tabs
 
-We gebruiken vooral escape characters in strings om bijvoorbeeld witregels (`\n`) en tabulaties(`\t`) aan te geven. Test bijvoorbeeld volgende lijn code eens:
+We gebruiken vooral escape characters in strings om bijvoorbeeld witregels (\n) en tabulaties(\t) aan te geven. Test bijvoorbeeld volgende lijn code eens:
 
 ```java
 string eenString = "Een zin.\t na een tab \nDan eentje op een nieuwe regel";
@@ -104,7 +104,7 @@ Dan eentje op een nieuwe regel
 
 ### Over tabstops
 
-Als je het niet gewoon bent de tab-toets op je toetsenbord te gebruiken dan is de eerste werking van ``\t`` mogelijk verwarrend. Nochtans is ``\t`` in een string gebruiken exact hetzelfde als op de tab-toets duwen. 
+Als je het niet gewoon bent de tab-toets op je toetsenbord te gebruiken dan is de eerste werking van \t mogelijk verwarrend. Nochtans is \t in een string gebruiken exact hetzelfde als op de tab-toets duwen. 
 
 In je console-scherm zijn de tab stops vooraf bepaald. Wanneer je dus een tab invoegt zal de cursor zich verplaatsen naar de eerstvolgende tab stop. 
 

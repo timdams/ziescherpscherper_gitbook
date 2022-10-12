@@ -78,7 +78,7 @@ Zowel de $-notatie (voor string interpolatie) als het @-teken kan je gecombineer
 Console.WriteLine($@"1/1={1+1}. \tGeen tab");
 ```
 
-Dit geeft als output (``\t`` wordt door het apenstaartje genegeerd):
+Dit geeft als output (\t wordt door het apenstaartje genegeerd):
 
 
 ```text
