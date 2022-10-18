@@ -156,7 +156,7 @@ Let echter op dat niet alle oplossingen bij dit soort oefeningen steeds dezelfde
 Merk op dat er een subtiel verschil is tussen volgende 2 lijnen code:
 ```java
 (double)(tempGisteren + tempVandaag) / 2; //geeft 22.5
-(double)((tempGisteren + tempVandaag)) / 2); //geeft 22
+(double)((tempGisteren + tempVandaag) / 2); //geeft 22
 ```
 In het eerste zullen we het resultaat van de som naar ``double`` omzetten. In het tweede, door de volgorde van berekeningen door de haakjes, zullen we de casting pas doen **na de deling** en zal dus 22 in plaats van 22.5 als resultaat geven.
 {% endhint %}
