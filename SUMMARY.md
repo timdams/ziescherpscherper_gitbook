@@ -44,7 +44,6 @@
 * H7: Methoden
   * [Methoden intro](6_methoden/0_intromethods.md)
   * [Bibliotheken](6_methoden/1_bibliotheken.md)
-  * [Methoden in de praktijk](6_methoden/methodepraktijk.md)
   * [Geavanceerde methodetechnieken](6_methoden/3_advancedmethod.md)  
 * H8: Arrays
   * [Array principes](7_arrays/1_ArraysBasics.md)
