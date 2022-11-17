@@ -44,7 +44,7 @@ short[,,] temperaturen;
 ```
 (enz.)
 
-{blurb, icon:brain}
+{% hint style='tip' %}
 Ja, dit kan dus ook een 10-dimensionale array aanmaken. Kan handig zijn als je een fysicus bent die rond de supersnaartheorie onderzoek doet.
 
 ```java
