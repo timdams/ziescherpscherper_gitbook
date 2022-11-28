@@ -55,7 +55,7 @@ Van zodra je een variabele hebt gedeclareerd kunnen we dus ten allen tijde deze 
 * **Waarde gebruiken**: Bijvoorbeeld `anderGetal = mijnGetal + 15;`
 * **Waarde tonen op scherm**: Bijvoorbeeld `Console.WriteLine(mijnGetal);`
 
-Met de **toekennings-operator \(=\)** kan je een waarde toekennen aan een variabele. Hierbij kan je zowel een literal toekennen oftewel het resultaat van een expressie (zie sectie 2.6).
+Met de **toekennings-operator \(=\)** kan je een waarde toekennen aan een variabele. Hierbij kan je zowel een literal toekennen oftewel het resultaat van een expressie .
 
 Je kan natuurlijk ook een waarde uit een variabele uitlezen en toewijzen (kopiëren) aan een andere variabele:
 
