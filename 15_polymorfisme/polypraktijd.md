@@ -34,7 +34,7 @@ public class EersteMinister
 ```
 
 {% hint style='tip' %}
-Fdit voorbeeld is gebaseerd op een briljante  StackOverflow post waarin de vraag *"What is polymorphism, what is it for, and how is it used?"* wordt behandeld (**https://stackoverflow.com/questions/1031273/what-is-polymorphism-what-is-it-for-and-how-is-it-used**).
+Dit voorbeeld is gebaseerd op een briljante StackOverflow post waarin de vraag *"What is polymorphism, what is it for, and how is it used?"* wordt behandeld (**https://stackoverflow.com/questions/1031273/what-is-polymorphism-what-is-it-for-and-how-is-it-used**).
 {% endhint %}
 
 
