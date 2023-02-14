@@ -353,8 +353,8 @@ Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorend
 ```java
 class Persoon
 {
-    private string voornaam;
-    private string achternaam;
+    public string Voornaam {get;set;}
+    public string Achternaam {get;set;}
 }
 ```
 We willen echter ook soms de volledige naam of emailadres krijgen, beide gebaseerd op de inhoud van de instantievariabelen ``voornaam`` en ``achternaam``. Via een read-only property die transformeert kan dit:
@@ -362,20 +362,20 @@ We willen echter ook soms de volledige naam of emailadres krijgen, beide gebasee
 ```java
 class Persoon
 {
-    private string voornaam;
-    private string achternaam;
+    public string Voornaam {get;set;}
+    public string Achternaam {get;set;}
     public string VolledigeNaam
     {
         get
         { 
-            return $"{voornaam} {achternaam}";
+            return $"{Voornaam} {Achternaam}";
         }
     }
     public string Email
     {
         get
         {
-            return $"{voornaam}@ziescherp.be";
+            return $"{Voornaam}@ziescherp.be";
         }
     }
 }
