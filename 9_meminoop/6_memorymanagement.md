@@ -4,7 +4,7 @@ Dit hoofdstuk gaat een beetje overal over. In de eerste, en belangrijkste, plaat
 
 Vervolgens gaan we kort de keywords ``using`` en ``namespace`` bekijken. Die tweede heb je al bij iedere project bovenaan je code zien staan, nu wordt het tijd om toe te lichten waarom dat is.
 
-Finaal lijkt het ons een goed moment om je robuustere, minder crashende, code te leren schrijven. Exception handling, de naam zegt het al, gaat ons helpen om die typische uitzonderingen (zoals deling door 0) in algoritmes op een elegante manier op te vangen (en dus niet door een nest van van ``if`` structuren te schrijven in de hoop dat je iedere mogelijke uitzondering kunt opvangen).
+Finaal lijkt het ons een goed moment om je robuustere, minder crashende, code te leren schrijven. Exception handling, de naam zegt het al, gaat ons helpen om die typische uitzonderingen (zoals deling door 0) in algoritmes op een elegante manier op te vangen (en dus niet door een nest van ``if`` structuren te schrijven in de hoop dat je iedere mogelijke uitzondering kunt opvangen).
 
 
 ## Geheugenmanagement in C#
