@@ -1,7 +1,3 @@
-
-
-
-
 # De eerste stappen
 
 Wel, wel, wie we hier hebben?! Iemand die de edele kunst van het programmeren wil leren? Dan ben je op de juiste plaats gekomen. Je gelooft het misschien niet, maar reeds aan het einde van dit hoofdstuk zal je je eerste eigen computer-applicaties kunnen maken. De weg naar eeuwige roem, glorie, véél vloeken en code herbruiken ligt voor je. Ben je er klaar voor? 
@@ -116,7 +112,7 @@ De C# taal is eigenlijk nog het eenvoudigst qua nummering. Om de zoveel tijd kri
 
 Eind 2022 komt .NET 7 uit en dus ook alweer een nieuwe versie van C#, namelijk versie 11. De kans is dus groot dat voorgaande zin alweer gedateerd is tegen dat je hem leest. De vernieuwingen in C# zijn niet altijd belangrijk voor beginnende programmeurs. In dit boek hebben we getracht de belangrijkste én meest begrijpbare nieuwe features uit de taal te gebruiken waar relevant, maar over het algemeen gezien mag je stellen dat dit boek tot en met versie 7.3 de belangrijkste zaken zal behandelen.
 
-{blurb, icon: video}
+{% hint style='tip' %}
 Volgende youtube-video van *Johnny does DOTNET* geeft een erg goed historisch overzicht van de naamsveranderingen: **youtube.com/watch?v=O4Qcg5Uon4g**.
 {% endhint %}
 
