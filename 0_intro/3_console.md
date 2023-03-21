@@ -23,7 +23,7 @@ Tweede lijn code:
 * Het resultaat van de ingevoerde tekst wordt bewaard in de variabele ``result``.
 
 {% hint style='tip' %}
-**Merk op dat de toekenning in C# van rechts naar links gebeurt.**Vandaar dat ``result`` dus links van de toekenning (``=``) staat en de waarde krijgt van het gedeelte rechts ervan.
+**Merk op dat de toekenning in C# van rechts naar links gebeurt.** Vandaar dat ``result`` dus links van de toekenning (``=``) staat en de waarde krijgt van het gedeelte rechts ervan.
 {% endhint %}
 
 
