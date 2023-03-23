@@ -70,7 +70,7 @@ Sinds C# 7 is de ``switch`` met enkele krachtige uitbreidingen vergroot. We hebb
 
 
 {% hint style='tip' %}
-Toch nieuwsgierig wat *de nieuws switch* kan? Lees dan zeker eens **thomasclaudiushuber.com/2021/02/25/c-9-0-pattern-matching-in-switch-expressions** voor een mooi overzicht van alle nieuwigheden.
+Toch nieuwsgierig wat *de nieuwe switch* kan? Lees dan zeker eens **thomasclaudiushuber.com/2021/02/25/c-9-0-pattern-matching-in-switch-expressions** voor een mooi overzicht van alle nieuwigheden.
 {% endhint %}
 
 
