@@ -302,7 +302,7 @@ Volgende 2 definities druk je best af op een grote poster die je boven je bed ha
 Objecten zijn instanties met een eigen levenscyclus die wordt gekenmerkt door:
 * **Gedrag**: deze wordt beschreven door de **methoden** in de klasse.
 * **Toestand**: deze kan wijzigen door zijn eigen gedrag, of het gedrag van externe impulsen en wordt bepaald door **datavelden** die beschreven staan in de klasse (properties en instantievariabelen). 
-* **Identiteit** : een unieke naam van object zodat andere object ermee kunnen interageren.
+* **Identiteit** : een unieke naam van object zodat andere objecten ermee kunnen interageren.
 
 {% hint style='tip' %}
 Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in een straat zal gebouwd worden. Het plan is de *klasse*. De effectieve huizen die we, gebaseerd op dat grondplan, bouwen zijn de instanties of objecten van deze klasse en hebben elk een eigen toestand (ander type bakstenen, wel of geen zonnepannelen) en gedrag (rolluiken gaan open als de zon opkomt).
