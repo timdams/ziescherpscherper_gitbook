@@ -518,16 +518,14 @@ Kortom, zorg dat je nooit dit schrijft!
 ```java
 static void Main(string[] args)
 {
-    ZieScherpVindDitNietLeuk();
+    TimVindtDitNietLeuk();
 
-    static void ZieScherpVindDitNietLeuk()
+    static void TimVindtDitNietLeuk()
     {
         Console.WriteLine("Doe dit niet!");
     }
 }
 ```
-
-
 
 
 
