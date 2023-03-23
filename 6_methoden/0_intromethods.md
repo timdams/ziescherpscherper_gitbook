@@ -214,7 +214,7 @@ internal class Program
 ```
 
 
-### ``Void`` 
+### ``void`` 
 
 Indien je methode niets teruggeeft wanneer de methode eindigt (bijvoorbeeld indien de methode enkel tekst op het scherm toont) dan dien je dit ook aan te geven. Hiervoor gebruik je het keyword void. Een voorbeeld:
 
