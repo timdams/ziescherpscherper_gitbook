@@ -184,7 +184,7 @@ Huis eenEigenHuis = new Huis(true,5);
 4. Wanneer het einde van de constructor wordt bereikt, zal er teruggegaan worden naar de constructor van ``Huis``.
 5. Nu wordt de code van de ``Huis`` constructor uitgevoerd: ``HeeftTuintje`` krijgt de waarde ``true``.
 
-**Einde:**Finaal keren we terug en staat er nu een gloednieuw object in de heap, wiens geheugenlocatie we kunnen toewijzen aan ``eenEigenHuis``.
+**Einde:** Finaal keren we terug en staat er nu een gloednieuw object in de heap, wiens geheugenlocatie we kunnen toewijzen aan ``eenEigenHuis``.
 
 
 {% endhint %}
