@@ -102,7 +102,6 @@
   * [Interfaces voorbeeld met president](16_interfaces/presidentinterfaces.md)
   * [Interfaces in de praktijk](16_interfaces/2_InterfacesInPraktijk.md)
   * [Interfaces en polymorfisme](18_IsAs/2_Polymorfisme_Interfaces.md)
-  * [Final chapter: we brengen alles samen](18_IsAs/2_Polymorfisme_Interfaces.md)
 * Conclusie
   * [Je hebt het gehaald](BookOnlyOOP/conclusie.md)
   * [En nu?](ennu.md)
