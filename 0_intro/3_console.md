@@ -42,7 +42,7 @@ Start nogmaals je programma. Je zal merken dat je programma nu een cursor toont 
 
 
 {% hint style='tip' %}
-Je kan gratis op Memrise deze cursus dagelijks instuderen, de ideale manier om snel essentiele C# begrippen voor altijd te onthouden. De cursus is beschikbaar via : (app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/)[https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/].
+Je kan gratis op Memrise deze cursus dagelijks instuderen, de ideale manier om snel essentiele C# begrippen voor altijd te onthouden. De cursus is beschikbaar via : [app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/](https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/).
 {% endhint %}
 
 ### Input gebruiker gebruiken
