@@ -40,6 +40,11 @@ result = Console.ReadLine();
 
 Start nogmaals je programma. Je zal merken dat je programma nu een cursor toont en wacht op invoer nadat het de eerste 3 lijnen tekst op het scherm heeft gezet. Je kan nu eender wat intypen en van zodra je op enter duwt gaat het programma verder. Maar aangezien lijn 5 de laatste lijn van ons algoritme is, zal je programma hierna afsluiten (en we hebben dus de gebruiker voor niets iets laten invoeren).
 
+
+{% hint style='tip' %}
+Je kan gratis op Memrise deze cursus dagelijks instuderen, de ideale manier om snel essentiele C# begrippen voor altijd te onthouden. De cursus is beschikbaar via : (app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/)[https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/].
+{% endhint %}
+
 ### Input gebruiker gebruiken
 
 Een variabele is een geheugenplekje (met een naam) waar we zaken in kunnen bewaren. In het volgende hoofdstuk gaan we zo vaak het woord variabele vertellen dat je oren en ogen er van gaan bloeden, dus trek je nu nog niet te veel aan van dit woord. We kunnen nu invoer van de gebruiker, die we hebben bewaard in de variabele ``result``, gebruiken en tonen op het scherm. 
