@@ -326,6 +326,12 @@ Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat
 {% endhint %}
 
 
+{% hint style='tip' %}
+Ook voor dit hoofdstuk en alle hoofdstukken hierna is een Memrise cursus beschikbaar: [https://app.memrise.com/course/6383638/zie-scherp-scherper-programmeren-in-c-deel-2/](https://app.memrise.com/course/6383638/zie-scherp-scherper-programmeren-in-c-deel-2/)
+{% endhint %}
+
+
+
 ### Abstractie principe
 Een belangrijk concept bij OOP is het **Black-box** principe waarbij we de afzonderlijke objecten en hun werking als zwarte dozen gaan beschouwen. 
 
