@@ -1,5 +1,9 @@
 # Nuttige extra's
 
+Er werden 2 Memrise cursussen aangemaakt speciaal voor dit handboek.  **Opgelet: je kan je enkel via de browser inschrijven op niet-spreektaal-cursussen. De app toont enkel spreektaalcursussen**. Gebruik deze app om dagelijks 5 minuten je C# kennis te drillen:
+  * [Deel 1](https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/)
+  * [Deel 2](https://app.memrise.com/course/6383638/zie-scherp-scherper-programmeren-in-c-deel-2/) 
+
 # Boeken
 
 Er zijn quasi oneindig veel boeken over C# geschreven, althans zo lijkt het. Hier een selectie van boeken met een korte bespreking waarom ik denk dat ze voor jou een meerwaarde kunnen zijn bij het leren programmeren in C#:
@@ -33,7 +37,6 @@ Ideale manier om programmeren meer in de vingers te krijgen op een speelse manie
 
 * [SoloLearn](https://play.google.com/store/apps/details?id=com.sololearn): Verplichte app! Simple as that!
 * [Enki](https://play.google.com/store/apps/details?id=com.enki.insights&hl=en) Net zoals SoloLearn maar dan anders.
-* [Memrise](https://www.memrise.com/course/700046/learn-c/) (aanrader!) Origineel vooral bedoeld om spreektalen te leren, maar bevat ook tal van andere zaken. Hoofdzakelijk nuttig om nieuwe aspecten te 'drillen'. Enkel dus nuttig indien je de basismaterie eerst hebt verwerkt.  Bekijk zeker ook de tal van andere cursussen die er staan. Let er op dat je bij de filter Engels instelt, er zijn nog niet veel (goede) Nederlandstalige C# cursussen naar mijn weten. **Opgelet: je kan je enkel via de browser inschrijven op niet-spreektaal-cursussen. De app toont enkel spreektaalcursussen**.
 * [Mimo](https://play.google.com/store/apps/details?id=com.getmimo) Speels en vrij beperkt in gratis versie, maar ideale aanvulling op SoloLearn.
 * [Screeps](https://screeps.com/) Een steam spel om te leren programmeren. Weliswaar JavaScript (nuttig voor Web Programming) maar het concept is te cool om niet hier te vermelden en zoals je zal ontdekken: leren programmeren kan je in eender welke taal, en het zal ook je andere programmeer-ervaring verbeteren. Give it a go!
 
