@@ -6,78 +6,82 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 
 
-## Hoofdstuk 1 - De eerste stappen
-* [Introductie tot C#](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f517d032-35b9-4c9f-ba91-ac33007cd2a6)
-* [Werken met VS](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=49110395-048c-4792-810b-af030090a520)
-* Optioneel:[De folderstructuur van projecten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f021b918-db11-43e4-93bf-a969006a6868)
-* [Je eerste programma](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3b85ae06-384c-4c3b-958d-af0300961b14)
-* [WriteLine, Write en ReadLine](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=645c1bae-c84d-47c4-89d6-abe3009410c3)
-* [Fouten in je code oplossen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1dd4ec60-8782-4bc5-8522-ac3200d629cd)
-* [Werken met kleuren in console](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a0446be7-b8f2-4ce7-ba76-abe30094107e)
-* [VS Howto: alles over solutions en project](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cad985c-3546-44a8-8303-af1c00ce5953)
-* [VS Howto: IntelliCode uitschakelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5b062697-fc35-44ee-8f2e-af1c013b47d7)
+### Hoofdstuk 1 - Object Oriented Programming
 
-## Hoofdstuk 2 - De basiconcepten van C#
+* [OOP in actie - de intro voor de intro](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f71ee5ef-5e80-4c34-afda-acc200a986b9)
+* [OOP, klassen en objecten...what's it all about?!](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=628acdda-bcc3-4de5-8b0e-acc200a98688)
+* [Podcast: Klassen en objecten](https://anchor.fm/tim-dams/episodes/Klassen-en-objecten-enis61)
+* [Klassen en objecten in C#](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6d91d9e1-9c8e-4b7a-a9a0-accd00b0ff32)
+* [Methoden en access modifiers](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59d6fbe6-a779-45d8-bb95-ae2700b22623)
+* [Properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45cc8607-0fdd-4928-965d-acb40097fbe4)
+* [Demo: Overzicht properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e326ab-5ee3-4e36-8880-ab6100c13715)
+* [Demo: Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
+* [Demo: autoproperties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
+* [De DateTime klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bab1597f-4907-40ae-8723-acb00095e421)
 
-* [Essentie van C#](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5ada7611-488b-4890-94b7-ac3300c413f7)
-* [Datatypes](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1b40cd70-3224-486b-846a-ac38009741af)
-* [Variabelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=17b14f94-5805-4ce1-a4d6-ac3800a51815)
-* [Expressies](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=67287dee-b3b8-49a6-886c-ac3a00a1eb65)
-* [VS Howto: Meerdere projecten in 1 solution](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=52e6f50e-d90e-4210-8cb0-af2300a6bbbf)
+### Hoofdstuk 2 - Geheugenmanagement, uitzonderingen en namespaces
 
-## Hoofdstuk 3 - Tekst gebruiken in code
+* [Stack vs heap](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4774ee4d-a695-4b3c-8adf-aeae008a1229)
+* [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9117b52-7306-4e92-bf24-acb100b10697)
+* [Podcast: Achter de schermen bij de "new" operator](https://anchor.fm/tim-dams/episodes/Achter-de-schermen-bij-de-new-operator-enndm3)
+* [Objecten in methoden als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=39c455a9-d24e-4783-8507-ae2a0094a93f)
+* [Extra toelichting "Bevallingsvoorbeeld" voorgaande les](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9b804bb0-c81b-4596-a4e9-acc900919722)
+* [Stack Overflow Exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=640a52f0-9ea0-42fc-b1f6-ab7a0093eda6)
+* [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)
+* [Podcast: namespaces en using](https://anchor.fm/tim-dams/episodes/Namespaces-en-using-e1e3pe9)
+* [Werken met exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f0d75032-e9bc-46e8-9a36-acb400b24318)
+* [Hoe de pokemon klasse werkt](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=245f5d03-dbe4-49d9-b9e9-ab720084b984)
 
-* [Char en strings](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=dace7ae4-e4aa-4686-a3aa-ac38008c4f5e)
-* [Escape characters](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e80901c9-0baa-47d3-9c18-ac380085c4d1)
-* [String interpolation](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a054ae85-1e31-44ba-b3fb-ac38008554a1)
-* [Unicode tonen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9b7eb60b-35fd-4f4e-b825-ac3800850087)
-* [Environment bibliotheek](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=72cdbd18-2533-4106-aac5-af0f00809b06)
-* [VS HOWTO: Code layout verbeteren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=dac716be-7613-4de2-997f-af2a00aab1f3)
+### Hoofdstuk 3 - Gevorderde klasseconcepten
 
-## Hoofdstuk 4 - Werken met data
+* [Constructors](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c61c93d6-1f53-4772-bb85-ae2a00ae074d)
+* [Overloaded constructors en this](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e4e76739-f3fb-4568-86c2-ae2a00b3e227)
+* [Object initialize Syntax](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3dabbb6a-850c-4796-babf-acb000b6a1db)
+* [static keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c9d6af4-3b7e-416c-b171-acb4009a874d)
+* [Nugets en libraries](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2950c6d7-0837-461f-a9ec-ae2f00c66853)
+* [Eigen class library maken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=01ff79ae-bf94-4a9e-93f4-ae2f00c6684c)
 
-* [Casting, conversie en parsing](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5a8cecfa-e8fb-41c8-8ec1-ac3d008960a7)
-* [Input verwerken en omzetten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a6e8b098-c0ad-40d6-9a29-ac3d008db7ab)
-* [Math-library en berekeningen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3819340c-9222-4814-b1e7-ac3d009788cb)
-* [Afronden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c4dfd175-47ec-4b1a-af7a-ac3d009afb99)
-* [Random](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b3c83c9c-5e84-45b8-949b-ac3d00a41820)
+### Hoofdstuk 4 - Arrays en klassen
 
-## Hoofdstuk 5 - Beslissingen
+* [Arrays van objecten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=328b271a-f26e-44ed-8e03-acb400ac9b72)
+* [var keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9beea541-07b2-4854-b6c0-acb000c553f9)
+* [De foreach loop](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=43be25ae-c1da-4b27-9563-aea90097378c)
+* [List<> klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=511f0a05-37a0-44b1-8096-ae9b00c6860b)
+* [Werken met Dictionary<>](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=43e5eb65-6b40-4539-892e-ab9f0093b774)
 
-* [Logische operators en expressies](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0cc5ce02-e957-4de0-980b-ac4600952358)
-* [If](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e1565009-be4b-4fed-a1fa-ac46009522dc)
-* [Scope van variabelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=16593f9b-a0fa-4b9b-a869-ac4600958190)
-* [Switch](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ce2ae654-bd58-45ed-915f-ac460095237f)
-* [Enum](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=41f45fba-c731-4f0a-9e87-ac4600952274)
-* [Demo: Enums gebruiken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9273e56b-1bfa-4393-a14a-aaed00bd4eaf)
-
-
-## Hoofdstuk 6 - Herhalingen, herhalingen, herhalingen
-
-* [Loops intro](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3276517e-fc5b-4f0c-9ef2-ac4b006fc937)
-* [While en Do-while loops](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0b11650a-9e8f-4447-99da-ac4b00924061)
-* [De for loop](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f9e5d2eb-e053-4904-b121-ac4d007f4f55)
-* [Loop nesting](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c4a0d717-890e-4e74-bd79-ac4f008fdce4)
-* [Micro-tips om loop-opgaven op te lossen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f1563c19-3b86-4603-a86d-ac4f00924132)
+### Hoofdstuk 5 - Overerving
+* [Overerving overzicht](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=32d7827b-53b1-482a-b52f-acb000cf868d)
+* [Constructors bij overerving](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d5df664-3e85-4bee-95ef-acb000d34540)
+* [virtual en override](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8e3fdfd1-7cb1-4bb9-afc2-aea900945593)
+* [base keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e2d99cbf-1c11-42fa-96c2-acb000d96cac)
 
 
-## Hoofdstuk 7 - Methoden
 
-* [Methoden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=61df170d-4f30-486f-a411-ac4f00b06415)
-* [Goede methoden schrijven](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=453d817f-0567-4d1a-bd46-ac8c00a27bfa)
-* [Bestaande bibliotheken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b16047e4-d2b4-4274-b9d9-af0f00843a6a)
-* [Geavanceerde methodetechnieken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=75c9a72b-f485-4660-b71e-ac4f00bb0c38)
-* [Fun with methods](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ab62fdcd-94f3-4028-bee1-ac3600ca414b)
+### Hoofdstuk 6 - Gevorderde overervingsconcepten
+* [Abstracte klassen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b1b22106-87a6-4f6f-9437-acb100add8d5)
+* [System.Object en ToString](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=00cad992-7714-4051-a992-ab7d0093864b)
+* [Zelf uitzonderingen maken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b68d611d-2022-4f0b-aa88-acb100b9ef5a)
+* [Uitgewerkt voorbeeld Abstract en System.Object mbv Zoo-dieren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e0c0f796-de77-4930-bcb6-ab8d00ce0c24) (compilatie uit hoorcollege 18-19)
+* [Class diagram en de class designer in Visual Studio](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4d0a4b76-eed7-45e3-ba3f-ae8500fd94e9)
+
+### Hoofdstuk 7 - Compositie en this
+* [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
+* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
+* [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=86c5c33e-eac6-4467-9522-acb100bdc094)
+* [this keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea597dce-a279-44bb-881d-acb100b55d85)
 
 
-## Hoofdstuk 8 - Arrays
+### Hoofdstuk 8 - Polymorfisme
+* [Polymorfisme](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f159648-9bc0-4169-91b0-acb000c86dea)
+* [Polymorfisme in de praktijk met presidenten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9ed3a377-6ae3-4b51-bf44-aeae0091e6e5)
+* [Is en as keywords](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8b1974ff-7c0a-4da8-9bd5-acb000cb742c)
+* [Samenvatting objecten vergelijken met equals: polymorfisme in actie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b705422d-db2d-420a-bcda-aba700fd9336)
 
-* [Arrays](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d1801903-4bd3-4004-b1cb-ac4f00d3cfdf)
-* [Arrays en geheugen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1a57ab27-bb21-4bd8-8b37-ac4f00d3cf97)
-* [System.Array](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3b587f2c-fc98-42d1-81ed-ac54007d7a4b)
-* [Algoritmes en arrays](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=90e32a53-b9ac-4162-a3e9-ac5400879d81)
-* [Strings en arrays](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=831314ae-c35f-4d6e-b7c0-ac54007d7abe)
-* [Arrays en methoden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4f1a0fd6-697b-42d5-b44a-ac560097b2aa)
-* [Startup parameters](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e362cd28-07a3-4d55-94cc-ac590085d8db)
-* [Meer-dimensionale arrays](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9dea3f48-d5b9-4469-823c-ac590085d881)
+### Hoofdstuk 9 - Interfaces
 
+* [Interfaces introductie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45c9a641-7333-432b-8f67-acb00082080f)
+* [Interfaces & polymorfisme](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4d5b3a53-531e-4e11-a777-ae2f00cec23e)
+* [Interfaces in de praktijk met presidenten, deel 2](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1df92edd-ba85-42f4-bdd0-abac0149cc10)
+* [Interfaces in de praktijk- een meme-detective verhaal](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ace92d8-27c8-4b3a-9a3d-abac014a15a9)
+* [Interfaces en polymorfisme in de praktijk: Vloekende mensen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=01040bf2-b14d-407f-b186-abad00b66540) 
+* [Interfaces en polymorfisme in de praktijk: fuifsimulator](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f40f6bd4-83cf-4ad1-8cb8-adf000d4cd5f)

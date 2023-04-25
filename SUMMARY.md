@@ -109,6 +109,9 @@
 ## Appendix
 
 * [Ea-ict coding guidelines](B_appendix/codingguidelines.md)
+* Kennicslips
+  * [H1 - H8](allvideos1.md)
+  * [H9 - H17](allvideos2.md)
   
 ## Programming principles appendix
 
