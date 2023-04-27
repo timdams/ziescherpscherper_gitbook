@@ -13,7 +13,7 @@ De ``is`` operator heeft twee operanden nodig en geeft een ``bool`` terug als re
 bool ditIsEenStudent = mijnStudent is Student;
 ```
 
-#### ``is`` voorbeeld 1
+#### ``is`` voorbeeld 
 Stel dat we volgende drie klassen hebben:
 ```java
 class Voertuig {}
