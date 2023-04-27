@@ -57,7 +57,7 @@ Het is belangrijk te beseffen dat ``someAnimal`` en ``anotherAnimal`` van het ty
 
 ### Objecten en polymorfisme
 
-Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-type, toe te wijzen aan een variabele van het parent-type.
+Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-type, toe te wijzen aan een variabele van het parent-type (**upcasting**).
 
 Dit wil ook zeggen dat dit mag (daar alles overerft van ``System.Object``):
 
