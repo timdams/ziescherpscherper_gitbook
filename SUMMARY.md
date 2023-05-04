@@ -22,7 +22,6 @@
   * [Escape characters](2_tekst/escapechars.md)
   * [Strings samenvoegen](2_tekst/6_stringInterpolation.md)
   * [Unicode tonen](2_tekst/7_unicode.md)
-  * [Environment bibliotheek](2_tekst/8_environment.md) 
 * H4: Werken met data
   * [Casting, conversie en parsing](3_data/4_converteren_casting.md)
   * [Input verwerken en omzetten](3_data/4b_inputconverten.md)
@@ -53,7 +52,6 @@
   * [Strings en arrays](7_arrays/stringarray.md)
   * [Arrays en methoden](7_arrays/3_arrays_en_methoden.md)
   * [N-dimensionale arrays](7_arrays/4_ndimensionalArrays.md)
-  * [Jagged arrays](7_arrays/5_jaggedArrays.md)
 
 ## Object Oriented Programming
 
@@ -68,8 +66,6 @@
   * [Objecten en methoden](9_meminoop/6b_objectenenmethoden.md)
   * [Null en NullReferenceException](9_meminoop/nullreference.md)
   * [Namespaces en using](9_meminoop/namespaces.md)
-  * [Exception handling](20_exceptions/0_exceptionhandling.md)
-  * [Waar exceptions plaatsen?](20_exceptions/waarplaatsen.md)
 * H11: Gevorderde klasseconcepten
   * [Constructors en de default Constructors](10_advancedklassen/1_constructors.md)
   * [Overloaded Constructors](10_advancedklassen/2_overloadedconstructor.md)
@@ -79,7 +75,6 @@
   * [Arrays van objecten](11_arraysvanklassen/7_arraysvanobj.md)
   * [List](11_arraysvanklassen/4_list.md)
   * [Foreach en var](11_arraysvanklassen/3_foreach.md)
-  * [Nuttige collection klassen](11_arraysvanklassen/dict.md)
 * H13: Overerving
   * [Overerving intro](12_overerving/0_overerving_intro.MD)
   * [Constructors bij overerving](12_overerving/3_constructors_inheritance.md)
@@ -88,7 +83,6 @@
 * H14: Gevorderde overervingsconcepten
   * [System.Object](13_advancedovererving/4_System_Object.md)
   * [Abstract](13_advancedovererving/5_abstract.md)
-  * [Eigen exceptions maken](20_exceptions/1_eigenuitzondering.md)
 * H15: Compositie en aggregatie
   * [Compositie](14_compositie/0_compositie_intro.MD)
   * [this keyword](14_compositie/this.md)
@@ -108,22 +102,10 @@
 
 ## Appendix
 
-* [Ea-ict coding guidelines](B_appendix/codingguidelines.md)
 * Kennicslips
   * [H1 - H8](allvideos1.md)
   * [H9 - H17](allvideos2.md)
   
-## Programming principles appendix
 
-* [Nice to know stuff](B_appendix/prostuff.md)
-  * [Out en Ref parameters](B_appendix/2_outenref.md)
-
-## OOP appendix
-
-* Nice to know stuff
-  * [Operator overloading](B_appendix/8_operatoroverloading.md)
-  * [Expression bodied members](B_appendix/6_exprbody.md)
-  * [Generics](B_appendix/generics.md)
-  * [struct en record](B_appendix/struct.md)
 
 
