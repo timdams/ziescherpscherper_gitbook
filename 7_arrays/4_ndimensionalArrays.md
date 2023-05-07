@@ -105,7 +105,7 @@ Die we als volgt kunnen visualiseren:
 
 ![De derde dimensie bestaat uit 3 2-dimensionale 2 bij 2 arrays...](../assets/5_arrays/3D.png)
 
-{blurb,icon:brain}
+{% hint style='tip' %}
 Zoals je ziet worden meerdimensionale arrays snel een kluwen van komma's, accolades en haakjes. Probeer dus je dimensies te beperken. Je zal zelden een 3 -of meer dimensionale array nodig hebben. 
 
 De regel is eenvoudig: als je een 7-dimensionale array nodig hebt, is de kans groot dat je een volledig verkeerd algoritme hebt verzonnen, of dat je nog niet aan hoofdstuk 9 bent geraakt, of dat je een topwetenschapper in CERN bent. Choose your reason!

@@ -72,14 +72,11 @@ Zelfs JavaScript, Python en veel andere moderne talen zullen weinig geheimen voo
 Deze Deen krijgt een eigen sectie in dit boek. Waarom? Hij is niemand minder dan de "uitvinder" van C#. Anders Hejlsberg heeft een stevig palmares inzake programmeertalen verzinnen. Voor hij C# boven het doopvont hield bij Microsoft,  schreef hij ook al Turbo Pascal én was hij de *chief architect* van Delphi. Je zou denken dat hij na 3 programmeertalen wel op z'n lauweren zou rusten, maar zo werkt Anders niet. In 2012 begon hij te werken aan een JavaScript alternatief, wat uiteindelijk het immens populaire TypeScript werd. Dit allemaal om maar te zeggen dat als je één poster in je slaapkamer moet ophangen, het die van Anders zou moeten zijn.
 
 
-
-
 ### De compiler
 
 Rechtstreeks onze algoritmen tegen de computer vertellen vereist dat we machinetaal kunnen. Deze is echter zo complex dat we tientallen lijnen machinetaal nodig hebben om nog maar gewoon 1 letter op het scherm te krijgen. Er werden daarom dus hogere programmeertalen ontwikkeld die aangenamer zijn dan deze zogenaamde machinetalen om met computers te praten.
 
 Uiteraard hebben we een vertaler nodig die onze code zal vertalen naar de machinetaal van het apparaat waarop ons programma moet draaien. Deze vertaler is de **compiler** die aardig wat complex werk op zich neemt, maar dus in essentie onze code gebruiksklaar maakt voor de computer.
-
 
 ![Vereenvoudigd compiler overzicht.](../assets/1_csharpbasics/compilersimple.png)
 
@@ -90,9 +87,7 @@ Merk op dat we hier veel details van de compiler achterwege laten. De compiler i
 
 Bij de geboorte van .NET in 2000 zat ook de taal C#.
 
-.NET is een zogenaamd **framework**. Dit framework bestaat uit een grote groep van bibliotheken (*class libraries*) en een *virtual execution system* genaamd de **Common Language Runtime (CLR)**. De CLR zal ervoor zorgen dat C#, of andere .NET talen (F#, VB.NET, enz.), kunnen samenwerken met de vele bibliotheken.
-
-Om een uitvoerbaar bestand te maken (**executable**, vandaar de extensie .exe bij uitvoerbare programma's in Windows) zal de broncode die je hebt geschreven in C# worden omgezet naar **Intermediate Language** (IL) code. Op zich is deze IL code nog niet uitvoerbaar, maar dat is niet ons probleem. Wanneer een gebruiker een in IL geschreven bestand wil uitvoeren dan zal, achter de schermen, de CLR deze code ogenblikkelijk naar machine code omzetten (**Just-In-Time** of JIT compilatie) en uitvoeren. De gebruiker zal dus nooit dit proces opmerken (tenzij er geen .NET framework werd geïnstalleerd op het systeem).
+.NET is een zogenaamd **framework**. Dit framework bestaat uit een grote groep van bibliotheken  en een erg technisch ding genaamd de **Common Language Runtime (CLR)**. De CLR zal ervoor zorgen dat C#, of andere .NET talen (F#, VB.NET, enz.), kunnen samenwerken met de vele bibliotheken.
 {% endhint %}
 
 
@@ -119,10 +114,3 @@ Volgende youtube-video van *Johnny does DOTNET* geeft een erg goed historisch ov
 {% hint style='tip' %}
 Je vraagt je misschien af waarom dit allemaal verteld wordt? Waarom wordt deze geschiedenisles gegeven? De reden is heel eenvoudig. Je gaat zeker geregeld zaken op het internet willen opzoeken tijdens het (leren) programmeren en zal dan ook vaker op artikels stuiten met de oude(re) naamgeving en dan mogelijks niet kunnen volgen. 
 {% endhint %}
-
-{% hint style='warning' %}
-Recent heeft Microsoft besloten om veel sneller nieuwe updates voor .NET en dus ook C# en Visual Studio uit te brengen, en dat allemaal opensource (je kan zelfs meehelpen via **github.com/dotnet**). Dit heeft als voordeel dat bugs sneller opgelost worden én dat we sneller toegang krijgen tot de nieuwste features. Het nadeel is echter dat informatie zoals in dit boek van de één op de andere dag out-dated kan zijn.
-{% endhint %}
-
-
-

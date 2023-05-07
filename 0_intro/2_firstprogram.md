@@ -92,13 +92,6 @@ De oerman verschijnt wanneer we een stevige stap gezet hebben en je mogelijk eve
 {% endhint %}
 
 
-{% hint style='tip' %}
-"Hello world" op het scherm laten verschijnen wanneer je een nieuwe programmeertaal leert is ondertussen een traditie bij programmeurs. Er is zelfs een website die dit verzamelt namelijk **helloworldcollection.de**. Deze site toont in honderden programmeertalen hoe je "Hello world" moet programmeren.
-{% endhint %}
-
-
-
-
 
 ### WriteLine: Tekst op het scherm
 
