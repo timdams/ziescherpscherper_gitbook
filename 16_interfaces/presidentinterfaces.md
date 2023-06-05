@@ -67,17 +67,11 @@ class MinisterVanMilieu:IMinister
 {
     public void Adviseer()
     {
-        increaseTroopNumbers();
-        improveSecurity();
-        payContractors();
-    }
-
-    public override void Adviseer()
-    {
         VerhoogBosSubsidies();
         OpenOnderzoek();
         ContacteerGreenpeace();
     }
+
     private void VerhoogBosSubsidies(){ ... }
     private void OpenOnderzoek(){ ... }
     private void ContacteerGreenpeace(){ ... }
