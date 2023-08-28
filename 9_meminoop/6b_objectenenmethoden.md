@@ -51,7 +51,8 @@ Je kan ook methoden schrijven die meegegeven objecten aanpassen daar we deze **b
 public void VoegMetingToeEnVerwijder(Meting inMeting)
 {
     Temperatuur += inMeting.Temperatuur;
-    inMeting = new Meting();
+    inMeting.Temperatuur = 0;
+    inMeting.OpgemetenDoor =  "";
 }
 ```
 
