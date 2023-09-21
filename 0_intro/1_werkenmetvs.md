@@ -6,10 +6,6 @@ We gaan in dit boek leren programmeren met Microsoft Visual Studio 2022, een sof
 
 VS is een zogenaamde **IDE ("Integrated Development Environment")** en is op maat gemaakt om in C# geschreven applicaties te ontwikkelen. Je bent echter verre van verplicht om enkel C# applicaties in VS te ontwikkelen, je kan gerust VB.NET, TypeScript, Python en andere talen gebruiken. Ook vice versa ben je niet verplicht om VS te gebruiken om te ontwikkelen. Je kan zelfs in notepad code schrijven en vervolgens compileren (zie hierna). Er bestaan zelfs online C# programmeer omgevingen, zoals **dotnetfiddle.net**.
 
-{% hint style='tip' %}
-In dit boek zullen we steeds werken met Visual Studio. Niet met *Visual Studio Code*. Visual Studio code is een zogenaamde lightweight versie van VS die echter zeker ook z'n voordelen heeft (makkelijk uitbreidbaar, snel, compact, etc). Visual Studio vindt dankzij VS Code eindelijk ook z'n weg op andere platformen dan enkel die van Microsoft. Je kan de laatste versie ervan downloaden op: **code.visualstudio.com**.
-{% endhint %}
-
 
 ### De compiler en Visual Studio
 
@@ -30,6 +26,10 @@ In dit boek zullen de voorbeelden steeds met de **Community** editie van VS gema
 Het is belangrijk bij de installatie dat je zeker de **.NET desktop development** workload kiest. Uiteraard ben je vrij om meerdere zaken te installeren.
 
 ![In dit boek zullen we enkel met de .NET desktop development workload werken.](../assets/0_intro/vsinstallerchoice.png)
+
+{% hint style='tip' %}
+In dit boek zullen we dus steeds werken met *Visual Studio Community 2022*. Niet met **Visual Studio Code**. Visual Studio code is een zogenaamde lightweight versie van VS die echter zeker ook z'n voordelen heeft (makkelijk uitbreidbaar, snel, compact, etc). Visual Studio vindt dankzij VS Code eindelijk ook z'n weg op andere platformen dan enkel die van Microsoft. Je kan de laatste versie ervan downloaden op: **code.visualstudio.com**.
+{% endhint %}
 
 
 ### Visual studio opstarten
@@ -64,7 +64,6 @@ Je kan dit achteraf nog aanpassen in VS via "Tools" in de menubalk, dan "Import 
 #### Project keuze
 Na het opstarten van VS krijg je het startvenster te zien van waaruit je verschillende dingen kan doen. Van zodra je projecten gaat aanmaken zullen deze in de toekomst ook op dit scherm getoond worden zodat je snel naar een voorgaand project kunt gaan. 
 
-{height:30%} 
 ![Het startscherm van Visual Studio. ](../assets/0_intro/vsstart.png)
 
 
@@ -94,6 +93,7 @@ Een console applicatie is een programma dat alle uitvoer naar een zogenaamde *co
 
 Op het volgende scherm kan je een naam ingeven voor je project alsook de locatie op de harde schijf waar het project dient opgeslagen te worden. **Onthoud waar je je project aanmaakt zodat je dit later terugvindt**.
 
+
 {% hint style='danger' %}
 **Het "Solution name" tekstveld blijf je af.** Hier zal automatisch dezelfde tekst komen als die dat je in het "Project name" tekstveld invult. 
 {% endhint %}
@@ -103,7 +103,11 @@ Op het volgende scherm kan je een naam ingeven voor je project alsook de locatie
 Geef je projectnamen ogenblikkelijk duidelijke namen zodat je niet opgezadeld geraakt met projecten zoals Project201, enz. waarvan je niet meer weet welke belangrijk zijn en welke niet.
 {% endhint %}
 
-Geef je project de naam "MyFirstProject" en kies een goede locatie (ik raad je aan dit steeds in Dropbox of Onedrive te doen). **We raden aan om de checkbox ("Place solution and project in the same directory") onderaan niét aan te vinken.** In de toekomst zal het nuttig zijn dat je meer dan 1 project per solution zal kunnen hebben. Lig er nog niet van wakker. Klik op next en kies als Target Framework de meest recente versie. **Duidt hier zeker de checkbox aan met "Do not use-top level statements"!!!** Klik nu op Create.
+Geef je project de naam "MijnEersteProgramma" en kies een goede locatie (ik raad je aan dit steeds in Dropbox of Onedrive te doen). **We raden aan om de checkbox ("Place solution and project in the same directory") onderaan niét aan te vinken.** In de toekomst zal het nuttig zijn dat je meer dan 1 project per solution zal kunnen hebben. Lig er nog niet van wakker. 
+
+![](../assets/0_intro/eersteproject.png)
+
+Klik op next en kies als Target Framework de meest recente versie. **Duidt hier zeker de checkbox aan met "Do not use-top level statements"!!!** Klik nu op Create.
 
 
 ![De auteur van dit boek kan fier melden dat die checkbox er staat mede dankzij zijn gezaag op github.com/dotnet/docs/issues/2742.](../assets/0_intro/toplevel.png)
@@ -127,7 +131,7 @@ We zullen nu eerst eens bekijken wat we allemaal zien in VS na het aanmaken van 
 * Het **properties** venster (eigenschappen) rechts onderaan is een belangrijk venster. Hier komen alle eigenschappen van het huidige geselecteerde element. Selecteer bijvoorbeeld maar eens Program.cs in de Solution Explorer en merk op dat er allerlei eigenschappen getoond worden. Onderaan het Properties venster wordt steeds meer informatie getoond over de huidig geselecteerde eigenschap.
 
 {% hint style='danger' %}
-Indien je een nieuw project hebt aangemaakt en de code die je te zien krijgt lijkt in de verste verte niet op de code die je hierboven ziet dan heb je vermoedelijk een verkeerd projecttype aangemaakt (of je hebt de "Do not use top-level statements" checkbox niet aangeduidt). De meest gemaakte fout in deze fase is dat je een Visual Basic (VB) Console applicatie hebt gekozen en niet een C# versie. 
+Indien je een nieuw project hebt aangemaakt en de code die je te zien krijgt lijkt in de verste verte niet op de code die je hierboven ziet dan heb je vermoedelijk een verkeerd projecttype aangemaakt (of je hebt de "Do not use top-level statements" checkbox niet aangeduid). De meest gemaakte fout in deze fase is dat je een Visual Basic (VB) Console applicatie hebt gekozen en niet een C# versie. 
 {% endhint %}
 
 

@@ -1,13 +1,13 @@
 Volgende aanpassingen/fouten zijn na de druk van het boek gedetecteerd. Ze werden reeds verbeterd in de online versie van het handboek (kleine typfouten behandelen we hier niet)
 
 
-**Pagina 17**
+## **Pagina 17**
 
 Volgende tip werd nog toegevoegd:
 "Je kan gratis op Memrise deze cursus dagelijks instuderen, de ideale manier om snel essentiele C# begrippen voor altijd te onthouden. De cursus is beschikbaar via : [app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/](https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/). " 
 
 
-**Onderaan pagina 78:**
+## **Onderaan pagina 78:**
 Haakje teveel in de tweede lijn code. 
 
 Foute lijn:
@@ -20,7 +20,7 @@ Moet zijn:
 (double)((tempGisteren + tempVandaag) / 2); //geeft 22
 ```
 
-**Bovenaan pagina 167:**
+## **Bovenaan pagina 167:**
 
 De dag-array bestaat niet en moet de regen-array zijn: 
 
@@ -34,7 +34,7 @@ Moet zijn:
 double gemiddelde = (regen[0]+regen[1]+regen[2]+regen[3]+regen[4]+regen[5]+regen[6])/7.0;
 ```
 
-**Onderaan pagina 199:**
+## **Onderaan pagina 199:**
 
 We hebben Length nodig, niet GetLength wanneer we werken met jagged arrays (dank aan Erik Speelman hiervoor).
 
@@ -46,7 +46,7 @@ Werd vervangen door:
 
 Wil je vervolgens de lengte kennen van de middelste sub-array (met dus index 1) dan gebruik je ``tickets[1].Length``."
 
-**Pagina 233:**
+## **Pagina 233:**
 
 De klasse persoon bevat instantievariabelen waardoor we in deze klasse nooit de voornaam en achternaam zullen kunnen instellen. Dit voorbeeld is veel duidelijker met auto-properties:
 
@@ -85,7 +85,7 @@ class Persoon
 
  ```
 
-**Halverwege pagina 240:**
+## **Halverwege pagina 240:**
 
 De eerste zin over TimeSpan klopt niet, je kan DateTime objecten enkel van elkaar aftrekken, optellen gaat niet.
 
@@ -96,7 +96,7 @@ Werd herschreven als:
 "Je kan DateTime objecten ook van elkaar aftrekken (optellen gaat niet!)."
  
  
- **Bovenaan pagina 257:**
+## **Bovenaan pagina 257:**
  Dit is een subtiele bug (dank Erik Speelman!). Het resetten van een object dat je meegeeft via een methode, kan niet zoals het voorbeeld toont . 
  De methode  ``VoegMetingToeEnVerwijder`` moet herschreven worden als
 
@@ -121,7 +121,7 @@ Werd herschreven als:
 
  Hier wordt de aanroep in plaats van ``m1.VoegMetingToeEnVerwijder(m2);`` dan ``m1.VoegMetingToeEnVerwijder(ref m2);``.
 
-**Halverwege pagina 373:**
+## **Halverwege pagina 373:**
 
 Een nieuwe term **upcasting** werd nog toegevoegd aan volgende zin:
  
@@ -131,7 +131,7 @@ Originele zin:
 Nieuwe zin:
 Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-type, toe te wijzen aan een variabele van het parent-type (**upcasting**)."
 
-**Onderaan pagina 391:**
+## **Onderaan pagina 391:**
 
 De klasse ``MinisterVanMilieu`` kan nog eenvoudiger en bevat code die weg moest. De nieuwe klasse wordt:
 
