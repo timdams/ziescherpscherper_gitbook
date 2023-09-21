@@ -128,7 +128,6 @@ We zullen nu eerst eens bekijken wat we allemaal zien in VS na het aanmaken van 
 
 * De "**solution explorer**" aan de rechterzijde toont alle bestanden en elementen die tot het huidige project behoren. Als we dus later nieuwe bestanden toevoegen, dan kan je die hier zien (en openen). Verwijder hier géén bestanden zonder dat je zeker weet wat je aan het doen bent!
 
-* Het **properties** venster (eigenschappen) rechts onderaan is een belangrijk venster. Hier komen alle eigenschappen van het huidige geselecteerde element. Selecteer bijvoorbeeld maar eens Program.cs in de Solution Explorer en merk op dat er allerlei eigenschappen getoond worden. Onderaan het Properties venster wordt steeds meer informatie getoond over de huidig geselecteerde eigenschap.
 
 {% hint style='danger' %}
 Indien je een nieuw project hebt aangemaakt en de code die je te zien krijgt lijkt in de verste verte niet op de code die je hierboven ziet dan heb je vermoedelijk een verkeerd projecttype aangemaakt (of je hebt de "Do not use top-level statements" checkbox niet aangeduid). De meest gemaakte fout in deze fase is dat je een Visual Basic (VB) Console applicatie hebt gekozen en niet een C# versie. 
