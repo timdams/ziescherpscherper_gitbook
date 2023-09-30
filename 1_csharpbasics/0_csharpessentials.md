@@ -10,7 +10,7 @@ De volgorde van de woorden (keywords, variabelen, enz.) zijn niet vrijblijvend e
 Enkele belangrijke regels van C#:
 
 * **Hoofdlettergevoelig**: C# is hoofdlettergevoelig. Dat wil zeggen dat hoofdletter ``R`` en kleine letter ``r`` totaal verschillende zaken zijn voor C#. ``Reinhardt`` en ``reinhardt`` zijn dus ook niet hetzelfde.
-* **Statements afsluiten met puntkomma**: Iedere C# statement wordt afgesloten moet een puntkomma ( **``;``** ). Doe je dat niet dan zal C# denken dat de regel gewoon op de volgende lijn doorloopt en deze als één (fout) geheel proberen te compileren.
+* **Statements afsluiten met puntkomma**: Iedere C# statement wordt afgesloten met een puntkomma ( **``;``** ). Doe je dat niet dan zal C# denken dat de regel gewoon op de volgende lijn doorloopt en deze als één (fout) geheel proberen te compileren.
 * **Witruimtes**: Spaties, tabs en enters worden door de C# compiler genegeerd. Je kan ze dus gebruiken om de layout van je code (*bladspiegel* zeg maar) te verbeteren. De enige plek waar witruimtes wél een verschil geven is tussen aanhalingstekens ``"      "`` die we later (bij string) zullen leren gebruiken.
 * **Commentaar toevoegen kan**: door ``//`` voor een enkele lijn te zetten zal deze lijn genegeerd worden door de compiler. Je kan ook meerdere lijnen code in commentaar zetten door er ``/*`` voor en ``*/`` achter te zetten. Voorts zijn er 2 handige knoppen die toelaten om een heel blok code in één keer van commentaar te voorzien of uit commentaar te halen (zie verder).
 * **Van boven naar onder**: je code wordt van boven naar onder uitgevoerd en zal enkel naar andere plaatsen springen als je daar expliciet in je code om vraagt (bijvoorbeeld met behulp van loops (hoofdstuk 6) of methoden (hoofdstuk 7)).
