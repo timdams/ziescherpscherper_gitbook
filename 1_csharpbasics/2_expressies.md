@@ -229,3 +229,5 @@ Nu krijgt het gedeelte tussen de haakjes een ``double`` als resultaat, namelijk 
 {% hint style='tip' %}
 Voorgaande voorbeeld is gebaseerd op een oefening uit het handboek "Programmeren in C#" van Douglas Bell en Mike Parr, een boek dat werd vertaald door collega lector Kris Hermans bij de Hogeschool PXL. Als je de console-applicaties beu bent en liever leert programmeren door direct grafische Windows-applicatie te maken, dan raad ik je dit boek ten stelligste aan!
 {% endhint %}
+
+
