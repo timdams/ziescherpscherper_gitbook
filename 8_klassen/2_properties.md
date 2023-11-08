@@ -490,11 +490,11 @@ Via ``propg`` gevolgd door twee maal de tabtoets krijg je een autoproperty met p
 {% hint style='tip' %}
 **Methode of property?**
 
-Een veel gestelde vraag bij beginnende OOP-ontwikkelaars is: "Moet dit in een property of in een methode geplaatst worden?"
+Een veel gestelde vraag bij beginnende OOP-ontwikkelaars is: *"Moet dit in een property of in een methode geplaatst worden?"*
 
 De regels zijn niet in steen gebeiteld, maar ruwweg kan je stellen dat:
 * Betreft het een actie of gedrag: iets dat het object moet doen (tekst tonen, iets berekenen of aanpassen, enz.) dan plaats je het in een **methode**. 
-* Betreft het een eigenschap van het object, dan gebruik je een **property**.
+* Betreft het een eigenschap van het object, dan gebruik je een **property** indien het om data gaat die snel verkregen of berekend kan worden. Gaat het om data die zwaardere en/of langere berekeningen vereist dan is een methode nog steeds aangeraden.
 
 {% endhint %}
 

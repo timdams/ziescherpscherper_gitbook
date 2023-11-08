@@ -43,9 +43,6 @@ Zie je het verschil? De ronde haakjes van de default constructor mag je dus acht
 {% endhint %}
 
 
-
-
-
 De volgorde waarin je code wordt uitgevoerd is wel belangrijk. Je ziet het niet duidelijk, maar sowieso wordt eerst nu de default constructor aangeroepen. Pas wanneer die klaar is zullen de properties de waarden krijgen die je meegeeft tussen de accolades. Als je dus zelf een default constructor in ``Meting`` had geschreven dan had eerst die code uitgevoerd zijn geweest. Voorgaande voorbeeld zal intern eigenlijk als volgt plaatsvinden:
 
 ```java
@@ -59,3 +56,37 @@ Je bent niet verplicht alle properties via deze syntax in te stellen, enkel de z
 {% endhint %}
 
 
+# `required` properties
+
+Object initializer syntax werd ontwikkeld om de wildgroei aan overloaded constructors in te perken. Echter, dit bracht een nieuw probleem met zich mee. Met behulp van overloaded constructors kan je gebruikers van je klasse verplichten om bepaalde begininformatie van het object bij de creatie mee te geven. Object initializer syntax werkt enkel met een default constructor, en dus was een nieuw key word vereist. Welkom `required`! 
+
+Door `required` voor een property te plaatsen kan je aangeven dat deze property verplicht moet ingesteld worden wanneer je een object aanmaakt met object initializer syntax: 
+
+```java
+class Meting
+{
+    public double Temperatuur {get;set;}
+    public required bool IsGeconfirmeerd {get;set;}
+}
+```
+
+Wanneer we nu een `Meting` als volgt aanmaken:
+
+```java
+Meting meting = new Meting { Temperatuur = 0.7};
+```
+
+Dan krijgen we een foutboodschap: *Required member 'Meting.IsGeconfirmeerd' must be set in the object initializer or attribute constructor.* Enkel als we dus minstens `IsGeconfirmeerd` ook instellen zal onze code werken:
+
+```java
+Meting meting = new Meting { IsGeconfirmeerd = true};
+```
+
+{% hint style='danger' %}
+Het `required` keyword werd pas geïntroduceerd in C# 11.0 en zal enkel werken indien je applicaties ontwikkeld in .NET 7 of nieuwer.
+{% endhint %}
+
+
+{% hint style='tip' %}
+Attribute constructors worden niet in dit boek behandeld.
+{% endhint %}

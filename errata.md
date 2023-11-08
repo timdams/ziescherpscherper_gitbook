@@ -6,6 +6,41 @@ Volgende aanpassingen/fouten zijn na de druk van het boek gedetecteerd. Ze werde
 Volgende tip werd nog toegevoegd:
 "Je kan gratis op Memrise deze cursus dagelijks instuderen, de ideale manier om snel essentiele C# begrippen voor altijd te onthouden. De cursus is beschikbaar via : [app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/](https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/). " 
 
+## **Pagina 64**
+
+Volgende aanvulling werd toegevoegd:
+
+Een andere eenvoudige manier om strings te formatteren is door middel van een soort masker bestaande uit 0'n. Dit ziet er als volgt uit:
+
+```java
+double number = 12.345;
+Console.WriteLine($"{number:0.00}");
+```
+
+We geven hierbij aan dat de variabele tot 2 cijfers na de komma moet getoond worden. Indien deze maar 1 cijfer na de komma bevat dan deze toch met twee cijfers getoond worden. Volgende voorbeeld toont dit:
+
+```java
+double number = 12.3;
+Console.WriteLine($"{number:0.00}");
+```
+
+Er zal ``12,30`` op het scherm verschijnen.
+
+Je kan dit masker ook gebruiken om te verplichten dat getallen bijvoorbeeld steeds met **minimum** 3 cijfers voor de komma getoond worden. Volgende voorbeeld toont dit:
+
+```java
+double number = 12.3;
+double number2 = 99999.3;
+Console.WriteLine($"{number:000.00}");
+Console.WriteLine($"{number2:000.00}");
+```
+
+Geeft als uitvoer:
+```text
+012.30
+99999.30
+```
+
 
 ## **Onderaan pagina 78:**
 Haakje teveel in de tweede lijn code. 
