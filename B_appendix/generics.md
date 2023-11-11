@@ -32,6 +32,17 @@ public static void ToonArray<T>(T[] array)
 }
 ```
 
+Vanaf nu kun je eender welk soort array aan deze ene methode geven en de array zal naar het scherm afgedrukt worden:
+
+```java
+int[] getallen= {1,2,4};
+string[] namen = {"tim", "ali", "marie", "fons"};
+ToonArray(getallen);
+ToonArray(namen);
+```
+
+
+
 ### Generic types
 We kunnen niet alleen generieke methoden schrijven, maar ook eigen klassen én interfaces definiëren die generiek zijn. In het volgende codevoorbeeld is te zien hoe een eigen generic class in C# gedefinieerd en gebruikt kan worden. Merk het gebruik van de aanduiding ``T`` , deze geeft weer aan dat hier een type (zoals ``int``, ``double``, ``Student``, enz.) zal worden ingevuld tijdens het compileren.
 

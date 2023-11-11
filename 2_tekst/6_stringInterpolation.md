@@ -72,7 +72,6 @@ Zoals je kan zien is dit veel meer leesbare code dan de eerste manier.
 Het resultaat zal dan worden: ```Ik ben Finkelstein en ik ben 13 jaar oud.```
 
 
-
 #### Berekeningen doen bij string interpolatie
 Je mag eender welke *expressie* tussen de accolades zetten bij string interpolation, denk maar aan:
 
