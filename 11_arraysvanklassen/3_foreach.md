@@ -99,7 +99,7 @@ JavaScript is namelijk een *dynamically typed language* terwijl C# een *statical
 {% endhint %}
 
 
-### var en foreach
+## var en foreach
 
 Wanneer je de Visual Studio code snippet voor ``foreach`` gebruikt (``foreach [tab][tab]``) dan zal deze code ook een ``var`` gebruiken voor de iteration variabele. De compiler kan aan de te gebruiken array of List zien wat het type van een individueel element in de array moet zijn.
 
