@@ -25,9 +25,9 @@ Leren programmeren door enkele de opdrachten in dit boek te maken zal je niet ve
 
 ## Cheat sheet
 
-Volgende document bevat een overzicht van de basis C# syntax zaken van het eerste en (deel van het) tweede semester: [download hier](https://timdams.files.wordpress.com/2023/11/cheat-sheet.pdf)
-
-![Cheat sheet preview](../assets/0_intro/cheatprev.jpg)
+Deze twee cheatsheets zijn handig om te gebruiken tijdens het (be)studeren van dit handboek:
+* [Hoofdstuk 1 tot en met 9](https://timdams.files.wordpress.com/2023/11/cheat-sheet.pdf)
+* [Hoofdstuk 8 tot en met 17](https://timdams.files.wordpress.com/2023/12/cheatsheet-oop.pdf)
 
 ## Game-based programmeren
 
