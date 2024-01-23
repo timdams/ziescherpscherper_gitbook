@@ -37,9 +37,9 @@ if (gevonden)
 
 
 
-#### Manueel zoeken met for en while
+#### Manueel zoeken met while
 
-We tonen nu twee voorbeelden van hoe je kan zoeken in een array wanneer we bijvoorbeeld 2 arrays hebben die 'synchroon' zijn. Daarmee bedoelen we: de eerste array bevat producten, de tweede array bevat de prijs van ieder product. De prijs van de producten staat steeds op dezelfde index in de andere array (de prijs van peren is dus 6.2, meloenen 2.9, enz.):
+We tonen nu een voorbeeld van hoe je kan zoeken in een array wanneer we bijvoorbeeld 2 arrays hebben die 'synchroon' zijn. Daarmee bedoelen we: de eerste array bevat bijvoorbeeld producten, de tweede array bevat de prijs van ieder product. De prijs van de producten staat steeds op dezelfde index in de andere array (de prijs van peren is dus 6.2, meloenen 2.9, enz.) :
 
 ```java
 string[] producten = {"appelen", "peren", "meloenen"};
@@ -76,20 +76,6 @@ else
 {
     Console.WriteLine("Niet gevonden");
 }
-```
-
-Een nadeel van deze oplossing is dat we steeds de hele ``while`` doorlopen (we gebruiken geen ``break`` vanwege een allergie hiervoor bij de auteur). Bij heel lange arrays is dit dus niet erg performant.
-
-
-
-Volgende oplossing met een ``do while`` toont een performantere oplossing voor het eerste deel van het programma:
-
-```java
-int teller = -1;
-do
-{
-    teller++;
-}while (teller < producten.Length && keuzeGebruiker != producten[teller]);
 ```
 
 {% hint style='tip' %}

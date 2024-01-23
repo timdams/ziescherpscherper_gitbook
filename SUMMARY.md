@@ -18,6 +18,7 @@
   * [Variabelen](1_csharpbasics/1b_variabelen.md)
   * [Expressies en operators](1_csharpbasics/2_expressies.md)
   * [Const(ant)](1_csharpbasics/3_constanten.md)
+  * [Solutions en projecten](1_csharpbasics/solsprojects.md)
 * H3: Tekst gebruiken in code
   * [Strings en chars](2_tekst/5_chars_strings.md)
   * [Escape characters](2_tekst/escapechars.md)
