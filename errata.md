@@ -186,3 +186,7 @@ class MinisterVanMilieu:IMinister
     }
 }
 ```
+
+## Extra content bij webversie
+
+* Hoofdstuk 2 bevat een extra stuk waarin het concept "Solution" en "Project" wordt verklaard in VS.
