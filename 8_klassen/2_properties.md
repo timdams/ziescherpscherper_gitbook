@@ -445,7 +445,7 @@ public int Geboortejaar {get;set;} = 2002;
 Al je objecten zullen nu als geboortejaar 2002 hebben wanneer ze geïnstantieerd worden.
 
 
-### Altijd auto-properties? 
+### Nut auto-properties? 
 Merk op dat je autoproperties dus enkel kan gebruiken indien er geen extra logica in de property (bij de set of get) aanwezig moet zijn.
 
 Stel dat je bij de setter van geboorteJaar wil controleren op een negatieve waarde, dan zal je dit zoals voorheen moeten schrijven en kan dit niet met een automatic property:
@@ -457,8 +457,7 @@ set
         geboorteJaar = value;
 }
 ```
-**Voorgaande property kan dus *NIET* herschreven worden met een automatic property.**
-
+**Voorgaande property kan dus *NIET* herschreven worden met een automatic property.** Autoproperties zijn vooral handig om snel klassen in elkaar te knutselen, zonder je zorgen te moeten maken om andere vereisten. Vaak zal een klasse in het begin met autoproperties gevuld worden. Naarmate je project vordert zullen die autoproperties meer en meer omgezet worden in full properties. 
 
 
 

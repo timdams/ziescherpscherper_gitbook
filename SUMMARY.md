@@ -127,5 +127,6 @@
   * [Expression bodied members](B_appendix/6_exprbody.md)
   * [Generics](B_appendix/generics.md)
   * [struct en record](B_appendix/struct.md)
+  <!--* [WPF](B_appendix/wpf/wpfintro.md)-->
 
 
