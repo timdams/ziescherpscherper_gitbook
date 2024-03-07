@@ -11,7 +11,7 @@ Object initializer syntax is een eerste glimp in het feit waarom properties zo b
 {% endhint %}
 
 
-Stel dat we volgende klasse hebben waarin we enkele autoproperties gebruiken. Merk op dat dit evengoed full properties mochten zijn. Voor object initializer syntax maakt dat niet uit, het ziet toch enkel maar het ``public`` gedeelte van de klasse:
+Stel dat we volgende klasse hebben waarin we enkele auto-properties gebruiken. Merk op dat dit evengoed full properties mochten zijn. Voor object initializer syntax maakt dat niet uit, het ziet toch enkel maar het ``public`` gedeelte van de klasse:
 
 ```java
 class Meting

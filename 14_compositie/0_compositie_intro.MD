@@ -193,7 +193,7 @@ Kortom, nog steeds niets nieuws onder de zon. Alle manieren die ja al kende om m
 
 ### Compositie en aggregatie objecten gebruiken
 
-Stel je voor dat de klasse ``HardeSchijf`` ook een autoproperty ``MaxCapacity`` heeft. De klasse ``PC`` kan dankzij compositie dus nu ook die property gebruiken, zoals volgende voorbeeld toont:
+Stel je voor dat de klasse ``HardeSchijf`` ook een auto-property ``MaxCapacity`` heeft. De klasse ``PC`` kan dankzij compositie dus nu ook die property gebruiken, zoals volgende voorbeeld toont:
 
 ```java
 class PC

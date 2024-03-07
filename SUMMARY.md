@@ -63,7 +63,8 @@
   * [OOP Intro](8_klassen/0_oop_intro.md)
   * [Klassen en objecten in C#](8_klassen/0b_oopincs.md)
   * [Methoden en access modifiers](8_klassen/0c_simpleobjects.md)
-  * [Properties](8_klassen/2_properties.md)
+  * [Full properties](8_klassen/2_properties.md)
+  * [Auto-properties](8_klassen/autoprop.md)
   * [DateTime: leren werken met objecten](8_klassen/datetime.md)
 * H10: Geheugenmanagement, uitzonderingen en namespaces
   * [Stack en Heap](9_meminoop/6_memorymanagement.md)

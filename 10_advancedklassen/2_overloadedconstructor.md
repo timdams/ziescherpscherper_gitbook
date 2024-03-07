@@ -101,7 +101,7 @@ class Student
 {% hint style='tip' %}
 Merk op dat je ook **full properties best aanroept in je constructor** en niet rechtstreeks de achterliggende instantievariabele. Zo kan je ogenblikkelijk de typische controles in een ``set`` in gebruik nemen.
 
-Beeld je in dat het schoolsysteem crasht wanneer een nieuwe student een onbeleefde bijnaam invoert. Wanneer dit gebeurt moet de bijnaam altijd gewoon op "Good boy" gezet worden, ongeacht de effectieve bijnaam van de student. Via een ``set``-controle kunnen we dit doen én vervolgens passen we de autoproperty aan naar een full property zodat er een ingebouwde controle kan plaatsvinden:
+Beeld je in dat het schoolsysteem crasht wanneer een nieuwe student een onbeleefde bijnaam invoert. Wanneer dit gebeurt moet de bijnaam altijd gewoon op "Good boy" gezet worden, ongeacht de effectieve bijnaam van de student. Via een ``set``-controle kunnen we dit doen én vervolgens passen we de auto-property aan naar een full property zodat er een ingebouwde controle kan plaatsvinden:
 
 ```java
 class Student
@@ -249,7 +249,7 @@ int resultaat = eenBreuk.BerekenBreuk(); //BAM!Een exception!
 
 Via een constructor kunnen we dit soort bugs voorkomen. We beschermen ontwikkelaars hiermee dat ze jouw klasse foutief gebruiken. Door een overloaded constructor te schrijven die een noemer en teller vereist verplichten we de ontwikkelaar jouw klasse correct te gebruiken (en kunnen geen breuk-objecten met de default constructor aangemaakt worden). 
 
-Eerst veranderen we de autoproperty ``Noemer`` naar een full property:
+Eerst veranderen we de auto-property ``Noemer`` naar een full property:
 
 ```java
 private int noemer;

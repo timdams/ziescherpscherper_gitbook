@@ -22,7 +22,7 @@ mijnpunten.PrintGraad();
 ```
 ## Nummers
 
-Maak een klasse ``Nummers``. Deze klasse bevat 2 getallen (type int) die via een autoproperty kunnen aangepast worden. Er zijn 4 methoden:
+Maak een klasse ``Nummers``. Deze klasse bevat 2 getallen (type int) die via een auto-property kunnen aangepast worden. Er zijn 4 methoden:
 
 * ``Som``: geeft de som van beide getallen terug
 * ``Verschil``: geeft het verschil van beide getallen terug
@@ -61,7 +61,7 @@ Quotiënt = 0,352941176470588
 Maak een nieuwe klasse ``Student``.
 
 
-Deze klasse heeft 6 autoproperties:
+Deze klasse heeft 6 auto-properties:
 
 * ``Naam`` (``string``)
 * ``Geboortejaar`` (``int``)
@@ -174,8 +174,8 @@ Kan je in voorgaand voorbeeld de instantievariabele ``reeks`` vervangen door een
 # Bibliotheek
 
 Boeken in een bibliotheek mogen maximum 14 dagen uitgeleend worden. Schrijf een console-applicatie om de volgende gegevens te tonen door middel van een klasse ``BibBoek``:
-* de naam van de ontlener, die werd ingelezen (autoproperty)
-* de datum van vandaag (autoproperty met private set)
+* de naam van de ontlener, die werd ingelezen (auto-property)
+* de datum van vandaag (auto-property met private set)
 * de datum, dat het boek ten laatste terug moet ingeleverd worden (readonly property)
 
 

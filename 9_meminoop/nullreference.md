@@ -101,7 +101,7 @@ static Student ZoekStudent(Student[] array, string naam)
 
 ### Bevalling in C# met ouders
 
-Tijd om het voorbeeld van de *voortplanting der mensch* er nog eens bij te nemen. Beeld je nu in dat we dichter naar de realiteit willen gaan (meestal het doel van OOP) en de baby eigenschappen van beide ouders geven. Stel dat mensen een maximum lengte hebben die ze genetisch kunnen halen, aangeduid via een autoproperty ``MaxLengte``. De maximale lengte van een baby is steeds de lengte van de grootste ouder (in de echte genetica is dat natuurlijk niet, zeker niet omdat er ook zeker een ``Random`` factor aanwezig is). 
+Tijd om het voorbeeld van de *voortplanting der mensch* er nog eens bij te nemen. Beeld je nu in dat we dichter naar de realiteit willen gaan (meestal het doel van OOP) en de baby eigenschappen van beide ouders geven. Stel dat mensen een maximum lengte hebben die ze genetisch kunnen halen, aangeduid via een auto-property ``MaxLengte``. De maximale lengte van een baby is steeds de lengte van de grootste ouder (in de echte genetica is dat natuurlijk niet, zeker niet omdat er ook zeker een ``Random`` factor aanwezig is). 
 
 De klasse ``Mens`` breiden we uit naar:
 
@@ -124,7 +124,7 @@ Mooi toch?!
 
 
 
-Om het nu volledig te maken zullen we er nu nog voor zorgen dat enkel een vrouw kan voortplanten, en enkel van een man (het is een vrij klassiek wereldbeeld, maar voor deze oefening wordt het te complex als we ook alle 21e-eeuwse voortplantingswijzen moeten implementeren).  Veronderstel dat het geslacht via een enumtype (``enum Geslachten {Man, Vrouw}``) in een autoproperty ``Geslacht`` wordt bewaard.  We voegen daarom bovenaan in de ``PlantVoort``-methode nog een kleine check in én return'n een leeg (``null``) object als de voortplanting faalt (we zouden ook een ``Exception`` kunnen opwerpen):
+Om het nu volledig te maken zullen we er nu nog voor zorgen dat enkel een vrouw kan voortplanten, en enkel van een man (het is een vrij klassiek wereldbeeld, maar voor deze oefening wordt het te complex als we ook alle 21e-eeuwse voortplantingswijzen moeten implementeren).  Veronderstel dat het geslacht via een enumtype (``enum Geslachten {Man, Vrouw}``) in een auto-property ``Geslacht`` wordt bewaard.  We voegen daarom bovenaan in de ``PlantVoort``-methode nog een kleine check in én return'n een leeg (``null``) object als de voortplanting faalt (we zouden ook een ``Exception`` kunnen opwerpen):
 
 ```java
     public Mens PlantVoort(Mens dePapa)

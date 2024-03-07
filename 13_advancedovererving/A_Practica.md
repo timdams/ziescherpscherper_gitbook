@@ -78,7 +78,7 @@ Schrijf deze klassen en toon de werking ervan in je main.
 
 # Geometric figures
 
-Maak een abstracte klasse ``GeometricFigure``. Iedere figuur heeft een hoogte, breedte en oppervlakte. Maak autoproperties voor van ``Hoogte`` en ``Breedte``. Voorzie een abstracte methode ``Oppervlakte`` die een int teruggeeft. 
+Maak een abstracte klasse ``GeometricFigure``. Iedere figuur heeft een hoogte, breedte en oppervlakte. Maak auto-properties voor van ``Hoogte`` en ``Breedte``. Voorzie een abstracte methode ``Oppervlakte`` die een int teruggeeft. 
 
 Maak 3 klassen:
 

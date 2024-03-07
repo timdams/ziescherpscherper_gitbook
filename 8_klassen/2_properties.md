@@ -42,10 +42,10 @@ We willen echter wel van buiten uit het energie-level van een sithLord kunnen in
  Er zijn 2 soorten properties in C#:
 
 * **Full properties**: deze stijl van properties verplicht ons véél code te schrijven, maar we hebben ook volledige controle over wat er gebeurt.
-* **Autoproperties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig controle.
+* **auto-properties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig controle.
 
 
-We behandelen eerst full properties, daar autoproperties een soort afgeleide van full properties zijn (bepaalde aspecten van full properties worden bij autoproperties achter de scherm verstopt zodat jij als programmeur er geen last van hebt).
+We behandelen eerst full properties, daar auto-properties een soort afgeleide van full properties zijn (bepaalde aspecten van full properties worden bij auto-properties achter de scherm verstopt zodat jij als programmeur er geen last van hebt).
 
 {% hint style='tip' %}
 In één van de volgende versies van C# (normaal versie 11) zal er nog een derde type verschijnen: de zogenaamde semi-auto properties. Een - je raadt het nooit- propertytype dat zich tussen beide bestaande types zal bevinden. De details en exacte gebruik ervan worden nog besproken op github (**github.com/dotnet/csharplang/issues/140**) door de ontwikkelaars, dus het is nog te vroeg om deze al op te nemen in dit boek. 
@@ -381,108 +381,6 @@ class Persoon
 }
 ```
 
-
-
-### Autoproperties
-Automatische eigenschappen (**autoproperties** , soms ook *autoprops* genoemd) laten toe om snel properties te schrijven zonder dat we de achterliggende instantievariabele moeten beschrijven.
-
-Heel vaak wil je heel eenvoudige variabelen aan de buitenwereld van je klasse beschikbaar stellen. Omdat je instantievariabelen echter niet ``public`` mag maken, moeten we dus properties gebruiken die niets anders doen dan als doorgeefluik fungeren. Autoproperties doen dit voor ons: het zijn vereenvoudige full properties waarbij de achterliggende instantievariabele onzichtbaar voor ons is.
-
-Zo kan je eenvoudig de volgende klasse ``Persoon`` herschrijven met behulp van autoproperties. De originele klasse mét full properties (we hebben de layout wat compacter gemaakt om een extra blad te besparen in dit boek):
-
-```java
-public class Person
-{
-    private string voornaam;
-    private int geboorteJaar;
-
-    public string Voornaam
-    {
-        get { return voornaam; }
-        set { voornaam = value; }
-    }
-
-    public int Geboortejaar
-    {
-        get { return geboorteJaar; }
-        set { geboorteJaar = value; }
-    }
-}
-```
-
-De herschreven klasse met autoproperties wordt: 
-
-```java
-public class Person
-{
-    public string Voornaam { get; set; }
-    public int Geboortejaar { get; set; }
-}
-```
-
-Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse aanzienlijk korter en dus eenvoudiger om te lezen. **De private instantievariabelen zijn niét meer aanwezig.** C# gaat die voor z'n rekening nemen. Alle code zal dus via de properties moeten gaan.
-
-Het is belangrijk te benadrukken dat de achterliggende instantievariabele onzichtbaar is in autoproperties en **onmogelijk** kan gebruikt worden. Alles gebeurt via de autoproperty, altijd.
-
-{% hint style='tip' %}
-Vaak zal je nieuwe klassen eerst met autoproperties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig autoproperties vervangen door full properties.
-
-Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan vooraan op de schroevendraaier en kies "Convert to full property".
-
-**Opgelet**: Merk op dat de syntax die VS gebruikt om een full property te schrijven anders is dan wat we hier uitleggen. Wanneer je VS laat doen krijg je een oplossing met allerlei ``=>`` tekens. Dit is zogenaamde **Expression Bodied Member syntax (EBM)**. We behandelen deze (nieuwere) C# syntax in de appendix.
-{% endhint %}
-
-
-### Beginwaarden van autoproperties
-
-Je mag autoproperties beginwaarden geven door de waarde achter de property te schrijven, als volgt:
-
-
-```java
-public int Geboortejaar {get;set;} = 2002;
-```
-
-Al je objecten zullen nu als geboortejaar 2002 hebben wanneer ze geïnstantieerd worden.
-
-
-### Nut auto-properties? 
-Merk op dat je autoproperties dus enkel kan gebruiken indien er geen extra logica in de property (bij de set of get) aanwezig moet zijn.
-
-Stel dat je bij de setter van geboorteJaar wil controleren op een negatieve waarde, dan zal je dit zoals voorheen moeten schrijven en kan dit niet met een automatic property:
-
-```java
-set
-{
-    if( value > 0)
-        geboorteJaar = value;
-}
-```
-**Voorgaande property kan dus *NIET* herschreven worden met een automatic property.** Autoproperties zijn vooral handig om snel klassen in elkaar te knutselen, zonder je zorgen te moeten maken om andere vereisten. Vaak zal een klasse in het begin met autoproperties gevuld worden. Naarmate je project vordert zullen die autoproperties meer en meer omgezet worden in full properties. 
-
-
-
-### Alleen-lezen autoproperties
-
-Je kan autoproperties ook gebruiken om bijvoorbeeld een read-only property met private setter te definiëren. Als volgt:
-
-
-```java
-public string Voornaam { get; private set; }
-```
-
-Een andere manier die ook kan wanneer we enkel een read-only property nodig hebben, is als volgt:
-
-
-```java
-public string Voornaam { get; } = "Tim";
-```
-
-Hierbij zijn we dan wel verplicht om ogenblikkelijk deze property een beginwaarde te geven, daar we deze op geen enkele andere manier nog kunnen aanpassen. 
-
-{% hint style='tip' %}
-Als je in Visual Studio in je code ``prop`` typt en vervolgens twee keer de tabtoets indrukt dan verschijnt al de nodige code voor een automatic property. 
-Via ``propg`` gevolgd door twee maal de tabtoets krijg je een autoproperty met private setter.
-{% endhint %}
 
 
 

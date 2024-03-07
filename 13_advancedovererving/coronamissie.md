@@ -4,7 +4,7 @@
 
 Deze klasse is...je raadt het nooit. Abtract.
 
-De klasse heeft 3 autoproperties:
+De klasse heeft 3 auto-properties:
 * Ieder gebouw heeft een X en Y locatie (via int property) waar het gebouw zal verschijnen op de kaart.
 * Ieder gebouw heeft een Naam (``string``)
 

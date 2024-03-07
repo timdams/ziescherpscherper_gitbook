@@ -10,7 +10,7 @@ Maak volgende klassen:
 
 **``Minister``**
 
-Een ``Minister`` heeft geen speciale eigenschappen. Enkel een autoproperty om de ``Naam`` van de minister in bij te houden
+Een ``Minister`` heeft geen speciale eigenschappen. Enkel een auto-property om de ``Naam`` van de minister in bij te houden
 
 **``President``**
 

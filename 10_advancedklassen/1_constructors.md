@@ -121,7 +121,7 @@ Dan zal de property ``UurVanInschrijven`` van ``eenStudent`` op ``11`` worden in
 
 
 {% hint style='tip' %}
-Constructors zijn soms nogal zwaarwichtig indien je enkel een eenvoudige autoproperty een startwaarde wenst te geven. Wanneer dat het geval is mag je dit ook als volgt doen:
+Constructors zijn soms nogal zwaarwichtig indien je enkel een eenvoudige auto-property een startwaarde wenst te geven. Wanneer dat het geval is mag je dit ook als volgt doen:
 
 ```java
 class Student

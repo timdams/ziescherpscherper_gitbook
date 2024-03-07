@@ -22,13 +22,13 @@ mijnpunten.PrintGraad();
 ### Bibliotheek*
 
 Boeken in een bibliotheek mogen maximum 14 dagen uitgeleend worden. Schrijf een console-applicatie om de volgende gegevens te tonen door middel van een klasse ``BibBoek``:
-* de naam van de ontlener, die werd ingelezen (autoproperty).
-* de datum van vandaag (autoproperty met private set). Gebruik uiteraard  de ``DateTime`` klasse.
+* de naam van de ontlener, die werd ingelezen (auto-property).
+* de datum van vandaag (auto-property met private set). Gebruik uiteraard  de ``DateTime`` klasse.
 * de datum dat het boek ten laatste terug moet ingeleverd worden (readonly property).
 
 ### Nummers
 
-Maak een klasse ``Nummers``. Deze klasse bevat 2 getallen (type ``int``) die via een autoproperty kunnen aangepast worden. Er zijn 4 methoden:
+Maak een klasse ``Nummers``. Deze klasse bevat 2 getallen (type ``int``) die via een auto-property kunnen aangepast worden. Er zijn 4 methoden:
 
 * ``Som``: geeft de som van beide getallen terug.
 * ``Verschil``: geeft het verschil van beide getallen terug.
@@ -71,7 +71,7 @@ Quotient = 0,352941176470588
 We maken een ``Rekening`` klasse die kan gebruikt worden om de bankrekening van een klant voor te stellen. Deze heeft volgende zaken:
 
 * Een instantievariabele van het type ``int`` genaamd ``balans``. Deze variabele houdt het totale bedrag bij dat op de rekening staat.
-* 2 autoproperties van type ``string`` namelijk ``NaamKlant`` en ``RekeningNummer``.
+* 2 auto-properties van type ``string`` namelijk ``NaamKlant`` en ``RekeningNummer``.
 * 1 readonly property  ``Balans`` die de balans teruggeeft.
 
 Voorzie 3 methoden:
@@ -103,7 +103,7 @@ Test je klasse.
 Voorzie extra functionaliteit naar keuze.
 
 #### Deel 2
-Voeg aan de ``Rekening``-klasse een autoproperty,genaamd ``Staat``, met private set toe van het type ``RekeningStaat`` toe, dat een enumeratie bevat. De Rekening kan in volgende staten zijn ``Geldig``, ``Geblokkeerd``. Een rekening is Geldig wanneer een nieuwe rekening wordt geopend.
+Voeg aan de ``Rekening``-klasse een auto-property,genaamd ``Staat``, met private set toe van het type ``RekeningStaat`` toe, dat een enumeratie bevat. De Rekening kan in volgende staten zijn ``Geldig``, ``Geblokkeerd``. Een rekening is Geldig wanneer een nieuwe rekening wordt geopend.
 
 Maak een bijhorende publieke methode waarmee je de Rekening van staat kunt veranderen. Deze methode (noem ze ``VeranderStaat``) vereist geen parameters. Telkens je ze aanroept wordt de staat omgewisseld. Als dus het object momenteel op ``Geldig`` stond, dan wordt ze nu ``Geblokkeerd`` en omgekeerd.
 
@@ -113,7 +113,7 @@ Indien de ``HaalGeldAf`` methode wordt aangeroepen en er werd meer geld afgehaal
 
 ### Persoon
 
-Ontwerp en implementeer een klasse Persoon met 2 autoproperties (``string``) ``Achternaam`` en ``Voornaam``. 
+Ontwerp en implementeer een klasse Persoon met 2 auto-properties (``string``) ``Achternaam`` en ``Voornaam``. 
 
 Voeg bovendien een full property ``GeboorteDatum`` toe (type ``DateTime``). De geboortedatum kan enkel waarden tussen 1/1/1990 en vandaag (moment dat code wordt uitgevoerd) liggen. Indien dit niet de situatie is, wordt de huidige datum van uitvoeren gebruikt. 
 

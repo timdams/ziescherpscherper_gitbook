@@ -31,7 +31,7 @@ public record Student
 }
 ```
 
-Het ``init`` keyword geeft aan dat deze autoproperty eenmalig kunnen ge**set** worden bij het aanmaken van het record via de object initializer syntax:
+Het ``init`` keyword geeft aan dat deze auto-property eenmalig kunnen ge**set** worden bij het aanmaken van het record via de object initializer syntax:
 
 ```java
 Student eenNieuweStudent = new Student 

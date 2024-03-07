@@ -18,7 +18,7 @@ Maak volgende klassen:
 * President
 
 ## Minister
-Een Minister heeft geen speciale eigenschappen. Enkel een autoproperty om de Naam van de minister in bij te houden
+Een Minister heeft geen speciale eigenschappen. Enkel een auto-property om de Naam van de minister in bij te houden
 
 ## President
 Een President is een minister maar met 1 extra property met private setter: hij heeft een teller die start op 4 alsook een methode `JaarVerder`die deze teller met 1 iedere aanroep verlaagt.

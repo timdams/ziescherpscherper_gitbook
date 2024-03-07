@@ -15,10 +15,10 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Methoden en access modifiers](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59d6fbe6-a779-45d8-bb95-ae2700b22623)
 * [Properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45cc8607-0fdd-4928-965d-acb40097fbe4)
 * [Properties anders uitgelegd: nut en full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=20d5c36f-7a4b-447b-a5c9-b11d00b18e93)
-* [Properties anders uitgelegd: autoproperties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=024fbb15-cb1b-446b-a12c-b11d00f38c52)
+* [Properties anders uitgelegd: autop-roperties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=024fbb15-cb1b-446b-a12c-b11d00f38c52)
 * [Demo: Overzicht properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e326ab-5ee3-4e36-8880-ab6100c13715)
 * [Demo: Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
-* [Demo: autoproperties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
+* [Demo: auto-properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
 * [De DateTime klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bab1597f-4907-40ae-8723-acb00095e421)
 
 ### Hoofdstuk 10 - Geheugenmanagement, uitzonderingen en namespaces

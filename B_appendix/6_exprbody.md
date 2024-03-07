@@ -70,7 +70,7 @@ class Student
 ```
 
 ### Full Properties met EBM
-Properties worden een soort mengeling tussen full en autoproperties:
+Properties worden een soort mengeling tussen full en auto-properties:
 
 ```java
 private int name;
@@ -91,5 +91,5 @@ public int Name => name;
 ```
 
 {% hint style='tip' %}
-Uiteraard had voorgaande zelfs nog korter geweest met behulp van een autoproperty.
+Uiteraard had voorgaande zelfs nog korter geweest met behulp van een auto-property.
 {% endhint %}
