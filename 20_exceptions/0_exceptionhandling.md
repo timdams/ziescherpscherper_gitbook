@@ -44,7 +44,7 @@ try
 {
     //code waar exception mogelijk kan optreden
 }
-catch ()
+catch 
 {
     //exception handling code hier
 }
@@ -72,7 +72,7 @@ try
     string input = Console.ReadLine();
     int converted = Convert.ToInt32(input);
 }
-catch ()
+catch 
 {
     Console.WriteLine("Verkeerde invoer!");
 }
