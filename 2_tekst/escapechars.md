@@ -87,7 +87,7 @@ Console.WriteLine("Een zin en dan nu de biep\a");
 
 ### Witregels en tabs
 
-We gebruiken vooral escape characters in strings om bijvoorbeeld witregels (``\n``) en tabulaties(``\t``) aan te geven. Test bijvoorbeeld volgende lijn code eens:
+We gebruiken vooral escape characters in strings om bijvoorbeeld witregels en tabs aan te geven. Test bijvoorbeeld volgende lijn code eens:
 
 ```java
 string eenString = "Een zin.\t na een tab \nDan eentje op een nieuwe regel";
