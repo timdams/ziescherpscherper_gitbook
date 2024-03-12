@@ -146,7 +146,6 @@ Ook binaire notatie (starten met ``0b`` of ``0B``) kan:
 ```java
 int mijnLeeftijd = 0b001001000; //72
 int andereLeeftijd = 0b0001_0110_0011_0100_0010 //idem, maar met _ als seperator
-byte mijnByteWaarde = 0b‭00100100‬1;
 ``` 
 
 Deze schrijfwijzen kunnen handig zijn wanneer je met binaire of hexadecimale data wilt werken die je bijvoorbeeld uit een stuk hardware hebt uitgelezen (bijvoorbeeld een Arduino of Raspberry Pi).
