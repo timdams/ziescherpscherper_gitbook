@@ -37,17 +37,16 @@ char apostrof = '\'';
 
 ### Veel gebruikte escape chars
 
-Er zijn echter nog een heleboel andere escape characters die je geregeld zal moeten gebruiken, waaronder ``\n`` om een nieuwe lijn aan te geven en ``\t`` om een tab in de tekst te plaatsen.
-
 Er zijn verschillende escape characters in C# toegelaten, we lijsten hier de belangrijkste op (voor een totaal overzicht kijk eens op **docs.microsoft.com/dotnet/csharp/programming-guide/strings/**):
 
-* `\'` : de apostrof zoals zonet besproken.
-* `\"` : een aanhalingsteken zodat je dat ook in je string kunt gebruiken zonder deze af te sluiten.
-* `\\` : een backslash in je tekst tonen. Hoe toon je dan twee backslashes? ``"\\\\"``.
-* `\n` : een nieuwe lijn (zogenaamde 'enter' of *newline*).
-* `\t` : Horizontale tab.
-* `\uxxxx` : Het ``char`` met als hexadecimale UNICODE waarde xxxx.
-
+```java
+\'      //de apostrof zoals zonet besproken.
+\"      //een aanhalingsteken zodat je dat ook in je string kunt gebruiken zonder deze af te sluiten.
+\\      //een backslash in je tekst tonen. Hoe toon je dan twee backslashes? \\\\
+\n      //een nieuwe lijn (zogenaamde enter of newline).
+\t      //Horizontale tab.
+\uxxxx  //een met als hexadecimale UNICODE waarde xxxx.
+```
 
 ### Escape characters in strings
 
