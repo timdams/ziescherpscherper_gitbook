@@ -17,7 +17,7 @@ Stel dat we een nieuw VS project aanmaken met volgende informatie:
 1. Naam van het project = Opdracht1
 2. Naam van de solution  = Huiswerk
 
-En plaatsen deze in de folder C:\Temp.
+En plaatsen deze in de folder ``C:\Temp``.
 
 ![](../assets/1_csharpbasics/solprojstart.png)
 

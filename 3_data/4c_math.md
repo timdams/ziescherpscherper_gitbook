@@ -32,7 +32,7 @@ Als je in Visual Studio ``Math`` schrijft in je code, gevolgd door een punt (``.
 ![De sterretjes geven de meestgebruikte methoden in deze bibliotheek aan. Vervolgens verschijnen alle overige methoden, properties, enz. alfabetisch.](../assets/4_methoden/methoden3.png)
 
 
-Een kubusje voor een naam wil zeggen dat het om een **Methode** gaat (zoals ``Console.ReadLine()``). Een vierkantje met twee streepjes in zijn constanten (zoals ``Pi``(``π``) en het getal van Euler (``e``)).
+Een kubusje voor een naam wil zeggen dat het om een **Methode** gaat (zoals ``Console.ReadLine()``). Een vierkantje met twee streepjes in zijn constanten (zoals ``Pi`` en het getal van Euler (``e``)).
 
 #### Methoden gebruiken
 
@@ -54,7 +54,7 @@ Twijfel je over de werking van een methode, gebruik dan de help als volgt:
 4. Je krijgt nu de help-files te zien van deze methode.
 5. In hoofdstuk 7 leggen we uit hoe je die help-files moet lezen.
 
-#### PI (π)
+#### PI 
 
 Ook het getal Pi (``3.141...``) is beschikbaar in de Math-bibliotheek. Het witte icoontje voor PI bij Intellisense toont aan dat het hier om een *field* gaat: een eenvoudige variabele met een specifieke waarde. In dit geval gaat het zelfs om een ``const`` field, met de waarde van Pi van het type double.
 

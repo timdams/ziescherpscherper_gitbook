@@ -42,7 +42,7 @@ We willen echter wel van buiten uit het energie-level van een sithLord kunnen in
  Er zijn 2 soorten properties in C#:
 
 * **Full properties**: deze stijl van properties verplicht ons véél code te schrijven, maar we hebben ook volledige controle over wat er gebeurt.
-* **auto-properties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig controle.
+* **Auto-properties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig (eigenlijk géén) controle.
 
 
 We behandelen eerst full properties, daar auto-properties een soort afgeleide van full properties zijn (bepaalde aspecten van full properties worden bij auto-properties achter de scherm verstopt zodat jij als programmeur er geen last van hebt).

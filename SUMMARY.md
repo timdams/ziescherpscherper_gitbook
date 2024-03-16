@@ -111,7 +111,7 @@
 
 ## Appendix
 
-* [Ea-ict coding guidelines](B_appendix/codingguidelines.md)
+* [Coding guidelines](B_appendix/codingguidelines.md)
 * Kennicslips
   * [H1 - H8](allvideos1.md)
   * [H9 - H17](allvideos2.md)
@@ -128,6 +128,5 @@
   * [Expression bodied members](B_appendix/6_exprbody.md)
   * [Generics](B_appendix/generics.md)
   * [struct en record](B_appendix/struct.md)
-  <!--* [WPF](B_appendix/wpf/wpfintro.md)-->
 
 

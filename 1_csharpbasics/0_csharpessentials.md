@@ -1,4 +1,4 @@
-# De basisconcepten van C#
+# De basisconcepten van C\#
 
 
 Om een werkend C#-programma te maken moeten we de C#-taal beheersen. Net zoals iedere taal, bestaat ook C# uit enerzijds grammatica, in de vorm van de **C# syntax** en anderzijds woordenschat in de vorm van de te gebruiken gereserveerde **keywords**.

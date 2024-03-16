@@ -1,4 +1,4 @@
-# EAICT Coding guidelines
+#  Coding guidelines
 
 ## Naamgeving
 
