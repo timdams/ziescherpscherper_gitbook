@@ -9,6 +9,7 @@ Helm op alsjeblieft! ``enum`` is een erg onderschat concept bij beginnende progr
 
 ### De bestaansreden voor enums
 Stel dat je een programma moet schrijven dat afhankelijk van de dag van de week iets anders moet doen. In een wereld zonder enums (**enumeraties**, letterlijk *opsommingen*) zou je dit kunnen schrijven op 2 zeer foutgevoelige manieren:
+
 1. Met een ``int`` die een getal van 1 tot en met 7 kan bevatten, afhankelijk van de dag (bv. 1 voor maandag, enz.)
 2. Met een ``string`` die de naam van de dag bevat (bv. ``"woensdag"``)
 
@@ -72,6 +73,7 @@ In C# zitten al veel enum-types ingebouwd. Denk maar aan ``ConsoleColor``: wanne
 ### Zelf enum maken
 
 Zelf een ``enum`` type maken en gebruiken gebeurt in 2 stappen:
+
 1. Het nieuwe datatype en de mogelijke waarden definiëren.
 2. Variabele(n) van het nieuwe type aanmaken en gebruiken in je code.
 

@@ -29,8 +29,7 @@ Een land heeft volgende publieke methoden:
 
 Deze methode aanvaardt volgende parameters:
   
-1. 1 ``President`` object die aan de private president variabele wordt toegekend.
-  
+1. 1 ``President`` object die aan de private president variabele wordt toegekend.  
 2. Een ``List<Minister>`` object waarin tussen de 1 tot 5 ministers in staan: de eerste minister in de lijst wordt toegewezen aan de ``eersteMinister`` instantievariabele. De overige ministers in de lijst worden aan de private lijst van ministers toegewezen.
 
 Deze methode zal enkel iets doen indien er geen president in het land is (``null``). Indien er reeds een regering is dan zal er een foutboodschap verschijnen.

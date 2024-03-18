@@ -35,7 +35,8 @@ interface IVloeker
 }
 ```
 
-We kunnen nu de nodige child-klassen maken.
+We kunnen nu de nodige child-klassen maken:
+
 1. De niet-vloekers: ``Leraar`` en ``Student``
 2. De vloekers: ``Advocaat`` en ``Politieker``
 

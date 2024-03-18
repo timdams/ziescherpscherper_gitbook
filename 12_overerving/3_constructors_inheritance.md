@@ -178,6 +178,7 @@ Huis eenEigenHuis = new Huis(true,5);
 
 
 **Start:** overloaded constructor van ``Huis`` wordt opgeroepen.
+
 1. Nog voor dat deze echter iets kan doen, wordt de formele parameter ``verdiepingenIn`` (die de waarde ``5`` heeft gekregen) doorgegeven als actuele parameter om de constructor van de basis-klasse aan te roepen.
 2. De overloaded constructor van ``Gebouw`` wordt dus aangeroepen.
 3. De code van deze constructor wordt uitgevoerd: het aantal verdiepingen van het gebouw/huis wordt ingesteld.

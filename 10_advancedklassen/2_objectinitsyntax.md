@@ -58,7 +58,7 @@ Je bent niet verplicht alle properties via deze syntax in te stellen, enkel de z
 
 # `required` properties
 
-Object initializer syntax werd ontwikkeld om de wildgroei aan overloaded constructors in te perken. Echter, dit bracht een nieuw probleem met zich mee. Met behulp van overloaded constructors kan je gebruikers van je klasse verplichten om bepaalde begininformatie van het object bij de creatie mee te geven. Object initializer syntax werkt enkel met een default constructor, en dus was een nieuw key word vereist. Welkom `required`! 
+Object initializer syntax werd ontwikkeld om de wildgroei aan overloaded constructors in te perken. Echter, dit bracht een nieuw probleem met zich mee. Met behulp van overloaded constructors kan je gebruikers van je klasse verplichten om bepaalde begininformatie van het object bij de creatie mee te geven. Object initializer syntax werkt enkel met een default constructor, en dus was een nieuw keyword vereist. Welkom `required`! 
 
 Door `required` voor een property te plaatsen kan je aangeven dat deze property verplicht moet ingesteld worden wanneer je een object aanmaakt met object initializer syntax: 
 

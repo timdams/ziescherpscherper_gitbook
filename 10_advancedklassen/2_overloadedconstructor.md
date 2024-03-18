@@ -214,6 +214,7 @@ public Microfoon(bool isUitverkochtIn): this("Bovarc", isUitverkochtIn)
 ```
 
 Wanneer we een object aanmaken als volgt ``new Microfoon(true)`` dan zal uiteindelijk dit object van het merk ``Wit Product`` zijn. Er gebeurt namelijk het volgende:
+
 1. De overloaded constructor ``Microfoon(bool isUitverkochtIn)`` wordt aangeroepen.
 2. Ogenblikkelijk wordt de meegegeven actuele parameter ``isUitverkochtIn`` doorgegeven om de overloaded constructor ``Microfoon(string merkIn, bool isUitverkochtIn)`` te benaderen.
 3. Deze constructor zal het ``Merk`` op ``Bovarc`` zetten en ``IsUitverkocht`` op ``true`` (daar we die parameter doorgeven).

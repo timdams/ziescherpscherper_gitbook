@@ -18,6 +18,7 @@ Willen we dat de gebruiker een getal invoert, bijvoorbeeld zijn of haar leeftijd
 
 
 Invoer van de gebruiker verwerken (dat een andere type dan ``string`` moet zijn) zal dus uit 3 stappen bestaan:
+
 1. Input **uitlezen** met ``Console.ReadLine()``.
 2. Input **bewaren** in een ``string`` variabele.
 3. De variabele **parsen** met ``.Parse()`` bibliotheek naar het gewenste type.
