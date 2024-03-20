@@ -37,14 +37,28 @@ jobs:
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
           cargo install --version ${MDBOOK_VERSION} mdbook
-      - name: Find and Replace 1
+      - name: Find and Replace tip blurb header
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "{% hint style='tip' %}"
           replace: |
             <div class="warning">
           regex: false
-      - name: Find and Replace 2
+      - name: Find and Replace danger blurb header
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "{% hint style='danger' %}"
+          replace: |
+            <div class="warning">
+          regex: false
+      - name: Find and Replace warning blurb header
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "{% hint style='warning' %}"
+          replace: |
+            <div class="warning">
+          regex: false
+      - name: Find and Replace all blurb endings
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "{% endhint %}"
