@@ -1,8 +1,8 @@
-# Intro
+## H0: Introductie
 
-[Introductie](README.md)
-[Dit boek in papier?](papier.md)
-[Nuttige extras](_intro/nuttigeextras.md)
+* [Introductie](README.md)
+* [Dit boek in papier?](papier.md)
+* [Nuttige extras](_intro/nuttigeextras.md)
 
 
 ## H1: De eerste stappen
