@@ -15,7 +15,7 @@ Dit gaat als volgt in z'n werk:
 2. Plaats bovenaan je Main: `Console.OutputEncoding = System.Text.Encoding.UTF8;`
 3. Je kan nu op 2 manieren dit teken in console plaatsen.
 
-Stel je voor dat we het copyright karakter "©" wensen te gebruiken in onze applicatie. Deze heeft hexadecimale UNICODE waarde 0x00A9.
+Stel je voor dat we het copyright karakter wensen te gebruiken (de letter c in een cirkeltje) in onze applicatie. Deze heeft hexadecimale UNICODE waarde 0x00A9.
 
 #### Manier 1: copy/paste
 
@@ -23,7 +23,7 @@ Kopieer het karakter zelf en plaats het in je code waar je het nodig hebt, bijvo
 
 
 ```java
-Console.WriteLine("©"); 
+Console.WriteLine("<plak hier je speciale teken>"); 
 ```
 
 Merk op dat niet alle lettertypes dit karakter kennen en dus mogelijk als een vierkantje dit op je scherm zullen tonen. Dit hangt af van het lettertype dat jouw shell-venster gebruikt (meestal is de standaard *Courier*).
@@ -95,10 +95,4 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.WriteLine($"{12.3456:C}")
 ```
 
-Zal als uitvoer geven:
-
-
-```text
-12,35 €
-```
 {% endhint %}

@@ -22,7 +22,7 @@ We voegen vervolgens een methode aan de klasse toe die ons toelaat om deze metin
 public void ToonMetingInKleur (ConsoleColor kleur)
 {
     Console.ForegroundColor = kleur;
-    Console.WriteLine($"{Temperatuur}°C gemeten door: {OpgemetenDoor}");
+    Console.WriteLine($"{Temperatuur} graden C gemeten door: {OpgemetenDoor}");
     Console.ResetColor();
 }
 ```

@@ -79,7 +79,7 @@ Console.WriteLine(mijnEersteAuto);
 Console.WriteLine(mijnAndereAuto);
 ```
 
-Je zal een ``"Use of unassigned local variable`'mijnAndereAuto'`` foutboodschap krijgen. Inderaad, je hebt nog geen object aangemaakt met ``new`` en ``mijnAndereAuto`` is dus voorlopig een lege doos (het heeft de waarde ``null``).
+Je zal een ``"Use of unassigned local variable mijnAndereAuto"`` foutboodschap krijgen. Inderaad, je hebt nog geen object aangemaakt met ``new`` en ``mijnAndereAuto`` is dus voorlopig een lege doos (het heeft de waarde ``null``).
 
 {% hint style='warning' %}
 Dit concept is dus fundamenteel verschillend van de klassieke *valuetypes* die we al kenden (``int``, ``double``, enz.). Daar zal volgende code wél werken:
