@@ -1,0 +1,11 @@
+[book]
+authors = ["Tim Dams"]
+language = "nl"
+multilingual = false
+src = "."
+title = "Zie Scherp Scherper"
+[output.html.fold]
+enable = true
+
+[output.html]
+no-section-label = true
