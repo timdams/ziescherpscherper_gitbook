@@ -65,6 +65,13 @@ jobs:
           replace: |
             </div>
           regex: false
+      - name: Change gitbook summary to mdbook summary
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "##"
+          replace: "#"
+          regex: false
+          include: "SUMMARY.md"
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
