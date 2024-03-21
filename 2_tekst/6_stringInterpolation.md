@@ -1,5 +1,7 @@
 ## Strings samenvoegen
+
 Je kan strings en variabelen samenvoegen tot een nieuwe string op verschillende manieren:
+
 * +-operator 
 * $ string interpolation 
 * Of de oude manier: ``String.Format()`` 
@@ -116,6 +118,7 @@ Merk op dat bij string formatting er **afgerond** wordt.
 
 {% hint style='tip' %}
 Nog enkele nuttige vormen:
+
 * D5: toon een geheel getal als een 5 cijfer getal (``123`` wordt ``00123``) (werkt uiteraard enkel op gehele getallen!)
 * E2: wetenschappelijke notatie met 2 cijfers precisie (``12000000`` wordt ``1,20E+007`` i.e. *"1 komma 2 maal tien tot de zevende"*)
 * C: geldbedrag (``12,34`` wordt $ 12,34 : teken van valuta afhankelijk van instellingen pc). Het euro teken zal als een ``?`` getoond worden. In de volgende sectie tonen we hoe je dit kan oplossen.

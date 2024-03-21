@@ -13,6 +13,7 @@ Maak een programma om de politieke situatie van een land te simuleren.
 
 
 Maak volgende klassen:
+
 * Land
 * Minister
 * President
@@ -24,6 +25,7 @@ Een Minister heeft geen speciale eigenschappen. Enkel een auto-property om de Na
 Een President is een minister maar met 1 extra property met private setter: hij heeft een teller die start op 4 alsook een methode `JaarVerder`die deze teller met 1 iedere aanroep verlaagt.
 
 ## Land
+
 * Een land heeft 0 of 1 president (of koning, kies zelf)
 * Een land heeft 0 of 1 eerste minister
 * Een land heeft 0 tot 4 ministers (via een ``List<Minister>``)

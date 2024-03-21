@@ -56,8 +56,8 @@ Net zoals in de wiskunde kan je in C# met behulp van de haakjes verplichten het 
 Je kan nu complexe berekeningen doen door literals, operators en variabelen samen te voegen. Bijvoorbeeld om te weten hoeveel je op Mars zou wegen:
 ```csharp
 double gewichtOpAarde = 80.3; //kg
-double gAarde = 9.81; //m/s² 
-double gMars = 3.711; //m/s²
+double gAarde = 9.81;  
+double gMars = 3.711; 
 double gewichtOpMars = (gewichtOpAarde/gAarde) * gMars; //kg
 Console.WriteLine("Je weegt op Mars " + gewichtOpMars + " kg");
 ```
@@ -213,6 +213,7 @@ Hoeveel krijg je van me?
 **0.0 euro, MUHAHAHAHA!!!**
 
 Begrijp je waarom? De volgorde van berekeningen zal eerst het gedeelte tussen de haakjes doen: 
+
 * 1 delen door 2 geeft 0, daar we een ``int`` door een ``int`` delen en dus terug een ``int`` als resultaat krijgen. 
 * Vervolgens zullen we deze ``0`` vermenigvuldigen met ``10000.0`` waarvan ik zo slim was om deze in ``double`` te zetten. Niet dus. We vermenigvuldigen weliswaar een ``double`` (het salaris) met een ``int`` maar die ``int`` is reeds ``0`` en we krijgen dus ``0.0`` als resultaat.
 

@@ -46,7 +46,8 @@ Hierbij geeft de tweede parameter aan vanaf welke index moet leeggemaakt worden,
 
 ### Copy : array by value kopiëren
 
-De ``.Copy()`` behelst iets meer werk, daar deze methode
+De ``.Copy()`` behelst iets meer werk, daar deze methode:
+
 * een reeds aangemaakte, nieuwe array nodig heeft, waar naar gekopiëerd moet worden.
 * moet meekrijgen hoe lang de bronarray (*source*) is, of hoeveel elementen uit de bronarray moeten gekopiëerd worden.
 

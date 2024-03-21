@@ -40,7 +40,7 @@ Console.WriteLine(bm);
 ## Deel 1
 Maak een klasse ``Book`` en gebruik auto-properties voor de velden:
 
-* Isbn (int)
+* ISBN (int)
 * Title (string)
 * Author (string)
  

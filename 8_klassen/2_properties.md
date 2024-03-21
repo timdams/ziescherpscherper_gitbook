@@ -210,6 +210,7 @@ Probeer wel steeds de OOP-principes te hanteren wanneer je met properties werkt:
 ### Property variaties
 
 We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property te schrijven. Dit laat ons toe om een aantal variaties te schrijven:
+
 * **Write-only property**: heeft geen ``get``.
 * **Read-only property**: heeft geen ``set``.
 * **Read-only property met private ``set``** (het omgekeerde , een private ``get``, zal je zelden tegenkomen).
@@ -225,14 +226,14 @@ Dit soort properties zijn handig indien je informatie naar een object wenst te s
 
 
 ```csharp
-   public int Energie
+public int Energie
+{
+    set
     {
-        set
-        {
-            if(value >= 0)
-                energie = value;
-        }
+        if(value >= 0)
+            energie = value;
     }
+}
 ```
 We kunnen dus enkel ``energie`` een waarde geven, maar niet van buiten uitlezen.
 
@@ -242,13 +243,13 @@ We kunnen dus enkel ``energie`` een waarde geven, maar niet van buiten uitlezen.
 Letterlijk het omgekeerde van een write-only property. Deze gebruik je vaak wanneer je informatie uit een object wil kunnen uitlezen uit een instantievariabele dat NIET door de buitenwereld mag aangepast worden.
 
 ```csharp
-   public int Energie
+public int Energie
+{
+    get
     {
-        get
-        {
-            return energie;
-        }
+        return energie;
     }
+}
 ```
 We kunnen enkel ``energie`` van buiten uitlezen, maar niet aanpassen.
 
@@ -266,18 +267,18 @@ Het ``readonly`` keyword heeft andere doelen en wordt NIET gebruikt in C# om een
 Soms gebeurt het dat we van enkel voor de buitenwereld de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
 
 ```csharp
-   public int Energie
+public int Energie
+{
+    get
     {
-        get
-        {
-            return energie;
-        }
-        private set
-        {
-            if(value >= 0)
-                energie = value;
-        }
+        return energie;
     }
+    private set
+    {
+        if(value >= 0)
+            energie = value;
+    }
+}
 ```
 
 Van buiten zal enkel code werken die de ``get`` van deze property aanroept, bijvoorbeeld:
@@ -350,6 +351,7 @@ public void ResetLord(int resetWaarde)
 ![Transformerende properties: Erg nuttig, maar vaak wat stiefmoederlijk behandeld.](../assets/6_klassen/proptrans.png)
 
 Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt. Stel dat we volgende klasse hebben:
+
 ```csharp
 class Persoon
 {
@@ -357,6 +359,7 @@ class Persoon
     public string Achternaam {get;set;}
 }
 ```
+
 We willen echter ook soms de volledige naam of emailadres krijgen, beide gebaseerd op de inhoud van de instantievariabelen ``voornaam`` en ``achternaam``. Via een read-only property die transformeert kan dit:
 
 ```csharp
@@ -390,6 +393,7 @@ class Persoon
 Een veel gestelde vraag bij beginnende OOP-ontwikkelaars is: *"Moet dit in een property of in een methode geplaatst worden?"*
 
 De regels zijn niet in steen gebeiteld, maar ruwweg kan je stellen dat:
+
 * Betreft het een actie of gedrag: iets dat het object moet doen (tekst tonen, iets berekenen of aanpassen, enz.) dan plaats je het in een **methode**. 
 * Betreft het een eigenschap van het object, dan gebruik je een **property** indien het om data gaat die snel verkregen of berekend kan worden. Gaat het om data die zwaardere en/of langere berekeningen vereist dan is een methode nog steeds aangeraden.
 

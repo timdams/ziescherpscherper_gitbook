@@ -37,12 +37,14 @@ Binnen het codeblock dat bij deze klasse hoort zullen we verderop dan de werking
 Je kan "eender waar" een klasse aanmaken in een project, maar het is een goede gewoonte om per klasse **een apart bestand** te gebruiken. Dit kan op 2 manieren.
 
 Manier 1:
+
 * In de Solution Explorer, rechterklik op je project.
 * Kies "Add".
 * Kies "Class..".
 * Geef een goede naam voor je klasse.
 
 Manier 2:
+
 * Klik in de menubalk bovenaan op "Project".
 * Kies "Add class..." .
 
@@ -104,6 +106,7 @@ Zo leerden we toen volgende datatypes:
 **Wel nu, klassen zijn niet meer dan een nieuw soort datatypes**. Kortom: telkens je een klasse aanmaakt, kunnen we in dat project variabelen en arrays aanmaken met dat datatype. We noemen variabelen die een klasse als datatype hebben **objecten**.
 
 Het grote verschil dat deze objecten zullen hebben is dat ze vaak veel complexer zijn dan de eerdere datatypes die we kennen:
+
 * Ze zullen meerdere "waarden" tegelijk kunnen bewaren (een ``int`` variabele kan maar één waarde tegelijkertijd in zich hebben).
 * Ze zullen methoden hebben die we kunnen aanroepen om de variabele "voor ons te laten werken".
 

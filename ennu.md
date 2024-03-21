@@ -1,6 +1,7 @@
 ## En nu? Ken ik nu alles van C#/.NET ?
 
 Helaas niet. Maar je hebt wel een erg goede basis gelegd. Vanaf dit punt kan je tal van richtingen uitgaan, afhankelijk van je interesses:
+
 * **Geavanceerde C# concepten**: je zou je verder kunnen verdiepen in "de taal C#". Denk maar aan leren werken met **``async``** en **events**. Maar ook het wonderlijke **Linq** is iets dat je in bijna alle .NET geledingen zal kunnen gebruiken.
 * **Desktop-applicaties**: Totnogtoe hebben we enkel oersaaie Console-applicaties gemaakt. Uiteraard kan je ook heel eenvoudig, met de kennis die je nu hebt, zogenaamde bureaublad-applicaties maken. Neem zeker eens een kijkje wat **WPF** en **UWP** je te bieden heeft. Je zal je even moeten inwerken in **eventgebaseerd**-programmeren en **XAML** en vanaf dan ben je vlot vertrokken!
 * **Mobiele applicaties**: Zogenaamde *native* Android of iPhone applicaties ontwikkelen gaat niet met C# (merk wel op dat dankzij je nieuwe C# kennis je vlot de native programmeertalen van Android (*Java*) en iOS (*Swift*) kan leren). Binnen de .NET-familie bestaat er echter wel het nieuwe **.NET MAUI**-framework. Dit krachtige framework (de opvolger van Xamarin) laat je toe om in C# crossplatform-apps te ontwikkelen. Je zal met 1 *codebase* kunnen compileren naar zowel Windows, Android, iPhone, enz. Bekijk zeker ook eens de Comet toolkit om erg modern-ogende apps te maken met .NET MAUI.

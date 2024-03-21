@@ -12,6 +12,7 @@ Herhalingen (**loops** of **iteraties**) creëer je wanneer bepaalde code een aa
 ## Soorten loops
 
 Er zijn verschillende soorten loops:
+
 * **Definite of counted loop**: een loop waar het aantal iteraties vooraf van gekend is (bv. alle getallen van 0 tot en met 100 tonen)
 * **Indefinite of sentinel loop**: een loop waarvan op voorhand niet kan gezegd worden hoe vaak deze zal uitgevoerd worden. Input van de gebruiker of een interne test zal bepalen wanneer de loop stopt (bv. "Voer getallen in, voer -1 in om te stoppen" of "Bereken de grootste gemene deler")
 * **Oneindige loop**: een loop die nooit stopt. Soms gewenst (bv. de game loop) of, vaker, een bug.
@@ -30,4 +31,5 @@ Er zijn 3 standaard manieren om  loops te maken in C#:
 * **``for``**: een alternatieve, iets compactere manier om loops te beschrijven wanneer je exact weet hoe vaak de loop zal moeten herhalen.
 
 Voorts zullen we ook een speciale loop variant zien we in hoofdstuk  9 wanneer  we arrays en objecten leren kennen:
+
 * **``foreach``**: een iets meer leesbare manier van *loopen* die vooral nuttig is wanneer je met objecten gaat werken.

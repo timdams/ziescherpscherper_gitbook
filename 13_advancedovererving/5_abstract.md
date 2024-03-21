@@ -1,6 +1,7 @@
 ## Abstracte klassen
 
 Aan de start van hoofdstuk 9 beschreven we volgende 2 duidelijke definities:
+
 * **Een klasse** is als een **blauwdruk** (of prototype) dat het gedrag en toestand beschrijft van alle objecten van deze klasse.
 * Een individueel **object** is een **instantie** van een klasse en heeft een eigen *toestand*, *gedrag* en *identiteit*.
 
@@ -127,6 +128,7 @@ class Olifant : Dier
 ```
 
 Wanneer je een abstracte property maakt dien je ogenblikkelijk aan te geven of het om een readonly, writeonly, of property met get én set gaat:
+
 * ``public abstract int Oppervlakte {get;}``
 * ``public abstract int GeheimeCode {set;}``
 * ``public abstract int GeboorteDatum {get;set;}``

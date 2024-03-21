@@ -5,6 +5,7 @@ Gebruik de applicatie uit de vorige missie als startpunt.
 
 # Opgelet: 
 Zorg ervoor dat minstens volgende zaken in je code aanwezig zijn:
+
 * ``is`` keyword
 * ``as`` keyword
 * controle of een object ``null`` is of niet

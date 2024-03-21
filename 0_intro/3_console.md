@@ -13,12 +13,14 @@ result = Console.ReadLine();
 Wat gebeurt er hier juist?
 
 De eerste lijn code: 
+
 * Concreet zeggen we hiermee aan de compiler: maak in het geheugen een plekje vrij waar enkel data van het type string in mag bewaard worden (wat deze zin exact betekent komt later. Onthoud nu dat geheugen van het type ``string`` enkel "tekst" kan bevatten).
 * Noem deze geheugenplek ``result`` zodat we deze later makkelijk kunnen in en uitlezen.
 
 
 
 Tweede lijn code:
+
 * Vervolgens roepen we de ``ReadLine`` methode aan. Deze methode zal de invoer van de gebruiker van het toetsenbord uitlezen tot de gebruiker op enter drukt.
 * Het resultaat van de ingevoerde tekst wordt bewaard in de variabele ``result``.
 

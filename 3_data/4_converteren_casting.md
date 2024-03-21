@@ -26,6 +26,7 @@ int leeftijd = 4.3;
 Je kan geen appelen in peren veranderen zonder magie: in het geval van C# zal je moeten **converteren of casten**. 
 
 Dit kan op 3 manieren:
+
 * Via **casting**: de (klassieke) manier die ook werkt in veel andere programmeertalen.
 * Via de **Convert. bibliotheek** van .NET.
 * Via **parsing** : Deze manier is enkel bruikbaar om strings om te zetten naar andere datatypes.

@@ -2,7 +2,9 @@
 Dankzij polymorfisme kunnen we dus child en parent-objecten door elkaar gebruiken. De keywords ``is`` en ``as`` gaan ons helpen om door het bos van objecten het bos nog te zien. 
 
 ### Het ``is`` keyword
+
 Het ``is`` keyword is een operator die je kan gebruiken om te weten te komen of:
+
 * Een object van een bepaalde datatype is.
 * Een object een bepaalde interface bevat (zie volgende hoofdstuk).
 
@@ -15,6 +17,7 @@ bool ditIsEenStudent = mijnStudent is Student;
 
 #### ``is`` voorbeeld 
 Stel dat we volgende drie klassen hebben:
+
 ```csharp
 class Voertuig {}
 
@@ -26,6 +29,7 @@ Een Auto **is** een Voertuig.
 Een Persoon **is géén** Voertuig.
 
 Stel dat we enkele variabelen hebben als volgt:
+
 ```csharp
 Auto mijnAuto = new Auto();
 Persoon rambo = new Persoon();

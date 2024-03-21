@@ -77,15 +77,15 @@ Voeg aan de klasse ook de methode ``GeefOverzicht`` toe. Deze methode zal een vo
 Test je programma door enkele studenten aan te maken en in te stellen. Volgende main zou dan de bijhorende output moeten krijgen:
 
 ```csharp
-    Student student1= new Student();
-    student1.Klas = Klassen.EA2;
-    student1.Geboortejaar = 2000;
-    student1.Naam = "Joske Vermeulen";
-    student1.PuntenCommunicatie = 12;
-    student1.PuntenProgrammingPrinciples = 15;
-    student1.PuntenWebTech = 13;
+Student student1= new Student();
+student1.Klas = Klassen.EA2;
+student1.Geboortejaar = 2000;
+student1.Naam = "Joske Vermeulen";
+student1.PuntenCommunicatie = 12;
+student1.PuntenProgrammingPrinciples = 15;
+student1.PuntenWebTech = 13;
 
-    student1.GeefOverzicht();
+student1.GeefOverzicht();
 ```
 
 Output:

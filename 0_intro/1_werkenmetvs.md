@@ -42,6 +42,7 @@ Als alles goed is geïnstalleerd kan je Visual Studio starten via het start-menu
 
 #### Allereerste keer opstarten
 De allereerste keer dat je VS opstart krijg je 2 extra schermen te zien:
+
 * Het "sign in" scherm mag je overslaan (kies "Not now, maybe later").
 * Op het volgende scherm kies je best als "Development settings" voor **Visual C#**. Vervolgens kan je je kleurenthema kiezen. Dit heeft geen invloed op de manier van werken.
 
@@ -125,7 +126,6 @@ We zullen nu eerst eens bekijken wat we allemaal zien in VS na het aanmaken van 
 ![VS IDE overzicht.](../assets/0_intro/vside.png)
 
 * Je kan meerdere bestanden tegelijkertijd openen in VS. Ieder bestand zal z'n eigen **tab** krijgen. De actieve tab is het bestand wiens inhoud je in het hoofdgedeelte eronder te zien krijgt. Merk op dat enkel open bestanden een tab krijgen. Je kan deze tabbladen ook "lostrekken" om bijvoorbeeld enkel dat tabblad op een ander scherm te plaatsen.
-
 * De "**solution explorer**" aan de rechterzijde toont alle bestanden en elementen die tot het huidige project behoren. Als we dus later nieuwe bestanden toevoegen, dan kan je die hier zien (en openen). Verwijder hier géén bestanden zonder dat je zeker weet wat je aan het doen bent!
 
 

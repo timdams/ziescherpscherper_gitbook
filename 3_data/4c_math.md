@@ -21,6 +21,7 @@ double result = Math.Pow(getal, 3);
 ```
 
 Deze methode vereist twee parameters:
+
 * De eerste is het grondtal 
 * De tweede is de exponent ("tot de hoeveelste macht")
 

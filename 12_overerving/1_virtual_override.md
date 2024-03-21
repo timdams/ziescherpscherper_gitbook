@@ -1,6 +1,7 @@
 ## Virtual en Override
 
 Het is fijn dat onze child-klasse alles kan dat onze parent-klasse doet. Maar soms is dat beperkend:
+
 * Mogelijk wil je een bestaande methode van de parent-klasse uitbreiden/aanvullen met extra functionaliteit.
 * Soms wil je gewoon de volledige implementatie van een methode of property herschrijven in je child-klasse.
 

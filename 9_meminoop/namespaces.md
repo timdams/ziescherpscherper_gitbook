@@ -45,6 +45,7 @@ Wanneer je een bepaalde namespace nodig hebt (standaard laadt een C# 10 project 
 Het gebeurt soms dat je een klasse gebruikt en je weet zeker dat ze in jouw project of een bestaande .NET bibliotheek aanwezig is. Visual Studio kan je helpen de namespace van deze klasse te zoeken moest je daar te lui voor zijn.
 
 Je doet dit door de naam van de klasse te schrijven (op de plek waar je deze nodig hebt) en dan op het lampje dat links in de rand verschijnt te klikken. Indien de klasse gekend is door VS zal je nu de optie krijgen om automatisch:
+
 * oftewel ``using``, met de juiste namespace, bovenaan je huidige codebestand te plaatsen.
 * oftewel de volledige naam van de klasse uit te schrijven (dus inclusief de namespace).
 

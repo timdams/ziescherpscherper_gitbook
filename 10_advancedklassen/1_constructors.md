@@ -3,11 +3,13 @@
 Nu we weten wat er allemaal achter de schermen gebeurt met onze objecten, wordt het tijd om wat meer geavanceerde concepten van klassen en objecten te bekijken. 
 
 We hebben al ontdekt dat een klasse kan bestaan uit:
+
 * **Instantievariabelen**: variabelen die de toestand van het individuele object bijhouden.
 * **Methoden**: om objecten voor ons te laten werken (gedrag).
 * **Properties**: om op een gecontroleerde manier toegang tot de interne staat van de objecten te verkrijgen.
 
 Uiteraard is dit niet alles. In dit hoofdstuk bekijken we:
+
 * **Constructors**: een gecontroleerde manier om de beginstaat van een object in te stellen.
 * **``static``**: die je de mogelijkheid geeft een (deel van je) klasse te laten werken als een object.
 * **Object initializer syntax**: een recente C# aanvulling die het aanmaken van nieuwe objecten vereenvoudigd.
@@ -22,7 +24,7 @@ Objecten die je aanmaakt komen niet zomaar tot leven. Nieuwe objecten maken we a
 Student frankVermeulen = new Student();
 ```
 
- De ``new`` operator doet 3 dingen:
+De ``new`` operator doet 3 dingen:
 
 * Het maakt een object aan in het heap geheugen.
 * Het roept de **constructor** van het object aan voor eventuele extra initialisatie.

@@ -199,6 +199,7 @@ We plaatsen de naam van de array, gevolgd door vierkante haakjes waarbinnen een 
 Het gebeurt vaak dat beginnende programmeurs verward geraken omtrent het aanmaken van een array aan de hand van de lengte en het indexeren erna. Maar niet getreurd, ik zal je hier extra tips geven.
 
 De regels zijn duidelijk:
+
 * Bij het maken van een array is de lengte van een array gelijk aan het aantal elementen dat er in aanwezig is. *Dus een array met 5 elementen heeft als lengte 5.*
 * Bij het schrijven en lezen van individuele elementen uit de array (zie hierna) gebruiken we een indexering die start bij **0**. Bijgevolg is **4** de index van het laatste element in een array met **lengte 5**.
 
@@ -357,7 +358,7 @@ string[] myColors = { "red", "green", "yellow", "orange", "blue" };
 Console.WriteLine(myColors[9]);
 ```
 
-Dit zal resulteren in een *"Out of Range exception".
+Dit zal resulteren in een *"Out of Range exception"*.
 
 Hackers misbruiken dit soort fouten in code om toegang tot delen van het geheugen te krijgen waar ze eigenlijk niet mochten zijn. Dit zijn zogenaamde *buffer overflow attacks*.
 {% endhint %}

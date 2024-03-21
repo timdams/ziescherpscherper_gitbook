@@ -5,6 +5,7 @@ Een flowchart (letterlijk: *stroomkaart*) of stroomdiagram is een schematische b
 
 
 Een flowchart bestaat uit een aantal elementen:
+
 * **Pijl**: een pijl geeft aan naar welk volgende blok wordt gegaan. Indien boven de pijl een bepaalde waarde staat wil dit zeggen dat deze pijl enkel wordt gevolgd als de uitkomst van het vorige blok de getoonde waarde geeft.
 * **Start en einde**: aangegeven met een cirkel met daarin de woorden "Start" of "Einde"
 * **Verwerk-stap**: een statement zoals "Voeg 1 toe aan X" wordt in een rechthoek geplaatst. Alle code die geen invoer nodig heeft zet je in een rechthoek.

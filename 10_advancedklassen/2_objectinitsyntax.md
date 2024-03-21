@@ -83,7 +83,7 @@ Meting meting = new Meting { IsGeconfirmeerd = true};
 ```
 
 {% hint style='danger' %}
-Het `required` keyword werd pas geïntroduceerd in C# 11.0 en zal enkel werken indien je applicaties ontwikkeld in .NET 7 of nieuwer.
+Het `required` keyword werd pas geïntroduceerd in C# 11.0 en zal enkel werken indien je applicaties ontwikkelt in .NET 7 of nieuwer.
 {% endhint %}
 
 

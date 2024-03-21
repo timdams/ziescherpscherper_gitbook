@@ -41,6 +41,7 @@ Als je nu je project uitvoert zal de code pauzeren aan die lijn en zal VS in "de
 ![Als je niet alle debugknoppen ziet kan je deze ook aanroepen via het "Debug" in het menu bovenaan.](../assets/1_csharpbasics/debugmode.png)
 
 In dit "nieuwe" scherm zijn er momenteel 2 belangrijke delen:
+
 * Onderaan zie je de **autos** en **locals** . In deze tabs kan je de waarden van iedere variabele in je huidige code zien op het moment van pauzeren. Ideaal om te onderzoeken waarom een bepaalde berekening of expressie niet doet wat ze moet doen.
 * Bovenaan zijn enkele debug-knoppen verschenen. Deze lichten we in de volgende sectie toe.
 * Voorts kan je in debug-modus met je muis over eender welke variabele of expressie *hoveren* om het resultaat van dat element te bekijken:
@@ -56,6 +57,7 @@ Wanneer je gepauzeerd bent kan je de nieuw verschenen debug-knoppen bovenaan VS 
 ![Debug knoppen.](../assets/1_csharpbasics/debugmove.png)
 
 We lichten hier de knoppen toe die je zeker zal nodig hebben:
+
 * De **continue** knop is logisch: hier op klikken zal je programma terug voortzetten vanaf het breakpoint waar je gepauzeerd bent. Het zal vervolgens verder gaan tot het weer een breakpoint bereikt of wanneer het einde van het programma wordt bereikt.
 * De **step in** knop zullen we in hoofdstuk 7 toelichten daar deze knop je toelaat om in een methode te springen.
 * De **rode stop** knop gebruik je indien je niet verder wilt debuggen en ogenblikkelijk terug je code wilt aanpassen.

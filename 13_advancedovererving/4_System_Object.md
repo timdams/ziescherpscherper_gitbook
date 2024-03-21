@@ -101,12 +101,12 @@ public virtual string ToString()
 
 Merk twee zaken op:
 
- 1. ``GetType()`` wordt aangeroepen en die output krijg je dus terug.
- 2. De methode is **virtual** gedefinieerd.
+1. ``GetType()`` wordt aangeroepen en die output krijg je dus terug.
+2. De methode is **virtual** gedefinieerd.
 
- **Alle 4 methoden in System.Object zijn ``virtual``, en je kan deze dus ``override``'n!**
+**Alle 4 methoden in System.Object zijn ``virtual``, en je kan deze dus ``override``'n!**
 
- Nu komen we tot het hart van deze methoden. Aangezien ze alle 4 ``virtual`` zijn, kunnen we de werking ervan naar onze hand zetten in onze eigen klassen. Aardig wat .NET bibliotheken rekenen er namelijk op dat je deze methoden op de juiste manier hebt aangepast, zodat ook jouw nieuwe klassen perfect kunnen samenwerken met deze bibliotheken. Een eerste voorbeeld hiervan toonden we net: de ``Console.WriteLine`` methode gebruikt van iedere parameter dat je er aan meegeeft de ``ToString``-methode om de parameter op het scherm als ``string`` te tonen.
+Nu komen we tot het hart van deze methoden. Aangezien ze alle 4 ``virtual`` zijn, kunnen we de werking ervan naar onze hand zetten in onze eigen klassen. Aardig wat .NET bibliotheken rekenen er namelijk op dat je deze methoden op de juiste manier hebt aangepast, zodat ook jouw nieuwe klassen perfect kunnen samenwerken met deze bibliotheken. Een eerste voorbeeld hiervan toonden we net: de ``Console.WriteLine`` methode gebruikt van iedere parameter dat je er aan meegeeft de ``ToString``-methode om de parameter op het scherm als ``string`` te tonen.
  
 #### ``ToString()`` overriden
 

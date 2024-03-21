@@ -9,6 +9,7 @@ Datatypes zijn een belangrijk concept in C# omdat deze taal een zogenaamde **"st
 
 
 Er zijn tal basistypes in C# gedeclareerd (zogenaamde **primitieve datatypes**). In dit boek leren we werken met datatypes voor:
+
 * Gehele getallen: `sbyte, byte, short, ushort, int, uint, long, ulong`
 * Kommagetallen: `double, float, decimal`
 * Tekst: `char, string`
@@ -17,6 +18,7 @@ Er zijn tal basistypes in C# gedeclareerd (zogenaamde **primitieve datatypes**).
 
 
 Ieder datatype wordt gedefinieerd door minstens volgende eigenschappen:
+
 * **Soort data** dat in het datatype kan bewaard worden (tekst, getal, enz.)
 * **Geheugengrootte**: de hoeveelheid bits dat 1 element van dit datatype inneemt in het geheugen. Dit kan belangrijk zijn wanneer je met véél data gaat werken en je niet wilt dat de gebruiker drie miljoen gigabyte RAM nodig heeft.
 * **Schrijfwijze van de literals**: hoe weet C# of 2 een komma getal (2.0) of een geheel getal (2) is? Hiervoor gebruiken we specifieke schrijfwijzen van deze waarden (**literals**) wat we verderop uiteraard uitgebreid zullen bespreken.
@@ -71,6 +73,7 @@ Het bereik van ieder datatype is een rechtstreeks gevolg van het aantal bits waa
 
 
 Enkele opmerkingen bij voorgaande tabel:
+
 * De `s` vooraan `sbyte` staat voor ``signed``: m.a.w. 1 bit wordt gebruikt om het + of - teken te bewaren. 
 * De `u` vooraan `ushort`, `uint` en `ulong` staat voor `unsigned`. Het omgekeerde van signed dus. Kwestie van het ingewikkeld te maken. Deze twee datatypes hebben dus geen teken en zijn **altijd positief**.
 * `char` bewaart karakters. We zullen verderop dit datatype uitspitten en ontdekken dat karakters (alle tekens op het toetsenbord, inclusief getallen, leesteken, enz.) als gehele, binaire getallen worden bewaard. Daarom staat `char` in deze lijst.
@@ -132,6 +135,7 @@ Het ``bool`` datatype is uiteraard het kleinst mogelijke datatype. Hoeveel geheu
 We besteden verderop een heel apart hoofdstuk om te tonen hoe je één enkel karakter of volledige flarden tekst kan bewaren in variabelen. 
 
 Hier alvast een sneakpreview: 
+
 * Tekst kan bewaard worden in het ``string`` datatype.
 * Een enkel karakter wordt bewaard in het ``char`` datatype dat we ook hierboven al even hebben zien passeren.
 

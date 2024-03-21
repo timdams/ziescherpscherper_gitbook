@@ -7,16 +7,19 @@ Toon de werking aan in een klein voorbeeld programma.
 # Carbon Footprint
 
 Maak 4 klassen:
+
 * ``Huis``
 * ``Fabriek``
 * ``Auto``
 * ``Plant``
 
 Maak een interface ``ICarbonFootPrint`` die volgende zaken heeft:
+
 * 1 methode ``BerekenFootprint`` die een ``int`` teruggeeft en geen parameters nodig heeft.
 * 1 methode ``VerlaagFootprint`` die niets teruggeeft en geen parameters nodig heeft.
 
 Breid de volgende klassen met de interface uit:
+
 * De carbon footprint van een ``huis`` is gebaseerd op het volume van het huis in kubieke meter maal 10.
 * De carbon footprint van een ``fabriek`` is gebaseerd op het aantal werknemers maal 100. 
 * De carbon footprint van een ``auto`` is gebaseerd op het merk

@@ -66,6 +66,7 @@ Een interface is een beschrijving hoe een component een andere component kan geb
 #### Interface regels
 
 Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen, wil het kunnen zeggen dat het een bepaalde interface heeft. Standaarden impliceert dat er duidelijke afspraken nodig zijn. Bij C# interfaces zijn er enkele belangrijke regels:
+
 * Je kan geen instantievariabelen declareren in een interface (dat hoort bij de implementatie).
 * Je kan geen constructors declareren.
 * Je kan geen access modifiers specificeren (``public``, ``protected``, etc): alles is ``public``.

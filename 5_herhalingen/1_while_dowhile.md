@@ -185,6 +185,7 @@ De booleaanse expressie ``input != "a" && input != "b" && input != "c"`` kan ook
 Voorgaande logica is een gevolg van de **Wetten van De Morgan** (ook wel dualiteit van De Morgen genoemd) die het verband leggen tussen de logische operatoren EN, OF en de negatie. 
 
 Deze wetten zeggen dat (uitgedrukt even in C# voor de duidelijkheid):
+
 * ``!(A && B )`` is hetzelfde als ``!A || !B``
 * ``!(A || B )`` is hetzelfde als ``!A && !B`` 
 

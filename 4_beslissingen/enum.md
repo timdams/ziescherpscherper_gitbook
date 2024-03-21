@@ -30,6 +30,7 @@ else if
 ```
 
 Deze oplossing heeft 2 grote nadelen:
+
 * Wat als we per ongeluk ``dagKeuze`` een niet geldige waarde geven, zoals 9, 2000 of -4 ?
 * De code is niet erg leesbaar. Wat was ``dagKeuze ==2`` nu weer? Was ``2`` nu dinsdag of woensdag (want misschien was maandag 0 i.p.v. 1) ?
 
@@ -52,11 +53,13 @@ else if //enz.
 ```
 
 De code wordt nu wel leesbaarder, maar toch is ook hier 1 groot nadeel:
+
 * De code is veel foutgevoeliger voor typefouten. Wanneer je ``"Maandag"`` i.p.v. ``"maandag"`` bewaart dan zal de if al niet werken. Iedere schrijffout of variant zal falen. 
 
 ### Enumeraties: het beste van beide werelden
 
-Enumeraties (**enum**) zijn een C# syntax dat bovenstaand probleem oplost en het beste van beide slechte oplossingen samenvoegt : 
+Enumeraties (**enum**) zijn een C# syntax dat bovenstaand probleem oplost en het beste van beide slechte oplossingen samenvoegt :
+ 
 1. **Leesbaardere code**.
 2. Minder foutgevoelige code, en dus minder potentiële bugs.
 3. VS kan je helpen met sneller de nodige code te schrijven.

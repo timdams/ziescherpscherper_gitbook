@@ -1,6 +1,7 @@
 # Handige Visual Studio code snippets
 
-Bepaalde code zal je vaak opnieuw schrijven. Er zitten in VS tal van shortcuts om deze typische lijnen code sneller te schrijven. Schrijf een van volgende stukken code en druk dan 2x op de [tab]-toets
+Bepaalde code zal je vaak opnieuw schrijven. Er zitten in VS tal van shortcuts om deze typische lijnen code sneller te schrijven. Schrijf een van volgende stukken code en druk dan 2x op de [tab]-toets:
+
 * ``cw`` : schrijft ``Console.WriteLine()``;
 * ``for``
 * ``while``
@@ -12,6 +13,7 @@ Bepaalde code zal je vaak opnieuw schrijven. Er zitten in VS tal van shortcuts o
 
 # Regions
 Je kan delen van je code in handige inklapbare secties zetten door deze als regions aan te duiden, als volgt:
+
 ```csharp
 #region My Epic code
 Console.WriteLine("I am the greatest!");
