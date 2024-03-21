@@ -1,0 +1,29 @@
+﻿---
+title:  'Zie Scherp Scherper'
+subtitle: ""
+author:
+- Dams Tim
+subject: "programming"
+isbn: "9789464486988"
+keywords: [csharp, programming, dotnet, oop]
+colorlinks: true
+titlepage-background: "assets/cover.png"
+lang: "nl"
+listings-disable-line-numbers: false
+listings-no-page-break: true
+book: true
+# geometry: paperheight=9.5in,paperwidth=6.7in,margin=1in
+# fontsize: 10pt
+titlepage: true
+header-includes:
+- |
+  ```{=latex}
+  \usepackage{awesomebox}
+  ```
+pandoc-latex-environment:
+  noteblock: [note]
+  tipblock: [tip]
+  warningblock: [warning]
+  cautionblock: [caution]
+  importantblock: [important]
+...

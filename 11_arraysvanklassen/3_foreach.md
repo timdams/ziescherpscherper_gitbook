@@ -32,7 +32,7 @@ Stel dat we een array van Studenten hebben, ``deKlas``, en wensen van deze stude
 ```csharp
 foreach (Student eenStudent in deKlas)
 {
-   Console.WriteLine($"{eenStudent.Naam} , {eenStudent.Geboortejaar}");
+   Console.WriteLine($"{eenStudent.Naam}, {eenStudent.Geboortejaar}");
 }
 ```
 
@@ -108,7 +108,7 @@ De foreach die we zonet gebruikten kan dus herschreven worden naar:
 ```csharp
 foreach (var eenStudent in deKlas)
 {
-   Console.WriteLine($"{eenStudent.Naam} , {eenStudent.Geboortejaar}");
+   Console.WriteLine($"{eenStudent.Naam}, {eenStudent.Geboortejaar}");
 }
 ```
 

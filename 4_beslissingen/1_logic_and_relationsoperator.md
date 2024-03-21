@@ -59,7 +59,7 @@ Aangezien onze relationele operators ``bool`` als resultaat geven, kunnen we dus
 bool result = (4 < 6) && ("ja" == "nee");
 ```
 
-In voorgaande code zal het achterste deel ``false`` teruggeven ("ja is niet gelijk aan nee") , het eerste deel zal ``true`` geven (4 is kleiner dan 6). De &&-expressie wordt dan: `` true && false`` wat ``false`` zal geven.
+In voorgaande code zal het achterste deel ``false`` teruggeven ("ja is niet gelijk aan nee"), het eerste deel zal ``true`` geven (4 is kleiner dan 6). De &&-expressie wordt dan: `` true && false`` wat ``false`` zal geven.
 
 Je kan de niet-operator voor een expressie zetten om het resultaat hiervan om te draaien. Bijvoorbeeld:
 

@@ -44,7 +44,7 @@ ToonArray(namen);
 
 
 ### Generic types
-We kunnen niet alleen generieke methoden schrijven, maar ook eigen klassen én interfaces definiëren die generiek zijn. In het volgende codevoorbeeld is te zien hoe een eigen generic class in C# gedefinieerd en gebruikt kan worden. Merk het gebruik van de aanduiding ``T`` , deze geeft weer aan dat hier een type (zoals ``int``, ``double``, ``Student``, enz.) zal worden ingevuld tijdens het compileren.
+We kunnen niet alleen generieke methoden schrijven, maar ook eigen klassen én interfaces definiëren die generiek zijn. In het volgende codevoorbeeld is te zien hoe een eigen generic class in C# gedefinieerd en gebruikt kan worden. Merk het gebruik van de aanduiding ``T``, deze geeft weer aan dat hier een type (zoals ``int``, ``double``, ``Student``, enz.) zal worden ingevuld tijdens het compileren.
 
 {% hint style='tip' %}
 ## ``<T>``

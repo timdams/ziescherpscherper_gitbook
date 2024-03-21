@@ -56,7 +56,7 @@ Dat lijkt niet veel beter, integendeel, we zitten nu ook nog met een hoop vierka
 De kracht van arrays komt nu: het getal tussen die vierkante haakjes (de index) kan je als een variabele beschouwen en dus ook dynamisch genereren in een loop. Volgend voorbeeld toont hoe we bijvoorbeeld een langere array van elementen met een for-loop overlopen om de som van alle elementen te berekenen:
 
 ```csharp
-int[] regen = {34, 45, 0, 34, 12, 0, 23, 7 , 20, 34 , 7 , 42}; //aanmaken array
+int[] regen = {34, 45, 0, 34, 12, 0, 23, 7, 20, 34, 7, 42}; //aanmaken array
 double som = 0;
 for(int i = 0; i<regen.Length;i++)
 {
@@ -178,7 +178,7 @@ Van zodra er waarden in een array staan of moeten bijgeplaatst worden kan je dez
 myColors[2]; //element met index 2
 ```
 
-We plaatsen de naam van de array, gevolgd door vierkante haakjes waarbinnen een getal , 2 in dit voorbeeld, aangeeft het hoeveelste element we wensen te benaderen (lezen en/of schrijven). Deze nummering start vanaf 0.
+We plaatsen de naam van de array, gevolgd door vierkante haakjes waarbinnen een getal, 2 in dit voorbeeld, aangeeft het hoeveelste element we wensen te benaderen (lezen en/of schrijven). Deze nummering start vanaf 0.
 
 {% hint style='danger' %}
 **De index van een C#-array start steeds bij 0.** Indien je dus een array aanmaakt met lengte 5 dan heb je de indices 0 tot en met 4.

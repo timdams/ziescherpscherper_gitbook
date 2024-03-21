@@ -11,7 +11,7 @@ Met andere woorden, stel dat we dit willen schrijven:
 Student jos = new Student("Lord Oakenwood");
 ```
 
-Als we dit met voorgaande klasse uitvoeren , die enkel een default constructor heeft, zal de code een fout geven. C# vindt geen constructor die een ``string`` als actuele parameter aanvaardt.
+Als we dit met voorgaande klasse uitvoeren, die enkel een default constructor heeft, zal de code een fout geven. C# vindt geen constructor die een ``string`` als actuele parameter aanvaardt.
 
 Net zoals bij overloading van methoden kunnen we ook constructors overloaden. De code is verrassend gelijkaardig aan method overloading:
 

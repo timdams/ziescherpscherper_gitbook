@@ -94,7 +94,7 @@ We hebben nu een manier gevonden om onze objecten op de juiste momenten even als
 ![](../assets/care.png)
 
 Polymorfisme is een heel krachtig concept. Door een referentie naar objecten te bewaren in een variabele van hun basistype en, wanneer nodig, ze als 'zichzelf' te gebruiken wordt je code een pak eenvoudiger.
-Vaak weet je niet op voorhand wat voor elementen je in je lijst wilt plaatsen. Via polymorfisme lossen we dit op. Stel bijvoorbeeld dat je een lijst van Personen hebt (``List<Person>``) waar echter elementen van subklassen in terecht kunnen komen (``Bakker``, ``Student``, etc) , dan laat polymorfisme dit gewoon toe om ook deze elementen in die lijst te plaatsen.
+Vaak weet je niet op voorhand wat voor elementen je in je lijst wilt plaatsen. Via polymorfisme lossen we dit op. Stel bijvoorbeeld dat je een lijst van Personen hebt (``List<Person>``) waar echter elementen van subklassen (``Bakker``, ``Student``, etc.) in terecht kunnen komen, dan laat polymorfisme dit gewoon toe om ook deze elementen in die lijst te plaatsen.
 
 {% endhint %}
 

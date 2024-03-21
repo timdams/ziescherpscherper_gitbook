@@ -105,7 +105,7 @@ Het zou heel vreemd zijn om objecten in het leven te kunnen roepen die letterlij
 
 ### Abstracte properties
 
-Properties kunnen ``virtual`` gemaakt worden , en dus ook ``abstract``. Net zoals bij abstracte methoden, kunnen we met abstracte properties de overgeërfde klassen verplichten een eigen implementatie van de property te schrijven. 
+Properties kunnen ``virtual`` gemaakt worden, en dus ook ``abstract``. Net zoals bij abstracte methoden, kunnen we met abstracte properties de overgeërfde klassen verplichten een eigen implementatie van de property te schrijven. 
 
 Volgend voorbeeld toont hoe dit werkt:
 

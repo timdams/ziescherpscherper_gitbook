@@ -15,7 +15,7 @@ Het grote verschil bij het aanmaken van bijvoorbeeld een 2D jagged array is het 
 (double[][]tickets=
     {
       new double[] {3.0, 40, 24},
-      new double[] {123 , 31.3 },
+      new double[] {123, 31.3 },
       new double[] {2.1}
     };)
 

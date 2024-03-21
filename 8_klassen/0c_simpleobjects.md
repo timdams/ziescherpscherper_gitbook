@@ -82,7 +82,7 @@ class Mens
 ```
 
 {% hint style='tip' %}
-Naast ``private`` (het meest beschermd) en ``public`` (het meest open) zijn er nog een aantal access modifiers die allemaal de toegang tot een klasse meer of minder kunnen inperken. Verderop in het boek zullen we nog ``protected`` (enkel zichtbaar voor overgeërfde klassen) bekijken. Maar weet dat ook nog ``internal`` (enkel binnen dezelfde *assembly*) , ``protected internal`` en ``private protected`` bestaan. 
+Naast ``private`` (het meest beschermd) en ``public`` (het meest open) zijn er nog een aantal access modifiers die allemaal de toegang tot een klasse meer of minder kunnen inperken. Verderop in het boek zullen we nog ``protected`` (enkel zichtbaar voor overgeërfde klassen) bekijken. Maar weet dat ook nog ``internal`` (enkel binnen dezelfde *assembly*), ``protected internal`` en ``private protected`` bestaan. 
 In dit boek gaan we ons beperken tot ``private``, ``protected`` en ``public``. Je zal echter merken dat VS 2022 standaard met ``internal`` werkt, wat voor ons niet echt uitmaakt.
 {% endhint %}
 

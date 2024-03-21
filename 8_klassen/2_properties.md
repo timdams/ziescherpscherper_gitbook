@@ -175,7 +175,7 @@ De full property ``Energie`` heeft nog steeds het probleem dat we negatieve waar
 
 **Properties hebben echter de mogelijkheid om op te treden als wachters van en naar de interne staat van objecten.**
 
-We kunnen in de ``set`` code extra controles inbouwen. Daar de ``value`` variabele de waarde krijgt die we aan de property van buiten af geven, kunnen we deze dus controleren en , indien nodig, bijvoorbeeld niet toewijzen. Volgende voorbeeld zal enkel de waarde toewijzen indien deze groter of gelijk aan 0 is:
+We kunnen in de ``set`` code extra controles inbouwen. Daar de ``value`` variabele de waarde krijgt die we aan de property van buiten af geven, kunnen we deze dus controleren en, indien nodig, bijvoorbeeld niet toewijzen. Volgende voorbeeld zal enkel de waarde toewijzen indien deze groter of gelijk aan 0 is:
 
 ```csharp
 public int Energie
@@ -213,7 +213,7 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 
 * **Write-only property**: heeft geen ``get``.
 * **Read-only property**: heeft geen ``set``.
-* **Read-only property met private ``set``** (het omgekeerde , een private ``get``, zal je zelden tegenkomen).
+* **Read-only property met private ``set``** (het omgekeerde, een private ``get``, zal je zelden tegenkomen).
 * **Read-only property die data transformeert**: om interne data in een andere vorm uit je object te krijgen.
 
 ![De verschillende full properties mooi opgelijst.](../assets/6_klassen/allprops.png)

@@ -182,7 +182,7 @@ PC mijnPC = new PC();
 mijnPC.CHardeSchijf = mijnHardeSchijf ;
 ```
 
-Op deze manier hebben we nog steeds een referentie naar ``mijnHardeSchijf`` en zal de GC dit object dus niet verwijderen wanneer , om welke reden ook, ``mijnPC`` wordt opgekuist.
+Op deze manier hebben we nog steeds een referentie naar ``mijnHardeSchijf`` en zal de GC dit object dus niet verwijderen wanneer, om welke reden ook, ``mijnPC`` wordt opgekuist.
 
 
 {% hint style='tip' %}
@@ -314,7 +314,7 @@ Begrijp je nu waarom het  geen goed idee is om een interne lijst gewoonweg via e
 We vertelden in het begin van dit hoofdstuk dat compositie en aggregatie een "heeft een"-relatie aanduiden, terwijl overerving een "is een"-relatie behelst. In de praktijk zal je véél vaker compositie en aggregatie moeten gebruiken dan overerving. 
 Compositie en aggregatie laat ons toe om 2 (of meer) totaal verschillende soorten zaken met elkaar te laten samenwerken, iets wat met overerving enkel kan indien beide zaken een "is een"-relatie hebben. Dit zien we ook in de echte wereld: de zaken rondom ons zullen vaker een compositie/aggregatie-relatie hebben dan een overervings-relatie.
 
-Zoals je hopelijk beseft kan dus alles een compositieobject zijn in een ander object. Denk maar aan een ``Dictionary`` van klanten die je gebruikt in een klasse ``Winkel``. Of wat te denken van de klasse ``Mens`` die uit een hele boel organen bestaat. Ieder orgaan is compositie-object in de klasse ``Mens``, zoals 2 ``Nier``-objecten, een ``Hersenen`` instantie, 1 ``Hart`` instantie enz. Iemand die in jouw Mens-simulator een nieuw hart nodig heeft kan dat dan dankzij *manier 3* , via een property ingeplant krijgen:
+Zoals je hopelijk beseft kan dus alles een compositieobject zijn in een ander object. Denk maar aan een ``Dictionary`` van klanten die je gebruikt in een klasse ``Winkel``. Of wat te denken van de klasse ``Mens`` die uit een hele boel organen bestaat. Ieder orgaan is compositie-object in de klasse ``Mens``, zoals 2 ``Nier``-objecten, een ``Hersenen`` instantie, 1 ``Hart`` instantie enz. Iemand die in jouw Mens-simulator een nieuw hart nodig heeft kan dat dan dankzij *manier 3*, via een property ingeplant krijgen:
 
 ```csharp
 Mens patient = new Mens();

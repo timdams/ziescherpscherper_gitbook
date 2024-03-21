@@ -91,7 +91,7 @@ Nu rest ons nog één belangrijke stap: **selecteren welk project moet gecompile
 Je kan nu op 2 manieren het actieve, uit te voeren, project kiezen.
 
 **Manier 1**: Rechterklik in de Solution Explorer op het actief te zetten project en kies voor  "Set as startup project."
-**Manier 2**: bovenaan , links van de groene "compiler/run" knop, staat een selectieveld met het actieve project. Je kan hier een andere project selecteren. 
+**Manier 2**: bovenaan, links van de groene "compiler/run" knop, staat een selectieveld met het actieve project. Je kan hier een andere project selecteren. 
 
 ![](../assets/1_csharpbasics/activepr.png)
 

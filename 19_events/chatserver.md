@@ -1,6 +1,6 @@
 # Client-server chat programma
 
-We maken een klein , eenvoudige applicatie zodat meerdere clients berichten naar de server kunnen sturen.
+We maken een klein, eenvoudige applicatie zodat meerdere clients berichten naar de server kunnen sturen.
 We gaan hiervoor gebruik maken van een bestaande Nuget-Bibliotheek ``SimpleTcp``
 
 Voer volgende stappen uit:
