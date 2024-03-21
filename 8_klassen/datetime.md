@@ -17,7 +17,7 @@ Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse, die, je raadt het 
 
 
 
-De .NET klasse ``DateTime`` is de ideale manier om te leren werken met objecten. Het is een nuttige en toegankelijk klasse.
+De .NET klasse ``DateTime`` is de ideale manier om te leren werken met objecten. Het is een nuttige en toegankelijk klasse (terzijde: technisch gezien is DateTime een ``struct``, niet een ``class``, maar dit onderscheid is in dit hoofdstuk niet relevant).
 
 ### DateTime objecten aanmaken
 
@@ -117,11 +117,11 @@ We behandelen ``static`` uitgebreid verderop in het boek.
 
 #### De tijd uit een string inlezen
 
-Parsen laat toe dat je strings omzet naar een ``DateTime`` object. Dit is handig als je bijvoorbeeld de gebruiker via ``Console.ReadLine()`` tijd en datum wilt laten invoeren:
+Parsen laat toe dat je strings omzet naar een ``DateTime`` object. Dit is handig als je bijvoorbeeld de gebruiker via ``Console.ReadLine()`` tijd en datum wilt laten invoeren in de *Belgische notatie*:
 
 ```csharp
 string datumInvoer = Console.ReadLine(); 
-DateTime datumVerwerkt = DateTime.Parse(datumInvoer);
+DateTime datumVerwerkt = DateTime.Parse(datumInvoer, new System.Globalization.CultureInfo("nl-BE"));
 Console.WriteLine(datumVerwerkt);
 ```
 
