@@ -78,3 +78,8 @@ IntelliCode zal ook IntelliSense verbeteren door de belangrijkste, meest gebruik
 {% hint style='tip' %}
 Google Copilot project is zelfs nog krachtiger en komt dus met een nog grotere disclaimer: **beginnende programmeurs, laat dit soort tools beter nog even links liggen!** Je leert ook niet hoofdrekenen door vanaf dag 1 met een zakrekenmachine aan de slag te gaan.
 {% endhint %}
+
+{% hint style='warning' %}
+Sinds 2023 is er een gigantische opkomst van nog straffere A.I. tools, met ChatGPT voorop. Alhoewel deze tools vaak heel goede C# code kunnen genereren, raden we af deze te gebruiken, om dezelfde redenen dat je best IntelliCode niet gebruikt. Vraag daarom nooit aan ChatGPT om "oefening x" voor je op te lossen. 
+Moet je dan ChatGPT volledig links laten liggen? Uiteraard niet. Gebruik hem als extra leermiddel om bijvoorbeeld stukken code toe te lichten, bepaalde concepten op een andere manier uit te leggen etc. 
+{% endhint %}
