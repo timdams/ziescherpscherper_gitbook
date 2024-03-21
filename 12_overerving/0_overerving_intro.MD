@@ -66,7 +66,7 @@ En als we het voorbeeld van de mens en z'n voorgangers nemen dan zou een vereenv
 
 Overving in C# duid je aan met behulp van het dubbele punt(:) bij de klassedefinitie, als volgt:
 
-```java
+```csharp
 class Paard : Dier
 {
    public bool KanHinnikken{get;set;}
@@ -83,7 +83,7 @@ class Dier
 
 We zeggen dus dat ``Paard`` overerft van de klasse ``Dier``. Het paard is dus een specialisatie van dier. Objecten van het type ``Dier`` kunnen enkel de ``Eet``-methode aanroepen. Objecten van het type ``Paard`` kunnen de ``Eet``-methode aanroepen én ze hebben ook een property ``KanHinnikken``. Een paard kan dus alles wat een dier kan en wat het zelf kan. Een dier kan enkel wat het zelf kan:
 
-```java
+```csharp
 Dier aDier = new Dier();
 Paard bPaard = new Paard();
 aDier.Eet();
@@ -119,7 +119,7 @@ Vervolgens maken we van iedere klasse 1 object aan. De objecten in het geheugen 
 
 
 Laten we eens 2 objecten aanmaken en kijken wat er in de heap en stack gebeurt:
-```java
+```csharp
 Huis eenHuis = new Huis();
 Villa groteVilla = new Villa();
 ```
@@ -142,7 +142,7 @@ Echter, de ``private`` delen van een klasse blijven beperkt tot dat stuk waar de
 
 Ook al is overerving transitief, hou er rekening mee dat private variabelen en methoden van de parent-klasse NIET rechtstreeks aanroepbaar zijn in de child-klasse. ``private`` geeft aan dat het element enkel in de klasse zichtbaar is:
 
-```java
+```csharp
 class Paard: Dier
 {
    public void MaakOuder()
@@ -158,7 +158,7 @@ class Dier
 
 Je kan dit oplossen door de **``protected``** access modifier te gebruiken in de plaats van ``private``. Met ``protected`` geef je aan dat het element enkel zichtbaar is binnen de klasse **én** binnen child-klassen:
 
-```java
+```csharp
 class Paard: Dier
 {
    public void MaakOuder()
@@ -189,7 +189,7 @@ Als puntje bij paaltje komt zal je trouwens bijna nooit multiple inheritance in 
 
 Soms wil je niet dat van een klasse nog nieuwe klassen kunnen overgeërfd worden. Je lost dit op door het keyword ``sealed`` voor de klasse te zetten:
 
-```java
+```csharp
 sealed class DoNotInheritMe
 {
    //...
@@ -198,7 +198,7 @@ sealed class DoNotInheritMe
 
 Als je later dan dit probeert:
 
-```java
+```csharp
 class ChildClass:DoNotInheritMe
 {
    //...

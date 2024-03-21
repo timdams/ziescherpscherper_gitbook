@@ -5,7 +5,7 @@ Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode ``Regeer``
 
 De ``EersteMinister`` heeft toegang tot tal van ministers die hem kunnen helpen (inzake milieu, binnenlandse zaken (BZ) en economie). Zonder de voordelen van polymorfisme zou de klasse ``EersteMinister`` er zo kunnen uitzien (**slechte manier**!):
 
-```java
+```csharp
 public class EersteMinister
 {
     public MinisterVanMilieu Jansens {get;set;} = new MinisterVanMilieu();
@@ -42,7 +42,7 @@ Dit voorbeeld is gebaseerd op een briljante StackOverflow post waarin de vraag *
 
 
 De ``MinisterVanMilieu`` zou er zo kunnen uitzien (de methodenimplementatie mag je zelf verzinnen):
-```java
+```csharp
 class MinisterVanMilieu
 {
   public void VerhoogBosSubsidies(){}
@@ -56,7 +56,7 @@ Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wa
 
 **Ten eerste:** We verplichten alle ministers dat ze overerven van de abstracte klasse ``Minister`` die maar 1 abstracte methode heeft ``Adviseer``:
 
-```java
+```csharp
 abstract class Minister
 {
   abstract public void Adviseer();
@@ -85,7 +85,7 @@ class MinisterVanEconomie:Minister {}
 
 **Ten tweede:** Het leven van de EersteMinister wordt plots véél makkelijker. Hij kan gewoon de ``Adviseer`` methode aanroepen van iedere minister:
 
-```java
+```csharp
 public class EersteMinister
 {
   public MinisterVanMilieu Jansens {get;set;} = new MinisterVanMilieu();
@@ -103,7 +103,7 @@ public class EersteMinister
 
 **En ten derde:** En we kunnen hem nog helpen door met een array of ``List<Minister>`` te werken zodat hij ook niet steeds de "namen" van z'n ministers moet kennen. Dankzij polymorfisme mag dit:
 
-```java
+```csharp
 public class EersteMinister
 {
   public List<Minister> AlleMinisters {get;set;}= new List<Minister>();

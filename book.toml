@@ -4,6 +4,8 @@ language = "nl"
 multilingual = false
 src = "."
 title = "Zie Scherp Scherper"
+description="Leer programmeren in csharp."
+
 [output.html.fold]
 enable = true
 

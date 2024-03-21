@@ -5,7 +5,7 @@ Eenvoudig gezegd zullen steeds de omliggende accolades de scope van de variabele
 
 Zeker wanneer je begint met ``if``, loops, methoden, enz. zal de scope belangrijk zijn: deze code-constructies gebruiken steeds accolades om codeblocks aan te tonen. Een variabele die je dus binnen een if-blok aanmaakt zal enkel binnen dit blok bestaan, niet erbuiten.
 
-```java
+```csharp
 if( iLoveCSharp == true)
 {
     Console.WriteLine("Hoeveel punten op 10 geef je C#?"):
@@ -18,7 +18,7 @@ Console.WriteLine(getal); // FOUT! getal niet in deze scope
 
 Wil je dus getal ook nog buiten de ``if`` gebruiken zal je je code moeten herschrijven zodat ``getal`` VOOR de ``if`` wordt aangemaakt:
 
-```java
+```csharp
 {
     int getal = 0 ; //Start scope getal
     if( iLoveCSharp == true)
@@ -43,7 +43,7 @@ Zolang je in de scope van een variabele bent, kan je geen nieuwe variabele met d
 
 Volgende code is dus niet toegestaan:
 
-```java
+```csharp
 int getal = 0;
 {
     int getal = 5; //Deze lijn is niet toegestaan
@@ -56,7 +56,7 @@ Enkel de tweede variabele een andere naam geven is toegestaan in het voorgaande 
 
 In volgende voorbeeld is dit dus wel geldig, daar de scope van de eerste variabele afgesloten wordt door de accolades:
 
-```java
+```csharp
 {
     int getal = 0 ;
     //....

@@ -2,7 +2,7 @@
 ## Namespaces en ``using``
 Je zal het keyword ``namespace`` al vele malen bovenaan je code hebben zien staan .
 
-```java
+```csharp
 namespace MyEpicGame
 {
     internal class Monster
@@ -18,7 +18,7 @@ De namespace rondom een klasse is als het ware een extra stukje naamgeving waarm
 
 Als ik dus even later een project met volgende namespace, en zelfde klassenaam, importeer:
 
-```java
+```csharp
 namespace NietZoEpicGame
 {
     internal class Monster

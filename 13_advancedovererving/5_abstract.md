@@ -20,7 +20,7 @@ Met behulp van het keyword **``abstract``** kunnen we aangeven dat een klasse ab
 We plaatsen ``abstract`` voor de klasse definitie om dit aan te duiden.
 
 Een voorbeeld:
-```java
+```csharp
 abstract class Dier
 {
     public string Naam {get;set;}
@@ -32,7 +32,7 @@ We kunnen nu geen objecten meer van het type ``Dier`` aanmaken. Volgende code za
 
 
 Maar, we mogen dus wel klassen overerven van deze klasse en instanties van deze nieuwe klasse aanmaken:
-```java
+```csharp
 class Paard: Dier
 {
     //...
@@ -56,7 +56,7 @@ In het begin lijkt ``abstract`` een beperkende factor: je kan minder dan ervoor.
 Het is logisch dat we mogelijk ook bepaalde zaken in de abstracte klasse als ``abstract`` kunnen aanduiden. Beeld je in dat je een methode ``MaakGeluid`` hebt in je klasse ``Dier``. Wat voor een geluid maakt 'een dier'? We kunnen dus ook geen implementatie (code) geven in de abstracte parent klasse, maar willen wel zeker ervoor zorgen dat alle child-klassen van ``Dier`` geluid kunnen maken, op wat voor manier dan ook.
 
 Via abstracte methoden geven we dit aan: we hoeven enkel de methode signatuur te geven, met ervoor ``abstract``:
-```java
+```csharp
 abstract class Dier
 {
     public abstract string MaakGeluid();
@@ -74,7 +74,7 @@ Merk op dat er geen codeblock-accolades na de signatuur van abstracte methodes k
 
 
 De Paard-klasse wordt dan:
-```java
+```csharp
 class Paard: Dier
 {
   public bool HeeftTetanus {get;set;}
@@ -108,7 +108,7 @@ Properties kunnen ``virtual`` gemaakt worden , en dus ook ``abstract``. Net zoal
 
 Volgend voorbeeld toont hoe dit werkt:
 
-```java
+```csharp
 abstract class Dier
 {
     abstract public int MaxLeeftijd { get;}

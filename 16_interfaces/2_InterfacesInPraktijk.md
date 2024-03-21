@@ -14,7 +14,7 @@ Een veelgebruikte .NET interface is de ``IComparable`` interface. Deze wordt geb
 We willen een array van landen kunnen sorteren op grootte van oppervlakte.
 
 Stel dat we de klasse ``Land`` hebben:
-```java
+```csharp
 class Land
 {
     public string Naam {get;set;}
@@ -24,7 +24,7 @@ class Land
 ```
 We plaatsen 3 landen in een array:
 
-```java
+```csharp
 Land[] eurolanden = new Land[3];
 eurolanden[0] = new Land() {Naam = "België", Oppervlakte = 5, Inwoners = 2000};
 eurolanden[1] = new Land() {Naam = "Frankrijk", Oppervlakte = 7, Inwoners = 2500};
@@ -33,7 +33,7 @@ eurolanden[2] = new Land() {Naam = "Nederland", Oppervlakte = 6, Inwoners = 1800
 Wanneer we nu zouden proberen de landen te sorteren:
 
 
-```java
+```csharp
 Array.Sort(eurolanden);
 ```
 Dan treedt er een uitzondering op:``InvalidOperationException: Failed to compare two elements in the array``. Dit is erg logisch: .NET heeft geen flauw benul hoe objecten van het type ``Land`` moeten gesorteerd worden. Moet dit alfabetisch volgens de ``Naam`` property, of van groot naar klein op aantal ``Inwoners``? Enkel jij als ontwikkelaar weet momenteel hoe er gesorteerd moet worden. 
@@ -41,7 +41,7 @@ Dan treedt er een uitzondering op:``InvalidOperationException: Failed to compare
 #### Stap 2: IComparable onderzoeken
 We kunnen dit oplossen door de ``IComparable`` interface in de klasse ``Land`` te implementeren. We bekijken daarom eerst de documentatie van deze interface (op **msdn.microsoft.com/system.icomparable**). De interface is beschreven als:
 
-```java
+```csharp
 interface IComparable
 {
     int CompareTo(Object obj);
@@ -67,7 +67,7 @@ De ``Array.Sort`` methode zal werken tegen deze ``IComparable`` interface om jui
 #### Stap 3: IComparable in Land implementeren
 
 We zorgen er nu voor dat ``Land`` deze interface implementeert. Daarbij willen we dat *de landen volgens oppervlakte worden gesorteerd* :
-```java
+```csharp
 class Land: IComparable
 {
     public int CompareTo(object obj)
@@ -90,7 +90,7 @@ class Land: IComparable
 Nu zal de ``Sort`` werken:
 
 
-```java
+```csharp
 Array.Sort(eurolanden);
 ```
 
@@ -98,7 +98,7 @@ De ``Sort()``-methode kan nu ieder object bevragen via de ``CompareTo()``-method
 
 Stel dat vervolgens nog beter willen sorteren: *we willen dat landen met een gelijke oppervlakte, op hun aantal inwoners gesorteerd worden*:
 
-```java
+```csharp
 public int CompareTo(object obj)
 {
 
@@ -122,7 +122,7 @@ Ik laat jou de code schrijven wat er moet gebeuren indien het aantal inwoners é
 De bestaande datatypes in .NET hebben allemaal de ``IComparable`` interface ingebakken. Zo ook dus de gekende primitieve datatypes. ``string`` dus ook en laat dus toe om bijvoorbeeld snel te weten welke van 2 string alfabetisch eerst komt, als volgt:
 
 
-```java
+```csharp
 return this.Naam.CompareTo(temp.Naam);
 ```
 

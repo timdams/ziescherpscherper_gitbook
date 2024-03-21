@@ -2,7 +2,7 @@
 
 In main
 
-```java
+```csharp
 //dieren staan ergens in List<Dier> diertjes
 //gebruiker gaf bij invoer f in als keuze:
 if(userinput == "f")
@@ -31,7 +31,7 @@ if(userinput == "f")
 
 Voorgaande resulteert in aardig wat quasi identieke code in de switch. Je kan zelf een generieke methode maken (hebben we niet in leerstof gezien) als volgt (in hoofdprogramma):
 
-```java
+```csharp
 static void Zegt<T>(List<Dier>dieren) where T: Dier
 {
     foreach(var dier in dieren)
@@ -45,7 +45,7 @@ static void Zegt<T>(List<Dier>dieren) where T: Dier
 
 In de switch krijg je dan:
 
-```java
+```csharp
 case "Slang":
     Zegt<Slang>(dieren);
     break;
@@ -59,7 +59,7 @@ case "Varken":
 
 In klasse ``Pokemon``:
 
-```java
+```csharp
 public override bool Equals(object obj)
 {
 

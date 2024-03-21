@@ -48,7 +48,7 @@ Je geeft hierbij 2 argumenten mee: de bestandsnaam, en de inhoud van het bestand
 Volgende voorbeeld schrijft bijvoorbeeld de zin "Ik ben cool" weg naar een bestand dat zal aangemaakt worden genaamd "me.txt":
 
 
-```java
+```csharp
 System.IO.File.WriteAllText("me.txt", "Ik ben cool");
 ```
 

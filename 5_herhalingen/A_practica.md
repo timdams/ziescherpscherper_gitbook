@@ -85,7 +85,7 @@ Stel dat je het getal 4560 hebt:
 {% hint style='tip' %}
 Je kan van een string weten hoe groot deze is als volgt:
 
-```java
+```csharp
 //veronderstellend dat myInputGetal van het type string is
 int lengte = myInputGetal.Length;
 ```

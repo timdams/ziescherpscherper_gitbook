@@ -12,14 +12,14 @@ Volgende aanvulling werd toegevoegd:
 
 Een andere eenvoudige manier om strings te formatteren is door middel van een soort masker bestaande uit 0'n. Dit ziet er als volgt uit:
 
-```java
+```csharp
 double number = 12.345;
 Console.WriteLine($"{number:0.00}");
 ```
 
 We geven hierbij aan dat de variabele tot 2 cijfers na de komma moet getoond worden. Indien deze maar 1 cijfer na de komma bevat dan deze toch met twee cijfers getoond worden. Volgende voorbeeld toont dit:
 
-```java
+```csharp
 double number = 12.3;
 Console.WriteLine($"{number:0.00}");
 ```
@@ -28,7 +28,7 @@ Er zal ``12,30`` op het scherm verschijnen.
 
 Je kan dit masker ook gebruiken om te verplichten dat getallen bijvoorbeeld steeds met **minimum** 3 cijfers voor de komma getoond worden. Volgende voorbeeld toont dit:
 
-```java
+```csharp
 double number = 12.3;
 double number2 = 99999.3;
 Console.WriteLine($"{number:000.00}");
@@ -46,12 +46,12 @@ Geeft als uitvoer:
 Haakje teveel in de tweede lijn code. 
 
 Foute lijn:
-```java
+```csharp
 (double)((tempGisteren + tempVandaag)) / 2); //geeft 22
 ```
 
 Moet zijn:
-```java
+```csharp
 (double)((tempGisteren + tempVandaag) / 2); //geeft 22
 ```
 
@@ -60,12 +60,12 @@ Moet zijn:
 De dag-array bestaat niet en moet de regen-array zijn: 
 
 Foute lijn:
-```java
+```csharp
 double gemiddelde = (dag[0]+dag[1]+dag[2]+dag[3]+dag[4]+dag[5]+dag[6])/7.0;
 ```
 
 Moet zijn:
-```java
+```csharp
 double gemiddelde = (regen[0]+regen[1]+regen[2]+regen[3]+regen[4]+regen[5]+regen[6])/7.0;
 ```
 
@@ -87,7 +87,7 @@ De klasse persoon bevat instantievariabelen waardoor we in deze klasse nooit de 
 
 We maken van de klasse:
 
-```java
+```csharp
 class Persoon
 {
     public string Voornaam {get;set;}
@@ -97,7 +97,7 @@ class Persoon
 
  Vervolgens wordt de hele klasse:
 
- ```java
+ ```csharp
  class Persoon
  {
         public string Voornaam {get;set;}
@@ -135,7 +135,7 @@ Werd herschreven als:
  Dit is een subtiele bug (dank Erik Speelman!). Het resetten van een object dat je meegeeft via een methode, kan niet zoals het voorbeeld toont . 
  De methode  ``VoegMetingToeEnVerwijder`` moet herschreven worden als
 
- ```java
+ ```csharp
  public void VoegMetingToeEnVerwijder(Meting inMeting)
  {
     Temperatuur += inMeting.Temperatuur;
@@ -145,7 +145,7 @@ Werd herschreven als:
  ```
 
  Ter info. Wil je wél je object kunnen resetten in de methode m.b.v. ``new`` dan zal je het ``ref``-keyword moeten gebruiken (zie appendix pagina 406). De methode wordt dan herschreven als:
-  ```java
+  ```csharp
  public void VoegMetingToeEnVerwijder(ref Meting inMeting)
  {
     Temperatuur += inMeting.Temperatuur;
@@ -170,7 +170,7 @@ Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-typ
 
 De klasse ``MinisterVanMilieu`` kan nog eenvoudiger en bevat code die weg moest. De nieuwe klasse wordt:
 
-```java
+```csharp
 class MinisterVanMilieu:IMinister
 {
     public void Adviseer()

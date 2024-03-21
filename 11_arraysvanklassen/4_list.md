@@ -6,7 +6,7 @@ Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen a
 
 De klasse ``List<>`` is een zogenaamde generieke klasse (meer hierover in de appendix). Tussen de ``< >``tekens plaatsen we het datatype dat de lijst zal moeten gaan bevatten. Bijvoorbeeld:
 
-```java
+```csharp
 List<int> alleGetallen = new List<int>();
 List<bool> binaryList = new List<bool>();
 List<Pokemon> pokeDex = new List<Pokemon>();
@@ -32,7 +32,7 @@ Via de ``Add()``-methode kan je elementen toevoegen aan de lijst. Je dient als p
 
 In volgende voorbeeld maken we een List aan die objecten van het type string mag bevatten en vervolgens plaatsen we er twee elementen in.
 
-```java
+```csharp
 List<string> mijnPersonages = new List<string>();
 mijnPersonages.Add("Reinhardt");
 mijnPersonages.Add("Mercy");
@@ -42,13 +42,13 @@ mijnPersonages.Add("Mercy");
 
 Ook meer complexe datatypes kan je dus toevoegen:
 
-```java
+```csharp
 List<Pokemon> pokedex = new List<Pokemon>();
 pokedex.Add(new Pokemon());
 ```
 
 Via object syntax initializer kan dit zelfs nog sneller:
-```java
+```csharp
 List<Pokemon> pokedex = new List<Pokemon>()
     {
         new Pokemon(),
@@ -60,7 +60,7 @@ List<Pokemon> pokedex = new List<Pokemon>()
 
 Je kan ook een stap verder gaan en ook binnenin deze initializer syntax dezelfde soort initialize syntax gebruiken om de objecten individueel aan te maken:
 
-```java
+```csharp
 List<Pokemon> pokedex = new List<Pokemon>()
     {
         new Pokemon() {Naam = "Pikachu", HP_Base = 5},
@@ -75,7 +75,7 @@ List<Pokemon> pokedex = new List<Pokemon>()
 
 **Het leuke van een ``List`` is dat je deze ook kan gebruiken als een gewone array**, waarbij je met behulp van de indexer elementen individueel kan aanroepen. Stel bijvoorbeeld dat we een lijst hebben met minstens 4 strings in. Volgende code toont hoe we de string op positie 3 kunnen uitlezen en hoe we die op positie 2 overschrijven, net zoals we reeds kenden van arrays:
 
-```java
+```csharp
 Console.WriteLine(mijnPersonages[3]);
 mijnPersonages[2] = "Torbjorn";
 ```
@@ -84,7 +84,7 @@ mijnPersonages[2] = "Torbjorn";
 
 Ook de klassieke werking met loops blijft gelden. **De enige aanpassing is dat ``List<>`` niet met ``Length`` werkt maar met ``Count``**:
 
-```java
+```csharp
 for(int i = 0 ; i < mijnPersonages.Count; i++)
 {
     Console.WriteLine(mijnPersonages[i])

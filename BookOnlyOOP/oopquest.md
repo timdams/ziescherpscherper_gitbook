@@ -16,7 +16,7 @@ We willen de ``Main()`` methode van Program.cs zo leeg mogelijk laten. Daarom zu
 
 In code behelst dit:
 
-```java
+```csharp
 static void Main(string[] args)
 {
     Console.WriteLine("Welkom bij OOP Quest. Een avontuur voor moedige en minder moedige programmeurs. Ben je er klaar voor?");
@@ -42,7 +42,7 @@ Een ``bool`` property ``Exit``  binnen het ``SpelManager`` object zal ons toelat
 
 Doorheen de verschillende locaties zullen elementen te vinden zijn. We beschrijven deze als ``SpelObject``:
 
-```java
+```csharp
 class SpelObject
 {
     public string Naam { get; set; }
@@ -64,7 +64,7 @@ De gebruiker kan van locatie naar locatie gaan. Een locatie bestaat uit een aant
 * Een lijst van Uitgangen, namelijk de richtingen waar de gebruiker naar toe kan gaan die aansluiten op een andere locatie.
 * Een eerste versie van onze locatie klasse is dan:
 
-```java
+```csharp
 class Locatie: SpelObject
 {
     public Locatie()
@@ -101,7 +101,7 @@ Iedere exit in een locatie definieert minstens 2 zaken:
 
 We krijgen dus al:
 
-```java
+```csharp
 class Exit
 {
     public Exit()
@@ -118,7 +118,7 @@ class Exit
 ```
 Waarbij ``Richtingen`` een eigen gemaakt enum-type is:
 
-```java
+```csharp
 enum Richtingen
 {
     Noord, Zuid, West, Oost
@@ -128,7 +128,7 @@ enum Richtingen
 ## Van locatie veranderen
 Binnen de locatie klasse voegen we een methode toe die de SpelManager kan gebruiken om te weten te komen naar welke locatie de gebruiker gaat. De methode aanvaardt een ``richting`` (i.e. de richting waarin de gebruiker wenst te gaan) en zal een referentie naar het Locatie-object teruggeven waarnaar de gebruiker zal bewegen. Indien de richting waarin hij wenst te bewegen niet geldig is dan tonen we dit op het scherm:
 
-```java
+```csharp
 public Locatie KrijgLocatieNaBewegen(Richtingen richting)
 {
     foreach (var exit in Uitgangen)
@@ -155,7 +155,7 @@ Stel nu dat we soms willen dat een bepaalde locatie pas bereikt kan worden indie
 
 De nieuwe, volledige ``Exit`` klasse wordt dan:
 
-```java
+```csharp
 class Exit
 {
     public Exit()
@@ -187,7 +187,7 @@ In deze ietwat knullige code tellen we dus of de speler alle SpelObjecten in z�
 
 Deze methode ``ControleerMagPasseren`` gebruiken we nu in de ``KrijgLocatieNaBewegen()``-methode in de Locatie klasse om te bepalen of de exit mag gebruikt worden. De methode wordt dan:
 
-```java
+```csharp
 public Locatie KrijgLocatieNaBewegen(Richtingen richting, List<SpelObjects> spelerInventaris )
 {
     foreach (var exit in Uitgangen)
@@ -213,7 +213,7 @@ public Locatie KrijgLocatieNaBewegen(Richtingen richting, List<SpelObjects> spel
 Rest ons nu enkel nog  de ``SpelManager`` klasse te maken. Ruw gezien is deze als volgt:
 
 
-```java
+```csharp
 class SpelManager
 {
  
@@ -263,7 +263,7 @@ Wat ogenblikkelijk opvalt zijn:
 We zullen nu de afzonderlijke methoden invullen:
 
 ### BeschrijfLocatie()
-```java
+```csharp
 public void BeschrijfLocatie()
 {
     this.huidigeLocatie.Beschrijf();
@@ -272,7 +272,7 @@ public void BeschrijfLocatie()
 
 ### VerwerkActie()
 
-```java
+```csharp
 string actie = Console.ReadLine();
 bool error = false;
 if (actie == "n")
@@ -297,7 +297,7 @@ if(error)
 We laten de speler dus toe door ``n,o,w,z`` in te typen dat gecontroleerd wordt naar welke nieuwe locatie zal gegaan worden. We passen hierbij de ``huidigeLocatie`` property van de SpelManager aan naar de, al dan niet nieuwe, locatie.
 
 ### ToonActies()
-```java
+```csharp
 public  void ToonActies()
 {
     Console.WriteLine("Mogelijke acties: (typ bijvoorbeeld n indien u naar het noorden wil)");
@@ -314,7 +314,7 @@ public  void ToonActies()
 ### InitialiseerSpel()
 In deze methode definiëren nu de volledige spelinhoud. Wil je dus bijvoorbeeld dit spel uitbreiden met extra kamers en objecten, dan doe je dat in deze methode. Ter illustratie tonen we eerst hoe we 2 locaties aanmaken en deze aan elkaar hangen mbv de Uitgangen (waarbij kamer één zich ten zuiden van kamer 2 bevindt)
 
-```java
+```csharp
 private  void InitialiseerSpel()
 {
     //Maak Locaties
@@ -349,7 +349,7 @@ Vergeet niet op het einde de 2 kamers toe te voegen aan de ``SpelLocatie`` lijst
 Stel dat we even later in een kamer een sleutel plaatsen die als conditie dient om een andere kamer te kunnen openen. We schrijven dan in de ``GameInit()`` methode:
 
 
-```java
+```csharp
     Locatie l6 = new Locatie()
     {
         Title = "Gang",
@@ -380,7 +380,7 @@ Stel dat we even later in een kamer een sleutel plaatsen die als conditie dient 
 We hebben nu de belangrijkste onderdelen geschreven. We tonen daarom een iets uitgebreider spel (demo zeg maar) waarin we alles gecombineerd in actie zien:
 
 
-```java
+```csharp
 private  void InitialiseerSpel()
 {
     //Maak Locaties

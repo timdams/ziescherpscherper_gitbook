@@ -1,7 +1,7 @@
 # Pokémon Extra
 
 Voeg dit toe aan ``Pokemon`` klasse:
-```java
+```csharp
 public override string ToString()
 {
     string toResturn = $"{Naam}(Level:{Level})\n" +
@@ -17,7 +17,7 @@ public override string ToString()
 
 Voeg dit toe aan ``Bookmark``:
 
-```java
+```csharp
 public override string ToString()
 {
     return $"{Naam} ({URL})";
@@ -26,7 +26,7 @@ public override string ToString()
 
 En dit aan ``HiddenBookmark``:
 
-```java
+```csharp
 public override string ToString()
 {
     return base.ToString() + "---HIDDEN---";
@@ -37,7 +37,7 @@ public override string ToString()
 
 ## Deel 1
 
-```java
+```csharp
 class Book
 {
     public int Isbn { get; set; }
@@ -97,7 +97,7 @@ class TextBook : Book
 
 Voeg dit toe aan de klasse ``Book``
 
-```java
+```csharp
 public override string ToString()
 {
     return $"{Title} - {Author}({Isbn}) {Price}";
@@ -106,7 +106,7 @@ public override string ToString()
 
 (PRO) Equals methode. Voeg dit toe aan de klasse ``Book``
 
-```java
+```csharp
 public override bool Equals(object obj)
 {
     Book tocomp = (Book)obj;
@@ -118,7 +118,7 @@ public override bool Equals(object obj)
 
 ## Money, Money, Money
 
-```java
+```csharp
 abstract class Rekening
 {
     private double saldo = 0;
@@ -176,7 +176,7 @@ class ProRekening : SpaarRekening
 
 # Geometric Figures
 
-```java
+```csharp
 abstract class GeometricFigure
 {
     public int Hoogte { get; set; }
@@ -228,7 +228,7 @@ class Driehoek: GeometricFigure
 
 # Dierentuin
 
-```java
+```csharp
 Console.WriteLine("H13 Dierentuin");
 List<dier> dieren = new List<dier>();
 
@@ -274,7 +274,7 @@ while (answer != "q")
 }
 ```
 
-```java
+```csharp
 abstract class dier
 {
     private int gewicht = 50;

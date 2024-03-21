@@ -6,7 +6,7 @@
 # Code
 
 ## BMI Berekenaar
-```java
+```csharp
 Console.WriteLine("Geef je gewicht in kg");
 double gewicht = double.Parse(Console.ReadLine());
 Console.WriteLine("Geef je lengte in cm");
@@ -19,7 +19,7 @@ Console.WriteLine($"Je BMI is {Math.Round(bmi,2)}");
 
 ## Weerstandsberekenaar
 
-```java
+```csharp
 int ring1 = 5;
 int ring2 = 7;
 

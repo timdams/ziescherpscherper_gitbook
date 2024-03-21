@@ -13,7 +13,7 @@ Na Exceptions is het weer tijd voor een andere bekentenis: arrays zijn fijn, maa
 Een array van objecten aanmaken doe je als volgt:
 
 
-```java
+```csharp
 Student[] mijnKlas = new Student[20];
 ```
 
@@ -24,7 +24,7 @@ De ``new`` zorgt er echter enkel voor dat er een referentie naar een nieuwe arra
 
 Willen we nu elementen in deze array plaatsen dan moeten we dit ook expliciet doen en moeten we dus objecten aanmaken en hun referentie in de array bewaren:
 
-```java
+```csharp
 mijnKlas[0] = new Student();
 mijnKlas[2] = new Student();
 ```
@@ -35,7 +35,7 @@ mijnKlas[2] = new Student();
 
 Uiteraard kan dit ook in een loop indien relevant voor de opgave. Volgende voorbeeld vult een reeds aangemaakte array met evenveel objecten als de arrays groot is: 
 
-```java
+```csharp
 for(int i = 0; i < mijnKlas.Length; i++)
 {
     mijnKlas[i] = new Student();
@@ -48,13 +48,13 @@ for(int i = 0; i < mijnKlas.Length; i++)
 Van zodra een object in de array staat kan je deze vanuit de array aanspreken door middel van de index en de *dot*-operator om de de juiste methode of property op het object aan te roepen:
 
 
-```java
+```csharp
 mijnKlas[3].Name = " Duke Peekaboo";
 ```
 
 Uiteraard mag je ook altijd de referentie naar een individueel object in de array kopiëren. Denk er aan dat we de hele tijd met referenties werken en de GC dus niet tussenbeide zal komen zolang er minstens 1 referentie naar het object is. Indien de student op plek 4 in de array aan de start een geboortejaar van 1981 had, dan zal deze op het einde van volgende code als geboortejaar 1983 hebben, daar we op hetzelfde objecten het geboortejaar verhogen in zowel lijn 2 als 3:
 
-```java
+```csharp
 Student tijdelijkeStudent = mijnKlas[3];
 mijnKlas[3].Geboortejaar++;
 tijdelijkeStudent.Geboortejaar++;
@@ -72,7 +72,7 @@ Je kan ook een variant op de object initializer syntax gebruiken waarbij de obje
 
 Volgende voorbeeld maakt een nieuwe array aan die bestaat uit 2 nieuwe studenten, alsook 1 bestaande met de naam ``jos``:
 
-```java
+```csharp
 Student jos = new Student();
 //...
 
@@ -96,7 +96,7 @@ Het kan niet genoeg benadrukt worden dat een goede kennis van de heap, stack en 
 
 Zoals je merkt zal nu de student ``jos`` niet verwijderd worden indien we op gegeven moment schrijven ``jos = null`` daar het object nog steeds bestaat via de array. We kunnen met andere woorden op 2 manieren de student ``jos`` momenteel bereiken, via de array of via ``jos``:
 
-```java
+```csharp
 jos.Naam = "Joske Vermeulen";
 mijnKlas[2].Naam = "Franske Vermeulen"; //we overschrijven "Joske Vermeulen"
 ```
@@ -106,7 +106,7 @@ mijnKlas[2].Naam = "Franske Vermeulen"; //we overschrijven "Joske Vermeulen"
 
 Ook hier kan je met ``?`` een null-check schrijven:
 
-```java
+```csharp
 mijnKlas?[3]?.Name = "Romeo Montague ";
 ```
 
@@ -116,7 +116,7 @@ Merk op dat het eerste vraagteken controleert of de array zelf niet ``null`` is.
 
 Ook arrays mag je als parameters en returntype gebruiken in methoden. De werking hiervan is identiek aan die van value-types zoals volgende voorbeeld toont. Eerst maken we een methode die als resultaat een referentie naar een lege array van 10 studenten teruggeeft.
 
-```java
+```csharp
 static Student[] CreateEmptyStudentArray()
 {
     return new Student[10];
@@ -125,7 +125,7 @@ static Student[] CreateEmptyStudentArray()
 Vervolgens kunnen we deze dan aanroepen en het resultaat (de referentie naar de lege array) toewijzen aan een nieuwe variabele (van hetzelfde datatype, namelijk ``Student[]``):
 
 
-```java
+```csharp
 Student[] resultaat = CreateEmptyStudentArray();
 ```
 

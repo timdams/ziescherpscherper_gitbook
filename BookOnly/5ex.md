@@ -47,7 +47,7 @@ Als de gebruiker dus ``ACGTGGTCTTAA`` heeft ingevoerd moet het resultaat: ``UGCA
 ![](../assets/neotim.png)
 
 Volgende code genereert een beeld zoals dat ook in de cultfilm The Matrix (1999) plaatsvindt. 
-```java
+```csharp
 Random rangen = new Random();
 Console.ForegroundColor = ConsoleColor.Green;
 while (true)

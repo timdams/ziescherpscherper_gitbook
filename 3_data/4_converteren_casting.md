@@ -16,7 +16,7 @@ Wanneer je de waarde van een variabele wilt toekennen aan een variabele van een 
 Volgende code zal bijvoorbeeld een dikke error geven:
 
 
-```java
+```csharp
 int leeftijd = 4.3;
 ```
 
@@ -48,13 +48,13 @@ Je dient enkel aan casting te doen wanneer je aan *narrowing* doet. **Bij narrow
 Casting duid je aan door voor de variabele of literal het datatype tussen haakjes te plaatsen naar wat het omgezet moet worden:
 
 
-```java
+```csharp
 int mijngetal = (int)3.5;
 ```
 
 of
 
-```java
+```csharp
 double kommagetal = 13.8;
 int kommaNietWelkom = (int)kommagetal;
 ```
@@ -74,7 +74,7 @@ Casting doe je wanneer je een variabele wilt toekennen aan een andere variabele 
 
 Bekijk eens het volgende voorbeeld:
 
-```java
+```csharp
 double hoofdMeting;
 int secundaireMeting;
 hoofdMeting = 20.4;
@@ -87,7 +87,7 @@ Dit zal niet gaan. Je probeert namelijk een waarde van het type double in een va
 
 En je lost dit op door voor de variabele die tijdelijk dienst moet doen als een ander type, het nieuwe type, tussen ronde haakjes te typen, als volgt:
 
-```java
+```csharp
 double hoofdMeting;
 int secundaireMeting; 
 hoofdMeting = 20.4;
@@ -105,7 +105,7 @@ Merk op dat `hoofdMeting` nooit van datatype is veranderd; enkel de inhoud ervan
 Stel dat ``tempGisteren`` en ``tempVandaag`` van het type ``int`` zijn, maar dat we nu de gemiddelde temperatuur willen weten. De formule voor gemiddelde temperatuur over 2 dagen is:
 
 
-```java
+```csharp
 int tempGemiddeld = (tempGisteren + tempVandaag)/2;
 ```
 
@@ -116,7 +116,7 @@ Het probleem is dat het gemiddelde van 2 getallen niet noodzakelijk een geheel g
 Hoe krijgen we de correctere uitslag te zien? Eens testen wat er gebeurt als we ``tempGemiddeld`` als ``double`` declareren:
 
 
-```java
+```csharp
 double tempGemiddeld = (tempGisteren + tempVandaag) / 2;
 ```
 
@@ -125,7 +125,7 @@ Als we dit testen zal nog steeds de waarde ``22.0`` aan ``tempGemiddeld`` toegew
 We moeten dus ook de rechterkant van de toekenning als ``double`` beschouwen. *We doen dit, zoals eerder vermeld, door middel van **casting***, als volgt:
 
 
-```java
+```csharp
 double tempGemiddeld = ((double)tempGisteren + (double)tempVandaag) / 2;
 ```
 
@@ -134,7 +134,7 @@ Nu zal ``tempGemiddeld`` wel de waarde ``22.5`` bevatten.
 {% hint style='warning' %}
 Er zijn ook andere oplossingen die het gewenste resultaat geven, namelijk:
 
-```java
+```csharp
 (tempGisteren + tempVandaag)/2.0;
 ((double)(tempGisteren + tempVandaag))/2;
 ((double)tempGisteren + tempVandaag)/2;
@@ -154,7 +154,7 @@ Let echter op dat niet alle oplossingen bij dit soort oefeningen steeds dezelfde
 
 {% hint style='danger' %}
 Merk op dat er een subtiel verschil is tussen volgende 2 lijnen code:
-```java
+```csharp
 (double)(tempGisteren + tempVandaag) / 2; //geeft 22.5
 (double)((tempGisteren + tempVandaag) / 2); //geeft 22
 ```
@@ -167,7 +167,7 @@ In het eerste zullen we het resultaat van de som naar ``double`` omzetten. In he
 
 Casting is niet nodig als je aan **widening** doet: een *kleiner* type in een *groter* type steken (met groter/kleiner wordt de geheugengrootte van het datatype bedoeld), als volgt:
 
-```java
+```csharp
 int hoofdMeting;
 double secundaireMeting;
 hoofdMeting = 20;
@@ -181,7 +181,7 @@ Er gaat **geen** inhoud verloren echter. Je hoeft dus niet expliciet de casting-
 Merk op dat je perfect casting hier mag gebruiken, maar daar de conversie impliciet zonder problemen kan plaatsvinden hoeft dit dus niet. Deze code is echter even juist (en soms een veilige gewoonte om te doen, better safe than sorry):
 
 
-```java
+```csharp
 secundaireMeting = (double) hoofdMeting;
 ```
 
@@ -196,7 +196,7 @@ Al deze methoden zitten binnen de **Convert**-bibliotheek van .NET.
 
 Het gebruik hiervan is zeer eenvoudig. Enkele voorbeelden:
 
-```java
+```csharp
 int getal = Convert.ToInt32(3.2); //double to int
 double anderGetal = Convert.ToDouble(5); //int to double
 bool isWaar = Convert.ToBoolean(1); //int to bool
@@ -229,7 +229,7 @@ Ieder ingebouwd datatype in C# heeft een ``.Parse()`` methode die je kan aanroep
 
 Voorbeeld van parsing:
 
-```java
+```csharp
 int numVal = Int32.Parse("-105");
 Console.WriteLine(numVal);
 ```

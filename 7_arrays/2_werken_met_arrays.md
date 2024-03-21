@@ -8,7 +8,7 @@ Om deze methoden in C# 9.0 of ouder te kunnen gebruiken moet je bovenaan je file
 
 
 
-```java
+```csharp
 Console.WriteLine(getallen.Sum());
 ```
 
@@ -25,6 +25,6 @@ Al deze methoden hier beschrijven zal ons te ver nemen. De volgende methoden zij
 Volgende code geeft bijvoorbeeld het grootste getal terug uit een array genaamd "leeftijden":
 
 
-```java
+```csharp
 int oudsteleeftijd = leeftijden.Max();
 ```

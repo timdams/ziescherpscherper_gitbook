@@ -2,7 +2,7 @@
 
 Dankzij polymorfisme hebben we nu met de ``is`` en ``as`` keywords handige hulpmiddelen om meer "generieke" methoden te schrijven. Herinner je je nog de ``Equals`` methode die we schreven om 2 studenten te vergelijken toen we leerden dat alle klassen van ``System.Object`` overerfden? Laten we deze code er nog eens bijnemen en verbeteren:
 
-```java
+```csharp
 //In de Student class
 public override bool Equals(Object o)
 {  
@@ -13,7 +13,7 @@ public override bool Equals(Object o)
 
 De eerste lijn waarin we ``o`` casten naar een student kan natuurlijk mislukken. Het is dan ook veiliger om eerst te controleren of we wel mogen casten, voor we het effectief doen. Hierdoor schrijven we een minder foutgevoelige methode:
 
-```java
+```csharp
 //In de Student class
 public override bool Equals(Object o)
 {  
@@ -27,7 +27,7 @@ public override bool Equals(Object o)
 ```
 
 Of we kunnen ook het volgende doen:
-```java
+```csharp
 //In de Student class
 public override bool Equals(Object o)
 {  

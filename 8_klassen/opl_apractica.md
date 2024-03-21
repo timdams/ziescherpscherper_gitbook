@@ -2,7 +2,7 @@
 
 ## Klokje
 
-```java
+```csharp
 while (true)
 {
     Console.WriteLine(DateTime.Now.ToString("HH:mm:ss"));
@@ -13,7 +13,7 @@ while (true)
 
 ## Verjaardag
 
-```java
+```csharp
 Console.WriteLine("Geef je verjaardag (formaat: d/m . Bv 18/3)");
 DateTime verj = DateTime.Parse(Console.ReadLine());
 
@@ -30,7 +30,7 @@ Console.WriteLine($"Je verjaart over {dagenover.Days} dagen");
 
 ## RapportModule
 
-```java
+```csharp
 class Rapport
 {
     public int Percentage {get;set;}
@@ -51,7 +51,7 @@ class Rapport
 
 Gebruik/test:
 
-```java
+```csharp
 Rapport tim = new Rapport();
 tim.Percentage = 78;
 tim.PrintGraad();
@@ -59,7 +59,7 @@ tim.PrintGraad();
 
 ## Nummers
 
-```java
+```csharp
 class Nummers
 {
     public int Getal1 { get; set; }
@@ -83,7 +83,7 @@ class Nummers
 
 ## Figure
 
-```java
+```csharp
 class Rechthoek
 {
     private int lengte = 1;
@@ -112,7 +112,7 @@ Driehoek is quasi hetzelfde, met uiteraard een andere berekening van de oppervla
 
 ## Studentklasse
 
-```java
+```csharp
 enum Klassen { EA1, EA2, EA3}
 
 class Student
@@ -147,7 +147,7 @@ class Student
 
 ## PizzaTime
 
-```java
+```csharp
     class Pizza
     {
 		private string toppings;

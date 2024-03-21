@@ -12,7 +12,7 @@ Bepaalde code zal je vaak opnieuw schrijven. Er zitten in VS tal van shortcuts o
 
 # Regions
 Je kan delen van je code in handige inklapbare secties zetten door deze als regions aan te duiden, als volgt:
-```java
+```csharp
 #region My Epic code
 Console.WriteLine("I am the greatest!");
 Console.WriteLine("Echt waar!");
@@ -24,7 +24,7 @@ Je zal vanaf dan in Visual Studio rechts van de start van de region een minnetje
 # Bereik in code weten (Pro-kennis)
 Het bereik van  datatypen is weliswaar opgegeven. Maar het is belangrijk om weten dat deze ook in de compiler gekend is. Het volgende voorbeeld toont dit aan:
 
-```java
+```csharp
 string zinnetje = "Het bereik van het type double is:";
 Console.WriteLine(zinnetje + double.MinValue + " en " + double.MaxValue);
 ```

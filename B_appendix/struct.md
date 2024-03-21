@@ -4,7 +4,7 @@
 
 Sinds C# 9.0 is het ook mogelijk om zogenaamde ``record``-klassen te maken. Erg vaak schrijf je klassen die niet meer moeten doen dan wat data eenmalig wegschrijven en onthouden,  dat je dan vervolgens via readonly getters kunt uitlezen, zoals:
 
-```java
+```csharp
 public class Student
 {
     public Student(string naam, int geboorteJaarIn, bool isIngeschreven)
@@ -22,7 +22,7 @@ public class Student
 
 Wanneer je een dergelijke klasse nodig hebt kan dit sinds C# 9.0 vereenvoudigd geschreven worden als een ``record``:
 
-```java
+```csharp
 public record Student
 {
     public string Naam { get; init; }
@@ -33,7 +33,7 @@ public record Student
 
 Het ``init`` keyword geeft aan dat deze auto-property eenmalig kunnen ge**set** worden bij het aanmaken van het record via de object initializer syntax:
 
-```java
+```csharp
 Student eenNieuweStudent = new Student 
             {   Naam = "Tim", 
                 Geboortejaar = 1981,

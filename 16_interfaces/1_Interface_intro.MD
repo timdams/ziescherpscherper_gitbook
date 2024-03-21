@@ -33,7 +33,7 @@ Een interface is dus eigenlijk als het ware een klein stukje papier waar je op z
 
 Stel dat we deze  interface kunnen we gebruiken in een spel vechtspel tussen karakters, waarin sommige van de klassen ook aan de Superhelden-interface moeten voldoen. Volgende code toont hoe we een interface definiëren in C#:
 
-```java
+```csharp
 interface ISuperHeld
 {
     void SchietLasers();
@@ -78,7 +78,7 @@ Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen, wil he
 We kunnen nu aan klassen de stempel ``ISuperHeld`` geven zodat programmeurs weten dat die klasse gegarandeerd de methoden ``SchietLasers``, ``VerlaagKracht`` en de property ``Power`` zal hebben.
 
 Volgende code toont dit. We plaatsen de interface (of interfaces) die de klasse beloofd te hebben achter het dubbele punt bovenaan. 
-```java
+```csharp
 class Zorro: ISuperHeld
 {
     public void RoepPaard(){...}
@@ -101,7 +101,7 @@ Zolang de klasse ``Zorro`` niet exact de interface inhoud implementeert zal deze
 De klasse in dit voorbeeld blijft wel overerven van ``System.Object``. Het is ook perfect mogelijk om een klasse te hebben die én overerft van een specifieke klasse én meerdere interfaces heeft:
 
 
-```java
+```csharp
 class DarthVader: StarWarsCharacter, IForceUser, IPilot
 ```
 
@@ -164,14 +164,14 @@ We kunnen ``is`` gebruiken om te weten of een klasse een specifieke interface he
 Stel dat we volgende klassen hebben waarbij de ``Boek`` klasse de ``IVerwijderbaar`` interface implementeert:
 
 
-```java
+```csharp
 interface IVerwijderbaar{ ... };
 class Boek: IVerwijderbaar { ... };
 class Persoon { ... };
 ```
 
 We kunnen nu met ``is`` objecten bevragen of ze de interface in kwestie hebben:
-```java
+```csharp
 Persoon tim = new Persoon();
 Boek gameOfThrones = new Boek();
 
@@ -189,7 +189,7 @@ De output zal worden: ``Ik kan Game of Thrones verwijderen``.
 
 Net zoals bij onze voorbeelden over polymorfisme en ``is`` zal de kracht van interfaces pas zichtbaar worden wanneer we met arrays of lijsten van objecten werken. Indien deze lijst een bont allegaartje objecten bevat, allemaal met specifieke parents én interfaces, dan kunnen we weer met ``is`` bijvoorbeeld alle objecten benaderen die een bepaalde interface hebben:
 
-```java
+```csharp
 foreach(var persoon in WerkNemers)
 {
     if(persoon is IManager)
@@ -203,7 +203,7 @@ foreach(var persoon in WerkNemers)
 
 ### Meerder interfaces
 Een nadeel van overerving is dat een klasse maar van 1 klasse kan overerven. Een klasse mag echter wel meerdere interfaces met zich meedragen:
-```java
+```csharp
 interface ISuperHeld{...}
 interface ICoureur{...} 
 class Man {...}
@@ -223,7 +223,7 @@ Merk op dat de volgorde belangrijk is: eerst plaats je de klasse waarvan wordt o
 Ook mogen interfaces van elkaar overerven:
 
 
-```java
+```csharp
 interface IGod:ISuperHeld
 { }
 ```

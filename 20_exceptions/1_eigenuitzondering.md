@@ -11,7 +11,7 @@ Het is dus ook logisch dat je in je code **(al dan niet zelfgemaakte) uitzonderi
 
 Een voorbeeld van een bestaand ``Exception`` type gebruiken:
 
-```java
+```csharp
 static int ResultaatBerekening(int getal)
 {
     if (getal != 0)
@@ -48,7 +48,7 @@ De lijn ``throw new DivideByZeroException("BOEM. ZWART GAT!");`` zorgt er dus vo
 
 Je kan ook eigen klassen overerven van ``Exception`` zodat je eigen uitzonderingen kan maken. Je maakt hiervoor gewoon een nieuwe klasse aan die je laat overerven van de Exception-klasse. Een voorbeeld:
 
-```java
+```csharp
 class Timception: Exception
 {
     public override string ToString()
@@ -68,7 +68,7 @@ Om deze exception nu zelf op te werpen gebruiken we het keyword **``throw``** ge
 
 In volgende voorbeeld gooien we onze eigen exception op een bepaald punt in de code op en vangen deze dan op:
 
-```java
+```csharp
 static void Main(string[] args)
 {
     try

@@ -141,7 +141,7 @@ Soms wil je misschien extra commentaar bij je code zetten. Als je dat gewoon zou
 
 Eén lijn commentaar geef je aan door de lijn te starten met twee voorwaartse slashes ``//``. Uiteraard mag je ook meerdere lijnen op deze manier in commentaar zetten. Zo wordt dit ook vaak gebruikt om tijdelijk een stuk code "uit te schakelen". Ook mogen we commentaar *achter* een stuk C# code plaatsen (zie voorbeeld hieronder). ``//`` zal alle tekens die volgen tot aan de volgende enter in commentaar zetten:
 
-```java
+```csharp
 //De start van het programma
 int getal = 3;
 //Nu gaan we rekenen
@@ -154,7 +154,7 @@ Console.WriteLine(result); //We tonen resultaat op scherm: 15
 
 We kunnen een stuk tekst als commentaar aangeven door voor de tekst ``/*`` te plaatsen en ``*/`` achteraan. Een voorbeeld:
 
-```java
+```csharp
 /*
     Een blok commentaar
     Een heel verhaal, dit wordt mooi

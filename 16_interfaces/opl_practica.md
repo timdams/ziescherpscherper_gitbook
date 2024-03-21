@@ -2,7 +2,7 @@
 
 # Figures with interfaces
 
-```java
+```csharp
 class Rechthoek: IComparable
 {
     //Alle vorige zaken
@@ -22,7 +22,7 @@ class Rechthoek: IComparable
 
 # Carbon footprint
 
-```java
+```csharp
 
 List<object> vervuilers = new List<object>();
 vervuilers.Add(new Plant());
@@ -59,7 +59,7 @@ if(maxindex>-1)
 ```
 
 
-```java
+```csharp
 class Huis : ICarbonFootPrint
 {
     public int Volume { get; set; }

@@ -22,7 +22,7 @@ Stel je voor dat we het copyright karakter wensen te gebruiken (de letter c in e
 Kopieer het karakter zelf en plaats het in je code waar je het nodig hebt, bijvoorbeeld:
 
 
-```java
+```csharp
 Console.WriteLine("<plak hier je speciale teken>"); 
 ```
 
@@ -33,7 +33,7 @@ Merk op dat niet alle lettertypes dit karakter kennen en dus mogelijk als een vi
 Casting leggen we pas in het volgende hoofdstuk uit, maar het kan geen kwaad om al eens een voorproefje hiervan te krijgen. 
 Noteer de hexadecimale code van het karakter dat in de tabel staat. In dit geval is de code 0x00A9. Om dit teken te tonen schrijf je dan:
 
-```java
+```csharp
 char copyright = (char)0x00A9;
 Console.WriteLine(copyright);
 ```
@@ -43,7 +43,7 @@ In C# schrijf je hexadecimale getallen als volgt als je ze rechtstreeks in een s
 Wil je dus bovenstaande teken schrijven dan kan dat ook als volgt:
 
 
-```java
+```csharp
 Console.WriteLine("\u00A9");
 ```
 
@@ -59,7 +59,7 @@ Je kan het resultaat eenvoudig naar je klembord kopiëren en vervolgens in je C#
 
 Bijvoorbeeld:
 
-```java
+```csharp
 string myname = @"
 ___________________   
 \__    ___/\______ \  
@@ -74,7 +74,7 @@ Console.WriteLine(myname);
 Zowel de $-notatie (voor string interpolatie) als het @-teken kan je gecombineerd gebruiken bij een string:
 
 
-```java
+```csharp
 Console.WriteLine($@"1/1={1+1}. \tGeen tab");
 ```
 
@@ -90,7 +90,7 @@ Dit geeft als output (\t wordt door het apenstaartje genegeerd):
 {% hint style='tip' %}
 In de vorige sectie legden we uit dat we tekst kunnen formateren als een geld bedrag m.b.v. ``Console.WriteLine($"{12.3456:C}");``. Het probleem was dat het euro-teken als een ``?`` op het scherm verscheen. Dit is omdat het euro-teken een nieuwe karakter is en dus binnen de UNICODE tabellen bestaat, maar niet binnen de klassieke ASCII-tabel. Willen we dit teken dus gebruiken dan moeten we de regel `Console.OutputEncoding = System.Text.Encoding.UTF8;` gebruiken:
 
-```java
+```csharp
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.WriteLine($"{12.3456:C}")
 ```

@@ -13,7 +13,7 @@ Ontwerp een klasse ``Rapport`` die je zal tonen wat je graad is gegeven een bepa
 
 Test je klasse door enkele objecten in je ``main`` en te onderzoeken of deze de juiste graden op het scherm printen. Bijvoorbeeld:
 
-```java
+```csharp
 Rapport mijnpunten = new Rapport();
 mijnpunten.Percentage = 65;
 mijnpunten.PrintGraad();
@@ -41,7 +41,7 @@ Toon in je ``main`` aan dat je code werkt (op de volgende pagina tonen we een vo
 
 Volgende code zou bijvoorbeeld onderstaande output moeten geven:
 
-```java
+```csharp
 Nummers paar1 = new Nummers();
 paar1.Getal1 = 12;
 paar1.Getal2 = 34;
@@ -87,7 +87,7 @@ Pas de ``HaalGeldAf`` methode aan zodat als returntype het bedrag (``int``) word
 
 Maak 2 instanties van het type ``Rekening`` aan en toon aan dat je geld van de ene Rekening aan de andere kunt geven, als volgt:
 
-```java
+```csharp
 //rekening 2 geeft 300 euro aan rekening 1
 rekening1.StortGeld(rekening2.HaalGeldAf(300));
 ```

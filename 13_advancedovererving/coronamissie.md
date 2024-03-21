@@ -39,7 +39,7 @@ Iedere groene klasse heeft:
 # Maak een enclave
 
 Test of je enclave werkt door volgende code in je main te steken:
-```java
+```csharp
 List<Gebouw> enclave = new List<Gebouw>();
 enclave.Add(new Hospitaal("Sint Vincentius",4, 5));
 enclave.Add(new Woonst("Tims shack",1, 1));

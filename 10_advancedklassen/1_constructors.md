@@ -18,7 +18,7 @@ Uiteraard is dit niet alles. In dit hoofdstuk bekijken we:
 Objecten die je aanmaakt komen niet zomaar tot leven. Nieuwe objecten maken we aan met behulp van de ``new`` operator zoals we al gezien hebben:
 
 
-```java
+```csharp
 Student frankVermeulen = new Student();
 ```
 
@@ -72,7 +72,7 @@ De default constructor is een constructor die geen extra parameters aanvaardt. E
 
 Stel dat we een klasse ``Student`` hebben:
 
-```java
+```csharp
 class Student
 {
     public int UurVanInschrijven {private set; get;}
@@ -82,7 +82,7 @@ class Student
 
 We willen telkens een Student-object wordt aangemaakt bijhouden op welk uur van de dag dit plaatsvond. Eerst schrijven de default constructor, deze ziet er als volgt uit:
 
-```java
+```csharp
 class Student
 {
     public Student()
@@ -97,7 +97,7 @@ Zoals verteld moet de constructor de naam van de klasse hebben, ``public`` zijn 
 
 Vervolgens voegen we de code toe die we nodig hebben:
 
-```java
+```csharp
 class Student
 {
     public Student()
@@ -113,7 +113,7 @@ class Student
 Telkens we nu een object zouden aanmaken met ``new Student()`` zal deze een ``UurVanInschrijven`` hebben dat afhangt van het moment waarop we de code uitvoeren. Beeld je in dat we dit programma uitvoeren om half twaalf 's morgens:
 
 
-```java
+```csharp
 Student eenStudent = new Student();
 ```
 
@@ -123,7 +123,7 @@ Dan zal de property ``UurVanInschrijven`` van ``eenStudent`` op ``11`` worden in
 {% hint style='tip' %}
 Constructors zijn soms nogal zwaarwichtig indien je enkel een eenvoudige auto-property een startwaarde wenst te geven. Wanneer dat het geval is mag je dit ook als volgt doen:
 
-```java
+```csharp
 class Student
 {
     public int UurVanInschrijven {private set; get;} = 2;

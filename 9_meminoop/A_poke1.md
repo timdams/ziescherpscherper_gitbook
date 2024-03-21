@@ -10,7 +10,7 @@ Maak een klasse ``Meetlat``. Via een write-only property BeginLengte kan de gebr
 
 Voorbeeld gebruik van klasse:
 
-```java
+```csharp
 Meetlat mijnLat = new Meetlat();
 mijnLat.BeginLengte = 2;
 Console.WriteLine($"{mijnLat.LengteInM} meter is {mijnLat.LengteInVoet} voet.");

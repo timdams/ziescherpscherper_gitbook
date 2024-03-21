@@ -8,7 +8,7 @@ In deze sectie duiken we dieper in de ``String`` klasse om aan te tonen dat er t
 
 Aan het einde van dit hoofdstuk willen we een csv-bestand (comma separated value) splitsen. De ``Split`` methode laat toe een string te splitsen op een bepaald teken. Het resultaat is steeds een **array van strings**.
 
-```java
+```csharp
 string data = "12,13,20";
 string[] gesplitst = data.Split(',');
 
@@ -27,7 +27,7 @@ Via ``Join`` kunnen we een array van strings terug samenvoegen. Het resultaat is
 Volgende voorbeeld zal de eerder array van het vorige voorbeeld opnieuw samenvoegen maar nu met telkens een ``;`` tussen iedere string:
 
 
-```java
+```csharp
 string joined = String.Join(";", gesplitst);
 ```
 
@@ -41,7 +41,7 @@ De ``System.IO`` namespace bevat tal van nuttige methoden en klassen om met best
 
 Via ``System.File.ReadAllLines()`` kunnen we een tekstbestand uitlezen. De methode geeft een array van string terug. Per lijn die eindigt met een newline (``\r\n``) zal een nieuwe string aan de array toegevoegd worden.
 
-```java
+```csharp
 string[] lines = File.ReadAllLines(@"c:\mypoem.txt");
 for (int i = 0; i < lines.Length; i++)
 {
@@ -64,7 +64,7 @@ Stoffels;José;1950
 
 Volgende code zal dit bestand uitlezen en de individuele data op het scherm tonen:
 
-```java
+```csharp
 string[] lines = File.ReadAllLines(@"c:\soccerstars.csv");
 for (int i = 0; i < lines.Length; i++)
 {
@@ -84,13 +84,13 @@ for (int i = 0; i < lines.Length; i++)
 Vaak zal je een online bestand willen verwerken. De ``WebClient`` klasse heeft tal van manieren om met online bronnen te werken. Deze klasse bevindt zich in de ``System.Net`` namespace en vereist dus dat je bovenaan je code volgende lijn toevoegt:
 
 
-```java
+```csharp
 using System.Net
 ```
 
 Volgende code toont hoe we een bestand van een specifieke locatie kunnen downloaden:
 
-```java
+```csharp
 WebClient wc = new WebClient();
 string csv = wc.DownloadString("www.fakeaddress.com/mydata.csv");
 ```
@@ -98,13 +98,13 @@ string csv = wc.DownloadString("www.fakeaddress.com/mydata.csv");
 Dit bestand is 1 platte tekst. Willen we deze vervolgens verwerken dan moeten we deze splitsen in lijnen:
 
 
-```java
+```csharp
 string[] split = csv.Split('\n');
 ```
 
 We hebben nu een ``for`` nodig die lijn per lijn zal splitsen:
 
-```java
+```csharp
 for (int i = 1; i < splitted.Length; i++)
 {
     string[] lijnsplit = splitted[i].Split(',');

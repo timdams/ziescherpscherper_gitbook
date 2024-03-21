@@ -7,7 +7,7 @@ Een nadeel van die voorgaande aanpak is dat al onze Ministers maar 1 "job" kunne
 Via interfaces kunnen we dit oplossen. Een ``Minister`` gaan we dan eerder als een "bij-job" beschouwen en niet de hoofdreden van een klasse.
 
 We definiëren daarom eerst een nieuwe interface ``IMinister``:
-```java
+```csharp
 interface IMinister
 {
     void Adviseer();
@@ -16,7 +16,7 @@ interface IMinister
 
 Vanaf nu kan eender *wie* die deze interface implementeert de ``EersteMinister`` advies geven. Hoera! En daarnaast kan die klasse echter ook nog tal van andere zaken doen. Beeld je in dat een CEO van een bedrijf ook minister bij de EersteMinister wilt zijn, zoals deze:
 
-```java
+```csharp
 class Ceo
 {
     public void MaakJaarlijkseOmzet()
@@ -32,7 +32,7 @@ class Ceo
 
 Nu we de interface ``IMinister`` hebben kunnen we deze klasse aanvullen met deze interface zonder dat de bestaande werking van de klasse moet aangepast worden:
 
-```java
+```csharp
 class Ceo: IMinister
 { 
     public void Adviseer()
@@ -45,7 +45,7 @@ De CEO kan dus z'n bestaande job blijven uitoefenen maar ook als Minister optred
 
 Ook de ``EersteMinister`` moet aangepast worden om nu met een lijst van ``IMinister`` ipv ``Minister`` te werken. Dankzij, wederom, polymorfisme is dat erg eenvoudig! 
 
-```java
+```csharp
 public class MisterEersteMinister
 {
     public void Regeer()
@@ -62,7 +62,7 @@ public class MisterEersteMinister
 
 De eerder beschreven ``MinisterVanMilieu``, ``MinisterBZ`` en ``MinisterVanEconomie`` dienen ook niet meer van de abstracte klasse ``Minister`` (deze zou je kunnen verwijderen) over te erven en kunnen gewoon de interface implementeren. Enkel lijn 1 moet hierbij aangepast worden:
 
-```java
+```csharp
 class MinisterVanMilieu:IMinister
 {
     public void Adviseer()

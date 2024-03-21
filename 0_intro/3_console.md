@@ -5,7 +5,7 @@ Met de Console kan je met een handvol methoden reeds een aantal interessante din
 
 Zo kan je bijvoorbeeld input van de gebruiker inlezen en bewaren in een variabele als volgt:
 
-```java
+```csharp
 string result;
 result = Console.ReadLine();
 ```
@@ -29,7 +29,7 @@ Tweede lijn code:
 
 Je programma zou nu moeten zijn:
 
-```java
+```csharp
 
 Console.WriteLine("Hello World!");
 Console.WriteLine("Hoi, ik ben het!");
@@ -49,7 +49,7 @@ Je kan gratis op Memrise deze cursus dagelijks instuderen, de ideale manier om s
 
 Een variabele is een geheugenplekje (met een naam) waar we zaken in kunnen bewaren. In het volgende hoofdstuk gaan we zo vaak het woord variabele vertellen dat je oren en ogen er van gaan bloeden, dus trek je nu nog niet te veel aan van dit woord. We kunnen nu invoer van de gebruiker, die we hebben bewaard in de variabele ``result``, gebruiken en tonen op het scherm. 
 
-```java
+```csharp
 Console.WriteLine("Dag");
 Console.WriteLine(result);
 Console.WriteLine("hoe gaat het met je?");
@@ -63,7 +63,7 @@ Met andere woorden: de ``WriteLine`` methode zal op het scherm tonen wat de gebr
 
 Je volledige programma ziet er dus nu zo uit:
 
-```java
+```csharp
 Console.WriteLine("Hello World!");
 Console.WriteLine("Hoi, ik ben het!");
 Console.WriteLine("Wie ben jij?!");
@@ -118,7 +118,7 @@ De ``WriteLine``-methode zal steeds een line break (een 'enter') aan het einde v
 
 Vervang daarom eens in de laatste 3 lijnen code in je project ``WriteLine`` door ``Write``:
 
-```java
+```csharp
 Console.Write("Dag");
 Console.Write(result);
 Console.Write("hoe gaat het met je?");
@@ -126,7 +126,7 @@ Console.Write("hoe gaat het met je?");
 
 Voer je programma uit en test het resultaat. Je krijgt nu:
 
-```java
+```csharp
 Hoi, ik ben het!
 Wie ben jij?!
 tim [enter]
@@ -135,7 +135,7 @@ Dagtimhoe gaat het met je?
 
 Wat is er "verkeerd" gelopen? Al je tekst van de laatste lijn plakt zo dicht bij elkaar? Inderdaad, we zijn spaties vergeten toe te voegen. Spaties zijn ook tekens die op scherm moeten komen (ook al zien we ze niet) en je dient dus binnen de aanhalingstekens spaties toe te voegen. Namelijk:
 
-```java
+```csharp
 Console.Write("Dag ");
 Console.Write(result);
 Console.Write(" hoe gaat het met je?");
@@ -167,7 +167,7 @@ Let goed op hoe je spaties gebruikt bij ``WriteLine``. **Indien je spaties buite
 
 Hier een fout gebruik van spaties (de code zal werken maar je spaties worden genegeerd):
 
-```java
+```csharp
 //we visualiseren de spaties even als liggende streepjes in volgende voorbeeld
 Console.Write("Dag"_);  
 Console.Write(result_);
@@ -176,7 +176,7 @@ Console.Write("hoe gaat het met je?");
 
 En een correct gebruik:
 
-```java
+```csharp
 Console.Write("Dag_");
 Console.Write(result);
 Console.Write("_hoe gaat het met je?");
@@ -191,7 +191,7 @@ Console.Write("_hoe gaat het met je?");
 We kunnen dit allemaal nog een pak korter tonen zonder dat de code onleesbaar wordt. De plus-operator (``+``) in C# kan je namelijk gebruiken om tekst aan elkaar te plakken. De laatste 3 lijnen code kunnen dan korter geschreven worden als volgt:
 
 
-```java
+```csharp
 Console.WriteLine("Dag " + result + " hoe gaat het met je?");
 ```
 
@@ -200,14 +200,14 @@ Merk op dat ``result`` dus NIET tussen aanhalingstekens staat, in tegenstelling 
 Bekijk zelf eens wat het verschil wordt wanneer je volgende lijn code:
 
 
-```java
+```csharp
 Console.WriteLine("Dag "+ result + " hoe gaat het met je?");
 ```
 
 Vervangt door: 
 
 
-```java
+```csharp
 Console.Write("Dag "+ "result" + " hoe gaat het met je?");
 ```
 
@@ -215,7 +215,7 @@ Console.Write("Dag "+ "result" + " hoe gaat het met je?");
 
 Als je meerdere inputs van de gebruiker wenst te bewaren dan zal je meerdere geheugenplekken (variabelen) nodig hebben. Bijvoorbeeld:
 
-```java
+```csharp
 Console.WriteLine("Geef leeftijd");
 string leeftijd; //eerste variabele aanmaken
 leeftijd = Console.ReadLine();
@@ -227,7 +227,7 @@ adres = Console.ReadLine();
 Je mag echter ook de variabelen al vroeger aanmaken. In C# zet men de geheugenplek creatie zo dicht mogelijk bij de code waar je die plek gebruikt (zoals vorig voorbeeld), maar dat is geen verplichting. Dit mag dus ook:
 
 
-```java
+```csharp
 string leeftijd; //eerste variabele aanmaken
 string adres; //tweede variabele aanmaken
 Console.WriteLine("Geef leeftijd");

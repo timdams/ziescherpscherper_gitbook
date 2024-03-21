@@ -16,7 +16,7 @@ In het Star Wars universum heb je goede oude "Darth Vader". Hij behoort tot de m
 
 
 We kunnen voorgaande als volgt schrijven:
-```java
+```csharp
 class SithLord
 {
     private int energie;
@@ -26,7 +26,7 @@ class SithLord
 
 **Het is uit den boze dat we eenvoudige instantievariabelen (``energie`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
 
-```java
+```csharp
 SithLord palpatine = new SithLord();
 Console.WriteLine(palpatine.sithName); //dit zal niet werken dankzij private
 ```
@@ -58,7 +58,7 @@ Properties herken je aan de ``get`` en ``set`` keywords in een klasse. Een prope
 
 In volgende voorbeeld maken we een property, genaamd ``Energie`` aan. Deze doet niets anders dan rechtstreeks toegang tot de instantievariabele ``energie`` te geven:
 
-```java
+```csharp
 class SithLord
 {
     private int energie;
@@ -81,7 +81,7 @@ class SithLord
 
 Dankzij voorgaande code kunnen we nu buiten het object de property ``Energie`` gebruiken als volgt:
 
-```java
+```csharp
 SithLord Vader = new SithLord();
 Vader.Energie = 20; //set
 Console.WriteLine($"Vaders energie is {Vader.Energie}"); //get
@@ -106,7 +106,7 @@ Indien je de property gaat gebruiken om een instantievariabele naar buiten besch
 
 Indien je wenst dat de property data **naar buiten** kan sturen, dan schrijven we de get-code. Binnen de accolades van de ``get`` schrijven we wat er naar buiten moet gestuurd worden.
 
-```java
+```csharp
 get
 {
     return energie;
@@ -127,7 +127,7 @@ We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er 
 
 In het set-gedeelte schrijven we de code die we moeten hanteren indien men van buiten een waarde aan de property wenst te geven om zo een instantievariabele aan te passen. 
 
-```java
+```csharp
 set
 {
     energie = value;
@@ -148,7 +148,7 @@ We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energi
 {% hint style='danger' %}
 Je bent niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele (**maar dit wordt ten stelligste afgeraden**). Dit mag dus ook:
 
-```java
+```csharp
 class Auto
 {
     private int benzinePeil;
@@ -177,7 +177,7 @@ De full property ``Energie`` heeft nog steeds het probleem dat we negatieve waar
 
 We kunnen in de ``set`` code extra controles inbouwen. Daar de ``value`` variabele de waarde krijgt die we aan de property van buiten af geven, kunnen we deze dus controleren en , indien nodig, bijvoorbeeld niet toewijzen. Volgende voorbeeld zal enkel de waarde toewijzen indien deze groter of gelijk aan 0 is:
 
-```java
+```csharp
 public int Energie
 {
     get
@@ -224,7 +224,7 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 Dit soort properties zijn handig indien je informatie naar een object wenst te sturen dat niet mag of moet uitgelezen kunnen worden. Het meest typische voorbeeld is een property ``Pincode`` van een klasse ``BankRekening``. 
 
 
-```java
+```csharp
    public int Energie
     {
         set
@@ -241,7 +241,7 @@ We kunnen dus enkel ``energie`` een waarde geven, maar niet van buiten uitlezen.
 #### Read-only property
 Letterlijk het omgekeerde van een write-only property. Deze gebruik je vaak wanneer je informatie uit een object wil kunnen uitlezen uit een instantievariabele dat NIET door de buitenwereld mag aangepast worden.
 
-```java
+```csharp
    public int Energie
     {
         get
@@ -265,7 +265,7 @@ Het ``readonly`` keyword heeft andere doelen en wordt NIET gebruikt in C# om een
 
 Soms gebeurt het dat we van enkel voor de buitenwereld de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
 
-```java
+```csharp
    public int Energie
     {
         get
@@ -283,7 +283,7 @@ Soms gebeurt het dat we van enkel voor de buitenwereld de property read-only wil
 Van buiten zal enkel code werken die de ``get`` van deze property aanroept, bijvoorbeeld:
 
 
-```java
+```csharp
 Console.WriteLine(palpatine.Energie);
 ```
 
@@ -305,7 +305,7 @@ Lukt het een beetje? Properties zijn in het begin wat overweldigend, maar geloof
 
 **Nu even goed opletten**: indien we **IN** het object de instantievariabelen willen aanpassen dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet wordt omzeilt. Kijk zelf naar volgende **slechte** codevoorbeeld:
 
-```java
+```csharp
 class SithLord
 {
     private int energie;
@@ -333,7 +333,7 @@ De nieuw toegevoegde methode ``ResetLord`` willen we gebruiken om de lord z'n en
 
 **We moeten dus in de methode ook expliciet via de property gaan** om bugs te voorkomen en dus gaan we in ``ResetLord``schrijven naar de property ``Energie`` én niet rechtstreeks naar de instantievariabele ``energie``:
 
-```java
+```csharp
 public void ResetLord(int resetWaarde)
 {
     Energie = resetWaarde; // Energie i.p.v. energie
@@ -350,7 +350,7 @@ public void ResetLord(int resetWaarde)
 ![Transformerende properties: Erg nuttig, maar vaak wat stiefmoederlijk behandeld.](../assets/6_klassen/proptrans.png)
 
 Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt. Stel dat we volgende klasse hebben:
-```java
+```csharp
 class Persoon
 {
     public string Voornaam {get;set;}
@@ -359,7 +359,7 @@ class Persoon
 ```
 We willen echter ook soms de volledige naam of emailadres krijgen, beide gebaseerd op de inhoud van de instantievariabelen ``voornaam`` en ``achternaam``. Via een read-only property die transformeert kan dit:
 
-```java
+```csharp
 class Persoon
 {
     public string Voornaam {get;set;}

@@ -4,7 +4,7 @@
 Een object aanmaken van een interface is natuurlijk onmogelijk. Je object zou flinterdun zijn zonder inhoud. Maar, dankzij polymorfisme kunnen we wel variabelen aanmaken van een interfacetype die een referentie hebben naar een object dat die interface heeft:
 
 
-```java
+```csharp
 IManager deBaas = new Werknemer();
 ```
 
@@ -12,7 +12,7 @@ Op dat moment kunnen we via ``deBaas`` aan het gedeelte van het ``Werknemer`` ob
 
 Beeld je in dat je een complexe klasse ``DiskWriter`` hebt die je programma gebruikt om data van en naar de harde schijf te schrijven. De klasse implementeert een interface ``IData`` die twee methoden heeft (``LeesData()`` en ``SchrijfData``):
 
-```java
+```csharp
 interface IData
 {
     string LeesData();
@@ -38,7 +38,7 @@ class DiskWriter : IData
 
 Als je later beslist om je data naar een online server te schrijven en niet naar de harde schijf, dan kan je gewoon die klasse schrijven (bv. ``InternetWriter``) en vervolgens ook de ``IData`` interface laten implementeren. 
 
-```java
+```csharp
 class InternetWriter: IData
 {
     public string LeesData()
@@ -57,7 +57,7 @@ Al je andere code moet dan niet aangepast worden! Ze (je andere klassen) kunnen 
 
 Beter zelfs: de klasse weet het niet, en hoeft dat ook niet te weten. Je kan vervolgens volgens de compositie regels instellen welk object ``IData`` krijgt. Hier doen we dit in de setters van een ``Offline`` property zodat we van buiten aan de klasse kunnen vertellen of het internet wel of niet beschikbaar is:
 
-```java
+```csharp
 class BackupSystem
 {
     private IData writer = new DisWriter();
@@ -83,7 +83,7 @@ class BackupSystem
 
 In volgend voorbeeld maken we een ``Logboek`` klasse aan die ook een ``IData`` interface in zich heeft. Echter, via de constructor stellen we nu in hoe ieder object informatie moet wegschrijven: 
 
-```java
+```csharp
 class Logboek
 {
     private IData datadoel;
@@ -101,7 +101,7 @@ class Logboek
 
 Vanaf nu kan je ``Logboek``-objecten aanmaken die naar verschillende plekken schrijven/lezen zonder dat je IN ``Logboek`` moet weten naar waar dat gebeurt:
 
-```java
+```csharp
 Logboek naarlokalefile = new Logboek(new DiskWriter());
 naarlokalefile.Schrijf();
 Logboek naarInternet = new Logboek(new InternetWriter());

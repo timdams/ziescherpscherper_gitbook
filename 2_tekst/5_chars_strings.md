@@ -19,7 +19,7 @@ In het vorige hoofdstuk werkten we vooral met getallen en haalden we maar kort h
 
 Een **enkel karakter** (cijfer, letter, leesteken, enz.) als 'tekst' opslaan kan je doen door het `char`-type te gebruiken. Zo kan je bijvoorbeeld één enkel karakter als volgt tonen:
 
-```java
+```csharp
 char eenLetter = 'X';
 Console.WriteLine("eenLetter=" + eenLetter);
 ```
@@ -48,7 +48,7 @@ Merk op dat we bij een ``string`` literal gebruik maken van aanhalingstekens (`"
 
 Volgende, uiterst boeiende, code geeft drie keer het cijfer 1 onder elkaar op het scherm, maar de eerste keer gaat het om het een ``char`` (enkelvoudig teken), dan en een ``string`` (reeks van tekens) en dan een ``int`` (effectief getal):
 
-```java
+```csharp
 char eenKarakter = '1'; 
 string eenString = "1"; 
 int eenGetal = 1;

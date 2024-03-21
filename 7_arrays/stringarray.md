@@ -6,7 +6,7 @@ Het type ``string`` is niet meer dan een arrays van karakters, ``char[]``. Het i
 
  Om een ``string`` per karakter te bewerken is het aanbevolen om deze naar een *char-array* om te zetten (en nadien terug naar een string). Dit kan gebruikmakend van ``.ToCharArray()`` als volgt:
 
-```java
+```csharp
 string origineleZin = "Ik ben Tom";
 char[] karakters = origineleZin.ToCharArray();
 karakters[8] = 'i';
@@ -18,7 +18,7 @@ De array zal nu het volgende bevatten:``Ik ben Tim``.
 
 Ook de omgekeerde weg is mogelijk. De werking is iets anders en maakt gebruik van ``new string()``, let vooral op hoe we de char array doorgeven als argument bij het aanmaken van een nieuwe ``string`` in lijn 3:
 
-```java
+```csharp
 char[] alleKarakters = {'h', 'a', 'l', 'l', 'o'};
 alleKarakters[2] = 'x';
 string woord = new string(alleKarakters);
@@ -34,7 +34,7 @@ Volgende methoden kan je rechtstreeks op string-variabelen oproepen:
 #### Length
 Geeft het totaal aantal karakters in de string wat logisch is, daar het om een array gaat:
 
-```java
+```csharp
 string myName = "Tim";
 Console.WriteLine(myName.Length); //er verschijnt 3 op het scherm
 ```
@@ -45,7 +45,7 @@ Console.WriteLine(myName.Length); //er verschijnt 3 op het scherm
 
 Deze methode geeft een ``int`` terug die de index bevat waar de string die je als parameter meegaf begint. Je kan deze index gebruiken om te ontdekken of een bepaald woord bijvoorbeeld in een grote lap tekst voorkomt zoals volgend voorbeeld toont:
 
-```java
+```csharp
 string boek = "Ik ben Reinhardt";
 int index = boek.IndexOf("ben");
 Console.WriteLine(index); 
@@ -57,7 +57,7 @@ Er zal ``3`` verschijnen, daar "ben" start op positie 3 ("ik" staat op positie 0
 
 ``Trim()`` verwijdert alle onnodige spaties en andere onzichtbare tekens vooraan en achteraan de string. Deze methode geeft de opgekuiste string terug als resultaat, je moet deze dus bewaren. In het volgende voorbeeld overschrijven we de originele string met z'n opgekuiste versie:
 
-```java
+```csharp
 string boek = "   Ik ben Reinhardt   ";
 Console.WriteLine(boek);
 boek = boek.Trim();
@@ -76,7 +76,7 @@ Ik ben Reinhardt
 
 ``ToUpper`` zal de meegegeven string naar ALLCAPS omzetten en geeft de nieuwe string als resultaat terug. ``ToLower()``doet het omgekeerde.
 
-```java
+```csharp
 string boek = "Ik ben Reinhardt";
 Console.WriteLine(boek.ToUpper());
 Console.WriteLine(boek.ToLower());
@@ -85,7 +85,7 @@ Console.WriteLine(boek.ToLower());
 Output op het scherm:
 
 
-```java
+```csharp
 IK BEN REINHARDT
 ik ben reinhardt
 ```
@@ -98,7 +98,7 @@ ik ben reinhardt
 
 Volgende voorbeeld toont dit en zal "Mercy" vervangen door "Reinhardt":
 
-```java
+```csharp
 string boek = "Ik ben Mercy";
 boek = boek.Replace("Mercy","Reinhardt");
 Console.WriteLine(boek);
@@ -107,7 +107,7 @@ Console.WriteLine(boek);
 {% hint style='tip' %}
 ``Replace`` kan je ook misbruiken om bijvoorbeeld alle woorden uit een stuk tekst te verwijderen door deze te vervangen door een lege ``string`` met de waarde ``""``. Volgende code zal alle ``"e"``'s uit de tekst verwijderen:
 
-```java
+```csharp
 string boek = "Ik ben Mercy";
 boek = boek.Replace("e", "");
 Console.WriteLine(boek);
@@ -123,7 +123,7 @@ Waardoor we ``Ik bn Mrcy`` op het scherm krijgen.
 
 Volgend voorbeeld zal het stukje "ben " uit de ``string`` weghalen:
 
-```java
+```csharp
 string boek = "Ik ben Mercy";
 boek = boek.Remove(3,4);
 Console.WriteLine(boek);
@@ -148,7 +148,7 @@ Volgende twee methoden zijn ``static`` en moet je  via de klasse ``String`` doen
 
  De ``Split`` methode laat toe een string te splitsen op een bepaald teken. Het resultaat is steeds een **array van strings**.
 
-```java
+```csharp
 string data = "12,13,20";
 string[] gesplitst = data.Split(',');
 
@@ -167,7 +167,7 @@ Via ``Join`` kunnen we een array van strings terug samenvoegen. Het resultaat is
 Volgende voorbeeld zal de eerder gesplitste array van het vorige voorbeeld opnieuw samenvoegen maar nu met telkens een ``;`` tussen iedere string:
 
 
-```java
+```csharp
 string joined = String.Join(";", gesplitst);
 ```
 

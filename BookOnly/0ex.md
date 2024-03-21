@@ -53,7 +53,7 @@ Je kan een gekleurd vakje 'tekenen' door de ``BackGroundColor`` van de console i
 
 Met de ``Console.Beep()`` methode kan je muziek maken. Volgende voorbeeld toont bijvoorbeeld hoe je do-re-mi-fa-sol-la-si-do afspeelt:
 
-```java
+```csharp
 Console.Beep(264, 1000);
 Console.Beep(297, 1000);
 Console.Beep(330, 1000);

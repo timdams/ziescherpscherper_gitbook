@@ -3,7 +3,7 @@
 #### Grootste getal
 Vervolledig deze code zodat ook getoond wordt welke de grootste waarde is die werd ingevoerd.
 
-```java
+```csharp
 int x = 0;
 int y = 0;
 do
@@ -70,7 +70,7 @@ Los dit op met ``enum`` : je code zal een pak leesbaarder worden
 ![Neo Tim](../assets/neotim.png)
 
 Volgende code genereert een beeld zoals dat ook in de cultfilm The Matrix (1999) plaatsvindt. 
-```java
+```csharp
 Random rangen = new Random();
 Console.ForegroundColor = ConsoleColor.Green;
 while (true)

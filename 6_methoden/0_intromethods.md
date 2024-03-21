@@ -8,7 +8,7 @@ Veel code die we hebben geschreven wordt meerdere keren, al dan niet op verschil
 
 Beeld je eens dat we geen gebruik konden maken van de vele .NET bibliotheken. Stel je voor dat ``Console.WriteLine``  niet bestond? Telkens als we dan iets in C# naar het scherm wilden sturen moesten we de volledige interne code van ``WriteLine`` uitschrijven. Voor de geïnteresseerden, dat zou er (ongeveer) als volgt uitzien:
 
-```java
+```csharp
 fixed (byte* p = bytes)
 {
     if (useFileAPIs)
@@ -42,7 +42,7 @@ Methoden gebruiken heeft als voordeel dat je (kleine) herbruikbare stukken code 
 
 De basis-syntax van een methode ziet er als volgt uit (de werking van het keyword ``static`` zien we in hoofdstuk 11):
 
-```java
+```csharp
 static returntype MethodeNaam(optioneel_parameters)
 {
     //code van methode
@@ -52,7 +52,7 @@ static returntype MethodeNaam(optioneel_parameters)
 Vervolgens kan je deze methode elders oproepen als volgt, indien de methode geen parameters vereist:
 
 
-```java
+```csharp
 MethodeNaam();
 ```
 
@@ -66,7 +66,7 @@ Beeld je in dat je een applicatie moet maken waarin je op verschillende plaatsen
 
 Als je later de naam van het programma wilt veranderen naar iets anders (bv. ``Timsoft 11``) dan zal je manueel overal de titel moeten veranderen in je code. Met een methode hebben we dat probleem niet meer. We schrijven daarom een methode ``ToonTitel`` als volgt:
 
-```java
+```csharp
 static void ToonTitel()
 {
     Console.WriteLine("Timsoft XP");
@@ -78,13 +78,13 @@ static void ToonTitel()
 Vanaf nu kan je eender waar in je programma deze methode aanroepen door te schrijven:
 
 
-```java
+```csharp
 ToonTitel();
 ```
 
 Volgend programma'tje toont dit:
 
-```java
+```csharp
 namespace Demo1
 {
     internal class Program
@@ -120,7 +120,7 @@ Zoals je misschien al begint te vermoeden is dus de ``Main`` waar we steeds onze
 
 Wat denk je trouwens dat je dit doet?
 
-```java
+```csharp
 static void Main(string[] args)
 {
     Console.WriteLine("Ik zit vast!");
@@ -153,7 +153,7 @@ Wanneer je een methode maakt die iets teruggeeft (dus ander returntype dan ``voi
 
 Volgend voorbeeld bestaat uit een methode die de naam van de auteur van je programma teruggeeft:
 
-```java
+```csharp
 static string GetNameAuthor()
 {
     string name = "Tim Dams";
@@ -164,7 +164,7 @@ static string GetNameAuthor()
 Een mogelijke manier om deze methode in je programma te gebruiken zou nu kunnen zijn:
 
 
-```java
+```csharp
 string myName = GetNameAuthor();
 ```
 
@@ -181,7 +181,7 @@ Zoals je merkt is er niet veel verschil met wat je al wist aangaande het gebruik
 {% hint style='tip' %}
 Je mag zowel literals als variabelen en zelfs andere methode-aanroepen plaatsen achter het ``return`` keyword. Zolang het maar om een expressie gaat die een resultaat heeft kan dit. Voorgaande methode kunnen we dus ook schrijven als:
 
-```java
+```csharp
 static string GetNameAuthor()
 {
     return "Tim Dams";
@@ -193,7 +193,7 @@ static string GetNameAuthor()
 
 Hier een voorbeeld van een methode die de faculteit van 5 berekent. De oproep van de methode gebeurt vanuit de Main-methode:
 
-```java
+```csharp
 internal class Program
 {
     static int FaculteitVan5()
@@ -218,7 +218,7 @@ internal class Program
 
 Indien je methode niets teruggeeft wanneer de methode eindigt (bijvoorbeeld indien de methode enkel tekst op het scherm toont) dan dien je dit ook aan te geven. Hiervoor gebruik je het keyword void. Een voorbeeld:
 
-```java
+```csharp
 static void ShowProgramVersion()
 {
     Console.Write("The version of this program is: ");
@@ -236,7 +236,7 @@ Het **void** keyword geeft aan dat deze methode niets "teruggeeft" van resultaat
 
 Je mag het ``return`` keyword eender waar in je methode gebruiken. Weet wel dat van zodra een statement met ``return`` wordt bereikt de methode ogenblikkelijk afsluit en het resultaat achter ``return`` teruggeeft. Soms is dit handig zoals in volgende voorbeeld:
 
-```java
+```csharp
 static string WindRichting()
 {
     Random r = new Random();
@@ -283,7 +283,7 @@ Methoden zijn handig vanwege de herbruikbaarheid. Wanneer je een methode hebt ge
 Indien er wel parameters nodig zijn dan geef je die mee als volgt:
 
 
-```java
+```csharp
 MethodeNaam(parameter1, parameter2, …);
 ```
 
@@ -303,7 +303,7 @@ Om zelf een methode te definiëren die 1 of meerdere parameters aanvaardt, dien 
 
 Als volgt:
 
-```java
+```csharp
 static returntype MethodeNaam(type parameter1, type parameter2)
 {
     //code van methode
@@ -316,7 +316,7 @@ Deze formele parameters zijn nu beschikbaar binnen de methode om mee te werken n
 
 Stel bijvoorbeeld dat we onze ``FaculteitVan5`` willen veralgemenen naar een methode die voor alle getallen werkt, dan zou je volgende methode kunnen schrijven:
 
-```java
+```csharp
 static int BerekenFaculteit(int grens)
 {
     int resultaat = 1;
@@ -332,7 +332,7 @@ De naam ``grens`` kies je zelf. Maar we geven hier dus aan dat de methode ``Bere
 
 Aanroepen van de methode gebeurt dan als volgt:
 
-```java
+```csharp
 int getal = 5;
 int resultaat = BerekenFaculteit(getal);
 ```
@@ -340,7 +340,7 @@ int resultaat = BerekenFaculteit(getal);
 Of sneller:
 
 
-```java
+```csharp
 int resultaat = BerekenFaculteit(5);
 ```
 
@@ -365,7 +365,7 @@ Het is echter logisch dat deze niet noodzakelijk gelijk moeten zijn: het enige d
 
 En wat als je de faculteiten wenst te kennen van alle getallen tussen 1 en 10?  Dan zou je schrijven:
 
-```java
+```csharp
 for (int i = 1; i < 11; i++)
 {
     Console.WriteLine($"Faculteit van {i} is {BerekenFaculteit(i)}" );
@@ -402,7 +402,7 @@ De volgorde waarin je je parameters meegeeft bij de aanroep van een methode is b
 
 Het volgende voorbeeld toont dit. Stel dat je een methode hebt:
 
-```java
+```csharp
 static void ToonDeling(double teller, double noemer)
 {
     if(noemer != 0)
@@ -414,7 +414,7 @@ static void ToonDeling(double teller, double noemer)
 
 Stel dat we nu in onze main volgende aanroep doen:
 
-```java
+```csharp
 double n = 4.2;
 double t = 5.2;
 ToonDeling(n, t);
@@ -423,13 +423,13 @@ ToonDeling(n, t);
 Dit zal een ander resultaat geven dan wanneer we volgende code zouden uitvoeren:
 
 
-```java
+```csharp
 ToonDeling(t, n);
 ```
 
 Ook de volgorde is belangrijk zeker wanneer je met verschillende types als formele parameters werkt:
 
-```java
+```csharp
 static void ToonInfo(string name, int age)
 {
    Console.WriteLine($"{name} is {age} old");
@@ -439,14 +439,14 @@ static void ToonInfo(string name, int age)
 Deze aanroep is correct:
 
 
-```java
+```csharp
 ToonInfo("Tim", 37);
 ```
 
 Deze is **FOUT** en zal niet compileren:
 
 
-```java
+```csharp
 ToonInfo(37, "Tim");
 ```
 
@@ -456,7 +456,7 @@ ToonInfo(37, "Tim");
 
 In het begin ga je vooral vanuit je ``main`` methoden aanroepen, maar dat is geen verplichting. Je kan ook vanuit methoden andere methoden aanroepen, en van daaruit weer andere, en zo voort. Volgende (nutteloze) programma'tje toont dit in actie:
 
-```java
+```csharp
 static void SchrijfT()
 {
     Console.WriteLine("T");
@@ -492,7 +492,7 @@ public static void Main()
 
 Wanneer je programma's complexer worden moet je zeker opletten dat je geen oneindige lussen creëert, zonder dat je loop-code gebruikt. Zie je de fout in volgende code?
 
-```java
+```csharp
 public static void Main()
 {
     SchrijfNaam();
@@ -515,7 +515,7 @@ Sinds C# 7.0 kan je methoden definiëren binnenin een andere methode. Dit noemt 
 
 Kortom, zorg dat je nooit dit schrijft!
 
-```java
+```csharp
 static void Main(string[] args)
 {
     TimVindtDitNietLeuk();
@@ -534,7 +534,7 @@ static void Main(string[] args)
 ![](../assets/attention.png)
 Even ingrijpen en je wijzen op recursie zodat je code niet in je gezicht blijft ontploffen. **Recursie** is een geavanceerd programmeerconcept wat niet in dit boek wordt besproken, maar laten we het hier kort toelichten. Recursieve methoden zijn methoden die zichzelf aanroepen maar wél op een gegeven moment stoppen wanneer dat moet gebeuren. Volgend voorbeeld is een recursieve methode om de som van alle getallen tussen ``start`` en ``stop`` te berekenen:
 
-```java
+```csharp
 static int BerekenSomRecursief(int start, int stop)
 {
     int som = start;
@@ -549,7 +549,7 @@ static int BerekenSomRecursief(int start, int stop)
 Je herkent recursie aan het feit dat de methode zichzelf aanroept. Maar een controle voorkomt dat die aanroep blijft gebeuren zonder dat er ooit een methode wordt afgesloten. We krijgen 6 terug (1+2+3) als we de methode als volgt aanroepen:
 
 
-```java
+```csharp
 int einde = BerekenSomRecursief(1,3);
 ``` 
 
@@ -569,7 +569,7 @@ Visual Studio zal dan automatisch de parameters verwerken van je methode zodat j
 
 Stel dat we een methode hebben geschreven die de macht van een getal berekent (wat dom is...er bestaat al zoiets als ``Math.Pow``). We zouden dan volgende commentaar toevoegen:
 
-```java
+```csharp
 /// <summary>
 /// Berekent de macht van een getal.
 /// </summary>
@@ -597,7 +597,7 @@ Wanneer we nu elders de methode ``Macht`` gebruiken dan krijgen we automatische 
 
 Je kan trouwens delen van je code in handige inklapbare secties zetten door deze als regions aan te duiden, als volgt:
 
-```java
+```csharp
 #region My Epic code
 Console.WriteLine("I am the greatest!");
 Console.WriteLine("Echt waar!");

@@ -36,7 +36,7 @@ Merk op dat qua naamgeving de keuze van de formele parameter ``Levens`` in de co
 
 Beeld je in dat je volgende ``Management`` klasse hebt die toelaat om ``Werknemer`` objecten te controleren of ze promoveerbaar zijn of niet. Het management van de firma heeft beslist dat werknemers enkel kunnen promoveren als hun huidige ``Rang`` lager is dan 10:
 
-```java
+```csharp
 class Management
 {
     private const int MAXRANG = 10;
@@ -49,7 +49,7 @@ class Management
 
 Dankzij het ``this`` keyword kan je nu vanuit de klasse ``Werknemer`` deze externe methode aanroepen om zo te kijken of een object al dan niet kan promoveren:
 
-```java
+```csharp
 class Werknemer
 {
     public int Rang { get; set; }
@@ -62,7 +62,7 @@ class Werknemer
 
 Op deze manier geeft het object waarop je ``IsPromoveerbaar`` op aanroept zichzelf mee als actuele parameter aan ``Management.MagPromoveren()``. Dit laat dus toe dat een werknemer zelf kan weten of hij of zij al dan niet kan promoveren:
 
-```java
+```csharp
 Werknemer francis = new Werknemer();
 if(francis.IsPromoveerbaar())
 {

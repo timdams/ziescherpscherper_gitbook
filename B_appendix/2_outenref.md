@@ -14,7 +14,7 @@ Je kan parameters op 2 manieren by reference doorgeven aan een methode:
 Je plaatst het ``ref`` keyword in de methode signatuur voor de formele parameter dat *by reference* moet meegegeven worden. Vanaf dan heeft de methode toegang tot de originele parameter en dus niet tot de kopie. Je dient ook expliciet het keyword voor de actuele parameter bij de aanroep van de methode te plaatsen:
 
 
-```java
+```csharp
 static void VerhoogWaarde(ref int getal)
 {
     getal++;
@@ -35,7 +35,7 @@ static void Main(string[] args)
 Door het ``out`` keyword te gebruiken geven we expliciet aan dat we beseffen dat de parameter in kwestie pas binnen de methode een waarde zal toegekend krijgen. Wat we hier tonen:
 
 
-```java
+```csharp
 static void GeefWaarde(out int getal)
 {
     getal = 5;
@@ -52,7 +52,7 @@ static void Main(string[] args)
 ## Foute invoer van de gebruiker opvangen m.b.v. ``TryParse``
 
 Vaak wil je de invoer van de gebruiker verwerken/omzetten naar een getal. Denk maar aan volgende applicatie:
-```java
+```csharp
 Console.WriteLine("Geef je leeftijd");
 string invoer = Console.ReadLine();
 int leeftijd = int.Parse(invoer);
@@ -69,7 +69,7 @@ De primitieve datatypes ``int``, ``double``, ``float`` enz. hebben allemaal een 
 De werking van ``TryParse`` is als volgt:
 
 
-```java
+```csharp
 bool gelukt = int.TryParse(invoer,out int leeftijd);
 ```
 
@@ -79,7 +79,7 @@ Het return resultaat van de methode is ``bool``: indien de conversie gelukt is d
 
 We kunnen nu onze applicatie herschrijven en minder foutgevoelig maken voor slechte invoer van de gebruiker:
 
-```java
+```csharp
 Console.WriteLine("Geef je leeftijd");
 string invoer = Console.ReadLine();
 bool gelukt = int.TryParse(invoer,out int leeftijd);
@@ -98,7 +98,7 @@ else
 
 Daar ``TryParse`` een ``bool`` teruggeeft kunnen we deze ook gebruiken in loops als logische expressie. Volgende applicatie zal aan de gebruiker een komma getal vragen en pas verder gaan indien de gebruiker een geldige invoer heeft gegeven:
 
-```java
+```csharp
 double temperatuur;
 string invoer = "";
 do

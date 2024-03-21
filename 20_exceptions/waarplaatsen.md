@@ -9,7 +9,7 @@ Als sneak preview tonen we ook ineens hoe arrays van objecten werken.
 {% endhint %}
 
 
-```java
+```csharp
 static void Main(string[] args)
 {
     string[] urllist = new string[3];
@@ -41,7 +41,7 @@ We bekijken nu een aantal mogelijk try/catch locaties in deze code en zien welke
 
 ### Rondom methode-aanroep in z'n geheel
 
-```java
+```csharp
 try
 {
     DownloadAllUris(urllist);
@@ -66,7 +66,7 @@ Met andere woorden, zolang de urls geldig zijn zal de download lukken. Bij de ee
 
 Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere urls niet werken. We plaatsen dan de try catch niet rond de methode ``DownloadAllUris``, maar net binnenin de methode zelf rond het gedeelte dat kan mislukken:
 
-```java
+```csharp
  for(int i = 0; i < urls.Length;i++)
 {
     try
@@ -98,7 +98,7 @@ Met andere woorden, indien een bepaalde url niet geldig is dan zal deze overgesl
 ### finally 
 Soms zal je na een try-catch-blok ook nog een ``finally`` blok zien staan. Dit blok laat je toe om code uit te voeren die ALTIJD moet uitgevoerd worden, ongeacht of er een exception is opgetreden of niet. Je kan dit gebruiken om bijvoorbeeld er zeker van te zijn dat het bestand dat je wou uitlezen terug afgesloten wordt.
 
-```java
+```csharp
 try
 {
     Uri uri = new Uri(urls[i]);

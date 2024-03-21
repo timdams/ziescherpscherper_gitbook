@@ -8,7 +8,7 @@ En applicatie die geen input van de gebruiker vergt kan even goed een screensave
 **De uitdaging met ``ReadLine`` is dat deze ALTIJD een string teruggeeft:**
 
 
-```java
+```csharp
 string userInput = Console.ReadLine();
 ```
 Dit mag dus niet: ``int userInput = Console.ReadLine();`` en zal in een *conversion error* resulteren.
@@ -27,7 +27,7 @@ Invoer van de gebruiker verwerken (dat een andere type dan ``string`` moet zijn)
 
 Stel dat we aan de gebruiker z'n gewicht vragen, dan moeten we dus doen:
 
-```java
+```csharp
 Console.WriteLine("Geef je gewicht:");
 string inputGewicht = Console.ReadLine();
 double gewicht = double.Parse(inputGewicht);
@@ -35,7 +35,7 @@ double gewicht = double.Parse(inputGewicht);
 
 Voorgaande code kan nog 1 lijntje sneller door ``ReadLine`` ogenblikkelijk als invoer aan de Parse-methode te geven:
 
-```java
+```csharp
 Console.WriteLine("Geef je gewicht:");
 double gewicht = double.Parse(Console.ReadLine());
 ```

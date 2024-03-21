@@ -4,7 +4,7 @@ De ``if`` (*als*) uitdrukking is één van de meest elementaire uitdrukkingen in
 
 De syntax is als volgt:
 
-```java
+```csharp
 if (booleaanse expressie) 
 {
     //deze code wordt uitgevoerd indien
@@ -17,7 +17,7 @@ Enkel indien de booleaanse expressie waar is, en dus ``true`` als resultaat heef
 
 
 Een voorbeeld:
-```java
+```csharp
 int  nummer = 3;
 if (  nummer < 5 )
 {
@@ -57,7 +57,7 @@ Indien `` nummer`` groter of gelijk aan 5 was dan zou er enkel ``Nee`` op het sc
 Het is aangeraden om steeds na de if-expressie met accolades te werken. Dit zorgt ervoor dat alle code tussen het block (de accolades) zal uitgevoerd worden indien de booleaanse expressie waar was. **Gebruik je geen accolades dan zal enkel de eerste lijn na de ``if`` uitgevoerd worden bij ``true``.**
 
 Een voorbeeld:
-```java
+```csharp
 if ( nummer < 5 )
 {
     Console.WriteLine ("Ja");
@@ -83,7 +83,7 @@ Voorman hier! Je hebt me gemist. Ik merk het. Het ging goed de laatste tijd. Maa
 De types in je booleaanse expressie moeten steeds vergelijkbaar zijn. Volgende code zal niet compileren: 
 
 
-```java
+```csharp
 if( "4" > 3)
 ```
 daar we hier een ``string`` met een ``int`` vergelijken.
@@ -91,7 +91,7 @@ daar we hier een ``string`` met een ``int`` vergelijken.
 **Accolades vergeten**
 Accolades vergeten plaatsen om een codeblock aan te duiden, maar je code toch zodanig uitlijnen (met tabs of spaties) dat het lijkt of je een heel codeblock hebt. Het gevolg zal zijn dat enkel de eerste lijn na de ``if`` zal uitgevoerd worden indien ``true``. Gebruiken we de ``if`` met block van daarnet maar zonder accolades dan zal de laatste lijn altijd uitgevoerd worden ongeacht de ``if``:
 
-```java
+```csharp
 if ( nummer < 5 )
     Console.WriteLine ( "Ja");
     Console.WriteLine ( "Nee"); //nee verschijnt altijd op scherm
@@ -103,7 +103,7 @@ Merk ook op dat je code anders uitlijnen géén invloed heeft op de uitvoer (wat
 
 Dit zal ervoor zorgen dat er eigenlijk geen codeblock bij de ``if`` hoort en je dus een nietszeggende ``if`` hebt geschreven. De code na het puntkomma zal uitgevoerd worden ongeacht de ``if``:
 
-```java
+```csharp
 if ( nummer < 5 );
     Console.WriteLine ( "Ja");
     Console.WriteLine ( "Nee");
@@ -127,7 +127,7 @@ We kunnen ook meerdere booleaanse expressie combineren zodat we complexere uitdr
 
 Een voorbeeld:
 
-```java
+```csharp
 Console.WriteLine("Voer a in");
 int a = int.Parse(Console.ReadLine());
 Console.WriteLine("Voer b in");
@@ -158,7 +158,7 @@ if ((a >= c) && (b <= c))
 
 Met ``if``/``else`` kunnen we niet enkel zeggen welke code moet uitgevoerd worden als de conditie waar is **maar ook welke specifieke code moet uitgevoerd indien de conditie niet waar is**. Volgend voorbeeld geeft een typisch gebruik van een ``if``/``else`` structuur om 2 waarden met elkaar te vergelijken:
 
-```java
+```csharp
 int nummer = 10;
 int max = 5;
  
@@ -177,7 +177,7 @@ else
 
 {% hint style='warning' %}
 Een veel gemaakte fout is bij de ``else`` sectie ook een booleaanse expressie plaatsen. Dit kan niet: de ``else`` sectie zal gewoon uitgevoerd worden indien de ``if`` sectie NIET uitgevoerd werd. Volgende code MAG DUS NIET:
-```java
+```csharp
 if(a > b) 
 {...}
 else (a <= b) //<FOUT!
@@ -196,7 +196,7 @@ Sowieso begint men steeds met een ``if``. Als men vervolgens een ``else if`` pla
 
 Een voorbeeld:
 
-```java
+```csharp
 int x = 9;
  
 if (x == 10)
@@ -215,7 +215,7 @@ else if (x == 8)
 
 Voorts mag men ook steeds nog afsluiten met een finale ``else`` die zal uitgevoerd worden indien geen enkele andere expressie ervoor waar bleek te zijn:
 
-```java
+```csharp
 if(x>100)
 {
     Console.WriteLine("Groter dan 100");
@@ -234,7 +234,7 @@ else
 
 {% hint style='danger' %}
 De volgorde van opeenvolgende if/if-else tests is uiterst belangrijk. Als we in voorgaande code de twee tests omdraaien dan zal er nooit in het tweede block (``x>100``) gekomen worden. Logisch: neem een getal groter dan 100 en laat het door volgende code lopen. Stel, we nemen 110. Al bij de eerste test (``x>10``) is deze ``true`` en verschijnt er dus "Groter dan 10". Alle andere tests worden daarna niet meer gedaan en de code gaat verder na het ``else``-blok.
-```java
+```csharp
 
 if(x>10)
 {
@@ -257,7 +257,7 @@ Hoe minder tests de computer moet doen, hoe meer performant de code zal uitgevoe
 Dit zelfde geldt ook binnen een test zelf wanneer we met logische operators werken. Deze worden altijd volgens de regels van de volgorde van berekeningen uitgevoerd. Volgende test wordt van links naar rechts uitgevoerd:
 
 
-```java
+```csharp
 x > 100 && a != "stop"
 ```
 
@@ -272,7 +272,7 @@ We kunnen met behulp van *nesting* (meerdere code blokken in elkaar plaatsen) oo
 
 Volgende voorbeeld toont dit aan (bekijk wat er gebeurt als je ``dokterVanWacht`` aan iets anders gelijkstelt dan een lege string):
 
-```java
+```csharp
 const double MAX_TEMP = 40;		
 double huidigeTemperatuur = 36.5;
 string dokterVanWacht = "";

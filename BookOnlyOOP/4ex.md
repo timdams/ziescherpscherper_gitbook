@@ -75,7 +75,7 @@ Hierna volgen enkele zaken die je zal nodig hebben.
 
 
 
-```java
+```csharp
 class BookMark
 {
     public BookMark(string naamIn, urlIn)
@@ -113,7 +113,7 @@ De ``GetPlanTextFromHtml()`` methode komt van volgende post:: **www.mercator.eu/
 
 Voorbeeld van hoe de ``Bookmark`` klasse zal werken:
 
-```java
+```csharp
 BookMark u = new BookMark("Google", "https://www.google.be" );
 Console.WriteLine(u.DownloadSite());
 ```

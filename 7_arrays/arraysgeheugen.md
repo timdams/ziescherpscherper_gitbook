@@ -20,7 +20,7 @@ Alle datatypes die we tot nog toe zagen (``string`` is een speciaal geval en neg
 Arrays worden 'by reference' gebruikt in C#. Dit wil zeggen dat als we schrijven:
 
 
-```java
+```csharp
 int[] getallen = {5,42,2};
 int age = 5
 ```
@@ -34,7 +34,7 @@ we in ``getallen`` enkel een geheugenadres bewaren dat wijst naar de plek waar d
 
 Het gevolg van voorgaande is dat volgende code niet zal doen wat je vermoedelijk wenst:
 
-```java
+```csharp
 string[] ploegen = {"Beerschot", "Antwerp"};
 string[] nieuwePloegen = {"Anderlecht", "Brugge"};
 nieuwePloegen = ploegen;
@@ -58,14 +58,14 @@ De derde lijn(``nieuwePloegen = ploegen;``) zal perfect werken. Wat er echter is
 Als je vervolgens schrijft:
 
 
-```java
+```csharp
 nieuwePloegen[1] = "Beerschot";
 ```
 
 Dan is dat hetzelfde als onderstaande schrijven daar beide variabele naar dezelfde array-inhoud verwijzen. Het effect zal dus hetzelfde zijn.
 
 
-```java
+```csharp
 ploegen[1] = "Beerschot";
 ```
 
@@ -79,7 +79,7 @@ Dus, hoe moet je wel te werk gaan? Draai snel deze pagina om !
 
 Wil je  arrays kopiëren dan kan dat **niet** als volgt:
 
-```java
+```csharp
 string[] ploegen = {"Beerschot", "Antwerp"};
 string[] nieuwePloegen = {"Anderlecht", "Brugge"};
 nieuwePloegen = ploegen; //FAIL!!!
@@ -87,7 +87,7 @@ nieuwePloegen = ploegen; //FAIL!!!
 
 **Je moet manueel ieder individueel element van de ene naar de andere array kopiëren** als volgt:
 
-```java
+```csharp
 for(int i = 0; i < ploegen.Length; i++)
 {
     nieuwePloegen[i] = ploegen[i];

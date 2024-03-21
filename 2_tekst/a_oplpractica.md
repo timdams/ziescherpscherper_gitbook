@@ -7,7 +7,7 @@
 
 ## UNICODE Art
 
-```java
+```csharp
             string myname = @"▄▄▄█████▓ ██▓ ███▄ ▄███▓   ▓█████▄  ▄▄▄       ███▄ ▄███▓  ██████ 
 ▓  ██▒ ▓▒▓██▒▓██▒▀█▀ ██▒   ▒██▀ ██▌▒████▄    ▓██▒▀█▀ ██▒▒██    ▒ 
 ▒ ▓██░ ▒░▒██▒▓██    ▓██░   ░██   █▌▒██  ▀█▄  ▓██    ▓██░░ ▓██▄   
@@ -23,7 +23,7 @@
 
 ## ASCI Art & Colors
 
-```java
+```csharp
 
 Console.Write("▄▄▄█████▓ ██▓ ███▄ ▄███▓   ");
 Console.ForegroundColor = ConsoleColor.Red; 

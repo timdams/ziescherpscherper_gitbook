@@ -27,7 +27,7 @@ Het datatype ``string`` heb je al gezien in het vorig hoofdstuk. Je hebt toen ee
 Verderop plaatsen we dan iets waar de gebruiker iets kan intypen in die variabele: 
 
 
-```java
+```csharp
 result = Console.ReadLine();
 ```
 {% endhint %}

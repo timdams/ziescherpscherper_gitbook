@@ -55,7 +55,7 @@ Voorzie een default constructor die alle datavelden initialiseert.
 
 Iedere module moet via een property langs buiten ingesteld worden (beeld je in dat je effectief een moederbord in elkaar knutselt):
 
-```java
+```csharp
 Moederbord Z390E_GAMING = new Moederbord();
 Z390E_GAMING.AGP= new AGPSlot("GeForceRTX2080");
 Z390E_GAMING.CPU= new CPUSlot("IntelCorei9_9900K");

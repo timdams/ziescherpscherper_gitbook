@@ -7,7 +7,7 @@ Je zal het ``const`` keyword hier en daar in codevoorbeelden zien staan. Je gebr
 
 Volgende voorbeeld toont in de eerste lijn hoe je het ``const`` gebruikt. De volgende lijn zal dankzij dit keyword een error geven reeds bij het compileren en jou dus waarschuwen dat er iets niet klopt.
 
-```java
+```csharp
 const double G_AARDE = 9.81;
 G_AARDE = 10.48; //ZAL ERROR GEVEN
 ```

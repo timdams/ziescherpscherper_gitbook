@@ -7,7 +7,7 @@ Soms wil je parameters aan een object meegeven bij de creatie ervan. We willen b
 Met andere woorden, stel dat we dit willen schrijven:
 
 
-```java
+```csharp
 Student jos = new Student("Lord Oakenwood");
 ```
 
@@ -15,7 +15,7 @@ Als we dit met voorgaande klasse uitvoeren , die enkel een default constructor h
 
 Net zoals bij overloading van methoden kunnen we ook constructors overloaden. De code is verrassend gelijkaardig aan method overloading:
 
-```java
+```csharp
 class Student
 {
     public Student(string bijnaamIn)
@@ -33,7 +33,7 @@ Dat was eenvoudig, hé?
 Je kan nu enkel je objecten nog via de overloaded constructors aanmaken. Schrijf je ``new Student()`` dan zal je een error krijgen. Wil je de default constructor toch nog hebben dan zal je die dus ook expliciet moeten schrijven, bijvoorbeeld:
 
 
-```java
+```csharp
 class Student
 {
     private const string DEFBIJNAAM = "Geen";
@@ -68,7 +68,7 @@ Van zodra je één constructor zelf schrijft, default of overloaded, krijg je ni
 #### Meerdere overloaded constructors
 Wil je meerdere overloaded constructors dan mag dat ook. Je wilt misschien een constructor die de bijnaam vraagt alsook een ``bool`` om mee te geven of het om een werkstudent gaat:
 
-```java
+```csharp
 class Student
 {
      private const string DEFBIJNAAM = "Geen";
@@ -103,7 +103,7 @@ Merk op dat je ook **full properties best aanroept in je constructor** en niet r
 
 Beeld je in dat het schoolsysteem crasht wanneer een nieuwe student een onbeleefde bijnaam invoert. Wanneer dit gebeurt moet de bijnaam altijd gewoon op "Good boy" gezet worden, ongeacht de effectieve bijnaam van de student. Via een ``set``-controle kunnen we dit doen én vervolgens passen we de auto-property aan naar een full property zodat er een ingebouwde controle kan plaatsvinden:
 
-```java
+```csharp
 class Student
 {
     private const string DEFBIJNAAM = "Good boy";
@@ -149,7 +149,7 @@ Deze manier voorkomt dat de constructors verantwoordelijk zijn opdat properties 
 
 Beeld je in dat je volgende klasse hebt:
 
-```java
+```csharp
 class Microfoon
 {
     public Microfoon(string merkIn, bool isUitverkochtIn)
@@ -182,7 +182,7 @@ Bij voorgaande code gaat er mogelijk bij sommige van jullie een alarmbelletje af
 
 Voorgaande klasse gaan we herschrijven zodat alle constructors de bovenste overloaded constructor gebruiken en zo voorkomen dat we te veel dubbele code hebben:
 
-```java
+```csharp
 class Microfoon
 {
     public Microfoon(string merkIn, bool isUitverkochtIn)
@@ -206,7 +206,7 @@ Bij de tweede overloaded constructor geven we de binnenkomende parameter ``merkI
 
 Uiteraard ben je vrij om in de constructor zelf nog steeds code te plaatsen. Het is gewoon belangrijk dat je de volgorde begrijpt waarin de constructor-code wordt doorlopen. Stel dat we volgende constructor toevoegen:
 
-```java
+```csharp
 public Microfoon(bool isUitverkochtIn): this("Bovarc", isUitverkochtIn)
 {
     Merk = "Wit Product";
@@ -229,7 +229,7 @@ Wanneer we een object aanmaken als volgt ``new Microfoon(true)`` dan zal uiteind
 
 Dit hangt natuurlijk af van de soort klasse dat je maakt. Een constructor is minimaal nodig om ervoor te zorgen dat alle variabele die essentieel zijn in je klasse een beginwaarde hebben. Beeld je volgende klasse voor die een breuk voorstelt:
 
-```java
+```csharp
 class Breuk
 {
     public int Noemer {get; private set;}
@@ -243,7 +243,7 @@ class Breuk
 
 De methode zal een ``DivideByZeroException`` opleveren als ik de methode ``BerekenBreuk`` zou aanroepen nog voor de ``Noemer`` een waarde heeft gekregen (deling door nul, weet je wel):
 
-```java
+```csharp
 Breuk eenBreuk = new Breuk();
 int resultaat = eenBreuk.BerekenBreuk(); //BAM!Een exception! 
 ```
@@ -252,7 +252,7 @@ Via een constructor kunnen we dit soort bugs voorkomen. We beschermen ontwikkela
 
 Eerst veranderen we de auto-property ``Noemer`` naar een full property:
 
-```java
+```csharp
 private int noemer;
 public int Noemer 
 {
@@ -274,7 +274,7 @@ public int Noemer
 
 En vervolgens voegen we een overloaded constructor toe:
 
-```java
+```csharp
 public Breuk(int tellerIn, int noemerIn)
 {
     Teller = tellerIn;
@@ -284,7 +284,7 @@ public Breuk(int tellerIn, int noemerIn)
 
 Finaal wordt dan onze klasse:
 
-```java
+```csharp
 class Breuk
 {
     public Breuk(int tellerIn, int noemerIn)
@@ -324,7 +324,7 @@ Hierdoor kan ik geen ``Breuk`` objecten meer als volgt aanmaken:``Breuk eenBreuk
 ### Pong met constructors
 We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonder beweegt, en één overloaded constructor die toelaat dat we zelf kunnen kiezen wat de beginwaarden van ``X``, ``Y``, ``VectorX`` en ``VectorY`` zullen zijn:
 
-```java
+```csharp
 class Balletje
 {
     public Balletje(int xin, int yin, int vxIn, int vyIn)
@@ -344,7 +344,7 @@ class Balletje
 ```
 
 We kunnen nu op 2 manieren balletjes aanmaken:
-```java
+```csharp
 Balletje bal1 = new Balletje();
 Balletje bal2 = new Balletje(10,8,-2,1);
 ```
@@ -352,7 +352,7 @@ Balletje bal2 = new Balletje(10,8,-2,1);
 {% hint style='tip' %}
 Je zou ook kunnen overwegen om in de default constructor het balletje een willekeurige locatie en snelheid te geven:
 
-```java
+```csharp
 static Random rng =new Random();
 public Balletje()
 {

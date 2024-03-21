@@ -28,7 +28,7 @@ Om de klasse ``Object`` niet te verwarren met het concept "object" zullen we hie
 
 Wanneer je een klasse ``Student`` aanmaakt als volgt: ``class Student{ }``. Dan gebeurt er een zogenaamde impliciete overerving van ``System.Object``. Er staat dus eigenlijk:
 
-```java
+```csharp
 class Student: System.Object
 {  }
 ```
@@ -52,7 +52,7 @@ Deze methoden zijn redelijk nutteloos in het begin. Enkel door ze zelf te ``over
 ### ``GetType()``
 Stel dat je een klasse ``Student`` hebt gemaakt in je project. Je kan dan op een object van deze klasse de ``GetType()``-methode aanroepen om te weten wat het type van dit object is:
 
-```java
+```csharp
 Student stud1 = new Student();
 Console.WriteLine(stud1.GetType());
 ```
@@ -61,7 +61,7 @@ Dit zal als uitvoer de namespace gevolgd door het type van het object op het sch
 
 Wil je enkel het type zonder namespace dan is het nuttig te beseffen dat ``GetType()`` eigenlijk een object teruggeeft van het type ``Type`` met meerdere eigenschappen, waaronder ``Name``. Volgende code zal enkel ``Student`` op het scherm tonen:
 
-```java
+```csharp
 Student stud1 = new Student();
 Console.WriteLine(stud1.GetType().Name);
 ```
@@ -80,19 +80,19 @@ Deze methode is de nuttigste, waar je al direct leuke dingen mee kan doen die je
 Wanneer je schrijft:
 
 
-```java
+```csharp
 Console.WriteLine(stud1);
 ```
 Wordt er eigenlijk een impliciete aanroep naar ``ToString`` gedaan. Er staat dus eigenlijk altijd:
 
 
-```java
+```csharp
 Console.WriteLine(stud1.ToString());
 ```
 
 Op het scherm verschijnt dan ``StudentManager.Student``. Waarom? Wel, de methode ``ToString()`` wordt in ``System.Object()`` ongeveer als volgt beschreven:
 
-```java
+```csharp
 public virtual string ToString()
 { 
     return GetType(); 
@@ -114,7 +114,7 @@ Merk twee zaken op:
  
  We kunnen dat eenvoudig verkrijgen door ``ToString()`` te overriden:
 
- ```java
+ ```csharp
  class Student
  {
    public int Geboortejaar {get;set;}
@@ -138,7 +138,7 @@ Merk twee zaken op:
 Ook deze methode kan je overriden om twee objecten met elkaar te vergelijken:
 
 
- ```java
+ ```csharp
 if(stud1.Equals(stud2))
 ```
 
@@ -156,7 +156,7 @@ Het is echter aan de maker van de klasse om te beslissen wanneer 2 objecten van 
 
 Stel dat we vinden dat een student gelijk is aan een andere student indien z'n ``Voornaam`` en ``Geboortejaar`` dezelfde is, we kunnen dan de Equals-methode overriden als volgt in de ``Student`` klasse:
 
-```java
+```csharp
 public override bool Equals(Object o)
 {  
     Student temp = (Student)o; //Zie opmerking na code!

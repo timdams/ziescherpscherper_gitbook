@@ -2,7 +2,7 @@
 
 Stel, je hebt volgende klasse:
 
-```java
+```csharp
 class Kassa
 {
     public int Totaal {get;set;}
@@ -12,7 +12,7 @@ class Kassa
 
 Je maakt even later twee kassa's aan met de nodige informatie:
 
-```java
+```csharp
 Kassa benedenKassa = new Kassa(){Totaal = 50, Bouwjaar = 1981};
 Kassa bovenKassa = new Kassa(){Totaal = 40, Bouwjaar = 2000};
 ```
@@ -21,7 +21,7 @@ Even later wordt besloten dat beide kassa's moeten samengevoegd worden tot een g
 Je zou willen schrijven:
 
 
-```java
+```csharp
 Kassa nieuw = benedenKassa + bovenKassa;
 ```
 
@@ -33,7 +33,7 @@ Je kan in een klasse bestaande operators (``+``,``-``,``*``, enz.) **overloaden*
 
 Stel dat je de + wilt overloaden in je klasse dan voeg je volgende methode toe:
 
-```java
+```csharp
 class Kassa
 {
     public int Totaal {get;set;}
@@ -64,7 +64,7 @@ Vervolgens moeten we nu beschrijven hoe de operator moet werken. Finaal zal de m
 
 In het voorbeeld dat we maken willen we dus het volgende:
 
-```java
+```csharp
 public static Kassa operator+ (Kassa a, Kassa b)
 {
     Kassa resultaat = new Kassa()

@@ -16,7 +16,7 @@ Stel dat je een programma moet schrijven dat afhankelijk van de dag van de week 
 #### Slechte oplossing 1: Met ``int``
 De waarde van de dag staat in een variabele ``int dagKeuze``. We bewaren er 1 in voor maandag, 2 voor dinsdag, enzovoort. Vervolgens kunnen we dan schrijven: 
 
-```java
+```csharp
 if(dagKeuze == 1)
 {
     Console.WriteLine("We doen de maandag dingen");
@@ -39,7 +39,7 @@ Deze oplossing heeft 2 grote nadelen:
 
 Laten we tweede manier eens bekijken: de waarde van de dag bewaren we in een variabele ``string dagKeuze``. We bewaren de dagen als ``"maandag"``, ``"dinsdag"``, enz.
 
-```java
+```csharp
 if(dagKeuze == "maandag")
 {
     Console.WriteLine("We doen de maandag dingen");
@@ -82,13 +82,13 @@ Zelf een ``enum`` type maken en gebruiken gebeurt in 2 stappen:
 We maken eerst een enum type aan. **In je console-applicaties moet dit binnen ``class Program`` gebeuren, maar niét binnen de (``main``) methoden**:
 
 
-```java
+```csharp
 enum Weekdagen{Maandag,Dinsdag,Woensdag,Donderdag,Vrijdag,Zaterdag,Zondag};
 ```
 
 Als volgt dus:
 
-```java
+```csharp
 enum Weekdagen{Maandag,Dinsdag,Woensdag,Donderdag,Vrijdag,Zaterdag,Zondag};
 
 static void Main(string[] args)
@@ -104,7 +104,7 @@ static void Main(string[] args)
 
 Net zoals ``int``, ``double`` enz. kan je nu ook variabelen van het type ``Weekdagen`` aanmaken. Hoe cool is dat!? Bijvoorbeeld:
 
-```java
+```csharp
 Weekdagen dagKeuze;
 Weekdagen andereKeuze;
 ```
@@ -112,7 +112,7 @@ Weekdagen andereKeuze;
 En vervolgens kunnen we waarden aan deze variabelen toewijzen als volgt:
 
 
-```java
+```csharp
 dagKeuze = Weekdagen.Donderdag;
 ```
 
@@ -125,11 +125,11 @@ Kortom: we hebben variabelen zoals we gewoon zijn, het enige verschil is dat we 
 Ook de beslissingsstructuren worden leesbaarder:
 
 
-```java
+```csharp
 if(dagKeuze == Weekdagen.Woensdag)
 ```
 of een switch:
-```java
+```csharp
 switch(dagKeuze)
 {
     case Weekdagen.Maandag:
@@ -158,7 +158,7 @@ Hoe?
 
 Volgende conversies met behulp van **casting** zijn dan ook perfect toegelaten:
 
-```java
+```csharp
 int keuze = 3;
 Weekdagen dagKeuze = (Weekdagen)keuze;
 //dagKeuze zal de waarde Weekdagen.Donderdag hebben
@@ -168,7 +168,7 @@ Weekdagen dagKeuze = (Weekdagen)keuze;
 
 Wil je dus bijvoorbeeld 1 dag bijtellen dan kan je schrijven:
 
-```java
+```csharp
 Weekdagen dagKeuze= Weekdagen.Dinsdag;
 int extradag= (int)dagKeuze + 1;
 Weekdagen nieuweDag= (Weekdagen)extradag;
@@ -182,7 +182,7 @@ Let er wel op dat je geen extra dag op Zondag probeert bij te tellen. Dat zal ni
 Standaard worden de enum waarden intern dus genummerd beginnende bij 0. Je kan dit ook manueel veranderen door bij het maken van de ``enum`` expliciet aan te geven wat de interne waarde moet zijn, als volgt:
 
 
-```java
+```csharp
 enum WeekDagen 
     {Maandag=1, Dinsdag, Woensdag, Donderdag, Vrijdag, Zaterdag, Zondag}
 ```
@@ -192,7 +192,7 @@ De dagen zullen nu vanaf 1 genummerd worden, dus ``WeekDagen.Woensdag`` zal de w
 We kunnen ook nog meer informatie meegeven, bijvoorbeeld:
 
 
-```java
+```csharp
 enum WeekDagen 
     {Maandag=1, Dinsdag, Woensdag, Donderdag, Vrijdag, Zaterdag=50, Zondag=60}
 ```
@@ -212,7 +212,7 @@ Heel vaak zal je een programma schrijven waarbij de gebruiker een keuze moet mak
 
 Volgende code toont hoe je dit kunt doen:
 
-```java
+```csharp
 enum Menu {Demo=1, Start, Einde}
 static void Main(string[] args)
 {
@@ -236,7 +236,7 @@ Sinds .NET 5, dat in 2020 uitkwam, is er een meer gebruiksvriendelijke manier ve
 Echter, zelfs zonder generics te begrijpen zou volgende code toch begrijpbaar moeten zijn. We gebruiken terug het eerder gedefinieerde ``Menu`` type en de nieuw beschikbare ``Enum.Parse< >``- methode :
 
 
-```java
+```csharp
 Menu keuze = Enum.Parse<Menu>(Console.ReadLine());
 ```
 
@@ -245,7 +245,7 @@ We plaatsen tussen de ``<  > `` het enum datatype naar waar we willen parsen.
 Optioneel kan je via een tweede argument van het type bool aangeven of de parsing hoofdlettergevoelig is (``false``) of niet (``true``) :
 
 
-```java
+```csharp
 Menu keuze = Enum.Parse<Menu>(Console.ReadLine(), true); 
 ```
 
@@ -268,12 +268,12 @@ Bij game development willen we bijhouden in welke staat het programma zich bevin
 Dit is een typisch ``enum`` verhaal. We definiëren hiervoor het volgende type:
 
 
-```java
+```csharp
 enum gamestate {Intro, Startmenu, Ingame, Gameover, Optionsscreen}
 ```
 En vervolgens kunnen we dan met een eenvoudige switch in ons hoofdprogramma snel de relevante code uitvoeren:
 
-```java
+```csharp
 //Bij opstart:
 gamestate playerGameState= gamestate.Intro;
 // ...
@@ -292,7 +292,7 @@ switch(playerGameState)
 Een ander typisch voorbeeld is schaken. We maken een enum om de speelstukken voor te stellen (``Pion, Koning, Toren`` enz.) en kunnen hen dan laten bewegen en vechten in uiterst leesbare code:
 
 
-```java
+```csharp
 if(spelstuk == Schaakstuk.Paard)
 ```
 

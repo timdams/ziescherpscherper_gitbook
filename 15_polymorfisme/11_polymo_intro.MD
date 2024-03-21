@@ -13,7 +13,7 @@ Polymorfisme laat ons toe dat objecten kunnen behandeld worden als objecten van 
 Dankzij overerving kunnen we "is een"-relaties beschrijven. Soms is het echter handig dat we alle child-objecten als hetzelfde type, dat van hun parent, kunnen beschouwen. Beeld je in dat je een gigantische klasse-hiërarchie hebt gemaakt, maar finaal wil je wel dat alle objecten een bepaalde property aanpassen die ze gemeenschappelijk hebben. Zonder polymorfisme is dat een probleem. 
 
 Stel dat we een een aantal van ``Dier`` afgeleide klassen hebben die allemaal op hun eigen manier een geluid voortbrengen:
-```java
+```csharp
 abstract class Dier
 {
    public abstract string MaakGeluid();
@@ -36,7 +36,7 @@ class Varken: Dier
 
 **Dankzij polymorfisme kunnen we nu elders objecten van Paard en Varken in een variabele van het type ``Dier`` bewaren**, maar toch hun eigen geluid laten reproduceren:
 
-```java
+```csharp
 Dier someAnimal = new Varken();
 Dier anotherAnimal = new Paard();
 Console.WriteLine(someAnimal.MaakGeluid()); //Oinkoink
@@ -62,7 +62,7 @@ Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-typ
 Dit wil ook zeggen dat dit mag (daar alles overerft van ``System.Object``):
 
 
-```java
+```csharp
 System.Object mijnObject = new Varken();
 ```
 
@@ -76,7 +76,7 @@ Arrays en lijsten laten heel krachtige code toe dankzij polymorfisme. Je kan een
 
 Een voorbeeld:
 
-```java
+```csharp
 List<Dier> zoo = new List<Dier>();
 zoo.Add(new Varken());
 zoo.Add(new Paard());

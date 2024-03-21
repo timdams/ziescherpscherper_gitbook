@@ -20,7 +20,7 @@ Formateer de informatie met behulp van de $-notatie zodat deze deftig getoond wo
 
 Volgend voorbeeld zal de output van het commando ``ipconfig /all`` op het scherm tonen:
 
-```java
+```csharp
 System.Diagnostics.Process process = new System.Diagnostics.Process();
 process.StartInfo.FileName = "ipconfig";
 process.StartInfo.Arguments = "/all"; 

@@ -3,7 +3,7 @@
 Het **``base``** keyword laat ons toe om bij ``override`` van een methode of property in de child-klasse toch te verplichten om de parent-implementatie toe te passen. Dit kan handig zijn wanneer je in je child-klasse de bestaande implementatie wenst uit te breiden.
 
 Stel dat we volgende 2 klassen hebben:
-```java
+```csharp
 class Restaurant
 {
      protected int kosten = 0;
@@ -25,7 +25,7 @@ Het poetsen van een ``Frituur`` is duurder (1000 basis + 500 voor ontsmetting) d
 
 ``base`` lost dit voor ons op. De ``Frituur``-klasse herschrijven we naar:
 
-```java
+```csharp
 class Frituur:Restaurant
 {
      public override void PoetsAlles()
@@ -53,7 +53,7 @@ Je kan zelf beslissen waar in je code je ``base`` aanroept. Soms doe je dat aan 
 
 Laten we eens kijken. Beeld je in dat je volgende basisklasse hebt:
 
-```java
+```csharp
 class Oermens
 {
       public virtual int VoorzieVoedsel()
@@ -69,7 +69,7 @@ De moderne mens, die overerft van de oermens, is natuurlijk al iets beter in het
 
 Echter, er bestaan ook hipsters die houden van de klassieke manier van voedsel verzamelen (maar ze zijn wel gewoon moderne mensen, dus geen klasse apart hier). Uiteraard hebben zij de technieken van de oermens verbeterd en zullen sowieso toch iets meer voedsel nog kunnen verzamelen met de traditionele methoden, namelijk 20 kg bovenop de basishoeveelheid van 15 kg.
 
-```java
+```csharp
 class ModerneMens: Oermens
 {
       public bool IsHipster {get;  set;}

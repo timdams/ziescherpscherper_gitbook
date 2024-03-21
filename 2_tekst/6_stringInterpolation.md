@@ -20,7 +20,7 @@ Volgende 3 manieren tonen hoe je steeds tot voorgaande string zal komen.
 Je kan strings en variabelen eenvoudig bij elkaar 'optellen' zoals we in het begin van dit boek hebben gezien. Ze worden dan achter elkaar geplakt (**geconcateneerd**). 
 
 
-```java
+```csharp
 string result = "Ik ben " + naam + " en ik ben " + leeftijd+ " jaar oud.";
 ```
 
@@ -29,7 +29,7 @@ Let er op dat je tussen de aanhalingsteken (binnen de strings) spaties zet indie
 {% hint style='danger' %}
 Toch even goed opletten hier. De volgorde van strings met andere types samenvoegen (**concateneren**) bepaalt wat de uitvoer zal zijn! Kijk zelf:
 
-```java
+```csharp
 Console.WriteLine("1"+1+1);
 Console.WriteLine(1+1+"1");
 Console.WriteLine("1" + (1 + 1));
@@ -62,7 +62,7 @@ Dankzij *string interpolation* kan dit wel **waarbij we het ``$``-teken gebruike
 Door het $-teken **VOOR** de string te plaatsen geef je aan dat alle delen in de string die *tussen accolades staan* als code mogen beschouwd worden. Een voorbeeld maakt dit duidelijk:
 
 
-```java
+```csharp
 string result = $"Ik ben {naam} en ik ben {leeftijd} jaar oud.";
 ```
 
@@ -76,7 +76,7 @@ Het resultaat zal dan worden: ```Ik ben Finkelstein en ik ben 13 jaar oud.```
 Je mag eender welke *expressie* tussen de accolades zetten bij string interpolation, denk maar aan:
 
 
-```java
+```csharp
 string result = $"Ik ben {naam} en ik ben {leeftijd+4} jaar oud.";
 ```
 
@@ -85,7 +85,7 @@ Alle expressies tussen de accolades zullen eerst uitgevoerd worden voor ze tusse
 Eender welke expressie is toegelaten, dus je kan ook complexe berekeningen of zelfs andere methoden aanroepen:
 
 
-```java
+```csharp
 string result = $"Ik ben {leeftijd*leeftijd+(3*2)} jaar oud.";
 ```
 
@@ -93,7 +93,7 @@ string result = $"Ik ben {leeftijd*leeftijd+(3*2)} jaar oud.";
 Uiteraard mag je dit dus ook gebruiken wanneer je eenvoudigere zaken naar het scherm wenst te sturen gebruik makende van ``Console.WriteLine`` en interpolatie:
 
 
-```java
+```csharp
 Console.WriteLine($"3 maal 9 is {3*9}");
 ```
 {% endhint %}
@@ -105,7 +105,7 @@ Zowel bij string interpolation (manier 2) als de manier hierna kan je ook bepale
 
 Wil je bijvoorbeeld een kommagetal tonen met maar 2 cijfers na de komma dan schrijf je:
 
-```java
+```csharp
 double number = 12.345;
 Console.WriteLine($"{number:F2}");
 ```
@@ -125,14 +125,14 @@ Alle overige format specifiers staan hier opgelijst: **docs.microsoft.com/dotnet
 
 Een andere eenvoudige manier om strings te formatteren is door middel van een soort masker bestaande uit 0'n. Dit ziet er als volgt uit:
 
-```java
+```csharp
 double number = 12.345;
 Console.WriteLine($"{number:0.00}");
 ```
 
 We geven hierbij aan dat de variabele tot 2 cijfers na de komma moet getoond worden. Indien deze maar 1 cijfer na de komma bevat dan deze toch met twee cijfers getoond worden. Volgende voorbeeld toont dit:
 
-```java
+```csharp
 double number = 12.3;
 Console.WriteLine($"{number:0.00}");
 ```
@@ -141,7 +141,7 @@ Er zal ``12,30`` op het scherm verschijnen.
 
 Je kan dit masker ook gebruiken om te verplichten dat getallen bijvoorbeeld steeds met **minimum** 3 cijfers voor de komma getoond worden. Volgende voorbeeld toont dit:
 
-```java
+```csharp
 double number = 12.3;
 double number2 = 99999.3;
 Console.WriteLine($"{number:000.00}");
@@ -160,7 +160,7 @@ String interpolatie met het $-teken is een nieuwe C# aanwinst. Je zal echter ger
 ``String.Format`` is een ingebouwde methode die string-interpolatie toelaat op een iets minder intuïtieve manier, als volgt:
 
 
-```java
+```csharp
 string result = String.Format("Ik ben {0} en ik ben {1} jaar.", naam, leeftijd);
 ```
 
@@ -169,7 +169,7 @@ Het getal tussen de accolades geeft telkens aan de hoeveelste parameter na de st
 Volgende code zal een ander resultaat geven:
 
 
-```java
+```csharp
 string result = String.Format("Ik ben {1} en ben {1} jaar.", naam, leeftijd);
 ```
 
@@ -179,7 +179,7 @@ Namelijk: ``Ik ben 13 en ik ben 13 jaar oud.``
 Je kan deze vorm van formateren ook toepassen in ``Console.WriteLine`` zonder dat je expliciet ``String.Format`` hiervoor moet aanroepen:
 
 
-```java
+```csharp
 Console.WriteLine("Gratis formateren. {0} maal hoera voor .NET!", 3);
 ```
 {% endhint %}
@@ -193,7 +193,7 @@ Wanneer we in hoofdstuk 8 arrays uit de doeken gaan doen zal je ontdekken dat al
 
 We hebben al gezien dat intern een ``char`` als een geheel getal (de UNICODE) wordt voorgesteld. Stel dat we volgende ``char``-variabelen aanmaken. 
 
-```java
+```csharp
 char letter1 = 'A';
 char letter2 = 'B';
 ```
@@ -201,7 +201,7 @@ char letter2 = 'B';
 Bij string mogen we de +-operator gebruiken om 2 strings aan elkaar te plakken. **Bij char mag dat niet!** Of beter, dit mag maar zal niet het resultaat geven dat je mogelijk verwacht wanneer je voor het eerst hiermee leert werken. Oordeel zelf:
 
 
-```java
+```csharp
 Console.WriteLine(letter1 + letter2);
 ```
 

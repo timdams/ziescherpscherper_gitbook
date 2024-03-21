@@ -9,7 +9,7 @@ Het resultaat van deze expressie is **``5``** (en dus van type ``int``).
 Meestal zal je expressies schrijven waarin je bewerkingen op en met variabelen uitvoert. Vervolgens zal je het resultaat van die expressie willen bewaren voor verder gebruik in je code. In de volgende code kennen we het **expressie**-resultaat toe aan een variabele:
 
 
-```java
+```csharp
 int temperatuursVerschil = temperatuurGisteren - temperatuurVandaag;
 ```
 
@@ -18,13 +18,13 @@ Hierbij zal de temperatuur uit de rechtse 2 variabelen worden uitgelezen, van el
 Een ander voorbeeld van een **expressie**-resultaat toewijzen maar nu met literals:
 
 
-```java
+```csharp
 int temperatuursVerschil = 21 - 25;
 ```
 
 Uiteraard mag je ook combinaties van literals en variabelen gebruiken in je expressies:
 
-```java
+```csharp
 int breedte = 15;
 int oppervlakte = 20 * breedte;
 ```
@@ -48,13 +48,13 @@ In hoofdstuk 5 zullen we nog een derde type operator ontdekken: de **ternaire op
 
 Net zoals in de wiskunde kan je in C# met behulp van de haakjes verplichten het deel tussen de haakjes eerst te berekenen, ongeacht de andere operators en hun volgorde van berekeningen:
 
-```java
+```csharp
 3+5*2 // zal 13 (type int) als resultaat geven
 (3+5)*2 // zal 16 (type int) geven
 ``` 
 
 Je kan nu complexe berekeningen doen door literals, operators en variabelen samen te voegen. Bijvoorbeeld om te weten hoeveel je op Mars zou wegen:
-```java
+```csharp
 double gewichtOpAarde = 80.3; //kg
 double gAarde = 9.81; //m/s² 
 double gMars = 3.711; //m/s²
@@ -74,7 +74,7 @@ De modulo-operator zal je geregeld gebruiken om bijvoorbeeld te weten of een get
 
 Bijvoorbeeld om te testen of getal even is gebruiken we ``%2``:
 
-```java
+```csharp
 int getal = 1234234;
 int rest = getal%2;
 Console.WriteLine("Indien het getal als rest 0 geeft is deze even."); 
@@ -104,7 +104,7 @@ Je zal deze verkorte notatie vaak tegenkomen. Ze zijn identiek aan elkaar en zul
 {% hint style='danger' %}
 Bovenstaande verkorte notaties hebben ook een variant waarbij de operator links en de operand rechts staat. Bijvoorbeeld `--getal`. Beide doen het zelfde, maar niet helemaal. Je merkt het verschil in volgende voorbeeld:
 
-```java
+```csharp
 int getal = 1;
 int som = getal++; //som wordt 1, getal wordt 2
 int som2 = ++som; //som2 wordt 2, som wordt 2
@@ -131,14 +131,14 @@ Succes!
 Lees deze zin enkele keren luidop voor, voor je verder gaat: **De types die je in je expressies gebruikt bepalen ook het type van het resultaat.** Als je bijvoorbeeld twee ``int`` variabelen of literals optelt zal het resultaat terug een ``int`` geven (klink logisch, maar lees aandachtig verder):
 
 
-```java
+```csharp
 int result = 3 + 4;
 ```
 
 Je kan echter geen kommagetallen aan ``int`` toewijzen. Als je dus twee ``double`` variabelen deelt is het resultaat terug een ``double`` en zal deze lijn een fout geven daar je probeert een ``double`` aan een ``int`` toe te wijzen:
 
 
-```java
+```csharp
 int otherResult = 3.1 / 45.2; //dit is fout!!!
 ```
 
@@ -150,7 +150,7 @@ Bovenstaande code geeft volgende fout: ``Cannot implicitly convert double to int
 
 Wat als je een ``int`` door een ``int`` deelt? Het resultaat is terug een ``int``. Je bent echter alle informatie na de komma kwijt. Kijk maar:
 
-```java
+```csharp
 int getal1 = 9;
 int getal2 = 2;
 int result = getal1/getal2;
@@ -167,14 +167,14 @@ Wat als je datatypes mengt? Als je een berekening doet met bijvoorbeeld een ``in
 Volgende code zal dus werken:
 
 
-```java
+```csharp
 double result = 3/5.6;
 ```
 
 
 Volgende code niet:
 
-```java
+```csharp
 int result = 3/5.6;
 ```
 En zal weer dezelfde fout genereren: *"Cannot implicitly convert type 'double' to 'int'. An explicit conversion exists (are you missing a cast?)"*
@@ -182,7 +182,7 @@ En zal weer dezelfde fout genereren: *"Cannot implicitly convert type 'double' t
 Wil je dus het probleem oplossen om 9 te delen door 2 en toch 4.5 te krijgen (en niet 4) dan zal je minstens 1 van de 2 literals of variabelen naar een double moeten omzetten. 
 
 Het voorbeeld van hierboven herschrijven we daarom naar:
-```java
+```csharp
 int getal1 = 9;
 double getal2 = 2.0; //slim he
 double result = getal1/getal2;
@@ -205,7 +205,7 @@ Stel dat ik afspreek dat je van mij de helft van m'n salaris krijgt. Ik verdien 
 Ik stel je voor om volgende expressie te gebruiken om te berekenen wat je van mij krijgt:
 
 
-```java
+```csharp
 double helft = 10000.0 * (1 / 2);
 ```
 Hoeveel krijg je van me? 
@@ -219,7 +219,7 @@ Begrijp je waarom? De volgorde van berekeningen zal eerst het gedeelte tussen de
 Als ik dus effectief de helft van m'n salaris wil afstaan dan moet ik de expressie aanpassen naar bijvoorbeeld: 
 
 
-```java
+```csharp
 double helft = 10000.0 * (1.0 / 2);
 ```
 

@@ -24,7 +24,7 @@ De online documentatie van VS is zeer uitgebreid en dankzij **IntelliSense** kri
 
 Type eens het volgende in:
 
-```java
+```csharp
 System.Console.
 ```
 
@@ -38,14 +38,14 @@ Je kan door deze lijst met de muis doorheen scrollen en zo zien welke methoden a
 {% hint style='tip' %}
 Vaak moet je code schrijven waarin je een getal aan de gebruiker vraagt:
 
-```java
+```csharp
 Console.WriteLine("Geef leeftijd");
 int leeftijd = int.Parse(Console.ReadLine());
 ```
 
 Als deze constructie op meerdere plekken in een project voorkomt dan is het nuttig om deze twee lijnen naar een methode te verhuizen die er dan zo kan uitzien:
 
-```java
+```csharp
 static int VraagInt(string zin)
 {
     Console.WriteLine(zin);
@@ -56,7 +56,7 @@ static int VraagInt(string zin)
 De code van zonet kan je dan nu herschrijven naar:
 
 
-```java
+```csharp
 int leeftijd = VraagInt("Geef leeftijd");
 ```
 

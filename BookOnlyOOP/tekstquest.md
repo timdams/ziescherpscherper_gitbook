@@ -17,7 +17,7 @@ Telkens de gebruiker op enter drukt verschijnt de volgende kamer.
 
 Merk op dat de array-lengte geen invloed heeft op de forloop. We kunnen dus eenvoudig kamers toevoegen zonder dat dit invloed heeft op de werking van het programma. We zullen blijven behouden doorheen het hele programma (de speciale kaart uitgezonderd in fase 8).
 
-```java
+```csharp
 string[] Kamers = new string[]
     {
         "Je staat voor de ingang.",
@@ -39,7 +39,7 @@ We bieden de mogelijkheid aan aan de gebruiker om zelf te kiezen naar welke kame
 
 Telkens de gebruiker zich wil verplaatsen controleren we of deze verplaatsen toegestaan is. De ``Huidigekamer`` variabele is dus automatisch ook de index van de te tonen kamer in de string-array.
 
-```java
+```csharp
 string[] Kamers = new string[]
     {
         "Je staat voor de ingang.",
@@ -77,7 +77,7 @@ Vervolgens willen we de mogelijkheid om een 2D wereld aan te bieden. Hierbij geb
 
 Eerste definiëren we de verschillende kamers die er bestaan:
 
-```java
+```csharp
 string[] Kamers =
     {
         "Onbekend terrein",//0
@@ -91,7 +91,7 @@ string[] Kamers =
 
 Vervolgens maken we 2D-array die onze kaart voorstelt. De array is van het type ``int``. Ieder cijfer in de array zal de index bevatten van de kamer die op die plek moet komen. Dit is dus een zogenaamde look-up-table of LuT:
 
-```java
+```csharp
             int[,] Kaart =
                 {
                     {1, 2, 1, 3},
@@ -108,7 +108,7 @@ Merk op dat we dus onze *wereld* zo groot of zo klein kunnen maken als we zelf w
 ### Stap 2: Wandelen op de kaart 
 Daar we ons nu op een 2D-kaart bevinden hebben we 2 variabelen nodig om onze huidige positie te onthouden:
 
-```java
+```csharp
 int posX = 0;
 int posY = 0;
 ```
@@ -123,7 +123,7 @@ We maken een oneindige loop die steeds de volgende stappen zal doen:
 
 Eerst gebruiken we dus de LuT om de huidige kamer beschrijving te tonen. We gebruiker de huidige spelerlocatie als index in de Kaart-array en vragen zo de kamerindex op. Die kamerindex gebruiken we om de tekst uit de Kamers-array te tonen.
 
-```java
+```csharp
 while (true)
 {
     int kamerindex = Kaart[posX, posY];
@@ -132,7 +132,7 @@ while (true)
 
 De gebruiker kan zich naar het noorden, oosten, zuiden of westen begeven (respectievelijk naar boven, links, onder, rechts op de kaart). We vragen dus telkens de gebruiker naar waar hij:
 
-```java
+```csharp
 Console.WriteLine("NOZW? Naar waar wil je?");
 char inp = Convert.ToChar(Console.ReadLine().ToUpper());
 
@@ -141,7 +141,7 @@ char inp = Convert.ToChar(Console.ReadLine().ToUpper());
 ### Stap 3: Positie aanpassen 
 
 We verwerken de richting in een switch:
-```java
+```csharp
 switch (inp)
 {
 ```
@@ -161,7 +161,7 @@ Indien aan deze 2 voorwaarden niet is voldaan dan mogen we de huidige locatie va
 
 We krijgen in de switch dus:
 
-```java
+```csharp
     case 'N':
         if (posX != 0 && Kaart[posX - 1, posY] != 0)
             posX--;
@@ -191,7 +191,7 @@ We krijgen in de switch dus:
 
 De volledige code van deze fase is dus geworden:
 
-```java
+```csharp
 int[,] Kaart =
     {
         {1, 2, 1, 3},
@@ -250,7 +250,7 @@ while (true)
 
 We wensen een visuele indicatie van de kaart te tonen aan de gebruiker (zonder dat hij ziet wat voor kamer het is). We voegen daarom een methode ``TekenKaart()`` toe die de kaart iedere keer opnieuw zal tekenen. Deze methode gaat ook de positie van de gebruiker duidelijk maken a.d.h.v. een "X" op de kaart. Onze *game-loop* veranderen we dus naar:
 
-```java
+```csharp
 while (true)
 {
     Console.Clear();
@@ -266,7 +266,7 @@ De ``TekenKaart()`` methode toont dus de huidige locatie als een "X". Voorts wil
 
 We doorlopen in de ``TekenKaart()`` methode de volledige kaart. Lijn per lijn. Hiervoor gebruiken we 2 geneste for-loops. De outer-loop (index ``i``) zal de X-coördinaat aflopen, oftewel lijn per lijn. De inner loop (index j) zal de Y-coördinaat aflopen, oftewel kolom per kolom:
 
-```java
+```csharp
 private static void TekenKaart(int[,] Kaart, int posX, int posY)
 {
     for (int i = 0; i < Kaart.GetLength(0); i++)
@@ -278,33 +278,33 @@ private static void TekenKaart(int[,] Kaart, int posX, int posY)
 Merk op dat ook deze methode geen *hardcoded* array-grenzen bevat. We kunnen dus eender welke kaart aan deze methode aanbieden.
 
 Binnen de inner-for gaan we nu element per element van 1 rij op het scherm tonen. Eerst controleren we of de speler zich bevindt in het element dat we op het punt staan te tekenen. Als dat zo is dan plaatsen we een "X":
-```java
+```csharp
 if (posX == i & posY == j)
     Console.Write("X");
 ```
 
 Anders plaatsen we een "o" indien het gaat om gebied waar de speler toegelaten is:
-```java
+```csharp
 else if (Kaart[i, j] != 0)
     Console.Write("o");
 ```
 
 
 Niet toegelaten gebied tonen we niet, we zetten dus een spatie in de plaats:
-```java
+```csharp
 else
     Console.Write("  ");
 ```
 
 Na iedere inner-loop moeten we vervolgens een newline toevoegen, anders worden alle rijen van de kaart naast elkaar gezet. Finaal krijgen we dus:
-```java
+```csharp
     }
     Console.Write(Environment.Newline);
 }
 ```
 
 Dit resulteert in volgende finale code voor deze fase:
-```java
+```csharp
 static void Main()
 {
     int[,] Kaart ={ {1, 2, 1, 3},{0, 1, 0, 1},{0, 4, 0, 5}};
@@ -372,7 +372,7 @@ private static void TekenKaart(int[,] Kaart, int posX, int posY)
 Zoals reeds aangehaald staat niets je in de weg om je spel-wereld groter te maken. Hiervoor hoef je enkel (momenteel) de Kamers en Kaart arrays aan te passen. Alle code zal blijven werken.
 
 Bijvoorbeeld:
-```java
+```csharp
 int[,] Kaart =
     {
         {1, 2, 1, 3, 0, 0},
@@ -404,7 +404,7 @@ Het principe van een LuT verschilt eigenlijk weinig van een eenvoudige database.
 
 We kunnen bijvoorbeeld per kamer ook een beschrijving tonen van die kamer. Daar we nog niets kennen van klassen en objecten (indien wel: ga direct naar de volgende appendix!) moeten we ons dus behelpen als volgt: we definiëren een nieuwe array ``Beschrijving`` waarbij ieder element de index heeft van de respectievelijke kamer:
 
-```java
+```csharp
 int[,] Kaart =
     {
         {1, 2, 1, 3, 0, 0},
@@ -442,7 +442,7 @@ string[] Beschrijving =
 ```
 
 Door 1 extra lijntje (+ eentje voor een visuele scheiding tussen beschrijving en kamertitel) plaatsen we nu steeds de kamerbeschrijving onder de kamertype:
-```java
+```csharp
 Console.WriteLine(Kamers[kamerindex]);
 Console.WriteLine("******");
 Console.WriteLine(Beschrijving[kamerindex]);
@@ -456,7 +456,7 @@ Na iedere actie van de speler verwerken we steeds weer de kaart in zowel de ``Te
 Je met de kennis die we zo meteen tonen bijvoorbeeld aan de start van het programma met een lege kaart: naargelang de speler zich verplaatst in de wereld zal de kaart aangevuld worden. (tip: gebruik hiervoor een array ``VolledigeKaart`` en een array ``ReedsOntdekteKaart`` of iets dergelijks. De speler krijgt steeds de ``ReedsOntdekteKaart`` te zien in ``TekenKaart()``. Naargelang acties van de speler kopieer je dan bepaalde elementen uit VolledigeKaart naar ReedsOntdekteKaart).
 
 We definiëren onze kaart (merk op dat we de folterkamer en geheime gang verwijderen rechts onderaan):
-```java
+```csharp
 int[,] Kaart =
     {
         {1, 2, 1, 3, 0, 0},
@@ -473,7 +473,7 @@ We willen volgende functionaliteit inbouwen:
 De actie gaan we nu even eenvoudig beschouwen als volgt: de gebruiker kan in alle kamers "G" als opdracht doorgeven. Echter, enkel wanneer de gebruiker zich in de kamer met index 6 bevind dan zal de geheime kamer zichtbaar worden.
 We voegen daarom een extra case toe aan onze switch:
 
-```java
+```csharp
 case 'G':
     if (kamerindex != 6)
     {
@@ -484,7 +484,7 @@ case 'G':
 ```
 Als de speler wél in de securityroom is dan gaan we de kaart-array aanpassen. We voegen rechtsonder in de array de 2 nieuwe kamers toe:
 
-```java
+```csharp
 Console.WriteLine("Je ontdekt een geheime ruimte");
 Kaart[4, 4] = 1;
 Kaart[4, 5] = 8;
@@ -495,7 +495,7 @@ Wanneer we nu de kaart hertekenen dan deze nieuwe ruimte verschijnen en weet de 
 
 
 De volledige code wordt dan (we laten de ``TekenKaart``-methode even achterwege):
-```java
+```csharp
 static void Main()
 {
     int[,] Kaart =
@@ -595,7 +595,7 @@ Vanaf dit punt kun je nu al een relatief eenvoudig, toch leuk spel maken, op voo
 
 Beeld je in dat je de kaart(en) voor je spel uit een bestand laadt. Op zich is dat niet zo moeilijk , maar het vereist natuurlijk extra lijnen code in je, reeds overbevolkte, Main-methode. We verhuizen daarom de code waarin we onze kaarten initialiseren naar een aparte methode. In onze Main schrijven we dan (merk het gebruik van het ``out`` keyword op, dit wordt in een eerder appendix uitgelegd):
 
-```java
+```csharp
 int[,] Kaart;
 string[] Kamers;
 string[] Beschrijving;
@@ -604,7 +604,7 @@ InitialiseerSpel(out Kaart, out Kamers, out Beschrijving);
 ```
 
 Deze methode bevat dan gewoon de code van daarnet, mooi verpakt en afgeschermd:
-```java
+```csharp
 private static void InitialiseerSpel(
     out int[,] Kaart, 
     out string[] Kamers, 
@@ -628,7 +628,7 @@ private static void InitialiseerSpel(
 
 Het verwerken van de userinput kunnen we ook makkelijk extraheren naar aparte methode zodat onze while-loop overzichtelijker wordt :
 
-```java
+```csharp
 while (true)
 {
     Console.Clear();
@@ -647,7 +647,7 @@ while (true)
 ```
 Merk op dat we zelfs de volledige loop naar een aparte methode op zijn beurt kunnen extraheren. Maar dat laten we aan de lezer over. We dienen de posities van de speler by reference mee te geven, daar we de posities onmiddellijk willen updaten in de ``VerwerkInput()``-methode.
 
-```java
+```csharp
 private static void VerwerkInput(
     int[,] Kaart, 
     int kamerindex, 
@@ -670,7 +670,7 @@ De kaart bevat UNICODE-art met vaste grootte. Dit zal bugs geven indien onze kaa
 
 We definiëren de nieuwe Methode en voegen als eerste actie UNICODE-art toe van een kaart:
 
-```java
+```csharp
 private static void TekenKaartCool(int[,] Kaart, int posX, int posY)
 {
     string background =
@@ -699,7 +699,7 @@ We tonen dit in de volgende code waarin we de background array (die de UNICODE-a
 
 De commentaar toont de zonet beschreven stappen:
 
-```java
+```csharp
 ConsoleColor oudeKleur = Console.ForegroundColor; //1
 Console.ForegroundColor = ConsoleColor.DarkCyan; //2
 for (int i = 0; i < background.Length; i++)
@@ -719,7 +719,7 @@ Console.ForegroundColor = oudeKleur;//4
 
 ```
 Vervolgens gebruiken we ``SetCursorPosition`` om onze spelerskaart ‘over’ de UNICODE-art te tekenen. Hierbij voegen we nog wat extra kleurtje toe, de speler-X wordt rood gekleurd:
-```java
+```csharp
 ConsoleColor bll2 = Console.BackgroundColor;
 Console.BackgroundColor = ConsoleColor.DarkYellow;
 
@@ -756,7 +756,7 @@ De while-loop in de Main()-methode passen we nu nog aan zodat:
 3.	De beschrijving en andere tekst steeds onder map komt en niet erover.
 
 
-```java
+```csharp
 while (true)
 {
     Console.Clear();
@@ -788,7 +788,7 @@ We zijn er!
 De volledige code voor dit extra-ordinaire spel wordt dan:
 
 ### Main-methode
-```java
+```csharp
 static void Main()
 {
     int[,] Kaart;
@@ -825,7 +825,7 @@ static void Main()
 
 ### InitialiseerSpel-methode
 
-```java
+```csharp
 private static void InitialiseerSpel(
     out int[,] Kaart, 
     out string[] Kamers, 
@@ -864,7 +864,7 @@ private static void InitialiseerSpel(
 
 
 ### VerwerkInput-methode
-```java
+```csharp
 private static void VerwerkInput(
     int[,] Kaart, 
     int kamerindex, 
@@ -917,7 +917,7 @@ private static void VerwerkInput(
 
 ### TekenKaartCool-methode
 
-```java
+```csharp
 private static void TekenKaartCool(int[,] Kaart, int posX, int posY)
 {
     string background =

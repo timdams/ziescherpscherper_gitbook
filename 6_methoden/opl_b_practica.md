@@ -9,7 +9,7 @@
 
 Basic:
 
-```java
+```csharp
 static void MyIntro()
 {
     Console.WriteLine("Ik ben Tim Dams, ik ben 18 jaar oud en woon in de Lambrisseringsstraat 666");
@@ -18,7 +18,7 @@ static void MyIntro()
 
 Basic 2:
 
-```java
+```csharp
 static void MyIntro(string name, int age, string address)
 {
     Console.WriteLine($"Ik ben {name}, ik ben {age} jaar oud en woon in de {address}");
@@ -27,7 +27,7 @@ static void MyIntro(string name, int age, string address)
 
 ## Grootste methode
 
-```java
+```csharp
 static int Grootste(int getal1, int getal2, int getal3)
 {
     if (getal1 >= getal2 && getal1 >= getal3)
@@ -41,7 +41,7 @@ static int Grootste(int getal1, int getal2, int getal3)
 
 ## Rekenmachine
 
-```java
+```csharp
 static double TelOp(double a, double b) { return a + b; }
 static double TrekAf(double a, double b) { return a - b; }
 static double Vermenigvuldig(double a, double b) { return a * b; }
@@ -50,7 +50,7 @@ static double Deel(double a, double b) { return a / b; }
 
 ## Paswoord generator methode
 
-```java
+```csharp
 static string PaswoordGenerator(int lengte)
 {
     string resultaat = "";
@@ -78,7 +78,7 @@ static string PaswoordGenerator(int lengte)
 
 ## Film Default
 
-```java
+```csharp
 static void FilmRuntime(string naam, int duur = 90, Genre filmgenre = Genre.Onbekend )
 {
     Console.WriteLine($"{naam} ({duur}, {filmgenre})");

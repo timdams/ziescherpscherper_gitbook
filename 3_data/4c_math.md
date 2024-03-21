@@ -9,14 +9,14 @@ De Math-bibliotheek bevat methoden voor een groot aantal typische wiskundige bew
 Stel dat je de derde macht van een variabele ``getal`` wenst te berekenen. *Zonder* de Math-bibliotheek zou dat er zo uitzien:
 
 
-```java
+```csharp
 double result = getal * getal * getal; //SLECHTE MANIER
 ```
 
 Dit valt nog mee, maar wat als je 3 tot de zevende macht moest berekenen? Kortom, laten we eens kijken hoe ``Math`` ons kan helpen. *Met* de Math-bibliotheek kunnen we gebruik maken van de ``Pow`` (**Power**) methode:
 
 
-```java
+```csharp
 double result = Math.Pow(getal, 3);
 ```
 
@@ -40,7 +40,7 @@ De meeste methoden zijn zeer makkelijk in gebruik en werken bijna allemaal op ee
 
 Enkele voorbeelden:
 
-```java
+```csharp
 double sineHoekA = Math.Sin(345); //IN RADIALEN!
 double derdeMachtVan20 = Math.Pow(20, 3);
 double complexer = 3 + derdeMachtVan20 * Math.Round(sineHoekA);
@@ -59,13 +59,13 @@ Twijfel je over de werking van een methode, gebruik dan de help als volgt:
 Ook het getal Pi (``3.141...``) is beschikbaar in de Math-bibliotheek. Het witte icoontje voor PI bij Intellisense toont aan dat het hier om een *field* gaat: een eenvoudige variabele met een specifieke waarde. In dit geval gaat het zelfs om een ``const`` field, met de waarde van Pi van het type double.
 
 
-```java
+```csharp
 public const double PI;
 ```
 
 Je kan deze als volgt gebruiken in berekeningen zoals
 
-```java
+```csharp
 double straal = 5.5;
 double omtrek = Math.PI * 2 * straal;
 ```
@@ -79,7 +79,7 @@ double omtrek = Math.PI * 2 * straal;
 ### Bereik in code weten 
 Het bereik van datatypes ligt weliswaar vast (zie hoofdstuk 2). Maar het is nuttig om weten dat deze ook in de compiler gekend is.  Ieder datatype heeft een aantal ingebouwde zaken die je kan gebruiken om onder andere de maximum en minimum-waarde van een datatype te gebruiken.  Volgende voorbeeld toont hoe dit kan:
 
-```java
+```csharp
 string startZin = "Het bereik van het type double is:";
 Console.WriteLine($"{startZin} {double.MinValue} tot {double.MaxValue}.");
 ```

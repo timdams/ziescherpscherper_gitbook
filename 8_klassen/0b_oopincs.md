@@ -8,7 +8,7 @@ We kunnen in C# geen objecten aanmaken voor we een klasse hebben gedefinieerd da
 
 Een klasse heeft minimaal de volgende vorm:
 
-```java
+```csharp
 class ClassName
 {
 
@@ -23,7 +23,7 @@ De naam die je een klasse geeft moet voldoen aan de identifier regels uit hoofds
 
 Volgende code beschrijft de klasse ``Auto`` in C#
 
-```java
+```csharp
 class Auto
 {
 
@@ -54,7 +54,7 @@ Je kan nu objecten aanmaken van de klasse die je hebt gedefinieerd. Dit kan op a
 
 Je doet dit door eerst een variabele te definiëren en vervolgens een object te **instantiëren** met behulp van het ``new`` keyword. De variabele heeft als datatype ``Auto``:
 
-```java
+```csharp
 Auto mijnEersteAuto = new Auto();
 Auto mijnAndereAuto = new Auto();
 ```
@@ -72,7 +72,7 @@ Let goed op dat je dus op de juiste plekken dit alles doet:
 In het volgende hoofdstuk gaan we kijken wat er allemaal gebeurt in het geheugen wanneer we een object met ``new`` aanmaken. Het is echter nu al belangrijk te beseffen dat objecten niet kunnen gemaakt worden zonder ``new``. De ``new`` operator vereist dat je aangeeft van welke klasse je een object wilt aanmaken, gevolgd door ronde haakjes (bijvoorbeeld ``new Student()``). We roepen hier een constructor aan (zie verder) die het object in het geheugen zal aanmaken. Vervolgens geeft ``new`` een adres terug waar het object zich bevindt. Het is dit adres dat we vervolgens kunnen bewaren in een variabele die links van de toekenningsoperator (``=``) staat. 
 
 Test maar eens wat er gebeurt als je volgende code probeert te compileren:
-```java
+```csharp
 Auto mijnEersteAuto = new Auto();
 Auto mijnAndereAuto;
 Console.WriteLine(mijnEersteAuto);
@@ -83,7 +83,7 @@ Je zal een ``"Use of unassigned local variable mijnAndereAuto"`` foutboodschap k
 
 {% hint style='warning' %}
 Dit concept is dus fundamenteel verschillend van de klassieke *valuetypes* die we al kenden (``int``, ``double``, enz.). Daar zal volgende code wél werken:
-```java
+```csharp
 int balans;
 Console.WriteLine(balans);
 ```

@@ -2,7 +2,7 @@
 
 Zoals nu duidelijk is bevatten referentievariabelen steeds een referentie naar een object. Maar wat als we dit schrijven:
 
-```java
+```csharp
 Student stud1;
 stud1.Naam = "Marc Jansens";
 ```
@@ -26,7 +26,7 @@ Een veel voorkomende foutboodschap tijdens de uitvoer van je applicatie is een `
 
 Laten we dit eens simuleren:
 
-```java
+```csharp
 Student stud1 = null;
 Console.WriteLine(stud1.Name);
 ```
@@ -49,7 +49,7 @@ Voorts kan het ook soms *by design* zijn dat een object voorlopig ``null`` is.
 
 Gelukkig kan je controleren of een object ``null`` is als volgt:
 
-```java
+```csharp
 if(stud1 == null)
     Console.WriteLine("Oei. Object bestaat niet.")
 ```
@@ -58,7 +58,7 @@ if(stud1 == null)
 
 Vaak moet je dit soort code schrijven:
 
-```java
+```csharp
 if(stud1 != null)
 {
     Console.WriteLine(stud1.Name)
@@ -68,7 +68,7 @@ if(stud1 != null)
 Op die manier voorkom je een ``NullReferenceException``. Het is uiteraard omslachtig om steeds die check te doen. Je mag daarom ook schrijven:
 
 
-```java
+```csharp
 Console.WriteLine(stud1?.Name)
 ```
 
@@ -85,7 +85,7 @@ Uiteraard mag je ook expliciet ``null`` teruggeven als resultaat van een methode
 
 Volgende methode zoekt in een array van studenten naar een student met een specifieke naam en geeft deze terug als resultaat. Enkel als de hele array werd doorlopen en er geen match is wordt er ``null`` teruggegeven (de werking van arrays van objecten wordt later besproken): 
 
-```java
+```csharp
 static Student ZoekStudent(Student[] array, string naam)
 {
     Student gevonden = null;
@@ -105,7 +105,7 @@ Tijd om het voorbeeld van de *voortplanting der mensch* er nog eens bij te nemen
 
 De klasse ``Mens`` breiden we uit naar:
 
-```java
+```csharp
 class Mens
 {
     public int MaxLengte{get;set;}
@@ -126,7 +126,7 @@ Mooi toch?!
 
 Om het nu volledig te maken zullen we er nu nog voor zorgen dat enkel een vrouw kan voortplanten, en enkel van een man (het is een vrij klassiek wereldbeeld, maar voor deze oefening wordt het te complex als we ook alle 21e-eeuwse voortplantingswijzen moeten implementeren).  Veronderstel dat het geslacht via een enumtype (``enum Geslachten {Man, Vrouw}``) in een auto-property ``Geslacht`` wordt bewaard.  We voegen daarom bovenaan in de ``PlantVoort``-methode nog een kleine check in én return'n een leeg (``null``) object als de voortplanting faalt (we zouden ook een ``Exception`` kunnen opwerpen):
 
-```java
+```csharp
     public Mens PlantVoort(Mens dePapa)
     {
         if(Geslacht == Geslachten.Vrouw && dePapa.Geslacht == Geslachten.Man)
@@ -143,7 +143,7 @@ Om het nu volledig te maken zullen we er nu nog voor zorgen dat enkel een vrouw 
 
 Volgende code produceert nu een kersverse baby:
 
-```java
+```csharp
 Mens mama = new Mens();
 mama.Geslacht = Geslachten.Vrouw;
 mama.MaxLengte = 180;
