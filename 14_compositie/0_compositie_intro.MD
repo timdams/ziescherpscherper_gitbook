@@ -210,7 +210,7 @@ class PC
 {% hint style='danger' %}
 ### NullReferenceException is een klassieke fout
 
-Een veelvoorkomende fout bij compositie en aggregatie van objecten is dat je een intern object aanspreekt dat nooit werd geïnstantieerd. Je krijgt dan een ``NullReferenceException``.
+Een veelvoorkomende fout bij compositie en aggregatie van objecten is dat je een intern object aanspreekt dat nooit werd aangemaakt. Je krijgt dan een ``NullReferenceException``.
 
 Het is dus zeker bij compositie en aggregatie een goede gewoonte om zoveel mogelijk te controleren op ``null`` telkens je het object gaat gebruiken:
 

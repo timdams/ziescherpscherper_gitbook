@@ -133,17 +133,15 @@ stud = new Student();
 Het geheugen na lijn 1 ziet er zo uit:
 
 
-![Na lijn 1: Merk op dat er eigenlijk de waarde ``null``is van de variabele stud. We leggen later uit wat die ``null`` juist wil zeggen.](../assets/6_klassen/memzoom1.png)
+![Na lijn 1](../assets/6_klassen/memzoom1.png)
 
+Merk op dat de variabele ``stud`` eigenlijk de waarde ``null`` heeft. We leggen later uit wat dit juist wil zeggen.
 
-Lijn 2 gaan we nog trager bekijken. Eerst zal het gedeelte rechts van de ``=``-operator uitgevoerd worden. Er wordt dus **in de heap** een nieuw ``Student``-object aangemaakt:
-
-
+Lijn 2 gaan we nog trager bekijken: Eerst zal het gedeelte rechts van de ``=``-operator uitgevoerd worden. Er wordt dus **in de heap** een nieuw ``Student``-object aangemaakt:
 
 ![Na: new Student();](../assets/6_klassen/memzoom2.png)
 
 Vervolgens wordt de toekenning toegepast en wordt het geheugenadres van het object in de variabele ``stud`` geplaatst:
-
 
 ![Na: stud = new Student();](../assets/6_klassen/memzoom3.png)
 

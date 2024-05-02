@@ -99,6 +99,7 @@ Console.WriteLine(balans);
 In hoofdstuk 2 leerden we dat er allerlei datatypes bestaan. We maakten vervolgens variabelen aan van een bepaald datatype zodat deze variabele als inhoud enkel zaken kon bevatten van dat ene datatype. 
 
 Zo leerden we toen volgende datatypes:
+
 * **Valuetypes** zoals ``int``, ``char`` en ``bool``.
 * Het **``enum``** keyword liet ons toe om een nieuw datatype te maken dat maar een eindig aantal mogelijke waarden (values) kon hebben. Intern bewaarden variabelen van zo'n enum-datatype hun waarde als een ``int``.
 * **Arrays** waren het laatste soort datatypes. We ontdekten dat we arrays konden maken van eender welk datatype (valuetypes en enums) dat we tot dan kenden.

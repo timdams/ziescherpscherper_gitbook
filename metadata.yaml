@@ -12,9 +12,12 @@ lang: "nl"
 listings-disable-line-numbers: false
 listings-no-page-break: true
 book: true
-# geometry: paperheight=9.5in,paperwidth=6.7in,margin=1in
-# fontsize: 10pt
-titlepage: true
+geometry: paperheight=9.8in,paperwidth=6.9in,margin=0.7in
+fontsize: 10pt
+titlepage: false
+toc-own-page: true
+first-chapter: 0
+papersize: "b4"
 header-includes:
 - |
   ```{=latex}
