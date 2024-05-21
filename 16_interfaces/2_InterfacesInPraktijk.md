@@ -131,5 +131,20 @@ Kortom, voeg dit achteraan de eerder geschreven vergelijkingen in je ``Land``-kl
 
 
 
+### List sorteren
+
+Indien je een ``List<Land>`` zou willen sorteren in plaats van een array van ``Land`` dan kan dit ook. Nog steeds vereisen we dat je klasse de ``IComparable`` interface gebruikt.  We kunnen nu de ingebouwde ``Sort``-methode van de ``List`` klasse gebruiken als volgt. Stel dat je een lijst van landen hebt genaamd ``landLijst``:
+
+```csharp
+landLijst.Sort();
+```
+
+Zo simpel! **Merk op dat we hier de lijst zelf sorteren. Er wordt dus geen nieuwe lijst teruggegeven zoals bij ``Array.Sort()`` het geval is.**
+
+Indien je toch liever ``Array.Sort`` gebruikt dan kunnen we een andere, handige, ingebouwde ``List``-methode gebruiken, namelijk ``ToArray()``, als volgt:
+
+```csharp
+landLijst = Array.Sort(landLijst.ToArray());
+```
 
 
