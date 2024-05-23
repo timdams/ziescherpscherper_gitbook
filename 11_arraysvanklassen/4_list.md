@@ -100,6 +100,7 @@ Interessante methoden en properties voorts zijn:
 * ``Insert()``: methode om een element op een specifieke plaats in de lijst in te voegen.
 * ``IndexOf()``: geeft de index terug van het element item in de rij. Indien deze niet in de lijst aanwezig is dan wordt -1 teruggegeven.
 * ``RemoveAt()``: verwijdert een element op de index die je als parameter meegeeft.
+* ``Sort()``: alle elementen in de lijst worden gesorteerd. Merk op dat dit niet altijd werkt zoals je verwacht. Lees zeker in hoofdstuk 17 de sectie omtrent "Interfaces in de praktijk" eerst voor je probeert een lijst van eigen objecten te sorteren.
 
 {% hint style='danger' %}
 Let op met het gebruik van ``IndexOf`` en objecten. Deze methode zal controleren of de referentie dezelfde is van een bepaald object en daar de index van teruggeven. Je kan deze methode dus wel degelijk met arrays van objecten gebruiken, maar je zal enkel je gewenste object terugvinden indien je reeds een referentie naar het object hebt en dit meegeeft als parameter.
@@ -107,5 +108,59 @@ Let op met het gebruik van ``IndexOf`` en objecten. Deze methode zal controleren
 
 
 
+### Een wereld met OOP: Pong list
 
+Ikzelf ben fan van List. Het maakt je code vaak leesbaarder dan arrays en geeft je de optie om dynamisch groeiende (en krimpende) arrays te hebben, zonder dat je daar veel *boilerplate* code voor moet schrijven. Herinner je onze Pong-code waarin we 100 balletjes op het scherm lieten vliegen?
 
+```csharp
+const int AANTAL_BALLETJES = 100;
+Random r = new Random();
+Balletje[] veelBalletjes = new Balletje[AANTAL_BALLETJES];
+for (int i = 0; i < veelBalletjes.Length; i++) //balletjes aanmaken
+{
+    veelBalletjes[i] = new Balletje();
+    veelBalletjes[i].X = r.Next(10, 20);
+    veelBalletjes[i].Y = r.Next(10, 20);
+    veelBalletjes[i].VX = r.Next(-2, 3);
+    veelBalletjes[i].VY = r.Next(-2, 3);
+}
+
+while (true)
+{
+    for (int i = 0; i < veelBalletjes.Length; i++)
+    {
+        veelBalletjes[i].Update(); //update alle balletjes
+    }
+    for (int i = 0; i < veelBalletjes.Length; i++)
+    {
+        veelBalletjes[i].TekenOpScherm(); //teken alle balletjes
+    }
+    System.Threading.Thread.Sleep(50);
+    Console.Clear();
+}
+```
+
+Vooral de code in de ``while`` wordt nu leesbaarder dankzij ``List<Balletje>`` (we gaan ook ineens gebruik maken van onze nieuwe default constructor die de random startwaarde instelde):
+
+```csharp
+const int AANTAL_BALLETJES = 100;
+List<Balletje> veelBalletjes = List<Balletje>();
+for (int i = 0; i < AANTAL_BALLETJES; i++) //balletjes aanmaken
+{
+    veelBalletjes.Add(new Balletje());
+}
+
+while (true)
+{
+    foreach(var bal in veelBalletjes)
+    {
+        bal.Update(); //update alle balletjes
+    }
+    foreach(var bal in veelBalletjes)
+    {
+        bal.TekenOpScherm(); //teken alle balletjes
+    }
+    System.Threading.Thread.Sleep(50);
+    Console.Clear();
+}
+```
