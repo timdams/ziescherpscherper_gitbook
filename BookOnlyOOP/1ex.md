@@ -122,7 +122,7 @@ Definieer vervolgens een methode ``BerekenLeeftijd``, die op basis van de ingest
 
 
 ### Verjaardag
-Maak een applicatie die aan de gebruiker z'n geboortedatum vraagt (dag/maand, bv 18/3). Vervolgens toont het programma op welke dag hij volgend jaar jarig zal zijn (Monday, Tuesday, enz.) én hoeveel dagen hij nog moet wachten. Uiteraard gebruik je ``DateTime`` voor deze applicatie.
+Maak een applicatie die aan de gebruiker z'n geboortedatum vraagt (dag/maand, bv. 18/3). Vervolgens toont het programma op welke dag hij volgend jaar jarig zal zijn (Monday, Tuesday, enz.) én hoeveel dagen hij nog moet wachten. Uiteraard gebruik je ``DateTime`` voor deze applicatie.
 
 {% hint style='tip' %}
 Je hebt geen eigen klasse nodig. Doel van deze oefening is dat je leert werken met de bestaande ``DateTime`` en ``TimeSpan`` klassen. Je mag dus alles in de Main schrijven.
@@ -141,7 +141,7 @@ Voorbeeld invoer en uitvoer:
 
 
 ```text
-Wanneer is je verjaardag (d/m, bv 18/3)
+Wanneer is je verjaardag (d/m, bv. 18/3)
 20/5
 Je bent over 124 dagen jarig op een Dinsdag
 ```

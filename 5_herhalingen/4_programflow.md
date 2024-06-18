@@ -13,6 +13,7 @@ Een flowchart bestaat uit een aantal elementen:
 * **Condities en beslissingen**: Een ruit wordt gebruikt wanneer een beslissing moet genomen worden. De condities van if en while-loops zet je dus in een ruit. De pijlen die eruit volgen geven aan welke pijl moet gevolgd worden gegeven een bepaalde waarde van de conditie.
 
 ### Flow-elementen
+
 We tonen nu kort de verschillende program flow elementen en hoe ze in een flowchart voorkomen. 
 
 ![If.](../assets/3_loops/if.png)
@@ -24,7 +25,7 @@ We tonen nu kort de verschillende program flow elementen en hoe ze in een flowch
 ![Do while.](../assets/3_loops/dowhile.png)
 
 {% hint style='tip' %}
-Merk op dat bij if en if-else de flow niet naar een eerder punt in de code gaat. Dit is dus de manier om een while/do while te herkennen: er wordt naar een eerder punt in de code gegaan, een punt waar we reeds geweest waren
+Merk op dat bij if en if-else de flow niet naar een eerder punt in de code gaat. Dit is dus de manier om een while/do while te herkennen: er wordt naar een eerder punt in de code gegaan. Namelijk een punt waar we reeds geweest waren.
 {% endhint %}
 
 

@@ -1,10 +1,10 @@
 # Het dierenrijk
 
-![Vereenvoudigde voorstelling van (een deel van het) dierenrijk](../assets/7_overerving/animals.png)
+![Vereenvoudigde voorstelling van een deel van het dierenrijk](../assets/7_overerving/animals.png)
 
 Maak bovenstaande klassenhierarchie na. Animal is de parentklasse , mammal en reptile zijn childklassen van Animal en zo voort.
 
-Verzin voor iedere klasse een property die de parent klasse niet heeft. (bv Animal heeft "BeweegVoort", Reptile heeft "AantalSchubben", etc).
+Verzin voor iedere klasse een property die de parent klasse niet heeft. (bv. Animal heeft "BeweegVoort", Reptile heeft "AantalSchubben", etc).
 
 Voorzie in de klasse Animal een virtual methode ``ToonInfo`` die alle properties van de klasse op het scherm zet. De overgeërfde klassen overriden deze methode door de extra properties ook te tonen (maar gebruik base.ToonInfo om zeker de parentklasse werking te bewaren).
 
@@ -62,7 +62,7 @@ We maken een klasse ``Ball`` die via ``Update`` en ``Draw`` zichzelf over het co
 * Een ``static`` methode ``CheckHit`` laat ons toe te ontdekken of twee ``Ball``objecten mekaar raken
 
 ```csharp
-class Ball
+internal class Ball
 {
    public int X { get { return x; } }
    public int Y { get { return y; } }
@@ -121,7 +121,7 @@ class Ball
 De overgeërfde klasse ``PlayerBall`` is een ``Ball`` maar zal z'n ``VectorX`` en ``VectorY`` updaten gebaseerd op input via de ``ChangeVelocity`` methode:
 
 ```csharp
-class PlayerBall : Ball
+internal class PlayerBall : Ball
 {
    public PlayerBall(int xin, int yin, int VectorXin, int VectorYin) : base(xin, yin, VectorXin, VectorYin)
    {

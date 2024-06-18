@@ -13,7 +13,7 @@ string userInput = Console.ReadLine();
 ```
 Dit mag dus niet: ``int userInput = Console.ReadLine();`` en zal in een *conversion error* resulteren.
 
-Willen we dat de gebruiker een getal invoert, bijvoorbeeld zijn of haar leeftijd, dan zal dit nog steeds als ``string`` moeten worden opvangen **en zullen we dit vervolgens moeten CONVERTEREN** .
+Willen we dat de gebruiker een getal invoert dan zal dit nog steeds als ``string`` moeten worden ingelezen. **Vervolgens zullen we dit vervolgens moeten converteren**.
 
 
 
@@ -21,7 +21,7 @@ Invoer van de gebruiker verwerken (dat een andere type dan ``string`` moet zijn)
 
 1. Input **uitlezen** met ``Console.ReadLine()``.
 2. Input **bewaren** in een ``string`` variabele.
-3. De variabele **parsen** met ``.Parse()`` bibliotheek naar het gewenste type.
+3. De variabele **parsen** met de ``Parse()`` bibliotheek naar het gewenste type.
 
 
 
@@ -44,25 +44,23 @@ double gewicht = double.Parse(Console.ReadLine());
 
 
 ### Foutloze input
-Voorgaande code veronderstelt dat de gebruiker géén fouten invoert. De conversie zal namelijk mislukken indien de gebruiker bijvoorbeeld ``IKWEEG10KG`` invoert in plaats van ``10,3``.
 
-In de komende hoofdstukken mag je er altijd van uitgaan dat de gebruiker foutloze input geeft.
+Voorgaande code veronderstelt dat de gebruiker géén fouten invoert[^geenfouten]. De conversie zal namelijk mislukken indien de gebruiker bijvoorbeeld ``Ik weeg 10kg`` invoert in plaats van ``10,3``.
 
+**In de komende hoofdstukken mag je er altijd van uitgaan dat de gebruiker foutloze input geeft.**
 
-{% hint style='danger' %}
-De invoer van kommagetallen door de gebruiker is afhankelijk van de landinstellingen van je besturingssysteem. Staat deze in Belgisch/Nederlands dan moet je kommagetallen met een **KOMMA**(``,``) invoeren (dus ``9,81``), staat deze in het Engels dan moet je een **PUNT**(``.``) gebruiken (``9.81``).
-{% endhint %}
+### Kommagetallen in C\#
 
+Goed opletten nu.
 
-
-{% hint style='danger' %}
-**In je C# code moet je kommagetal literals altijd met een punt schrijven**. Dit is onafhankelijk van je taalinstellingen.
-{% endhint %}
+De invoer van kommagetallen door de gebruiker is afhankelijk van de landinstellingen van je besturingssysteem. Staat deze in Belgisch/Nederlands dan moet je kommagetallen met een **komma** invoeren (``9,81``). Staat je computer in het Engels dan moet je een **punt** gebruiken (``9.81``).
 
 
-{% hint style='tip' %}
-En wat als je toch foute invoer wilt opvangen? Zoals eerder aangegeven: dan is ``TryParse`` je vriend (zie appendix).
-{% endhint %}
+Maar: **In je C# code moet je kommagetal literals altijd met een punt schrijven**. Dit is onafhankelijk van je taalinstellingen. 
+
+
+[^geenfouten]: En wat als je toch foute invoer wilt opvangen? Dan is ``TryParse`` je vriend. Meer informatie hierover in de appendix.
+
 
 
 

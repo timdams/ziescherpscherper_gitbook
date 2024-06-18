@@ -20,6 +20,7 @@ public static void ToonArray(string[] array)
     }
 }
 ```
+
 Dankzij generics kunnen we nu het deel dat **generiek** moet zijn aanduiden (in dit geval met ``T``) en onze methode eenmalig definiëren. We gebruiken hierbij de ``< >`` aanduiding die aan de compiler vertelt *"dit stuk is een generiek type"*:
 
 ```csharp
@@ -42,24 +43,21 @@ ToonArray(namen);
 ```
 
 
+<!-- \newpage -->
 
 ### Generic types
+
 We kunnen niet alleen generieke methoden schrijven, maar ook eigen klassen én interfaces definiëren die generiek zijn. In het volgende codevoorbeeld is te zien hoe een eigen generic class in C# gedefinieerd en gebruikt kan worden. Merk het gebruik van de aanduiding ``T``, deze geeft weer aan dat hier een type (zoals ``int``, ``double``, ``Student``, enz.) zal worden ingevuld tijdens het compileren.
 
-{% hint style='tip' %}
-## ``<T>``
-De typeparameter T wordt pas voor de specifieke instantie van de generieke klasse of type ingevuld bij het compileren. Hierdoor kan de compiler per instantie controleren of alle parameters en variabelen die in samenhang met het generieke type gebruikt worden wel kloppen.
+De typeparameter ``<T>`` wordt pas voor de specifieke instantie van de generieke klasse of type ingevuld bij het compileren. Hierdoor kan de compiler per instantie controleren of alle parameters en variabelen die in samenhang met het generieke type gebruikt worden wel kloppen.
 
-De afspraak is om .NET een ``T`` te gebruiken indien het type nog dient bepaald te worden (dit is niet verplicht maar wordt aanbevolen als je maar 1 generieke type nodig hebt).
-{% endhint %}
+De afspraak is om .NET een ``T`` te gebruiken indien het type nog dient bepaald te worden. Dit is niet verplicht maar wordt aanbevolen als je maar 1 generiek type nodig hebt.
 
-
-
-We wensen een klasse te maken die de locatie in X,Y,Z richting kan bewaren. We willen echter zowel ``float``, ``double`` als ``int`` gebruiken om deze X,Y,Z coördinaten in bij te houden:
+We wensen nu een klasse te maken die de locatie in X,Y,Z coördinaten kan bewaren. We willen echter zowel ``float``, ``double`` als ``int`` gebruiken om deze X,Y,Z coördinaten in bij te houden:
 
 
 ```csharp
-class Locatie<T>
+internal class Locatie<T>
 {
     public T X {get;set;}
     public T Y {get;set;}
@@ -91,13 +89,14 @@ Merk op dat het keyword ``var`` hier handig is: het verkort de ellenlange stukke
 
 
 
+<!-- \newpage -->
 
 
 ### Een complexere generieke klasse
 Voorgaand voorbeeld is natuurlijk maar de tip van de ijsberg. We kunnen bijvoorbeeld volgende klasse maken die we kunnen gebruiken met eender welk type om de meetwaarde van een meting in op te slaan. Merk op hoe we op verschillende plaatsen in de klasse het element ``T`` gebruiken als een datatype:
 
 ```csharp
-public class Meting<T>
+internal class Meting<T>
 {
     public T Waarde {get;set;}
     public Meting(T waardein)
@@ -120,7 +119,7 @@ Console.WriteLine(m2.Waarde);
 Zoals reeds eerder vermeld is de ``T`` aanduiding enkel maar een afspraak. Je kan echter zoveel ``T``-parameters meegeven als je wenst. Stel dat je bijvoorbeeld een klasse wenst te maken waarbij 2 verschillende types kunnen gebruikt worden. De klassedefinitie zou er dan als volgt uit zien:
 
 ```csharp
-class DataBewaarder<Type1, Type2>
+internal class DataBewaarder<Type1, Type2>
 {
     public Type1 Waarde1 {get;set;}
     public Type2 Waarde2 {get;set;}
@@ -141,12 +140,16 @@ DataBewaarder<int, string> d1 = new DataBewaarder<int, string>(4, "Ok");
 ```
 
 
+<!-- \newpage -->
 
 ### Constraints
-We willen soms voorkomen dat bepaalde types wel of niet gebruikt kunnen worden in je zelfgemaakte generieke klasse. Stel bijvoorbeeld dat je een klasse schrijft waarbij je de ``CompareTo()`` methode wenst te gebruiken. Dit gaat enkel indien het type in kwestie de ``IComparable`` interface implementeert. We kunnen als **constraint** (*beperking*) dan opgeven dat de volgende klasse enkel kan gebruikt worden door klassen die ook effectief die interface implementeren (en dus de ``CompareTo()``-methoden hebben). We doen dit in de klasse-definitie met het nieuwe ``where`` keyword. We zeggen dus letterlijk: *"waar T overerft van IComparable"*:
+
+We willen soms voorkomen dat bepaalde types wel of niet gebruikt kunnen worden in je zelfgemaakte generieke klasse. 
+
+Stel bijvoorbeeld dat je een klasse schrijft waarbij je de ``CompareTo()`` methode wenst te gebruiken. Dit gaat enkel indien het type in kwestie de ``IComparable`` interface implementeert. We kunnen als **constraint** (*beperking*) dan opgeven dat de volgende klasse enkel kan gebruikt worden door klassen die ook effectief die interface implementeren (en dus de ``CompareTo()``-methoden hebben). We doen dit in de klasse-definitie met het nieuwe ``where`` keyword. We zeggen dus letterlijk: *"waar T overerft van IComparable"*:
 
 ```csharp
-public class Wijziging<T> where T : IComparable
+internal class Wijziging<T> where T : IComparable
 {
     public T VorigeWaarde {get;set;}
     public T Huidigewaarde {get;set;}

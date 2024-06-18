@@ -2,7 +2,7 @@
 
 Zonder expressies is programmeren saai: je kan dan enkel variabelen aan elkaar toewijzen. Expressies zijn als het ware eenvoudige tot complexe sequenties van bewerkingen die op 1 resultaat uitkomen met een specifiek datatype. De volgende code is bijvoorbeeld een expressie: `3+2`.
 
-Het resultaat van deze expressie is **``5``** (en dus van type ``int``). 
+Het resultaat van deze expressie is **``5``** (type ``int``). 
 
 ### Expressie-resultaat toewijzen
 
@@ -29,19 +29,20 @@ int breedte = 15;
 int oppervlakte = 20 * breedte;
 ```
 
-### Operators
-Om expressies te gebruiken hebben we ook zogenaamde **operators** nodig. Operators in C# zijn de welgekende wiskundige bewerkingen zoals optellen (`+`), aftrekken (`-`), vermenigvuldigen (`*`) en delen (`/`). Deze volgen de klassieke wiskundige regels van **volgorde van berekeningen**:
+### Operators en operanden
+
+Om expressies te gebruiken hebben we ook zogenaamde **operators** nodig. Operators in C# zijn de wiskundige bewerkingen zoals optellen, aftrekken, vermenigvuldigen en delen. Deze volgen de klassieke wiskundige regels van **volgorde van berekeningen**:
 
 1. **Haakjes**
-2. **Vermenigvuldigen, delen en modulo**: ``*`` (vermenigvuldigen), ``/`` (delen) en ``%`` (rest na deling, ook modulo genoemd)
-3. **Optellen en aftrekken**: `+` en `-`, enz.
+2. **Vermenigvuldigen, delen en modulo**: ``*``, ``/`` , ``%`` (rest na deling, ook modulo genoemd).
+3. **Optellen en aftrekken**: `+` en `-`
 
 {% hint style='tip' %}
 We spreken over operators en **operanden**. Een operand is het element dat we links en/of rechts van een operator zetten. In de som ``3+2`` zijn ``3`` en ``2`` de operanden, en ``+`` de operator. In dit voorbeeld spreken we van een **binaire operator** omdat er twee operanden zijn.
 
 Er bestaan ook **unaire operators** die maar 1 operand hebben. Denk bijvoorbeeld aan de ``-`` operator om het teken van een getal om te wisselen: ``-6``. 
 
-In hoofdstuk 5 zullen we nog een derde type operator ontdekken: de **ternaire operator** die met 3 operands werkt!
+In hoofdstuk 5 zullen we nog een derde type operator ontdekken: de **ternaire operator** die met 3 operanden werkt!
 {% endhint %}
 
 
@@ -65,14 +66,16 @@ Console.WriteLine("Je weegt op Mars " + gewichtOpMars + " kg");
 #### Modulo operator ``%``
 De modulo operator die we in C# aanduiden met ``%`` verdient wat meer uitleg. Deze operator zal als resultaat de gehele rest teruggeven wanneer we het linkse getal door het rechtse getal delen:
 
+```csharp
+int rest = 7%2; 
+int resultaat2 = 10%5;
 ```
-int resultaat = 7%2; // zal 1 geven, daar 7 gedeeld door 2, 3 met rest 1 geeft 
-int resultaat2 = 10%5; // zal 0 geven, daar 10 gedeeld door 5, 2 met rest 0 geeft 
-```
+
+Lijn 1 resulteert in de waarde ``1`` die in ``rest`` wordt bewaard: 7 delen door 2 geeft 3 met rest 1. Lijn 2 zal 0 geven, want 10 delen door 5 heeft geen rest.
 
 De modulo-operator zal je geregeld gebruiken om bijvoorbeeld te weten of een getal een veelvoud van iets is. Als de rest dan 0 is weet je dat het getal een veelvoud is van het getal waar je het door deelde.
 
-Bijvoorbeeld om te testen of getal even is gebruiken we ``%2``:
+Bijvoorbeeld om te testen of getal even is gebruiken we **``%2``**:
 
 ```csharp
 int getal = 1234234;
@@ -88,13 +91,13 @@ Heel vaak wil je de inhoud van een variabele bewerken en dan terug bewaren in de
 Stel dat we een variabele ``int getal`` hebben:
 
 | **Verkorte notatie** | **Lange notatie** | **Beschrijving**|
-| :--- | :--- |:--- |
-| ``getal++;`` | ``getal= getal+1;``| variabele met 1 verhogen|
-| ``getal--;`` | ``getal= getal-1;``| variabele met 1 verlagen|
-| ``getal+=3;`` | ``getal= getal+3;``| variabele verhogen met een getal|
-| ``getal-=6;`` | ``getal= getal-6;``| variabele verminderen met een getal|
-| ``getal*=7;`` | ``getal= getal*7;``| variabele vermenigvuldigen met een getal|
-| ``getal/=2;`` | ``getal= getal/2;``| variabele delen door een getal|
+| :--- | :-------- |:------------- |
+| ``getal++;`` | ``getal = getal+1;``| variabele met 1 verhogen|
+| ``getal--;`` | ``getal = getal-1;``| variabele met 1 verlagen|
+| ``getal+=3;`` | ``getal = getal+3;``| variabele verhogen met een getal|
+| ``getal-=6;`` | ``getal = getal-6;``| variabele verminderen met een getal|
+| ``getal*=7;`` | ``getal = getal*7;``| variabele vermenigvuldigen met een getal|
+| ``getal/=2;`` | ``getal = getal/2;``| variabele delen door een getal|
 
 {% hint style='tip' %}
 Je zal deze verkorte notatie vaak tegenkomen. Ze zijn identiek aan elkaar en zullen dus je code niet versnellen. Ze zal enkel compacter zijn om te lezen. Bij twijfel, gebruik gewoon de lange notatie. 
@@ -102,7 +105,8 @@ Je zal deze verkorte notatie vaak tegenkomen. Ze zijn identiek aan elkaar en zul
 
 
 {% hint style='danger' %}
-Bovenstaande verkorte notaties hebben ook een variant waarbij de operator links en de operand rechts staat. Bijvoorbeeld `--getal`. Beide doen het zelfde, maar niet helemaal. Je merkt het verschil in volgende voorbeeld:
+
+De verkorte notaties hebben ook een variant waarbij de operator links en de operand rechts staat. Bijvoorbeeld `--getal`. Beide doen het zelfde, maar niet helemaal. Je merkt het verschil in volgende voorbeeld:
 
 ```csharp
 int getal = 1;
@@ -110,23 +114,23 @@ int som = getal++; //som wordt 1, getal wordt 2
 int som2 = ++som; //som2 wordt 2, som wordt 2
 ```
 
-Als je de operator achter de operand zet (``som++``) dan zal eerst de waarde van de operand worden teruggegeven, vervolgens wordt deze verhoogd. Bij de andere (``++som``) is dat omgekeerd: eerst wordt de operand aangepast, en de nieuwe waarde wordt als resultaat teruggegeven.
+Als je de operator achter de operand zet (``som++``) dan zal eerst de waarde van de operand worden teruggegeven, vervolgens wordt deze verhoogd. Bij de andere (``++som``) is dat omgekeerd: eerst wordt de operand aangepast, vervolgens wordt nieuwe waarde als resultaat van de expressie teruggegeven.
 {% endhint %}
 
+<!-- \newpage -->
+
+
+>![](../assets/attention.png)Gegroet! Zet je helm op en let alsjeblieft goed op. Als je de volgende sectie goed begrijpt dan heb je al een grote stap vooruit gezet in de wondere wereld van C#. 
+>
+>Ik zei je al dat variabelen het hart van programmeren zijn. Wel, expressies zijn het bloedvatensysteem dat ervoor zorgt dat al je variabelen ook effectief gecombineerd kunnen worden tot wondermooie nieuwe dingen. 
+>
+>Succes!
+
+{% hint style='tip' %}
+De voorman verschijnt wanneer er iets beschreven wordt waar véél fouten op gemaakt worden, zelfs bij ervaren programmeurs. Opletten geblazen dus.
+{% endhint %}
 
 ## Expressiedatatypes 
-
-
-{% hint style='warning' %}
-
-![](../assets/attention.png)
-Gegroet! Zet je helm op en let alsjeblieft goed op. Als je het volgende stuk goed begrijpt (en blijft begrijpen) dan heb je al een grote stap vooruit gezet in de wondere wereld van C#. 
-
-We vertelden al dat variabelen het hart van programmeren zijn. Wel, expressies zijn het bloedvatensysteem dat ervoor zorgt dat al je variabelen ook effectief gecombineerd kunnen worden tot wondermooie nieuwe dingen. 
-
-Succes!
-{% endhint %}
-
 
 Lees deze zin enkele keren luidop voor, voor je verder gaat: **De types die je in je expressies gebruikt bepalen ook het type van het resultaat.** Als je bijvoorbeeld twee ``int`` variabelen of literals optelt zal het resultaat terug een ``int`` geven (klink logisch, maar lees aandachtig verder):
 
@@ -142,9 +146,12 @@ Je kan echter geen kommagetallen aan ``int`` toewijzen. Als je dus twee ``double
 int otherResult = 3.1 / 45.2; //dit is fout!!!
 ```
 
-Bovenstaande code geeft volgende fout: ``Cannot implicitly convert double to int.``
+Bovenstaande code geeft volgende fout: *"Cannot implicitly convert double to int."*
 
 **Let hier op!**
+
+<!-- \newpage -->
+
 
 ### But wait... it gets worse! 
 
@@ -190,17 +197,17 @@ Console.WriteLine(result);
 ```
 En nu krijgen we wel ``4.5`` aangezien we nu een ``int`` door een ``double`` delen en C# dus ook het resultaat dan als een ``double`` zal teruggeven.
 
+<!-- \newpage -->
 
 
 {% hint style='warning' %}
 
-![](../assets/attention.png)
 Begrijp je nu waarom dit een belangrijk deel was? Je kan snel erg foute berekeningen en ongewenste afrondingen krijgen indien je niet  bewust omgaat met je datatypes. 
 
 Laten we eens kijken of je goed hebt opgelet, het kan namelijk subtiel en ambetant worden in grotere berekeningen.
 {% endhint %}
 
-Stel dat ik afspreek dat je van mij de helft van m'n salaris krijgt. Ik verdien 10000 euro per maand (I wish).
+Stel dat ik afspreek dat je van mij de helft van m'n salaris krijgt[^kirsref]. Ik verdien 10 000 euro per maand (*I wish*).
 
 Ik stel je voor om volgende expressie te gebruiken om te berekenen wat je van mij krijgt:
 
@@ -215,7 +222,7 @@ Hoeveel krijg je van me?
 Begrijp je waarom? De volgorde van berekeningen zal eerst het gedeelte tussen de haakjes doen: 
 
 * 1 delen door 2 geeft 0, daar we een ``int`` door een ``int`` delen en dus terug een ``int`` als resultaat krijgen. 
-* Vervolgens zullen we deze ``0`` vermenigvuldigen met ``10000.0`` waarvan ik zo slim was om deze in ``double`` te zetten. Niet dus. We vermenigvuldigen weliswaar een ``double`` (het salaris) met een ``int`` maar die ``int`` is reeds ``0`` en we krijgen dus ``0.0`` als resultaat.
+* Vervolgens zullen we deze ``0`` vermenigvuldigen met ``10000.0`` waarvan ik zo slim was om deze in ``double`` te zetten. Niet dus. We vermenigvuldigen weliswaar een ``double`` (``10000.0``) met een ``int``, maar die ``int`` is reeds ``0`` en we krijgen dus ``0.0`` als resultaat.
 
 Als ik dus effectief de helft van m'n salaris wil afstaan dan moet ik de expressie aanpassen naar bijvoorbeeld: 
 
@@ -227,8 +234,7 @@ double helft = 10000.0 * (1.0 / 2);
 Nu krijgt het gedeelte tussen de haakjes een ``double`` als resultaat, namelijk ``0.5`` dat we dan kunnen vermenigvuldigen met het salaris om ``5000.0`` te krijgen, wat jij vermoedelijk een fijner resultaat vindt.
 
 
-{% hint style='tip' %}
-Voorgaande voorbeeld is gebaseerd op een oefening uit het handboek "Programmeren in C#" van Douglas Bell en Mike Parr, een boek dat werd vertaald door collega lector Kris Hermans bij de Hogeschool PXL. Als je de console-applicaties beu bent en liever leert programmeren door direct grafische Windows-applicatie te maken, dan raad ik je dit boek ten stelligste aan!
-{% endhint %}
+[^kirsref]: Voorgaande voorbeeld is gebaseerd op een oefening uit het handboek "Programmeren in C#" van Douglas Bell en Mike Parr, een boek dat werd vertaald door collega lector Kris Hermans bij de Hogeschool PXL. Als je de console-applicaties beu bent en liever leert programmeren door direct grafische Windows-applicatie te maken, dan raad ik je dit boek ten stelligste aan!
+
 
 

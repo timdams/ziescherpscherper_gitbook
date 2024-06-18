@@ -1,7 +1,7 @@
 
 ## Kleuren in console
 
-Je kan in console-applicaties zelf bepalen in welke kleur nieuwe tekst op het scherm verschijnt. Je kan zowel de kleur van het lettertype instellen (via ``ForegroundColor``) als de achtergrondkleur (``BackgroundColor``).
+Je kan in console-applicaties zelf bepalen in welke kleur nieuwe tekst op het scherm verschijnt. Je kan zowel de **kleur van het lettertype** instellen (via ``ForegroundColor``) als de **achtergrondkleur** (``BackgroundColor``).
 
 Je kan met de volgende expressies de console-kleur veranderen, bijvoorbeeld de achtergrond in blauw en de letters in groen:
 
@@ -17,7 +17,7 @@ Alle kleuren die beschikbaar zijn staan beschreven in ``ConsoleColor`` deze zijn
 
 Wens je dus de kleur Red dan zal je deze moeten aanroepen door er ``ConsoleColor.`` voor te zetten: ``ConsoleColor.Red``.
 
-Waarom is dit? ``ConsoleColor`` is een zogenaamd ``enum``-type, een concept dat we verderop in hoofdstuk 5 zullen bespreken.
+Waarom is dit? ``ConsoleColor`` is een zogenaamd ``enum``-type. Enums leggen we verderop in hoofdstuk 5 uit.
 {% endhint %}
 
 
@@ -37,8 +37,9 @@ Als je deze code uitvoert krijg je als resultaat:
 ![Resultaat voorgaande code.](../assets/0_intro/kleuren.PNG)
 
 {% hint style='danger' %}
-Kleur in console gebruiken is nuttig om je gebruikers een minder eentonig en meer informatieve applicatie aan te bieden. Je zou bijvoorbeeld alle foutmeldingen in het rood kunnen laten verschijnen. Let er wel op dat je applicatie geen aartslelijk, op psychedelische producten geschreven, programma lijkt.
-Hou er ook rekening mee dat niet iedereen (alle) kleuren kan zien. In de vorige editie van dit boek gebruikte ik rode letters op een groene achtergrond...Dat resulteerde in onleesbare tekst voor mensen met Daltonisme.
+Kleur in console gebruiken is nuttig om je gebruikers een minder eentonig en meer informatieve applicatie aan te bieden. Je zou bijvoorbeeld alle foutmeldingen in het rood kunnen laten verschijnen. Let er wel op dat je applicatie geen aartslelijk programma wordt. 
+
+Hou er ook rekening mee dat niet iedereen (alle) kleuren kan zien. In de vorige editie van dit boek gebruikte ik rode letters op een groene achtergrond. Dat resulteerde in onleesbare tekst voor mensen met *Daltonisme*.
 {% endhint %}
 
 
@@ -56,3 +57,24 @@ Console.WriteLine("Het programma sluit nu af");
 ```
 
 
+
+<!-- \newpage -->
+
+<!--## Waar zijn de oefeningen?!-->
+
+<!--Huh?! Waar zijn de oefeningen naartoe die de vorige edities van dit handboek nog wel hadden? Om bomen te besparen heb ik besloten om alle oefeningen via **ziescherp.be** beschikbaar te stellen. Je zal langs die webpagina een grote verzamelingen oefeningen vinden, die op de koop toe geregeld vernieuwd en verbeterd worden.
+
+
+Je kan trouwens gratis op Quizlet deze cursus dagelijks instuderen[^quizlet], de ideale manier om snel essentiele C# begrippen voor altijd te onthouden.
+
+{% hint style='warning' %}
+Sinds 2023 is er een gigantische opkomst van nog straffere A.I. tools, met ChatGPT voorop. Alhoewel deze tools vaak heel goede C# code kunnen genereren, raden we af deze te gebruiken, om dezelfde redenen dat je best IntelliCode niet gebruikt (zie hoofdstuk 7). Vraag daarom nooit aan ChatGPT om "oefening x" voor je op te lossen. 
+
+Moet je dan ChatGPT volledig links laten liggen? Uiteraard niet. Gebruik hem als extra leermiddel om bijvoorbeeld stukken code toe te lichten, bepaalde concepten op een andere manier uit te leggen enz. 
+{% endhint %}
+
+
+[^quizlet]:Via [https://quizlet.com/join/mqzQCGJCF](https://quizlet.com/join/mqzQCGJCF).
+
+
+-->

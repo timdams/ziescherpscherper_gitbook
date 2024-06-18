@@ -12,7 +12,7 @@ Je zult in je zoektocht naar online antwoorden mogelijk al een paar keer het ``t
 Wanneer je ``this`` gebruikt binnen een klasse, dan zal je zien dat bij het schrijven van de dot-operator je ogenblikkelijk de volledige interne structuur van de klasse kunt bereiken:
 
 
-![Met this zien we letterlijk alles dat de klasse heeft aan te bieden, ongeacht de access modifiers.](../assets/7_overerving/thisme.png)
+![Met this zien we letterlijk alles dat de klasse heeft aan te bieden, ongeacht de access modifiers.](../assets/7_overerving/thisme.png)<!--{width=80%}-->
 
 Enerzijds ben je vrij om altijd ``this`` te gebruiken wanneer je eender wat van de klasse zelf wilt bereiken. Vooral in oudere code-voorbeelden zal je dat nog vaak zien gebeuren.
 
@@ -21,7 +21,7 @@ Enerzijds ben je vrij om altijd ``this`` te gebruiken wanneer je eender wat van 
 Anderzijds laat ``this`` ook toe om properties, methoden en instantievariabelen aan te roepen wanneer die mogelijk op de huidige plek niet aanroepbaar zijn omdat hun naam conflicteert met een lokale variabele dat dezelfde naam heeft:
 
 
-![Bij conflicterende namen binnen dezelfde scope zal this ons helpen om toch buiten de huidige methode aan een gelijknamig element te geraken.](../assets/7_overerving/thisinst.png)
+![Bij conflicterende namen binnen dezelfde scope zal this ons helpen om toch buiten de huidige methode aan een gelijknamig element te geraken.](../assets/7_overerving/thisinst.png)<!--{width=90%}-->
 
 De lijn ``Levens = 5;`` in de constructor zal de parameter zelf van waarde aanpassen (wat niet wordt aangeraden). Terwijl door ``this`` te gebruiken geraak je aan de property met dezelfde naam.
 
@@ -30,6 +30,7 @@ Merk op dat qua naamgeving de keuze van de formele parameter ``Levens`` in de co
 {% endhint %}
 
 
+<!-- \newpage -->
 
 
 
@@ -38,7 +39,7 @@ Merk op dat qua naamgeving de keuze van de formele parameter ``Levens`` in de co
 Beeld je in dat je volgende ``Management`` klasse hebt die toelaat om ``Werknemer`` objecten te controleren of ze promoveerbaar zijn of niet. Het management van de firma heeft beslist dat werknemers enkel kunnen promoveren als hun huidige ``Rang`` lager is dan 10:
 
 ```csharp
-class Management
+internal class Management
 {
     private const int MAXRANG = 10;
     public static bool MagPromoveren(Werknemer toCheck)
@@ -51,7 +52,7 @@ class Management
 Dankzij het ``this`` keyword kan je nu vanuit de klasse ``Werknemer`` deze externe methode aanroepen om zo te kijken of een object al dan niet kan promoveren:
 
 ```csharp
-class Werknemer
+internal class Werknemer
 {
     public int Rang { get; set; }
     public bool IsPromoveerbaar()

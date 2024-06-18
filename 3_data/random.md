@@ -1,9 +1,10 @@
 ## Random getallen genereren
 
-Willekeurige (*random*) getallen genereren in je code kan leuk zijn om de gebruiker een interactievere ervaring te geven. Beeld je in dat je monsters steeds dezelfde weg zouden bewandelen of dat er steeds op hetzelfde tijdstip een orkaan op je stad neerdwaalt. **SAAI**!
+Willekeurige (*random*) getallen genereren in je code kan leuk zijn om de gebruiker een interactievere ervaring te geven. Beeld je in dat je monsters steeds dezelfde weg zouden bewandelen of dat er steeds op hetzelfde tijdstip een orkaan op je stad neerdwaalt. Of wat de denken van een programma dat steeds dezelfde wiskunde opgaven genereert? **SAAI!** 
 
 ### Random generator
-De ``Random``-bibliotheek (eigenlijk klasse, wat we in hoofdstuk 9 zullen toelichten) laat je toe om willekeurige gehele en komma-getallen te genereren. Je moet hiervoor twee zaken doen:
+
+De ``Random``-bibliotheek laat je toe om willekeurige gehele en komma-getallen te genereren. Je moet hiervoor twee zaken doen:
 
 1. Maak **eenmalig** een Random-generator object aan.
 2. Roep de ``Next`` methode aan op dit object telkens je een nieuw willekeurig getal nodig hebt.
@@ -14,9 +15,9 @@ Random randomGenerator = new Random();
 int mijnLeeftijd = randomGenerator.Next();
 ```
 
-**De eerste stap dien je maar 1 keer te doen.** De naam die je het generatorobject geeft (hier ``randomGenerator``) mag je kiezen, dit is een variabele en moet dus aan de identifier regels voldoen.
+**De eerste stap dien je maar 1 keer te doen.** De naam die je het generatorobject geeft (hier ``randomGenerator``) mag je kiezen.  Dit is een variabele en moet dus aan de identifier regels voldoen.
 
-Vanaf nu kan je telkens aan het generatorobject een nieuw getal vragen m.b.v. de ``Next``-methode. 
+Vanaf nu kan je telkens aan het generatorobject een nieuw getal vragen door middel van de ``Next``-methode. 
 
 Volgende code toont bijvoorbeeld 3 random getallen op het scherm:
 
@@ -84,10 +85,9 @@ Je bereik is 7.5, namelijk ``12.5 - 5.0`` en vermenigvuldig je het resultaat van
 
 
 
-{% hint style='warning' %}
 
-![](../assets/attention.png)
-**"Help! Ik krijg steeds dezelfde random getallen? Wat nu?"**
+
+>![](../assets/attention.png)**"Help! Ik krijg steeds dezelfde random getallen? Wat nu?"**
 
 Wel wel, wie we hier hebben. Werkt je Random generator niet naar behoren? Wil je het ding in de vuilbak gooien omdat het niet zo willekeurig lijkt te werken als je hoopte? Gelukkig ben ik er! Zet je helm dus op en luister.
 
@@ -95,14 +95,20 @@ Wanneer je twee ``Random`` objecten aanmaakt op quasi hetzelfde tijdstip in je c
 
 ```csharp
 Random a = new Random();
-Random b = new Random();
+Random b = new Random(); //Slecht idee!
 Console.WriteLine(a.Next());
 Console.WriteLine(b.Next());
 ```
 
-De ``Random`` bibliotheek gebruikt namelijk de tijd als een soort "willekeurig" startpunt (de tijd is de zogenaamde seed). Het is namelijk een **pseudo-willekeurige getal generator**. 
+De ``Random`` bibliotheek gebruikt de tijd als een soort "willekeurig" startpunt (de tijd is de zogenaamde *seed*). Het is namelijk een **pseudo-willekeurige getal generator**. 
 
-Dit is de reden waarom je in je code steeds maar **1 Random generator** mag aanmaken! Er zijn weinig redenen om er meerdere aan te maken. Bovenstaande code is dus niet aan te raden.
+Dit is de reden waarom je in je code steeds maar **1 Random generator** mag aanmaken! Er zijn weinig redenen om er meerdere aan te maken. Bovenstaande code is dus niet aan te raden. Je schrijft beter:
+
+```csharp
+Random a = new Random();
+Console.WriteLine(a.Next());
+Console.WriteLine(a.Next());
+```
 
 Wil je toch dezelfde willekeurige reeks getallen na elkaar genereren telkens je je programma opstart (bijvoorbeeld om je code te testen met steeds dezelfde reeks getallen) dan kan je bij het aanmaken van je generator ook een parameter meegeven die als seed zal werken. 
 
@@ -111,7 +117,7 @@ In het volgende voorbeeld zal generator ``a`` steeds dezelfde reeks willekeurige
 
 ```csharp
 Random a = new Random(666);
+Console.WriteLine(a.Next());
 ```
-{% endhint %}
 
 

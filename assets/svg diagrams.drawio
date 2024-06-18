@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-01-23T10:35:02.339Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="rssdxOo3xNJwTBynyBXk" version="21.2.8" type="device" pages="9">
+<mxfile host="Electron" modified="2024-05-28T09:48:21.093Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="nSWijeOn89ZpXTWYMh0I" version="21.2.8" type="device" pages="9">
   <diagram id="aMTPNOkb2MSXbjmKVqOL" name="loops">
-    <mxGraphModel dx="2261" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3923" dy="1788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -514,7 +514,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="BWxcgHYiZZb_lNRjo50n" name="beslissingen">
-    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1290" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="87tOtBMkvvUMKqmjzaLs-0" />
         <mxCell id="87tOtBMkvvUMKqmjzaLs-1" parent="87tOtBMkvvUMKqmjzaLs-0" />
@@ -539,7 +539,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="87tOtBMkvvUMKqmjzaLs-6" value="nummer &amp;gt; MAX" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">
+        <mxCell id="87tOtBMkvvUMKqmjzaLs-6" value="waterpeil &amp;gt; MAX" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">
           <mxGeometry x="260" y="170" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="87tOtBMkvvUMKqmjzaLs-7" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">
@@ -550,13 +550,13 @@
             <mxPoint x="320" y="349.9999999999999" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="87tOtBMkvvUMKqmjzaLs-9" value="&lt;i&gt;Schrijf &quot;nummer is groter dan {Max}&quot;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">
+        <mxCell id="87tOtBMkvvUMKqmjzaLs-9" value="&lt;i&gt;&quot;Waterpeil staat &lt;br&gt;te hoog!&quot;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">
           <mxGeometry x="395" y="250" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="87tOtBMkvvUMKqmjzaLs-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#FF3333;" parent="87tOtBMkvvUMKqmjzaLs-1" source="87tOtBMkvvUMKqmjzaLs-13" target="87tOtBMkvvUMKqmjzaLs-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="87tOtBMkvvUMKqmjzaLs-13" value="&lt;i&gt;Schrijf &quot;nummer is NIET groter dan {Max}&quot;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">
+        <mxCell id="87tOtBMkvvUMKqmjzaLs-13" value="&lt;i&gt;&quot;Waterpeil is in orde.&quot;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">
           <mxGeometry x="100" y="250" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Oma3t55FBb0BEWvr-5BI-0" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#000000;" parent="87tOtBMkvvUMKqmjzaLs-1" vertex="1">

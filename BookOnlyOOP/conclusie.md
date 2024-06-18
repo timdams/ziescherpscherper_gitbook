@@ -11,8 +11,7 @@ Ik wens je alvast veel succes met de verdere ontwikkeling van je programmeer-exp
 
 Tim Dams
 
-*Zomer  2022*
+*Zomer  2024*
 
 ![](../assets/alltim.png)
 
-PS In welke staat je ook bent: houd sowieso **ziescherp.be** in het oog. Momenteel ben ik aan een podcast bezig van dit boek waar je de prille eerst stappen reeds van kan beluisteren op **anchor.fm/tim-dams/**. Voorts zal je er tal van oefeningen én oplossingen vinden!

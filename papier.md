@@ -2,7 +2,7 @@ Deze cursus wordt ook aangeboden voor de "buitenwereld". Deze online cursus zal 
 
 De gepubliceerde versie is identiek aan deze cursus.
 
-Kijk op [ziescherp.be](https://timdams.com/ziescherp/) waar u deze cursus op verschillende manieren kunt aanschaffen (ebook, pdf of papier, etc.)
+Kijk op [ziescherp.be](https://timdams.com/ziescherp/) waar u deze cursus op verschillende manieren kunt aanschaffen (ebook, pdf of papier, enz.)
 
 ![](../assets/boek3.png)
 

@@ -3,7 +3,7 @@
 Net zoals we hebben gezien dat de Math-klasse een heleboel nuttige methoden in zich heeft, zo heeft ook iedere array een aantal methoden waar handig gebruik van gemaakt kan worden.
 
 {% hint style='tip' %}
-Om deze methoden in C# 9.0 of ouder te kunnen gebruiken moet je bovenaan je file de volgende lijn toevoegen: ``using System.Linq;``. Vanaf C# 10 hoeft dit niet omdat er zoiets bestaat als *implicit usings*, een concept dat we niet gaan bespreken in dit boek.
+Om deze methoden in C# 9.0 of ouder te kunnen gebruiken moet je bovenaan je file de volgende lijn toevoegen: ``using System.Linq;``. Vanaf C# 10 hoeft dit niet omdat er zoiets bestaat als *implicit usings*, een concept dat ik niet bespreek in dit boek.
 {% endhint %}
 
 

@@ -14,7 +14,7 @@ while (true)
 ## Verjaardag
 
 ```csharp
-Console.WriteLine("Geef je verjaardag (formaat: d/m . Bv 18/3)");
+Console.WriteLine("Geef je verjaardag (formaat: d/m . bv. 18/3)");
 DateTime verj = DateTime.Parse(Console.ReadLine());
 
 

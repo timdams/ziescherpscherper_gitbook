@@ -36,7 +36,7 @@ Plaats van iedere klasse 2 objecten  in een gemeenschappelijke lijst en zorg erv
 
 # Pokémon interfaces
 
-Shadow Pokémon zijn een speciaal ras Pokémons ([zie hier](https://bulbapedia.bulbagarden.net/wiki/Shadow_Pok%C3%A9mon)) en kunnen "purified" worden op verschillende manieren. Maak een interface ``IShadow`` die een methode ``Purify`` heeft. Verzin enkele Pokémons die Shadow Pokémons zijn, geef ze de interface, en verzin manieren hoe ze purified kunnen worden (bv door hun HP op -1 te zetten).
+Shadow Pokémon zijn een speciaal ras Pokémons ([zie hier](https://bulbapedia.bulbagarden.net/wiki/Shadow_Pok%C3%A9mon)) en kunnen "purified" worden op verschillende manieren. Maak een interface ``IShadow`` die een methode ``Purify`` heeft. Verzin enkele Pokémons die Shadow Pokémons zijn, geef ze de interface, en verzin manieren hoe ze purified kunnen worden (bv. door hun HP op -1 te zetten).
 Kan je door je lijst van Pokémons gaan enkel de Shadow Pokémons op het scherm tonen?
 
 # PokéDex IList (PRO)
@@ -92,7 +92,7 @@ Je zal de meeste logica in je ``Main`` of een ``Manager`` klasse moeten plaatsen
 Voorgaande beschrijving is een ‘minimale’ beschrijving. Voorzie extra functionaliteit naar believen zoals:
 * Speler heeft levens
 * Monsters hebben levens
-* Andere soort monsters (bv slimmere)
+* Andere soort monsters (bv. slimmere)
 * Meerdere levels met telkens andere/meer monsters bijvoorbeeld
 * Meerdere spelers
 * Verder schieten, of schieten in andere richtingen.

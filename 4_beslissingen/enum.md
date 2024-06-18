@@ -1,20 +1,21 @@
 ## Enum
 
-{% hint style='warning' %}
 
-![](../assets/attention.png)
-Helm op alsjeblieft! ``enum`` is een erg onderschat concept bij beginnende programmeurs. Enums zijn wat raar in het begin, maar van zodra je er mee weg bent zal je niet meer zonder kunnen en zal je code zoveel eleganter en stoerder worden. Zet je helm dus op en begin er aan!
-{% endhint %}
+
+>![](../assets/attention.png)Helm op alsjeblieft! ``enum`` is een erg onderschat concept bij beginnende programmeurs. Enums zijn wat raar in het begin, maar van zodra je er mee weg bent zal je niet meer zonder kunnen en zal je code zoveel eleganter en stoerder worden. Zet je helm dus op en begin er aan!
+
 
 
 ### De bestaansreden voor enums
+
 Stel dat je een programma moet schrijven dat afhankelijk van de dag van de week iets anders moet doen. In een wereld zonder enums (**enumeraties**, letterlijk *opsommingen*) zou je dit kunnen schrijven op 2 zeer foutgevoelige manieren:
 
-1. Met een ``int`` die een getal van 1 tot en met 7 kan bevatten, afhankelijk van de dag (bv. 1 voor maandag, enz.)
+1. Met een ``int`` die een getal van 1 tot en met 7 kan bevatten. 
 2. Met een ``string`` die de naam van de dag bevat (bv. ``"woensdag"``)
 
 #### Slechte oplossing 1: Met ``int``
-De waarde van de dag staat in een variabele ``int dagKeuze``. We bewaren er 1 in voor maandag, 2 voor dinsdag, enzovoort. Vervolgens kunnen we dan schrijven: 
+
+De waarde van de dag staat in een variabele ``int dagKeuze``. We bewaren er 1 in voor maandag, 2 voor dinsdag, enz. Vervolgens kunnen we dan schrijven: 
 
 ```csharp
 if(dagKeuze == 1)
@@ -70,6 +71,7 @@ Het keyword ``enum`` geeft aan dat we een nieuw datatype maken dat maar enkele m
 In C# zitten al veel enum-types ingebouwd. Denk maar aan ``ConsoleColor``: wanneer je de kleur van het lettertype van de console wilt veranderen gebruiken we een enum-type. Er werd reeds gedefinieerd wat de toegelaten waarden zijn, bijvoorbeeld: ``Console.ForegroundColor = ConsoleColor.Red;`` 
 {% endhint %}
 
+<!-- \newpage -->
 
 
 
@@ -78,11 +80,11 @@ In C# zitten al veel enum-types ingebouwd. Denk maar aan ``ConsoleColor``: wanne
 Zelf een ``enum`` type maken en gebruiken gebeurt in 2 stappen:
 
 1. Het nieuwe datatype en de mogelijke waarden definiëren.
-2. Variabele(n) van het nieuwe type aanmaken en gebruiken in je code.
+2. Waarden van het nieuwe enumtype aanmaken en gebruiken in je code.
 
 #### Stap 1: het nieuwe datatype definiëren
 
-We maken eerst een enum type aan. **In je console-applicaties moet dit binnen ``class Program`` gebeuren, maar niét binnen de (``main``) methoden**:
+We maken eerst een enum type aan. **In je console-applicaties moet dit binnen ``class Program`` gebeuren, maar niét binnen de ``Main`` methode**:
 
 
 ```csharp
@@ -100,12 +102,14 @@ static void Main(string[] args)
 }
 ```
 
-**We hebben nu letterlijk een nieuw datatype aangemaakt**, genaamd ``Weekdagen``. 
+We hebben nu letterlijk **een nieuw datatype aangemaakt**, genaamd ``Weekdagen``. 
 
 
 #### Stap 2: variabelen van het nieuwe datatype aanmaken en gebruiken
 
-Net zoals ``int``, ``double`` enz. kan je nu ook variabelen van het type ``Weekdagen`` aanmaken. Hoe cool is dat!? Bijvoorbeeld:
+Net zoals ``int``, ``double`` enz. kan je nu ook variabelen van het type ``Weekdagen`` aanmaken. Hoe cool is dat!? 
+
+Bijvoorbeeld:
 
 ```csharp
 Weekdagen dagKeuze;
@@ -121,6 +125,7 @@ dagKeuze = Weekdagen.Donderdag;
 
 Kortom: we hebben variabelen zoals we gewoon zijn, het enige verschil is dat we nu beperkt zijn in de waarden die we kunnen toewijzen. Deze kunnen enkel de waarden krijgen die in het type gedefinieerd werden. De code is nu ook een pak leesbaarder geworden.
 
+<!-- \newpage -->
 
 
 ### Enums en beslissingen werken graag samen
@@ -144,12 +149,12 @@ switch(dagKeuze)
 ```
 
 {% hint style='tip' %}
-Visual Studio houdt van enums (ik ook) en zal je helpen bij het schrijven van een ``switch`` indien je test-variabele een enum-type bevat. 
+Visual Studio houdt van enums (*ik ook trouwens*) en zal je helpen bij het schrijven van een ``switch`` indien de test-variabele een enum-type bevat. 
 Hoe?
 
-* Schrijf ``switch`` en druk op 2 maal op tab. Normaal verschijnt er nu een "prefab" switch structuur met een test-waarde genaamd ``switch_on`` die een gele achtergrond heeft
-* Overschrijf ``switch_on`` met de variabele die je wilt testen (bv. ``dagKeuze``)
-* Klik nu met de muis eender waar binnen de accolades van de ``switch``
+* Schrijf ``switch`` en druk op 2 maal op tab. Normaal verschijnt er nu een "prefab" switch structuur met een test-waarde genaamd ``switch_on`` die een gele achtergrond heeft.
+* Overschrijf ``switch_on`` met de variabele die je wilt testen (bv. ``dagKeuze``).
+* Klik nu met de muis eender waar binnen de accolades van de ``switch``.
 * Profit!
 {% endhint %}
 
@@ -157,7 +162,7 @@ Hoe?
 
 ### Conversie van en naar enum variabelen
 
-**De waarde van een enum-variabelen wordt intern als een ``int`` bewaard.** In het geval van de ``Weekdagen`` zal maandag standaard de waarde 0 krijgen, dinsdag 1, enz.
+**De waarde van een enum-variabelen wordt intern als een ``int`` bewaard.** In het geval van de ``Weekdagen`` zal ``maandag`` standaard de waarde 0 krijgen, dinsdag 1, enz.
 
 Volgende conversies met behulp van **casting** zijn dan ook perfect toegelaten:
 
@@ -207,11 +212,12 @@ In dit geval zullen Maandag tot Vrijdag intern als 1 tot en met 5 bewaard worden
 De individuele enum waarden moeten steeds met een hoofdletter starten. 
 {% endhint %}
 
+<!-- \newpage -->
 
 
 ### Gebruikersinvoer naar enum
 
-Heel vaak zal je een programma schrijven waarbij de gebruiker een keuze moet maken uit een menu of iets dergelijks. Dit menu kan je voorstellen met een enum. Het probleem is vervolgens vragen wat de keuze van de gebruiker is en deze dan verwerken. Je zou dit kunnen doen met behulp van een reeks if-testen (``if(userinput=="demo")`` ), of je zou het feit kunnen gebruiken dat we nu ``enum`` kennen. 
+Heel vaak zal je een programma schrijven waarbij de gebruiker een keuze moet maken uit een menu of iets dergelijks. Dit menu kan je voorstellen met een enum. Het probleem is vervolgens vragen wat de keuze van de gebruiker is en deze dan verwerken. Je zou dit kunnen doen met behulp van een reeks if-testen (``if(userinput=="demo")`` )...Maar waarom niet de kracht van ``enum`` benutten?! 
 
 Volgende code toont hoe je dit kunt doen:
 
@@ -234,9 +240,9 @@ static void Main(string[] args)
 
 ### Parsen van enum
 
-Sinds .NET 5, dat in 2020 uitkwam, is er een meer gebruiksvriendelijke manier verschenen om een string te parsen naar een enum variabele. Hierbij wordt gebruikt gemaakt van *generics* (herkenbaar aan ``<  >``), een concept dat uit de doeken wordt gedaan in de appendix van dit boek. 
+Sinds .NET 5  uitkwam, is er een meer gebruiksvriendelijke manier verschenen om een string te parsen naar een enum variabele. Hierbij wordt gebruikt gemaakt van *generics* (herkenbaar aan ``<  >``), een concept dat uit de doeken wordt gedaan in de appendix van dit boek. 
 
-Echter, zelfs zonder generics te begrijpen zou volgende code toch begrijpbaar moeten zijn. We gebruiken terug het eerder gedefinieerde ``Menu`` type en de nieuw beschikbare ``Enum.Parse< >``- methode :
+Echter, zelfs zonder generics te kennen zou volgende code toch begrijpbaar moeten zijn. We gebruiken terug het eerder gedefinieerde ``Menu`` type en de nieuw beschikbare ``Enum.Parse< >``- methode :
 
 
 ```csharp
@@ -254,26 +260,21 @@ Menu keuze = Enum.Parse<Menu>(Console.ReadLine(), true);
 
 
 
+<!-- \newpage -->
 
 
-{% hint style='warning' %}
+>![](../assets/care.png)Ah, de tijden zonder ``enum``. Ik weet nog hoe we onze grotten beschilderden zonder ons druk te moeten maken in enumeraties. Om maar te zeggen: je kan perfect leven zonder ``enum``. Vele programmeurs voor je hebben dit bewezen. Echter, van zodra ze ``enum`` ontdekten (en begrepen) zijn nog maar weinig programmeurs er terug van afgestapt. 
+>
+>De eerste kennismaking met enumeraties is wat bevreemdend: je kan plots je eigen datatypes aanmaken?! Van zodra je ze in de vingers hebt zal je ontdekken dat je veel leesbaardere code kunt schrijven én dat Visual Studio je kan helpen met het opsporen van bugs. 
 
-![](../assets/care.png)
+Wanneer gebruik je ``enum``? Telkens je één of meer variabelen nodig hebt, waarvan je perfect op voorhand weet welke mogelijke waarden ze mogen hebben. Ze worden bijvoorbeeld vaak gebruikt in *finite state machines*. 
 
-Ah, de tijden zonder ``enum``. Ik weet nog hoe we onze grotten beschilderden zonder ons druk te moeten maken in enumeraties. Om maar te zeggen: je kan perfect leven zonder ``enum``. Vele programmeurs voor je hebben dit bewezen. Echter, van zodra ze ``enum`` ontdekten (en begrepen) zijn nog maar weinig programmeurs er terug van afgestapt. 
-
-De eerste kennismaking met enumeraties is wat bevreemdend: je kan plots je eigen datatypes aanmaken?! Van zodra je ze in de vingers hebt zal je ontdekken dat je veel leesbaardere code kunt schrijven én dat Visual Studio je kan helpen met het opsporen van bugs. 
-
-Wanneer gebruik je ``enum``? Telkens je een variabele (of meerdere) nodig hebt waarvan je perfect op voorhand weet welke (handvol) mogelijke waarden ze mogen hebben. Ze worden bijvoorbeeld vaak gebruikt in **finite state machines**. 
-
-Bij game development willen we bijhouden in welke staat het programma zich bevindt: ``Intro``, ``Startmenu``, ``Ingame``, ``Gameover``, ``Optionsscreen``, enz.
-
-Dit is een typisch ``enum`` verhaal. We definiëren hiervoor het volgende type:
-
+Bij game development willen we bijhouden in welke staat het programma zich bevindt: ``Intro``, ``Startmenu``, ``Ingame``, ``Gameover``, ``Optionsscreen``, enz. Dit is een typisch ``enum`` verhaal. We definiëren hiervoor het volgende type:
 
 ```csharp
 enum gamestate {Intro, Startmenu, Ingame, Gameover, Optionsscreen}
 ```
+
 En vervolgens kunnen we dan met een eenvoudige switch in ons hoofdprogramma snel de relevante code uitvoeren:
 
 ```csharp
@@ -300,7 +301,6 @@ if(spelstuk == Schaakstuk.Paard)
 ```
 
 
-{% endhint %}
 
 
 

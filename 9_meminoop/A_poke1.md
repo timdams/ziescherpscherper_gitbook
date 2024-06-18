@@ -18,12 +18,11 @@ Console.WriteLine($"{mijnLat.LengteInM} meter is {mijnLat.LengteInVoet} voet.");
 
 # Pokémon
 
-We gaan een programma schrijven dat ons toelaat enkele basis-eigenschappen van specifieke Pokémon te berekenen terwijl ze levellen.
+We gaan een programma schrijven dat ons toelaat enkele basis-eigenschappen van specifieke Pokémon[^pokediscl] te berekenen terwijl ze levellen.
 Nadruk van deze oefening is het juist gebruiken van properties. Bekijk de cheat sheet bij twijfel.  
 
-{% hint style='tip' %}
-Disclaimer: de informatie in deze tekst is een vereenvoudigde versie van de echte Pokémon-stats in de mate dat ik het allemaal een beetje kon begrijpen en juist interpreteren.
-{% endhint %}
+[^pokediscl]: Disclaimer: de informatie in deze tekst is een vereenvoudigde versie van de echte Pokémon-stats in de mate dat ik het allemaal een beetje kon begrijpen en juist interpreteren.
+
 
 
 ## Hoe Pokémon werken
@@ -94,7 +93,7 @@ Toon aan dat de Average, Total , HP en andere stats correct berekend worden (con
 
 Maak een kleine loop die je toelaat om per loop een bepaalde Pokémon z’n level met 1 te verhogen en vervolgens toon je dan z’n nieuwe stats.
 
-Test eens hoe de stats na bv 100 levels evolueren. Je zal zien dat bepaalde stats pas na een paar keer levelen ook effectief beginnen stijgen.
+Test eens hoe de stats na bv. 100 levels evolueren. Je zal zien dat bepaalde stats pas na een paar keer levelen ook effectief beginnen stijgen.
 
 **Voeg extra functionaliteit toe naar keuze.**
 

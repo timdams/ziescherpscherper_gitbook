@@ -19,12 +19,13 @@ bool ditIsEenStudent = mijnStudent is Student;
 Stel dat we volgende drie klassen hebben:
 
 ```csharp
-class Voertuig {}
+internal class Voertuig {}
 
-class Auto: Voertuig{}
+internal class Auto: Voertuig{}
 
-class Persoon {}
+internal class Persoon {}
 ```
+
 Een Auto **is** een Voertuig.
 Een Persoon **is géén** Voertuig.
 
@@ -82,15 +83,16 @@ Het ``as`` keyword lost dit op. Het keyword zegt aan de compiler **"probeer dit 
  
 De code van daarnet herschrijven we dan naar:
 
- ```csharp
+```csharp
 Student fritz = new Student();
 Mens jos = fritz as Mens;
 ```
 
-Indien nu de casting niet lukt (omdat ``Student`` misschien geen childklasse van ``Mens`` blijkt te zijn) dan zal ``jos`` de waarde ``null`` hebben gekregen.
+Indien nu de casting niet lukt (omdat ``Student`` misschien geen childklasse van ``Mens`` blijkt te zijn) dan zal ``jos`` de waarde ``null`` krijgen.
 
 We kunnen dan vervolgens schrijven:
- ```csharp
+
+```csharp
 Student fritz = new Student();
 Mens jos = fritz as Mens;
 if(jos != null)
@@ -99,5 +101,15 @@ if(jos != null)
 }
 ```
 
+### Volgorde van bewerkingen met ``is`` en ``as``
 
+De is en as keywords worden gebruik in logische expressie. Ze hebben dan ook een bepaalde volgorde wanneer ze verwerkt zullen worden. Onze bestaande volgorde van bewerkingen krijgt dus 2 nieuwe leden op lijn 4:
+
+1. Logische NIET: ``!``
+2. Delen en vermenigvuldigen: ``*``, ``/``, ``%``
+3. Optellen en aftrekken: ``+``, ``-``
+4. Relationele operators: ``<``, ``<=``, ``>``, ``>=`` én **``is``, ``as``**
+5. Gelijkheid: ``==``, ``!=``
+6. Logische EN: ``&&``
+7. Logische OF: ``||``
 

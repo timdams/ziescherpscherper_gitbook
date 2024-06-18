@@ -33,8 +33,8 @@ Deze methode gaat ook random bepalen welke speler de beste is. Vervolgens geef j
 Pas de kennis van constructors toe op je Pokémon-project uit het vorige hoofdstuk. Zorg ervoor dat je Pokémons op 3 manieren kunt aanmaken als volgt:
 
 * Via een default constructor: alle base stats worden daarbij op 10 standaard ingesteld via de constructor
-* Via een overloaded constructor die de gebruiker toelaat om de 6 base stats als parameters mee te geven (bv ``new Pokemon(45,42,50,65,34,67)``)
-* Via object initializer syntax waarbij je eender welke base stat enz. kunt instellen (bv ``new Pokemon(){HP_Base=40, Name="Pikachu"};``)
+* Via een overloaded constructor die de gebruiker toelaat om de 6 base stats als parameters mee te geven (bv. ``new Pokemon(45,42,50,65,34,67)``)
+* Via object initializer syntax waarbij je eender welke base stat enz. kunt instellen (bv. ``new Pokemon(){HP_Base=40, Name="Pikachu"};``)
 
 ## Static methoden
 

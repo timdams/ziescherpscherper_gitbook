@@ -23,16 +23,16 @@ namespace NietZoEpicGame
 {
     internal class Monster
 ```
+
 Dan kan ik deze klasse aanroepen als ``NietZoEpicGame.Monster`` en kan er dus geen verwarring optreden.
 
 
-{% hint style='warning' %}
 
-![](../assets/gotopolice.png)
-De politie uw vriend! Inderdaad. De auteur van dit boek heeft klachten gekregen over het feit dat hij het edele beroep van politie-agent ietwat besmeurd. We willen daarom even u attenderen en, zoals een goed agent betaamd, u de weg doorheen de stad wijzen.
 
-Als u ons tegenkomt en vraagt "Waar is de Kerkstraat." Dan zullen wij u meer informatie moeten vragen. Zonder er bij te zeggen in welke gemeente u die straat zoekt, is de kans bestaande dat we u naar de verkeerde Kerkstraat sturen (er zijn er namelijk best veel in België en Nederland). Wel, namespaces zijn exact dat. Een soort stadsnaam (of postcode) die essentiëel is bij een straatnaam om zonder verwarring een straat te kunnen identificeren, in dit geval dus de klassenaam. Nog een fijne dag!
-{% endhint %}
+>![](../assets/gotopolice.png)De politie uw vriend! Inderdaad. De auteur van dit boek heeft klachten gekregen over het feit dat hij het edele beroep van politie-agent ietwat besmeurd. We willen daarom even u attenderen en, zoals een goed agent betaamd, u de weg doorheen de stad wijzen.
+>
+>Als u ons tegenkomt en vraagt "Waar is de Kerkstraat." Dan zullen wij u meer informatie moeten vragen. Zonder er bij te zeggen in welke gemeente u die straat zoekt, is de kans bestaande dat we u naar de verkeerde Kerkstraat sturen. Er zijn er namelijk best veel Kerkstraten in België en Nederland. Wel, namespaces zijn exact dat. Je kan ze vergelijken als een stadsnaam  die essentiëel is bij een straatnaam. De stadsnaam laat toe om zonder verwarring een straat (de klasse in dit geval) te identificeren. Nog een fijne dag!
+
 
 
 ### ``using`` in je code
@@ -42,6 +42,7 @@ Wanneer je een bepaalde namespace nodig hebt (standaard laadt een C# 10 project 
 
 
 ### Ontbrekende namespaces terugvinden
+
 Het gebeurt soms dat je een klasse gebruikt en je weet zeker dat ze in jouw project of een bestaande .NET bibliotheek aanwezig is. Visual Studio kan je helpen de namespace van deze klasse te zoeken moest je daar te lui voor zijn.
 
 Je doet dit door de naam van de klasse te schrijven (op de plek waar je deze nodig hebt) en dan op het lampje dat links in de rand verschijnt te klikken. Indien de klasse gekend is door VS zal je nu de optie krijgen om automatisch:
@@ -59,11 +60,16 @@ Trouwens: de optie ``Generate type ..`` zal je ook vaak kunnen gebruiken. Wannee
 Maar hoe weet C# nu welke bibliotheken allemaal beschikbaar zijn? Wel, je kan in je project via de solution explorer kijken welke bibliotheken (meestal in de vorm van DLL-bestanden) werden toegevoegd. In je solution explorer klik je hiervoor de *Dependencies* open. Daar kan je dan zien in welke bibliotheken VS mag zoeken als je een klasse nodig hebt die niet gekend is. Klik bijvoorbeeld eens onder *Dependencies* de sectie *FrameWorks* open en dan *MicrosofT.NETCore.App*. Je zal er onder andere alle **System.** bibliotheken zien staan.
 {% endhint %}
 
+#### NuGet
 
-{% hint style='tip' %}
-Je kan ook extra bibliotheken toevoegen aan je Dependencies. Rechterklik maar eens op Dependencies en zie wat je allemaal kunt doen. **Vooral de NuGet packages zijn een erg nuttig en krachtig hulpmiddel**. Lees er alles over op **docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio**. Helaas kan niet alles over C# en .NET in één boek verzameld worden, maar weet dat er erg nuttige, toffe en zelfs grappige NuGet packages bestaan, zoek bijvoorbeeld maar eens naar de *Colorful.Console* NuGet!
-{% endhint %}
+Je kan ook extra bibliotheken toevoegen aan je Dependencies. 
 
+Rechterklik maar eens op Dependencies en zie wat je allemaal kunt doen. **Vooral de NuGet packages zijn een erg nuttig en krachtig hulpmiddel**.[^nuget]
+
+Helaas kan niet alles over C# en .NET in één boek verzameld worden. Weet echter dat er erg nuttige, toffe en zelfs grappige NuGet packages bestaan. Zoek bijvoorbeeld maar eens naar de *Colorful.Console* NuGet!
+
+
+[^nuget]: Lees er alles over op [docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio](https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio).
 
 
 

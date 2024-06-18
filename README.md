@@ -1,40 +1,48 @@
+<!-- \frontmatter -->
 
 # Welkom
 
 
-![](../assets/me.png)
+Zo, je hebt besloten om C# te leren? Je bent hier aan het juiste adres. Dit boek is ontstaan als handboek voor de opleidingen professionele bachelor elektronica-ict en toegepaste informatica van de AP Hogeschool. Ondertussen wordt het ook in tal van andere hogescholen en middelbare scholen gebruikt. Ik ga je op een laagdrempelige manier leren programmeren in C#, waarbij geen voorkennis vereist is.
 
-Zo, je hebt besloten om C# te leren? Je bent hier aan het juiste adres. Dit boek wordt gebruikt als handboek binnen de opleidingen professionele bachelor elektronica-ict en toegepaste informatica van de AP Hogeschool. Het is gedurende vele jaren gegroeid tot een tweedelige reeks (1 per semester), genaamd "Zie Scherp" en "Zie Scherper". Dit boek is de combinatie van die twee delen. 
+Eerst zullen we de fundering leggen en zaken behandelen zoals variabelen, loops methoden en arrays. Vervolgens zal de wonderlijke wereld van het *object georiënteerd programmeren* uit de doeken gedaan worden.
 
-Eerst zullen we de fundering leggen en zaken behandelen zoals variabelen, loops methoden en arrays. Vervolgens zal (hopelijk) de mystieke, maar oh zo belangrijke, wereld van het *Object georiënteerd programmeren* uit de doeken gedaan worden.
+Je vraagt je misschien af hoe up-to-date dit boek is? Wel, het is origineel samengesteld tijdens de lockdowns in 2020... Mmm, het jaar 2020 als kwaliteitslabel gebruiken is een beetje zoals zeggen dat je wijn maakt met rioolwater. Toen eind 2021 een nieuwe versie van Visual Studio verscheen werd het tijd om dit boek grondig te updaten. De versie die je nu in handen hebt werd geüpdatet in de zomer van 2024, na reeds een grote herziening in 2022.
 
-Je vraagt je misschien af hoe up-to-date dit boek is? Wel, het is origineel samengesteld tijdens de lockdowns in 2020, dus... mmm, het jaar 2020 als kwaliteitslabel gebruiken is een beetje zoals zeggen dat je wijn maakt met rioolwater. Toen eind 2021 een nieuwe versie van Visual Studio verscheen werd het tijd om dit boek grondig te updaten. De versie die je nu in handen hebt werd geüpdatet in de zomer van 2022, een veel fijner jaar dan 2020 ;) 
+Net zoals spreektalen, evolueert ook de programmeertaal C# constant. Terwijl ik dit schrijf zijn we aan versie 10.0 van C# en staat versie 11 in de startblokken. Bij iedere nieuwe C#-versie worden bepaalde concepten plots veel eenvoudiger of zelfs gewoon overbodig. Een goed programmeur moet natuurlijk zowel met de oude als de nieuwe constructies kunnen werken. 
 
-Net zoals spreektalen, evolueert ook de programmeertaal C# constant. Terwijl ik dit schrijf zijn we aan versie 10.0 van C# en staat versie 11 in de startblokken. Bij iedere nieuwe C#-versie worden bepaalde concepten plots veel eenvoudiger of zelfs gewoon overbodig. Een goed programmeur moet natuurlijk zowel met de oude als de nieuwe constructies kunnen werken. Ik heb getracht een gezonde mix tussen oud en nieuw te zoeken, waarbij de nadruk ligt op maximale bruikbaarheid in je verdere professionele carrière. Je zal hier dus geen stoere, state-of-the-art C# innovaties terugvinden die enkel in heel specifieke projecten bruikbaar zijn. Integendeel, ik hoop dat als je aan het laatste hoofdstuk bent, je een zodanige basis hebt, dat je ook zonder problemen in andere 'zustertalen' durft te duiken (zoals Java, C en C++, maar ook zelfs Python of JavaScript).
+Ik heb getracht een gezonde mix tussen oud en nieuw te zoeken, waarbij de nadruk ligt op maximale bruikbaarheid in je verdere professionele carrière. Je zal hier dus geen stoere, state-of-the-art C# innovaties terugvinden die enkel in heel specifieke projecten bruikbaar zijn. Integendeel. Ik hoop dat als je aan het laatste hoofdstuk bent, je een zodanige basis hebt, dat je ook zonder problemen in andere 'zustertalen' durft te duiken (zoals Java, C en C++, maar ook zelfs Python of JavaScript).
 
-Dit boek ambieert niet om de volledige C#-taal en alles dat daar rond hangt aan te leren. Het boek daarentegen is gericht op eender wie die interesse heeft in de wondere wereld van programmeren, maar mogelijk nog nooit één letter code effectief heeft geprogrammeerd. Bepaalde concepten die ik te gecompliceerd acht voor een beginnende programmeur werden dan ook uit deze cursus gelaten. Beschouw wat je gaat lezen dus maar als een gatewaydrug naar meer C#, meer programmeertalen en vooral meer (programmeer)plezier! U weze gewaarschuwd.
-
-Veel lees-en programmeerplezier,
-
-Tim Dams 
-Zomer 2022
+Dit boek ambieert niet om de volledige C#-taal en alles dat daar rond hangt aan te leren. Het boek daarentegen is gericht op eender wie die interesse heeft in de wondere wereld van programmeren, maar mogelijk nog nooit één letter code effectief heeft geprogrammeerd. Bepaalde concepten die ik te ingewikkeld acht voor een beginnende programmeur werden dan ook weg gelaten. Beschouw wat je gaat lezen dus maar als een *gateway drug* naar meer C#, meer programmeertalen en vooral meer programmeerplezier! U weze gewaarschuwd.
 
 
+## Wat je kunt verwachten
 
+Voor we verder gaan wil ik je wel even waarschuwen. Dit boek gaat uit van geen enkele kennis van programmeren, laat staan C#. Daarom beginnen we bij het prille begin. Verwacht echter niet dat je aan het einde van dit boek supercoole grafische applicaties of games kunt maken. Het is zelfs zo dat we hoegenaamd geen woord gaan reppen over "windows applicaties", met knoppen en menu's enz. 
+
+Alles dat in dit boek gemaakt wordt zal uitgevoerd "in de console".  Die oeroude DOS-schermen - ook wel een *shell* genoemd - die je nu nog vaak in films ziet wanneer hackers proberen in een erg beveiligd systeem in te breken. Deze aanpak helpt je te focussen op de essentie van het probleem, zonder afgeleid te worden door visuele elementen.  
+
+
+![De "console". Qua zwarte inkt-verspilling zal deze afbeelding de hoofdprijs winnen!](../assets/0_intro/introconsole.png)<!--{width=50%}-->
 
 
 ## Over de bronnen
 
-Dit boek is het resultaat van bijna een decennium C# doceren aan de AP Hogeschool (eerst nog Hogeschool Antwerpen, dan Artesis Hogeschool, dan Artesis Plantijn Hogeschool...). De eerste schrijfsels verschenen op een eigen gehoste blog ("Code van 1001 Nacht", die ondertussen ter ziele is gegaan) en vervolgens kreeg deze een iets strakkere, eenduidige vorm als gitbook cursus. Deze cursus, alsook een hele resem oefeningen en andere nuttige extra's kan je terugvinden op **ziescherp.be**. De inhoud van die cursus loopt integraal gelijk aan die van dit boek. Uiteraard is de kans bestaande dat er in de online versie ondertussen weer wat minder schrijffoutjes staan. 
+Dit boek is het resultaat van bijna een decennium C# doceren aan de AP Hogeschool (eerst nog Hogeschool Antwerpen, dan Artesis Hogeschool, dan Artesis Plantijn Hogeschool, enz.). De eerste schrijfsels verschenen op een eigen gehoste blog ("Code van 1001 Nacht", die ondertussen ter ziele is gegaan) en vervolgens kreeg deze een iets strakkere, eenduidige vorm als gitbook cursus. 
+
+Deze cursus, alsook een hele resem oefeningen en andere nuttige extra's kan je terugvinden op **ziescherp.be**. De inhoud van die cursus loopt integraal gelijk aan die van dit boek. Uiteraard is de kans bestaande dat er in de online versie ondertussen weer wat minder schrijffoutjes staan. 
+
 
 Waarom deze korte historiek? Wel, de kans is bestaande dat er hier en daar flarden tekst, code voorbeelden, of oefeningen niet origineel de mijne zijn. Ik heb getracht zo goed mogelijk aan te geven wat van waar komt, maar als ik toch iets vergeten ben, aarzel dan niet om me er op te wijzen. 
 
 
-### Benodigdheden
-
-Alle codevoorbeelden in deze cursus kan je zelf (na)maken met de gratis **Visual Studio 2022 Community** editie die je kan downloaden op **visualstudio.microsoft.com**.
 
 
+## Benodigdheden
+
+Alle codevoorbeelden in deze cursus kan je zelf (na)maken met de gratis **Visual Studio 2022 Community** editie die je kan downloaden op [visualstudio.microsoft.com](https://visualstudio.microsoft.com).
+
+<!-- \newpage -->
 
 ## Dankwoord
 
@@ -46,5 +54,11 @@ Ook een bos bloemen voor collega's Olga Coutrin en Walter Van Hoof om de ondankb
 
 De trainers van Multimedi BV. die dit handboek ook gebruiken wil ik expliciet bedanken voor hun nuttige feedback op de eerste versie van dit boek, alsook om mij een extra reden te geven om dit boek in de eerste plaats uit te brengen.
 
+Als laatste, in deze 2024 editie, een shoutout naar de leerkrachten van het middelbaar die sinds de laatste onderwijshervorming C# en OOP aan hun leerlingen mogen onderwijzen! 
 
+![](../assets/me.png)
 
+Veel lees-en programmeerplezier,
+
+Tim Dams 
+Zomer 2024

@@ -9,7 +9,7 @@ Klassen zijn "gewoon" nieuwe datatypes. Alle regels die we dus al kenden in verb
 Stel dat we volgende klasse hebben waarin we temperatuurmetingen willen opslaan, alsook wie de meting heeft gedaan:
 
 ```csharp
-class Meting
+internal class Meting
 {
     public int Temperatuur { get; set; }
     public string OpgemetenDoor { get; set; }
@@ -41,6 +41,7 @@ m1.ToonMetingInKleur(ConsoleColor.Red);
 m2.ToonMetingInKleur(ConsoleColor.Pink);
 ```
 
+<!-- \newpage -->
 
 
 ### Objecten in methoden aanpassen
@@ -84,7 +85,7 @@ public Meting GenereerRandomMeting()
 {
     Meting result = new Meting();
     result.Temperatuur = Temperatuur * 2;
-    result.OpgemetenDoor = OpgemetenDoor + "Junior";
+    result.OpgemetenDoor = $"{OpgemetenDoor} Junior";
     return result;
 }
 ```
@@ -101,11 +102,11 @@ Meting m3 = m1.GenereerRandomMeting();
 
 Het object ``m3`` zal een temperatuur van ``52`` bevatten en zijn opgemeten door ``Lieven Scheire Junior``.
 
-### Bevallen in C#
+### Bevallen in code
 
-In voorgaande voorbeeld zagen we reeds dat objecten dus objecten van het eigen type kunnen teruggeven. Laten we dat voorbeeld eens, bij wijze van demonstratie, doortrekken naar hoe de bevalling van een kind in C# zou gebeuren.
+In voorgaande voorbeeld zagen we reeds dat objecten dus objecten van het eigen type kunnen teruggeven. Laten we dat voorbeeld eens doortrekken naar hoe de bevalling van een kind in C# zou gebeuren.
 
-Baby's zijn kleine mensjes, het is dan ook logisch dat mensen een methode ``PlantVoort`` hebben (we laten in het midden wat het geslacht is). Volgende klasse ``Mens`` is dus perfect mogelijk:
+Baby's zijn kleine mensjes. Het is dan ook logisch dat mensen een methode ``PlantVoort`` hebben (we houden geen rekening met het geslacht). Volgende klasse ``Mens`` is dus perfect mogelijk:
 
 ```csharp
 class Mens
@@ -117,7 +118,7 @@ class Mens
 }
 ```
 
-Vervolgens kunnen we nu het volgende doen:
+Vervolgens kunnen we het volgende doen:
 
 ```csharp
 Mens oermoeder = new Mens();
@@ -130,6 +131,6 @@ kleindochter = dochter.PlantVoort();
 Het is een interessante oefening om deze code eens uit te tekenen in de stack en heap inclusief de verschillende referenties. 
 
 {% hint style='tip' %}
-We gaan voorgaande code over enkele pagina's nog uitbreiden om een meer realistisch *voortplantingsscenario* te hebben (sommige zinnen verwacht je nooit te zullen schrijven in je leven... *I was wrong*).
+Ik ga voorgaande code over enkele pagina's nog uitbreiden om een meer realistisch *voortplantingsscenario* te hebben (sommige zinnen verwacht je nooit te zullen schrijven in je leven... *I was wrong*).
 {% endhint %}
 

@@ -4,7 +4,7 @@ Het **``base``** keyword laat ons toe om bij ``override`` van een methode of pro
 
 Stel dat we volgende 2 klassen hebben:
 ```csharp
-class Restaurant
+internal class Restaurant
 {
      protected int kosten = 0;
      public virtual void PoetsAlles()
@@ -12,7 +12,7 @@ class Restaurant
            kosten += 1000;
      }
 }
-class Frituur:Restaurant
+internal class Frituur:Restaurant
 {
      public override void PoetsAlles()
      {
@@ -26,7 +26,7 @@ Het poetsen van een ``Frituur`` is duurder (1000 basis + 500 voor ontsmetting) d
 ``base`` lost dit voor ons op. De ``Frituur``-klasse herschrijven we naar:
 
 ```csharp
-class Frituur:Restaurant
+internal class Frituur:Restaurant
 {
      public override void PoetsAlles()
      {
@@ -42,19 +42,21 @@ Het ``base`` keyword laat ons toe om in onze code expliciet een methode of prope
 We hebben een soortgelijke werking ook reeds gezien bij de constructors van overgeërfde klassen.
 {% endhint %}
 
+<!-- \newpage -->
+
 
 Je kan zelf beslissen waar in je code je ``base`` aanroept. Soms doe je dat aan de start van de methode, soms op het einde, soms halverwege. Alles hangt er van af wat je juist nodig hebt.
 
 
-{% hint style='warning' %}
 
-![](../assets/care.png)
-**"Ik denk dat ik een extra voorbeeldje nodig ga hebben."**
+
+
+>![](../assets/care.png)**"Ik denk dat ik een extra voorbeeldje nodig ga hebben."**
 
 Laten we eens kijken. Beeld je in dat je volgende basisklasse hebt:
 
 ```csharp
-class Oermens
+internal class Oermens
 {
       public virtual int VoorzieVoedsel()
       {
@@ -63,25 +65,63 @@ class Oermens
 }
 ```
 
-Wanneer 1 van mijn dorpsgenoten voedsel zoekt (door te jagen) zal hij 15 kg vlees verzamelen.
+Wanneer 1 van mijn dorpsgenoten voedsel zoekt door te jagen zal hij 15 kg vlees verzamelen.
 
 De moderne mens, die overerft van de oermens, is natuurlijk al iets beter in het maken van voedsel en kan dagelijks standaard 100 kg voedsel maken. 
 
-Echter, er bestaan ook hipsters die houden van de klassieke manier van voedsel verzamelen (maar ze zijn wel gewoon moderne mensen, dus geen klasse apart hier). Uiteraard hebben zij de technieken van de oermens verbeterd en zullen sowieso toch iets meer voedsel nog kunnen verzamelen met de traditionele methoden, namelijk 20 kg bovenop de basishoeveelheid van 15 kg.
+Echter, er bestaan ook jagers die nog op de klassieke manier voedsel kunnen verzamelen (maar ze zijn wel gewoon moderne mensen, dus geen klasse apart hier). Uiteraard hebben zij de technieken van de oermens verbeterd en zullen sowieso toch iets meer voedsel nog kunnen verzamelen met de traditionele methoden, namelijk 20 kg bovenop de basishoeveelheid van 15 kg.
 
 ```csharp
-class ModerneMens: Oermens
+internal class ModerneMens: Oermens
 {
-      public bool IsHipster {get;  set;}
+      public bool IsJager {get;  set;}
 
       public override int VoorzieVoedsel()
       {
-            if (IsHipster)
+            if (IsJager)
                   return base.VoorzieVoedsel() + 20;
             return 100;
       }
 }
 ```
+
+<!-- \newpage -->
+
+
+### Een wereld met OOP: Pong overerving
+
+Dankzij overerving zijn we nu in staat om Pong uit te breiden met andere soort balletjes. De eerste vraag die je je moet stellen is dan "welke werking in de klasse ``Balletje`` gaan we potentiëel willen aanpassen?". Laten we veronderstellen dat we enkel de ``Update`` mogelijk willen veranderen. We voegen daarom het ``virtual`` keyword aan die methode toe:
+
+```csharp
+virtual public void Update()
+```
+
+Voor de rest passen we hier niets aan. Dankzij overerving kunnen we de klasse ``Balletje`` nu onaangeroerd laten en onze nieuwe functionaliteit toevoegen via child-klassen. 
+
+Stel dat we een nieuw ``Balletje`` willen ontwikkelen, genaamd ``CentreerBalletje``. Dit balletje heeft als eigenschappen dat het terug naar het midden van het scherm *teleporteert* wanneer het de linker- of rechterzijde van het scherm raakt. Dit zal er zo uitzien:
+
+```csharp
+internal class CentreerBalletje : Balletje
+{
+      public override void Update()
+      {
+            if(X+VX >= Console.WindowWidth || X+VX < 0)
+            {
+                  X = Console.WindowWidth / 2;
+                  Y = Console.WindowHeight / 2;
+            }         
+            base.Update();
+      }     
+}
+```
+
+We hoeven nu enkel in het hoofdprogramma alle ``Balletje``-variabelen te vervangen door  ``CentreerBalletje``.
+
+{% hint style='tip' %}
+Dankzij polymorfisme verderop gaan we ontdekken dat zelfs dit eigenlijk mag!
+
+```csharp
+Balletje bal1 = new CentreerBalletje();
+```
+
 {% endhint %}
-
-

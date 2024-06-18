@@ -1,35 +1,26 @@
 ## Strings samenvoegen
 
-Je kan strings en variabelen samenvoegen tot een nieuwe string op verschillende manieren:
-
-* +-operator 
-* $ string interpolation 
-* Of de oude manier: ``String.Format()`` 
-
-{% hint style='tip' %}
-In dit boek verkiezen we **manier 2**, de string interpolatie. Dit is de meest moderne aanpak.
-{% endhint %}
+Tot nogtoe gebruikten we de +-operator om strings aan elkaar te plakken. We gaan deze manier meer in detail bekijken, gevolgd door een moderner alternatief: door middel van string interpolatie met de ``$``-notatie.
 
 
 In de volgende sectie gaan we van volgende informatie uit:
 
 * Stel dat je 2 variabelen hebt ``int leeftijd = 13`` en ``string naam = "Finkelstein"``.
-* We willen de inhoud van deze variabelen samenvoegen in een nieuwe ``string result`` die zal bestaan uit de tekst: ``Ik ben Finkelstein en ik ben 13 jaar oud.``
+* We willen de inhoud van deze variabelen samenvoegen in een nieuwe ``string zin`` die zal bestaan uit de tekst: ``Ik ben Finkelstein en ik ben 13 jaar.``
 
-Volgende 3 manieren tonen hoe je steeds tot voorgaande string zal komen.
 
-### Manier 1: String samenvoegen met de +-operator
+
+### String samenvoegen met de +-operator
+
 Je kan strings en variabelen eenvoudig bij elkaar 'optellen' zoals we in het begin van dit boek hebben gezien. Ze worden dan achter elkaar geplakt (**geconcateneerd**). 
 
-
 ```csharp
-string result = "Ik ben " + naam + " en ik ben " + leeftijd+ " jaar oud.";
+string zin = "Ik ben " + naam + " en ik ben " + leeftijd+ " jaar.";
 ```
 
-Let er op dat je tussen de aanhalingsteken (binnen de strings) spaties zet indien je het volgende deel niet tegen het vorige stringstuk wilt 'plakken'.
+Let er op dat je tussen de aanhalingsteken (binnen de strings) spaties zet indien je het volgende deel niet tegen het vorige deel wilt *plakken*. Is hiermee alles gezegd?! Neen, toch even goed opletten hier. **De volgorde van strings met andere types samenvoegen bepaalt wat de uitvoer zal zijn.** 
 
-{% hint style='danger' %}
-Toch even goed opletten hier. De volgorde van strings met andere types samenvoegen (**concateneren**) bepaalt wat de uitvoer zal zijn! Kijk zelf:
+Kijk zelf:
 
 ```csharp
 Console.WriteLine("1"+1+1);
@@ -50,14 +41,15 @@ Was dit de uitvoer die je voorspeld had?
 
 Ook in dit soort code wordt de volgorde van bewerkingen gerespecteerd. De **concatenatie gebeurt van links naar rechts en de linkse operand zal steeds bepalen wat het resultaat van de bewerking zal zijn indien er twijfel is**. Dit nieuw samengevoegde deel wordt dan de linkse operand voor het volgende deel.
 
-Kijken we dus naar ``"1"+1+1`` dan wordt dit eerst ``"11"+1`` en vervolgens de ``string`` ``"111"``.
-Bij ``1+1+"1"`` krijgen we eerste ``2+"1"``, dit geeft vervolgens ``21`` (aangezien C# niet kan bepalen dat de string iets bevat wat een getal kan zijn, en dus besluit om beide operanden als een ``string`` te zien wat altijd de veiligste oplossing is).
-{% endhint %}
+Kijken we dus naar ``"1"+1+1`` dan wordt dit eerst ``"11"+1`` en vervolgens dit ``"111"``.
+
+Bij ``1+1+"1"`` krijgen we eerst ``2+"1"``. Dit geeft vervolgens ``21``. Aangezien C# niet kan bepalen dat de string iets bevat wat een getal kan zijn, en dus besluit om beide operanden als een ``string`` te zien wat altijd de veiligste oplossing is.
 
 
 
-### Manier 2: String interpolation met $
-In de oude dagen van C# gebruikten we ``String.Format()`` (zie hierna) om meerdere strings en variabelen samen te voegen tot één string. Het nadeel van de +-operator uit manier 1 is dat je strings erg lang en onleesbaar worden. 
+### String interpolation met $-notatie
+
+Het nadeel van de +-operator is dat je strings soms erg lang en onleesbaar worden. 
 
 Dankzij *string interpolation* kan dit wel **waarbij we het ``$``-teken gebruiken vooraan de ``string`` om aan te geven dat specifieke delen van de zin geïnterpoleerd moeten worden**
 
@@ -65,30 +57,29 @@ Door het $-teken **VOOR** de string te plaatsen geef je aan dat alle delen in de
 
 
 ```csharp
-string result = $"Ik ben {naam} en ik ben {leeftijd} jaar oud.";
+string zin = $"Ik ben {naam} en ik ben {leeftijd} jaar.";
 ```
 
 In dit geval zal de inhoud van de variabele ``naam`` tussen de string op de plek waar nu ``{naam}`` staat geplaatst worden. Idem voor ``leeftijd``.
 Zoals je kan zien is dit veel meer leesbare code dan de eerste manier.
 
-Het resultaat zal dan worden: ```Ik ben Finkelstein en ik ben 13 jaar oud.```
+Het resultaat zal dan worden: ``Ik ben Finkelstein en ik ben 13 jaar.``
 
 
 #### Berekeningen doen bij string interpolatie
+
 Je mag eender welke *expressie* tussen de accolades zetten bij string interpolation, denk maar aan:
-
-
 ```csharp
-string result = $"Ik ben {naam} en ik ben {leeftijd+4} jaar oud.";
+string zin = $"Ik ben {leeftijd+4} jaar.";
 ```
 
-Alle expressies tussen de accolades zullen eerst uitgevoerd worden voor ze tussen de string worden geplaatst. De uitvoer wordt nu dus: ```Ik ben Finkelstein en ik ben 17 jaar oud.```
+Alle expressies tussen de accolades zullen eerst uitgevoerd worden voor ze tussen de string worden geplaatst. De uitvoer wordt nu dus: ```Ik ben 17 jaar.```
 
 Eender welke expressie is toegelaten, dus je kan ook complexe berekeningen of zelfs andere methoden aanroepen:
 
 
 ```csharp
-string result = $"Ik ben {leeftijd*leeftijd+(3*2)} jaar oud.";
+string zin = $"Ik ben {leeftijd*leeftijd+(3*2)} jaar.";
 ```
 
 {% hint style='tip' %}
@@ -103,30 +94,37 @@ Console.WriteLine($"3 maal 9 is {3*9}");
 
 
 #### Mooier formatteren
-Zowel bij string interpolation (manier 2) als de manier hierna kan je ook bepalen hoe de te tonen variabelen en expressies juist weergegeven moeten worden. Je geeft dit aan door na de expressie, binnen de accolades, een dubbelpunt te plaatsen gevolgd door de manier waarop moet geformatteerd worden.
 
-Wil je bijvoorbeeld een kommagetal tonen met maar 2 cijfers na de komma dan schrijf je:
+Bij string interpolation kan je ook extra informatie meegeven hoe het resultaat juist weergegeven moet worden. Dit noemen we *formatteren*. Je geeft dit aan door na de expressie, binnen de accolades, een dubbelpunt te plaatsen gevolgd door de manier waarop moet geformatteerd worden.
+
+Wil je een kommagetal tonen met maar 2 cijfers na de komma dan schrijf je:
 
 ```csharp
 double number = 12.345;
 Console.WriteLine($"{number:F2}");
 ```
 
-Er zal ``12.35`` op het scherm verschijnen. ``F2`` geeft aan dat je een *float* wilt met 2 beduidende cijfers na de komma. 
+Er zal ``12.35`` op het scherm verschijnen. ``F2`` na het dubbelpunt geeft aan dat je een *float* wilt met 2 beduidende cijfers na de komma. 
 
-Merk op dat bij string formatting er **afgerond** wordt. 
+Merk op dat bij string formattering er **afgerond** wordt, en dus niet *afgekapt*. 
 
-{% hint style='tip' %}
+
 Nog enkele nuttige vormen:
 
-* D5: toon een geheel getal als een 5 cijfer getal (``123`` wordt ``00123``) (werkt uiteraard enkel op gehele getallen!)
-* E2: wetenschappelijke notatie met 2 cijfers precisie (``12000000`` wordt ``1,20E+007`` i.e. *"1 komma 2 maal tien tot de zevende"*)
-* C: geldbedrag (``12,34`` wordt $ 12,34 : teken van valuta afhankelijk van instellingen pc). Het euro teken zal als een ``?`` getoond worden. In de volgende sectie tonen we hoe je dit kan oplossen.
+* D5: toon een geheel getal als een 5 cijfer getal. ``123`` wordt ``00123``. Maar ``123456`` zal volledig getoond worden. De ``Dx`` formattering werkt enkel op gehele getallen.
+* E2: wetenschappelijke notatie met 2 cijfers precisie (``12000000`` wordt ``1,20E+007`` *"1 komma 2 maal tien tot de zevende"*)
+* C: geldbedrag. ``12,34`` wordt € 12,34. Het teken en het aantal beduidende cijfers is van de landinstellingen van de pc waarop je code wordt uitgevoerd. Het euro teken zal mogelijk als een ``?`` getoond worden. In de volgende sectie tonen we hoe je dit kan oplossen.
 
-Alle overige format specifiers staan hier opgelijst: **docs.microsoft.com/dotnet/standard/base-types/standard-numeric-format-strings**.
-{% endhint %}
+Alle overige format specifiers kan je in de documentatie opzoeken[^formatdoc].
 
-Een andere eenvoudige manier om strings te formatteren is door middel van een soort masker bestaande uit 0'n. Dit ziet er als volgt uit:
+[^formatdoc]: Zie [docs.microsoft.com/dotnet/standard/base-types/standard-numeric-format-strings](https://docs.microsoft.com/dotnet/standard/base-types/standard-numeric-format-strings).
+
+<!-- \newpage -->
+
+
+#### Formateren met een masker
+
+Een andere eenvoudige manier om strings te formatteren is door middel van een masker bestaande uit 0'n. Dit ziet er als volgt uit:
 
 ```csharp
 double number = 12.345;
@@ -157,44 +155,18 @@ Geeft als uitvoer:
 99999.30
 ```
 
-### Manier 3: String.Format()
-String interpolatie met het $-teken is een nieuwe C# aanwinst. Je zal echter geregeld documentatie en online code tegenkomen die nog met ``String.Format`` werkt (ook zijn er nog zaken waar het te verkiezen is om ``String.Format`` te gebruiken i.p.v. 1 van vorige manieren). Om die reden bespreken we dit nog in dit boek.
-
-``String.Format`` is een ingebouwde methode die string-interpolatie toelaat op een iets minder intuïtieve manier, als volgt:
-
-
-```csharp
-string result = String.Format("Ik ben {0} en ik ben {1} jaar.", naam, leeftijd);
-```
-
-Het getal tussen de accolades geeft telkens aan de hoeveelste parameter na de string hier in de plaats moet gezet worden (0= de eerste, 1= de tweede, enz). De eerste parameter is ``naam``, de tweede is ``leeftijd``.
-
-Volgende code zal een ander resultaat geven:
-
-
-```csharp
-string result = String.Format("Ik ben {1} en ben {1} jaar.", naam, leeftijd);
-```
-
-Namelijk: ``Ik ben 13 en ik ben 13 jaar oud.``
-
 {% hint style='tip' %}
-Je kan deze vorm van formateren ook toepassen in ``Console.WriteLine`` zonder dat je expliciet ``String.Format`` hiervoor moet aanroepen:
+Vanaf nu zal ik bijna altijd string interpolatie gebruiken doorheen het boek. Dit is de meest moderne aanpak en zal 99% van de tijd meer leesbare code geven.
 
-
-```csharp
-Console.WriteLine("Gratis formateren. {0} maal hoera voor .NET!", 3);
-```
+In de appendix leg ik uit hoe je vroeger met behulp van ``String.Format()`` strings moest samenvoegen (daar je dit soms nog in *legacy* code zal tegenkomen).
 {% endhint %}
 
+<!-- \newpage -->
 
-{% hint style='tip' %}
-Wanneer we in hoofdstuk 8 arrays uit de doeken gaan doen zal je ontdekken dat alles in de digitale wereld begint te tellen vanaf 0, en niet 1 zoals wij gewend zijn. Het eerste element in een lijst, zoals hier boven, heeft daarom index 0, het tweede 1, enz.
-{% endhint %}
 
 ## Optellen van char variabelen
 
-We hebben al gezien dat intern een ``char`` als een geheel getal (de UNICODE) wordt voorgesteld. Stel dat we volgende ``char``-variabelen aanmaken. 
+We hebben al gezien dat intern een ``char`` als een geheel getal wordt voorgesteld. Stel dat we volgende ``char``-variabelen aanmaken: 
 
 ```csharp
 char letter1 = 'A';
@@ -221,6 +193,9 @@ dan zal de compiler deze twee waarden letterlijk optellen en het nieuw verkregen
 * Als we dus de variabelen ``letter1`` en ``letter2`` optellen geeft dit **131**. 
 
 
+
 {% hint style='tip' %}
-Je zou misschien verwachten dat C# vervolgens het element op plaats 131 in de UNICODE tabel zou tonen. Dat is niet zo: omdat de ``+`` operator niet is gedefinieerd voor het ``char`` datatype maar wel voor het ``int`` datatype, besluit de compiler om de twee operanden (``letter1`` en ``letter2``) als ``int`` operanden te hanteren. Aangezien ``int+int`` een ``int`` als resultaat geeft, krijgen we dus ``131`` op het scherm en niet het UNICODE element 131 (we zien in het volgende hoofdstuk hoe je dit wel kunt doen).
+Je zou misschien verwachten dat C# vervolgens het element op plaats 131 in de UNICODE tabel zou tonen. 
+
+Dat is niet juist: de ``+``- operator is niet gedefinieerd voor het ``char`` datatype, maar wel voor het ``int`` datatype. Daarom beschouwt de compiler de operanden ``letter1`` en ``letter2`` als ``int``. De som van twee ``int`` waarden geeft een ``int`` resultaat. We zien daarom ``131`` op het scherm in plaats van het UNICODE karakter met waarde 131 (een Latijnse ``i`` zonder punt) . In het volgende hoofdstuk leren we hoe je dit wel kunt doen.
 {% endhint %}

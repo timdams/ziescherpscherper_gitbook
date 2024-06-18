@@ -1,23 +1,23 @@
-### Jagged Arrays
+### Jagged arrays
 
 Jagged arrays (letterlijk *gekartelde arrays*) zijn *arrays van arrays* maar van verschillende lengte. De arrays die we totnogtoe zagen moesten steeds rechthoekig zijn. Jagged arrays, zoals de naam doet vermoeden, hoeven dat niet te zijn:
 
 
-![Voorbeeld van een jagged array.](../assets/5_arrays/jaggedt.png)
+![Voorbeeld van een jagged array.](../assets/5_arrays/jaggedt.png)<!--{width=70%}-->
 
-We gaan niet al te diep in deze array ingaan omdat deze, alhoewel erg nuttig, vaak omslachtige, meer foutgevoelige code zullen creëren. Meestal zijn er *gezondere* alternatieven te gebruiken zoals de verschillende collectie-klassen uit hoofdstuk 12.
+Ik ga niet al te diep in deze arrays ingaan omdat deze, alhoewel erg nuttig, vaak omslachtige, meer foutgevoelige code zullen creëren. Meestal zijn er *gezondere* alternatieven te gebruiken zoals de verschillende collectie-klassen uit hoofdstuk 12.
 
 #### Jagged arrays aanmaken
 
 Het grote verschil bij het aanmaken van bijvoorbeeld een 2D jagged array is het gebruik van de vierkante haken (en dus niet bijvoorbeeld ``tickets[,]``):
 
 ```csharp
-(double[][]tickets=
+double[][]tickets=
     {
       new double[] {3.0, 40, 24},
       new double[] {123, 31.3 },
       new double[] {2.1}
-    };)
+    };
 
 ```
 

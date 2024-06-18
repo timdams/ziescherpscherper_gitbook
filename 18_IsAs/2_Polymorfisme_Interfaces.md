@@ -1,11 +1,11 @@
 ## Alles samen : Polymorfisme, interfaces en is/as
 
-De eigenschappen van polymorfisme en interfaces combineren kan tot zeer krachtige code resulteren. Wanneer we dan ook nog eens de ``is`` en ``as`` keywords gebruiken zoals we ook al even toonden in de vorige sectie is het hek helemaal van de dam. Als afsluiter van deze lange reis in OOP-land zullen we daarom een voorbeeld tonen waarin de verschillende OOP-concepten samenkomen om, je raadt het nooit, vloekende mensen op het scherm te tonen.
+De eigenschappen van polymorfisme en interfaces combineren kan tot zeer krachtige code resulteren. Wanneer we dan ook nog eens de ``is`` en ``as`` keywords gebruiken is het hek helemaal van de dam. Als afsluiter van deze lange reis in OOP-land zal ik daarom een voorbeeld geven waarin de verschillende OOP-concepten samenkomen om ... vloekende mensen op het scherm te tonen.
 
 
 ### Vloekende mensen: Opstart
 
-Het idee is het volgende: mensen kunnen spreken. Leraren, Studenten, Politieker, en ja zelfs Advocaten zijn mensen. Echter, enkel Politiekers en Advocaten hebben ook de interface ``IVloeker`` die hen toelaat eens goed te vloeken. Brave leerkrachten en studenten doen dat niet (kuch). We willen een programma dat lijsten van mensen bevat waarbij we de vloekers kunnen doen vloeken zonder complexe code te moeten schrijven.
+Het idee is het volgende: mensen kunnen spreken. Leraars, studenten, politieker, en ja zelfs advocaten zijn mensen. Echter, enkel politiekers en advocaten hebben ook de interface ``IVloeker`` die hen toelaat eens goed te vloeken. Brave leerkrachten en studenten doen dat niet (*kuch*). We willen een programma dat lijsten van mensen bevat waarbij we de vloekers kunnen doen vloeken zonder complexe code te moeten schrijven.
 
 We hebben volgende klasse-structuur:
 
@@ -15,7 +15,7 @@ We hebben volgende klasse-structuur:
 Als basis klasse ``Mens`` hebben we:
 
 ```csharp
-public class Mens
+internal class Mens
 {
     public void Spreek()
     {
@@ -41,16 +41,19 @@ We kunnen nu de nodige child-klassen maken:
 2. De vloekers: ``Advocaat`` en ``Politieker``
 
 ```csharp
-class Leraar:Mens {} //moet niets speciaal doen
-class Student:Mens{} //ook studenten doen niets speciaal
-class Politieker: Mens, IVloeker
+internal class Leraar:Mens {} //moet niets speciaal doen
+
+internal class Student:Mens{} //ook studenten doen niets speciaal
+
+internal class Politieker: Mens, IVloeker
 {
     public void Vloek()
     {
         Console.WriteLine("Godvermiljaardedju, zei de politieker");
     }
 }
-class Advocaat: Mens, IVloeker
+
+internal class Advocaat: Mens, IVloeker
 {
     public void Vloek()
     {
@@ -73,7 +76,10 @@ for(int i = 0; i < mensjes.Length; i++)
     //NOW WHAT?
 ```
 
-**Het probleem:** hoe kan ik in de array van mensen (bestaande uit een mix van studenten, leraren, advocaten en politiekers) **enkel de vloekende mensen laten vloeken?**
+**Het probleem:** hoe kan ik in de array van studenten, leraren, advocaten en politiekers **enkel de vloekers laten vloeken?**
+
+<!-- \newpage -->
+
 
 ### Oplossing 1: ``is`` to the rescue
 De eerste oplossing is door gebruik te maken van het ``is`` keyword.
@@ -120,12 +126,10 @@ for(int i = 0; i<mensjes.Length; i++)
 ```
 
 
-{% hint style='warning' %}
+<!-- \newpage -->
 
-![](../assets/attention.png)
 
-Hopelijk hebben voorgaande voorbeelden je een beetje hebben kunnen doen proeven van de kracht van interfaces. Gedaan met ons druk te maken wat er allemaal in een klasse gebeurt. Werk gewoon 'tegen' de interfaces van een klasse en we krijgen de ultieme black-box revelatie! *See what I did there?*
+>![](../assets/attention.png)Hopelijk hebben voorgaande voorbeelden je een beetje hebben kunnen doen proeven van de kracht van interfaces. Gedaan met ons druk te maken wat er allemaal in een klasse gebeurt. Werk gewoon 'tegen' de interfaces van een klasse en we krijgen de ultieme black-box revelatie! *See what I did there?*
 
-{% endhint %}
 
 

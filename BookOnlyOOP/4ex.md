@@ -46,7 +46,7 @@ Vervolgens:
 * Idem nu voor alle onderdelen die in een doos zitten.
 * Idem nu voor alle onderdelen die een even ID hebben én wiens prijs onder de 200 ligt.
 
-Tussen iedere filter toon je op het scherm wat de volgende lijst juist voorstelt (bv "Nu tonen we alle onderdelen in een doos").
+Tussen iedere filter toon je op het scherm wat de volgende lijst juist voorstelt (bv. "Nu tonen we alle onderdelen in een doos").
 
 #### Managen
 
@@ -141,7 +141,7 @@ Herhaal de voortplantingscyclus voor 10 generaties (merk op dat ouders dus vermo
 
 Houdt bij iedere Mens die je aanmaakt om welke generatie het gaat.
 
-Toon aan de gebruiker hoeveel de gemiddelde lengte is, hoeveel percent welke kleur ogen heeft, etc.
+Toon aan de gebruiker hoeveel de gemiddelde lengte is, hoeveel percent welke kleur ogen heeft, enz.
 
 Maak een applicatie waarbij de gebruiker experimenten kan doen om te zien wat er gebeurt na x generaties. Bijvoorbeeld:
 * Wat als mannen erg klein zijn, vrouwen erg lang.

@@ -2,12 +2,9 @@
 
 Je kan de ``System.Array`` bibliotheek gebruiken om je array-code te vereenvoudigen. Deze bibliotheek bevat naast de ``.Length`` eigenschap, ook enkele nuttige methoden zoals ``BinarySearch()``, ``Sort()``, ``Copy`` en ``Reverse()``. Het gebruik hiervan is bijna steeds hetzelfde zoals volgende voorbeelden tonen.
 
-{% hint style='tip' %}
-De eerste zin is een vereenvoudiging (wat we in hoofdstuk 13 zullen ontdekken). Technisch gezien erven alle arrays over van ``System.Array`` omdat dit niet een bibliotheek, maar een *klasse* is.
-{% endhint %}
-
 
 ### Sort: Arrays sorteren
+
 Om arrays te sorteren roep je de ``Sort()``-methode op en geef je als parameter de array mee die gesorteerd moet worden. Volgend voorbeeld toont hier het gebruik van:
 
 ```csharp
@@ -20,12 +17,11 @@ for (int i = 0; i < myColors.Length; i++)
 }
 ```
 
-Wanneer je de Sort-methode toepast op een array van strings dan zullen de elementen alfabetisch gerangschikt worden. Uiteraard werkt dit ook op arrays van andere datatypes, zolang C# maar weet hoe dit type gesorteerd moet worden (getallen van klein naar groot, tekst volgens de regels van het alfabet, enums volgens hun interne voorstelling).
+Wanneer je de Sort-methode toepast op een array van strings dan zullen de elementen alfabetisch gerangschikt worden. Uiteraard werkt dit ook op arrays van andere datatypes. Zolang C# maar weet hoe dit type gesorteerd moet worden, zal dit werken. Het zal getallen van klein naar groot sorteren, tekst volgens de regels van het alfabet, enums volgens hun interne voorstelling, enz.
 
 ### Reverse: Arrays omkeren
 
 Met de ``Array.Reverse()``-methode kunnen we dan weer de volgorde van de elementen van de array omkeren (dus het laatste element vooraan zetten en zo verder):
-
 
 ```csharp
 Array.Reverse(myColors);
@@ -70,6 +66,7 @@ Array.Copy(myColors, copyColors, 2);
 Bekijk zeker ook de overloaded versies die de ``.Copy()`` methode heeft. Zo kan je ook een bepaald stuk van een array kopiëren en ook bepalen waar in de doel-array dit stuk moet komen.
 {% endhint %}
 
+<!-- \newpage -->
 
 
 
@@ -82,7 +79,10 @@ De ``BinarySearch``-methode maakt het mogelijk om te zoeken naar de index van ee
 {% endhint %}
 
 
-Je geeft aan de methode 2 parameters mee: enerzijds de array in kwestie en anderzijds het element dat we zoeken. Als resultaat wordt de index van het gevonden element teruggegeven. Indien niets wordt gevonden zal het resultaat **negatief** zijn.
+Je geeft aan de methode 2 parameters mee: enerzijds de array in kwestie en anderzijds het element dat we zoeken. Als resultaat wordt de 
+index van het gevonden element teruggegeven. Indien niets wordt gevonden zal het resultaat **negatief** zijn.
+
+
 
 Volgende code zal bijvoorbeeld de index teruggeven van de kleur "red" indien deze in de array ``myColors`` staat:
 

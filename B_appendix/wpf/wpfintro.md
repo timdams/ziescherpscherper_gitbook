@@ -1,6 +1,6 @@
 # Windows Presentation Foundation (WPF)
 
-In den beginnen bestond er  Windows Forms (kort *Winforms*). Nu nog steeds zal je in aardig wat bedrijven grafische, bureaubladapplicaties vinden die werden geschreven in Winforms. Als je als Windows-ontwikkelaar  in de *nillies* (2000-2010) grafische applicaties wilde maken dan deed je dat in Winforms. Het liet je toe om zogenaamde **Graphical User Interface** (GUI) applicaties te ontwikkelen in C#, VB en andere .NET talen. Het voorzag een hele hoop standaard *controls* om te gebruiken zoals knoppen (``Button``), tekstvelden (``TextBox`` en ``Label``), afbeeldingen (``Image``, ``Canvas``), etc. zonder dat je je als programmeur nog druk moest maken over de interne werking van een knop of combobox.
+In den beginnen bestond er  Windows Forms (kort *Winforms*). Nu nog steeds zal je in aardig wat bedrijven grafische, bureaubladapplicaties vinden die werden geschreven in Winforms. Als je als Windows-ontwikkelaar  in de *nillies* (2000-2010) grafische applicaties wilde maken dan deed je dat in Winforms. Het liet je toe om zogenaamde **Graphical User Interface** (GUI) applicaties te ontwikkelen in C#, VB en andere .NET talen. Het voorzag een hele hoop standaard *controls* om te gebruiken zoals knoppen (``Button``), tekstvelden (``TextBox`` en ``Label``), afbeeldingen (``Image``, ``Canvas``), enz. zonder dat je je als programmeur nog druk moest maken over de interne werking van een knop of combobox.
 
 Hoe geliefkoosd deze .NET technologie ook was, ze raakte snel verouderd naarmate onze computers evolueerden en we grotere én kleinere schermen kochten. Er was nood aan bureaubladapplicaties die grafisch veel straffere dingen konden, zoals animaties, en die ook op gigantische HD en UHD (4K) schermen er nog steeds *crisp* uitzagen. 
 
@@ -42,7 +42,7 @@ Je kan nu je applicatie uitvoeren en je zal merken dat je applicatie er net zo u
 
 Zoals reeds verteld vereist het schrijven van grafische applicatie dat je naast C# ook een andere taal beheerst, xaml. We hebben echter ook net ontdekt dat zo te zien VS voor ons aardig wat xaml code kan schrijven, dus dat is mooi meegenomen.
 
-Xaml staat voor *"eXtensible Application Markup Language"* en dus een zogenaamde *markup*-taal zoals ook HTML. Markup-talen zijn talen die beschrijven hoe tekst en beeld moet opgemaakt worden. Je kan met andere woorden beschrijven hoe de effectieve uitvoer van een bepaalde element moet zijn naar het scherm toe (vet, cursief, in het rood, etc.). Xaml doet voor grafische bureaubladapplicaties, wat HTML doet voor websites: het beschrijft de grafische gebruikers interface. 
+Xaml staat voor *"eXtensible Application Markup Language"* en dus een zogenaamde *markup*-taal zoals ook HTML. Markup-talen zijn talen die beschrijven hoe tekst en beeld moet opgemaakt worden. Je kan met andere woorden beschrijven hoe de effectieve uitvoer van een bepaalde element moet zijn naar het scherm toe (vet, cursief, in het rood, enz.). Xaml doet voor grafische bureaubladapplicaties, wat HTML doet voor websites: het beschrijft de grafische gebruikers interface. 
 
 
 ## Code-behind

@@ -2,22 +2,23 @@
 
 We zagen zonet dat instantievariabelen nooit ``public`` mogen zijn om te voorkomen dat de buitenwereld onze objecten 'vult' met slechte zaken. Het voorbeeld waarbij we vervolgens een methode ``StartVerjongingskuur`` gebruikten om op gecontroleerde manier toch aan de interne staat van objecten te komen is één oplossing, maar een nogal *oldschool* oplossing. 
 
-Deze manier van werken - methoden gebruiken om instantievariabelen aan te passen of uit te lezen- is wat voorbij gestreefd binnen C#. Onze programmeertaal heeft namelijk het concept **properties** (*eigenschappen*) in het leven geroepen die toelaten op een veel eenvoudigere manier aan de interne staat van objecten te komen.
+Deze manier van werken - methoden gebruiken om instantievariabelen aan te passen of uit te lezen - is wat voorbij gestreefd binnen C#. Onze programmeertaal heeft namelijk het concept **properties** (*eigenschappen*) in het leven geroepen die toelaten op een eenvoudigere manier aan de interne staat van objecten te geraken.
 
 {% hint style='tip' %}
-**Properties (*eigenschappen*) zijn de C# manier om objecten hun interne staat in en uit te lezen. Ze zorgen voor een gecontroleerde toegang tot de interne structuur van je objecten.**
+**Properties (*eigenschappen*) zijn de C# manier om objecten hun interne staat in en uit te lezen. Ze zorgen voor een gecontroleerde toegang tot de interne structuur van je objecten.** 
 {% endhint %}
 
 
 
 ### Star Wars en de nood aan properties 
 
-In het Star Wars universum heb je goede oude "Darth Vader". Hij behoort tot de mysterieuze klasse van de Sith Lords. Deze lords lopen met een geheim rond: ze hebben een zogenaamde Sithnaam, een naam die ze enkel mogen bekend maken aan andere Sith Lords, maar aan niemand anders. Voorts heeft een Sith Lord ook een hoeveelheid energie (*The Force*) waarmee hij kattekwaad kan uithalen. Deze energie mag natuurlijk nooit onder nul gezet worden.
+In het Star Wars universum heb je goede oude "Darth Vader". Hij behoort tot de mysterieuze klasse van de Sith Lords. Deze Lords lopen met een geheim rond: ze hebben een *Sithnaam*. Deze naam mogen de Lords enkel bekend maken aan andere Sith Lords. Voorts heeft een Sith Lord ook een hoeveelheid energie (*The Force*) waarmee hij kattekwaad kan uithalen. Deze energie kan nooit onder nul gezet worden.
 
 
 We kunnen voorgaande als volgt schrijven:
+
 ```csharp
-class SithLord
+internal class SithLord
 {
     private int energie;
     private string sithName;
@@ -28,8 +29,7 @@ class SithLord
 
 ```csharp
 SithLord palpatine = new SithLord();
-Console.WriteLine(palpatine.sithName); //dit zal niet werken dankzij private
-```
+Console.WriteLine(palpatine.sithName); //zal niet compileren!
 
 We willen echter wel van buiten uit het energie-level van een sithLord kunnen instellen. Maar ook hier hetzelfde probleem: wat als we de energie-level op -1000 instellen? Terwijl energie nooit onder 0 mag gaan.
 
@@ -39,27 +39,27 @@ We willen echter wel van buiten uit het energie-level van een sithLord kunnen in
 
 
 ### 2 soorten properties
- Er zijn 2 soorten properties in C#:
+
+Er zijn 2 soorten properties[^semiprop] in C#:
 
 * **Full properties**: deze stijl van properties verplicht ons véél code te schrijven, maar we hebben ook volledige controle over wat er gebeurt.
-* **Auto-properties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig (eigenlijk géén) controle.
+* **Auto-properties**: deze zijn exact het omgekeerde van full properties. Je moet niet veel code schrijven, maar je hebt ook weinig (eigenlijk géén) controle over wat er gebeurt.
 
 
-We behandelen eerst full properties, daar auto-properties een soort afgeleide van full properties zijn (bepaalde aspecten van full properties worden bij auto-properties achter de scherm verstopt zodat jij als programmeur er geen last van hebt).
+Ik behandel eerst full properties, omdat auto-properties een soort afgeleide van full properties zijn. Bepaalde aspecten van full properties worden bij auto-properties achter de scherm verstopt zodat jij als programmeur er geen last van hebt.
 
-{% hint style='tip' %}
-In één van de volgende versies van C# (normaal versie 11) zal er nog een derde type verschijnen: de zogenaamde semi-auto properties. Een - je raadt het nooit- propertytype dat zich tussen beide bestaande types zal bevinden. De details en exacte gebruik ervan worden nog besproken op github (**github.com/dotnet/csharplang/issues/140**) door de ontwikkelaars, dus het is nog te vroeg om deze al op te nemen in dit boek. 
-{% endhint %}
+[^semiprop]: In één van de volgende versies van C# (normaal versie 11) zal er nog een derde type verschijnen: *semi-auto properties*. Een propertytype dat zich tussen beide bestaande types zal bevinden. De details en exacte gebruik ervan worden nog besproken op [github.com](github.com/dotnet/csharplang/issues/140) door de ontwikkelaars, dus het is nog te vroeg om deze al op te nemen in dit boek. 
+
 
 
 ### Full properties
 
-Properties herken je aan de ``get`` en ``set`` keywords in een klasse. Een property is een beschrijving van wat er moet gebeuren indien je informatie uit (**``get``**) een object wilt halen of informatie net in (**``set``**) een object wilt plaatsen.
+Properties herken je aan de ``get`` en ``set`` keywords in een klasse. Een property is een beschrijving van wat er moet gebeuren indien je informatie uit (**``get``**) een object wilt halen of informatie in (**``set``**) een object wilt plaatsen.
 
 In volgende voorbeeld maken we een property, genaamd ``Energie`` aan. Deze doet niets anders dan rechtstreeks toegang tot de instantievariabele ``energie`` te geven:
 
 ```csharp
-class SithLord
+internal class SithLord
 {
     private int energie;
 
@@ -118,9 +118,10 @@ Dit werkt dus identiek aan een methode met een returntype. **Het element dat je 
 We kunnen nu van buitenaf toch de waarde van ``energie`` uitlezen via de property en het get-gedeelte, bijvoorbeeld ``int uitgelezen = palpatine.Energie;``.
 
 {% hint style='tip' %}
-We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er finaal maar iets uitgestuurd wordt m.b.v. ``return``. We gaan hier verderop meer over vertellen, want soms is het handig om *getters* te schrijven die de data transformeren voor ze uitgestuurd wordt.
+We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er finaal maar iets uitgestuurd wordt m.b.v. ``return``. Ik zal hier verderop meer over vertellen, want soms is het handig om *getters* te schrijven die de data transformeren voor ze uitgestuurd wordt.
 {% endhint %}
 
+<!-- \newpage -->
 
 
 #### Full property: set gedeelte
@@ -137,19 +138,21 @@ set
 De waarde die we van buiten krijgen (als een parameter zeg maar) zal altijd in een lokale variabele **``value``** worden bewaard binnenin de set-code. Deze zal van het type van de property zijn. 
 
 {% hint style='tip' %}
-Deze ``value`` parameter is een essentiëel onderdeel van de ``set`` syntax en kan je niet hernoemen. 
+Deze ``value`` parameter is een geserveerd keyword van de ``set`` syntax en kan je niet hernoemen of voor iets anders gebruiken. 
 {% endhint %}
 
 
-Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energie = value;``. Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we zo meteen zullen uitleggen.
+Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energie = value;``. Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat ik zo meteen uitleg.
 
 We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energie`` toch bereiken: ``palpatine.Energie = 50;``.
 
 {% hint style='danger' %}
-Je bent niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele (**maar dit wordt ten stelligste afgeraden**). Dit mag dus ook:
+Je bent niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele (**maar dit wordt wel aangeraden**). 
+
+Dit mag dus ook:
 
 ```csharp
-class Auto
+internal class Auto
 {
     private int benzinePeil;
 
@@ -164,18 +167,19 @@ class Auto
 
 
 {% hint style='tip' %}
-Visual Studio heeft een ingebouwde snippet om snel een full property, inclusief een bijhorende private instantievariabele, te schrijven. **Typ ``propfull`` gevolgd door twee maal op de tab-toets te duwen.**
+Visual Studio heeft een ingebouwde *snippet* om snel een full property, inclusief een bijhorende private instantievariabele, te schrijven. **Typ "propfull" gevolgd door twee maal op de tab-toets te duwen.**
 {% endhint %}
 
- 
+
 
 
 ### Full property met toegangscontrole
+
 De full property ``Energie`` heeft nog steeds het probleem dat we negatieve waarden kunnen toewijzen (via de ``set``) die dan vervolgens zal toegewezen worden aan ``energie``.
 
 **Properties hebben echter de mogelijkheid om op te treden als wachters van en naar de interne staat van objecten.**
 
-We kunnen in de ``set`` code extra controles inbouwen. Daar de ``value`` variabele de waarde krijgt die we aan de property van buiten af geven, kunnen we deze dus controleren en, indien nodig, bijvoorbeeld niet toewijzen. Volgende voorbeeld zal enkel de waarde toewijzen indien deze groter of gelijk aan 0 is:
+We kunnen in de ``set`` code extra controles inbouwen. Aangezien de variabele ``value`` de waarde krijgt die we extern aan de property toewijzen, kunnen we deze controleren en zo nodig de toewijzing voorkomen. Volgende voorbeeld zal enkel de waarde toewijzen indien deze groter of gelijk aan 0 is:
 
 ```csharp
 public int Energie
@@ -193,9 +197,13 @@ public int Energie
 ```
 
 Volgende lijn zal dus geen effect hebben:
-`` palpatine.Energie = -1;``
 
-We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
+
+```csharp 
+palpatine.Energie = -1;
+```
+
+We mogen de code binnen ``set`` en ``get`` zo complex maken als we zelf willen. 
 
 {% hint style='tip' %}
 Probeer wel steeds de OOP-principes te hanteren wanneer je met properties werkt: in de ``get`` en ``set`` van een property mogen enkel die dingen gebeuren die de verantwoordelijkheid van de property zelf zijn. Je gaat dus bijvoorbeeld niet controleren of een andere property geen illegale waarden krijgt, daar is die andere property voor verantwoordelijk.
@@ -205,6 +213,7 @@ Probeer wel steeds de OOP-principes te hanteren wanneer je met properties werkt:
 
 
 
+<!-- \newpage -->
 
 
 ### Property variaties
@@ -213,12 +222,15 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 
 * **Write-only property**: heeft geen ``get``.
 * **Read-only property**: heeft geen ``set``.
-* **Read-only property met private ``set``** (het omgekeerde, een private ``get``, zal je zelden tegenkomen).
+* **Read-only property met private ``set``** : het omgekeerde, een private ``get``, zal je zelden tegenkomen.
 * **Read-only property die data transformeert**: om interne data in een andere vorm uit je object te krijgen.
 
-![De verschillende full properties mooi opgelijst.](../assets/6_klassen/allprops.png)
+![De verschillende full properties mooi opgelijst.](../assets/6_klassen/allprops.png)<!--{width=100%}-->
 
 
+
+
+<!-- \newpage -->
 
 #### Write-only property
 
@@ -258,13 +270,14 @@ We kunnen enkel ``energie`` van buiten uitlezen, maar niet aanpassen.
 Het ``readonly`` keyword heeft andere doelen en wordt NIET gebruikt in C# om een readonly property te maken.
 {% endhint %}
 
+<!-- \newpage -->
 
 
 
 #### Read-only property met private set
 
 
-Soms gebeurt het dat we van enkel voor de buitenwereld de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
+Soms gebeurt het dat we van enkel voor de buitenwereld de property read-only willen maken. We willen in de klasse zelf nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
 
 ```csharp
 public int Energie
@@ -297,17 +310,17 @@ Het is een goede gewoonte om **altijd** via de properties je interne variabele a
 
 
 
-{% hint style='warning' %}
-
-![](../assets/attention.png)
-
-Lukt het een beetje? Properties zijn in het begin wat overweldigend, maar geloof me: ze zijn zowat dé belangrijkste bewoners in de .NET/C# wereld.
 
 
-**Nu even goed opletten**: indien we **IN** het object de instantievariabelen willen aanpassen dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet wordt omzeilt. Kijk zelf naar volgende **slechte** codevoorbeeld:
+>![](../assets/attention.png)Lukt het een beetje? Properties zijn in het begin wat overweldigend, maar geloof me: ze zijn zowat dé belangrijkste bewoners in de .NET/C# wereld.
+
+<!-- \newpage -->
+
+
+**Nu even goed opletten**: indien we **in** het object de instantievariabelen willen aanpassen dan is het een goede gewoonte om ook dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet wordt omzeilt. Kijk zelf naar volgende **slechte** codevoorbeeld:
 
 ```csharp
-class SithLord
+internal class SithLord
 {
     private int energie;
     private string sithName;
@@ -340,7 +353,7 @@ public void ResetLord(int resetWaarde)
     Energie = resetWaarde; // Energie i.p.v. energie
 }
 ```
-{% endhint %}
+
 
 
 
@@ -348,12 +361,13 @@ public void ResetLord(int resetWaarde)
 #### Read-only properties die transformeren
 
 
-![Transformerende properties: Erg nuttig, maar vaak wat stiefmoederlijk behandeld.](../assets/6_klassen/proptrans.png)
+![Transformerende properties: Erg nuttig, maar vaak wat stiefmoederlijk behandeld.](../assets/6_klassen/proptrans.png)<!--{width=60%}-->
+
 
 Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt. Stel dat we volgende klasse hebben:
 
 ```csharp
-class Persoon
+internal class Persoon
 {
     public string Voornaam {get;set;}
     public string Achternaam {get;set;}
@@ -363,7 +377,7 @@ class Persoon
 We willen echter ook soms de volledige naam of emailadres krijgen, beide gebaseerd op de inhoud van de instantievariabelen ``voornaam`` en ``achternaam``. Via een read-only property die transformeert kan dit:
 
 ```csharp
-class Persoon
+internal class Persoon
 {
     public string Voornaam {get;set;}
     public string Achternaam {get;set;}

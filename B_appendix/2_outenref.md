@@ -1,6 +1,8 @@
 ## ``out`` en ``ref`` keywords
 
-Zoals verteld kun je parameters aan een methode doorgeven *by value* (de waarde) of *by reference* (het geheugenadres) afhankelijk van het datatype dat je meegeeft (de primitieve datatypes zoals ``int`` en ``double`` worden *by value* meegegeven, arrays by reference). Je kan echter de primitieve datatypes ook *by reference* meegeven zodat de methode rechtstreeks toegang tot de meegegeven variabele heeft en niet met een kopie moet werken. Dit kan soms handig zijn, maar zorgt ook voor ongewenste bugs. Opletten dus.
+Parameters kun je op twee manieren aan een methode doorgeven: by value (via de waarde) of by reference (via het geheugenadres). Welke manier gebruikt wordt, hangt af van het datatype. Primitieve datatypes zoals int en double worden by value doorgegeven. Arrays worden by reference doorgegeven.
+
+Je kunt primitieve datatypes ook by reference doorgeven. Dit geeft de methode directe toegang tot de variabele, in plaats van een kopie. Dit kan handig zijn, maar kan ook ongewenste bugs veroorzaken. Wees dus voorzichtig.
 
 
 ### Parameters by reference doorgeven
@@ -32,7 +34,7 @@ static void Main(string[] args)
 
 
 ### ``out``
-Door het ``out`` keyword te gebruiken geven we expliciet aan dat we beseffen dat de parameter in kwestie pas binnen de methode een waarde zal toegekend krijgen. Wat we hier tonen:
+Door het ``out`` keyword te gebruiken geven we expliciet aan dat we beseffen dat de parameter in kwestie pas binnen de methode een waarde zal toegekend krijgen. Wat ik hier toon:
 
 
 ```csharp
@@ -49,7 +51,7 @@ static void Main(string[] args)
 }
 ```
 
-## Foute invoer van de gebruiker opvangen m.b.v. ``TryParse``
+## Foute invoer opvangen met ``TryParse``
 
 Vaak wil je de invoer van de gebruiker verwerken/omzetten naar een getal. Denk maar aan volgende applicatie:
 ```csharp
@@ -73,7 +75,7 @@ De werking van ``TryParse`` is als volgt:
 bool gelukt = int.TryParse(invoer,out int leeftijd);
 ```
 
-De methode ``TryParse`` zal de string in de eerste parameter (``invoer`` in dit voorbeeld) trachten naar een ``int`` te converteren. Als dit lukt dan zal het resultaat in de variabele ``int leeftijd`` geplaatst worden. Merk op dat we ``out`` voor de parameter moeten zetten zoals besproken in de vorige sectie van de appendix. 
+De methode TryParse probeert de string in de eerste parameter (invoer) om te zetten naar een int. Als dit lukt, wordt het resultaat opgeslagen in de variabele int leeftijd. Let op dat we out voor de parameter moeten zetten, zoals eerder uitgelegd.
 
 Het return resultaat van de methode is ``bool``: indien de conversie gelukt is dan zal deze ``true`` teruggeven, anders ``false``.
 

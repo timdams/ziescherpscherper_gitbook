@@ -1,18 +1,19 @@
 ## Nuttige collectie-klassen
 
-Naast de generieke ``List`` collectie, zijn er nog enkele andere nuttige generieke 'collectie-klassen' die je geregeld in je projecten kan gebruiken, namelijk de  ``Dictionary``, ``Queue`` en ``Stack``-collecties.
+Naast de generieke ``List`` collectie, zijn er nog enkele andere nuttige generieke 'collectie-klassen' die je geregeld in je projecten kan gebruiken. We bespreken nu de  ``Dictionary``, ``Queue`` en ``Stack``-collecties.
 
 
 ### ``Queue<>`` collectie
 
-Een queue  (uitgesproken als *kjioe*) stelt een "first in, first out"-lijst (FIFO) voor. Een ``Queue`` stelt de rijen voor die we in het echte leven ook hebben wanneer we bijvoorbeeld aanschuiven aan een ticketverkoop of in de supermarkt. Met deze klasse kunnen we zo’n rij simuleren en ervoor zorgen dat steeds het eerste/oudste element in de rij als eerste wordt behandeld. Nieuwe elementen worden achteraan de rij toegevoegd.
+Een queue (uitgesproken als *kjioe*) stelt een "first in, first out"-lijst (FIFO) voor. Een ``Queue`` stelt de rijen voor die we in het echte leven ook hebben wanneer we bijvoorbeeld aanschuiven aan een ticketverkoop of in de supermarkt. Met deze klasse kunnen we zo’n rij simuleren en ervoor zorgen dat steeds het eerste/oudste element in de rij als eerste wordt behandeld. Nieuwe elementen worden achteraan de rij toegevoegd.
 
-We gebruiken onder andere volgende 2 methoden om met een ``Queue``-lijst te werken:
+We gebruiken onder andere volgende 2 methoden[^peek] om met een ``Queue``-lijst te werken:
 
 * ``Enqueue(T item)``: Voeg een item achteraan de lijst toe.
-* ``Dequeue()``: geeft een referentie naar het eerste element in de queue terug en verwijdert dit element vervolgens uit de lijst.
+* ``Dequeue()``: geeft een referentie naar het eerste element in de queue terug en verwijdert dit vervolgens.
 
-![De Queue: een wachtrij van objecten en een verdomd moeilijk woord om te schrijven.](../assets/10_generics/queue.png)
+![De Queue: een wachtrij van objecten en een verdomd moeilijk woord om te schrijven.](../assets/10_generics/queue.png)<!--{width=70%}-->
+
 
 Voorbeeld:
 
@@ -21,7 +22,6 @@ Queue<string> wachtrij = new Queue<string>();
 wachtrij.Enqueue("Ik stond hier eerste.");
 wachtrij.Enqueue("Ik tweedes.");
 wachtrij.Enqueue("Ik laatste.");
- 
 Console.WriteLine(wachtrij.Dequeue());
 Console.WriteLine(wachtrij.Dequeue());
 ```
@@ -32,10 +32,10 @@ Ik stond hier eerste.
 Ik tweedes.
 ```
 
-{% hint style='tip' %}
-Een andere interessante methode is de **Peek()** methode: hiermee kunnen we kijken in de queue wat het eerste element is, zonder het te verwijderen.
-{% endhint %}
+[^peek]: Een andere interessante methode is **Peek()**: hiermee kunnen we kijken in de queue wat het eerste element is, zonder het te verwijderen.
 
+
+<!-- \newpage -->
 
 
 ### ``Stack<>`` collectie
@@ -44,10 +44,10 @@ Daar waar een queue "first in,first out" is, is een stack "last in,first out" (L
 Ook de klasse ``Stack`` heeft verschillende methoden, waarvan volgende 2 methoden het interessantst zijn:
 
 * ``Push(T item)``: plaats een nieuw element bovenop de stapel.
-* ``Pop()``: geeft het bovenste element in de stack terug en verwijdert vervolgens dit element van de stack.
+* ``Pop()``: geeft het bovenste element in de stack terug en verwijdert dit vervolgens.
 
 
-![De stack: een toren van objecten](../assets/10_generics/stack.png)
+![De stack: een toren van objecten](../assets/10_generics/stack.png)<!--{width=70%}-->
 
 Voorbeeld:
 
@@ -60,16 +60,21 @@ stapel.Push("Ik als laatste.");
 Console.WriteLine(stapel.Pop());
 Console.WriteLine(stapel.Pop());
 ```
+
 Dit zal dus het volgende resultaat geven:
-```
+
+```text
 Ik als laatste.
 Ik tweede.
 ``` 
 
+<!-- \newpage -->
+
 
 
 ### ``Dictionary<>`` collectie
-In een **dictionary** wordt ieder element voorgesteld door een sleutel (**key** of index) en de waarde (**value**) van het element. 
+
+In een **dictionary** wordt ieder element voorgesteld door een sleutel (**key** of index) en een waarde (**value**). 
 
 De sleutel moet een unieke waarde zijn zodat het element kan opgevraagd worden uit de dictionary aan de hand van deze sleutel zonder dat er duplicaten zijn.
 
@@ -77,8 +82,7 @@ De sleutel moet een unieke waarde zijn zodat het element kan opgevraagd worden u
 Bij de declaratie van de ``Dictionary`` dien je op te geven wat het datatype van de key zal zijn, alsook het type van de waarde (*value*). 
 
 {% hint style='tip' %}
-De ``Dictionary``-klasse emuleert dus letterlijk de werking van een woordenboek waarbij ieder woord uniek is en een bijhorende uitleg heeft (het woord is de sleutel, de bijhorende uitleg de waarde). 
-Geen enkel woord komt dubbel voor in een woordenboek (als het meerdere definities heeft dan worden deze allemaal bij dat ene woord als waarde geplaatst).
+De ``Dictionary``-klasse emuleert dus letterlijk de werking van een woordenboek,  waarbij ieder woord uniek is en een bijhorende uitleg heeft. Het woord is de sleutel, de bijhorende uitleg is de waarde. 
 {% endhint %}
 
 
@@ -94,7 +98,7 @@ klanten.Add(700, "James Bond");
 ``` 
 
 
-![Visuele voorstelling van de net aangemaakte Dictionary](../assets/10_generics/diction.png)
+![Visuele voorstelling van de net aangemaakte Dictionary](../assets/10_generics/diction.png)<!--{width=70%}-->
 
 Bij de declaratie van ``klanten`` plaatsen we dus tussen de ``< >`` twee datatypes: het eerste duidt het datatype van de key aan, het tweede dat van de values.
 
@@ -118,16 +122,20 @@ foreach (var item in klanten)
 
 
 
-De key werkt dus net als de index bij gewone arrays, alleen heeft de key nu geen relatie meer met de positie van het element in de collectie maar is een unieke identifier van het element in kwestie (vergelijk dit met de nummerplaat van een auto).
+De key werkt dus net als de index bij gewone arrays. Alleen heeft de key nu geen relatie meer met de positie van het element in de collectie, maar is een unieke identifier van het element in kwestie. 
 
 #### Eender welk type voor key en value
 
 De key kan zelfs een ``string`` zijn en de waarde een ander type. In het volgende voorbeeld hebben we eerder een klasse Student aangemaakt. We maken nu een student aan en voegen deze toe aan de studentenLijst. Vervolgens willen we het geboortejaar van een bepaalde student tonen op het scherm en vervolgens verwijderen we deze student:
 
 ```csharp
-Dictionary<string, Student> studentenLijst = new Dictionary<string, Student>();
+var studentenLijst = new Dictionary<string, Student>();
 Student stud = new Student() { Naam = "Tim", Geboortejaar = 2001 };
 studentenLijst.Add("AB12", stud);
 Console.WriteLine(studentenLijst["AB12"].Geboortejaar);
 studentenLijst.Remove("AB12");
 ```
+
+{% hint style='tip' %}
+Lijn1 is zo'n typisch voorbeeld waar het gebruik van het keyword ``var`` effectief een meerwaarde heeft. Het zorgt ervoor dat de code mooi op 1 lijn past en leesbaar blijft.
+{% endhint %}

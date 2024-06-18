@@ -151,7 +151,7 @@ Wanneer dus een exit wordt gevonden in de Uitgangen lijst die voldoet aan de mee
 Stel nu dat we soms willen dat een bepaalde locatie pas bereikt kan worden indien de gebruiker reeds een bepaald ``SpelObject`` in zijn bezit heeft. Hiervoor moeten we 2 zaken aanpassen:
 
 * We beschrijven in de ``Exit`` klasse welk object(en) nodig zijn om deze exit te mogen gebruiken.
-* We controleren of de speler het ``SpelObject`` heeft wanneer deze naar een nieuwe locatie wil gaan mbv de ``KrijgLocatieNaBewegen()`` methode.
+* We controleren of de speler het ``SpelObject`` heeft wanneer deze naar een nieuwe locatie wil gaan mbv. de ``KrijgLocatieNaBewegen()`` methode.
 
 De nieuwe, volledige ``Exit`` klasse wordt dan:
 
@@ -312,7 +312,7 @@ public  void ToonActies()
 ```
 
 ### InitialiseerSpel()
-In deze methode definiëren nu de volledige spelinhoud. Wil je dus bijvoorbeeld dit spel uitbreiden met extra kamers en objecten, dan doe je dat in deze methode. Ter illustratie tonen we eerst hoe we 2 locaties aanmaken en deze aan elkaar hangen mbv de Uitgangen (waarbij kamer één zich ten zuiden van kamer 2 bevindt)
+In deze methode definiëren nu de volledige spelinhoud. Wil je dus bijvoorbeeld dit spel uitbreiden met extra kamers en objecten, dan doe je dat in deze methode. Ter illustratie tonen we eerst hoe we 2 locaties aanmaken en deze aan elkaar hangen mbv. de Uitgangen (waarbij kamer één zich ten zuiden van kamer 2 bevindt)
 
 ```csharp
 private  void InitialiseerSpel()

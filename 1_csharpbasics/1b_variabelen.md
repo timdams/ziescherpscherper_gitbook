@@ -1,9 +1,11 @@
 ## Variabelen
 
-De data die we in een programma gebruiken bewaren we in een **variabele van een bepaald datatype**. Een variabele is een plekje in het geheugen dat in je programma zal gereserveerd worden om daarin data te bewaren van het type dat je aan de variabele hebt toegekend. Een variabele zal intern een geheugenadres hebben (waar de data in het geheugen staat) maar dat zou lastig programmeren zijn indien je steeds dit adres moest gebruiken. Daarom moeten we ook steeds een naam oftewel **identifier** aan de variabele geven zodat we makkelijk de geheugenplek kunnen aanduiden en niet moeten werken met een lang hexadecimaal geheugen adres (bv 0x4234FE13EF1).
+De data die we in een programma gebruiken bewaren we in een **variabele van een bepaald datatype**. Een variabele is een plekje in het geheugen dat in je programma zal gereserveerd worden om daarin data te bewaren van het type dat je aan de variabele hebt toegekend. 
+
+Een variabele heeft een geheugenadres, namelijk de plek waar de data in het geheugen staat. Maar het zou lastig programmeren zijn indien je steeds dit adres moest gebruiken. Daarom moeten we ook steeds een naam oftewel **identifier** aan de variabele geven. Op die manier kunnen we eenvoudig de geheugenplek aanduiden en hoeven we niet te werken met een lang hexadecimaal geheugen adres (bv. 0x4234FE13EF1).
 
 {% hint style='tip' %}
-De naam (identifier) van de variabele moet voldoen aan de identifier regels zoals eerder besproken.
+De identifier van de variabele moet uiteraard voldoen aan de *identifier regels* zoals eerder besproken.
 {% endhint %}
 
 
@@ -13,9 +15,9 @@ De naam (identifier) van de variabele moet voldoen aan de identifier regels zoal
 Om een variabele te maken moeten we deze **declareren**, door een type en naam te geven. Vanaf dan zal de computer een hoeveelheid geheugen voor je reserveren waar de inhoud van deze variabele in kan bewaard worden. 
 Hiervoor dien je minstens op te geven:
 
-1. Het **datatype** \(bv ``int``, ``double``\).
+1. Het **datatype** (bv. ``int``, ``double``).
 2. Een **identifier** zodat de variabele uniek kan geïdentificeerd worden volgens de naamgevingsregel van C#.
-3. \(optioneel\) Een **beginwaarde** die de variabele krijgt bij het aanmaken ervan.
+3. (optioneel) Een **beginwaarde** die de variabele krijgt bij het aanmaken ervan.
 
 Een variabele declaratie heeft als syntax:
 
@@ -55,7 +57,7 @@ Van zodra je een variabele hebt gedeclareerd kunnen we dus ten allen tijde deze 
 * **Waarde gebruiken**: Bijvoorbeeld `anderGetal = mijnGetal + 15;`
 * **Waarde tonen op scherm**: Bijvoorbeeld `Console.WriteLine(mijnGetal);`
 
-Met de **toekennings-operator \(=\)** kan je een waarde toekennen aan een variabele. Hierbij kan je zowel een literal toekennen oftewel het resultaat van een expressie .
+Met de **toekennings-operator (``=``)** kan je een waarde toekennen aan een variabele. Hierbij kan je zowel een literal toekennen oftewel het resultaat van een expressie .
 
 Je kan natuurlijk ook een waarde uit een variabele uitlezen en toewijzen (kopiëren) aan een andere variabele:
 
@@ -65,34 +67,10 @@ int eenAndereLeeftijd = mijnLeeftijd;
 ```
 
 
-### Literal toewijzen
 
-Literals zijn expliciet ingevoerde waarden in je code. Als je in je code expliciet de waarde 4 wilt toekennen aan een variabele dan is het getal 4 in je code een zogenaamde **literal**. Wanneer we echter data bijvoorbeeld eerst uitlezen of berekenen \(via bijvoorbeeld invoer van de gebruiker of als resultaat van een berekening\) en het resultaat hiervan toekennen aan een variabele dan is dit geen literal.
+### Literals
 
-Voorbeelden van een literal toekennen:
-
-```csharp
-int temperatuurGisteren = 20; //20 is de literal
-int temperatuurVandaag = 25; //25 is de literal
-```
-
-Het is belangrijk dat het type van de literal overeenstemt met dat van de variabele waaraan je deze zal toewijzen. Een string-literal (zie verder) stel je voor door aanhalingstekens. Volgende code zal dan ook een compiler-fout generen, daar je een string-literal aan een int-variabele wil toewijzen, en vice versa.
-
-```csharp
-string eenTekst;
-int eenGetal;
-eenTekst = 4;
-eenGetal = "4";
-```
-
-Als je bovenstaande probeert te compileren dan krijg je volgende error-boodschappen:
-
-
-![Foutboodschap wanneer je literals toekent van een verkeerd datatype.](../assets/0_intro/errorliteraltoekenning.png)
-
-
-#### Literal bepaalt het datatype
-De manier waarop je een literal schrijft in je code zal bepalen wat het datatype van die literal is:
+Literals zijn expliciet neergeschreven waarden in je code. De manier waarop je een literal schrijft in je code zal bepalen wat het datatype van die literal is:
 
 * **Gehele getallen** worden standaard als ``int`` beschouwd, vb: ``125``.
 * **Kommagetallen** (met punt ``.``) worden standaard als ``double`` beschouwd, vb: ``12.5``.
@@ -129,12 +107,46 @@ string zin = "Ja hoor";
 ```
 {% endhint %}
 
-De overige types ``sbyte``, ``short`` en ``ushort`` hebben geen literal aanduiding. Er wordt vanuit gegaan wanneer je een literal probeert toe te wijzen aan één van deze datatypes dat dit zonder problemen zal gaan (ze worden impliciet geconverteerd). Bijvoorbeeld ``sbyte start = 127;`` wordt toegestaan, de ``int`` literal 127 zal geconverteerd worden achter de schermen naar een ``sbyte`` en dan toegewezen worden.
+De overige types ``sbyte``, ``short`` en ``ushort`` hebben geen literal aanduiding. Er wordt vanuit gegaan wanneer je een literal probeert toe te wijzen aan één van deze datatypes dat dit zonder problemen zal gaan (ze worden impliciet geconverteerd). 
+
+Volgende code mag dus:
+
+```csharp 
+sbyte start = 127;
+``` 
+Dit wordt toegestaan, de ``int`` literal 127 zal geconverteerd worden achter de schermen naar een ``sbyte`` en dan toegewezen worden.
 
 
+#### Literal toewijzen
+
+Als je in je code expliciet de waarde ``4`` wilt toekennen aan een variabele dan is het getal ``4`` in je code een zogenaamde **literal**. 
+
+Voorbeelden van een literal toekennen:
+
+```csharp
+int temperatuurGisteren = 20; //20 is de literal
+int temperatuurVandaag = 25; //25 is de literal
+```
+
+<!-- \newpage -->
+
+
+Het is belangrijk dat het type van de literal overeenstemt met dat van de variabele waaraan je deze zal toewijzen. Volgende code zal dan ook een compiler-fout genereren. Je probeert een ``string``-literal aan een ``int``-variabele wil toewijzen, en omgekeerd:
+
+```csharp
+string eenTekst;
+int eenGetal;
+eenTekst = 4;
+eenGetal = "4";
+```
+
+Als je bovenstaande probeert te compileren dan krijg je volgende foutboodschappen:
+
+![Foutboodschap wanneer je literals toekent van een verkeerd datatype.](../assets/0_intro/errorliteraltoekenning.png)
 
 
 ##### Hexadecimale en binaire notatie
+
 
 Je kan ook hexadecimale notatie (starten met ``0x`` of ``0X``) gebruiken wanneer je bijvoorbeeld met ``int`` of ``byte`` werkt:
 ```csharp
@@ -148,18 +160,21 @@ int mijnLeeftijd = 0b001001000; //72
 int andereLeeftijd = 0b0001_0110_0011_0100_0010 //idem, maar met _ als seperator
 ``` 
 
-Deze schrijfwijzen kunnen handig zijn wanneer je met binaire of hexadecimale data wilt werken die je bijvoorbeeld uit een stuk hardware hebt uitgelezen (bijvoorbeeld een Arduino of Raspberry Pi).
+Deze schrijfwijzen kunnen handig zijn wanneer je met binaire of hexadecimale data wilt werken.
+
+<!-- \newpage -->
+
 
 #### Beginwaarden van variabelen
 
-Het is een goede gewoonte om variabelen steeds ogenblikkelijk een beginwaarde toe te wijzen. Alhoewel C# altijd vers gedeclareerde variabelen een standaard beginwaarde zal geven, is dit niet zo in oudere programmeertalen. In sommige talen zal een variabele een volledig willekeurige beginwaarde krijgen. Gelukkig in C# is dat niet, maar geef toch maar direct steeds een waarde, al was het om je literals te oefenen.
+Het is een goede gewoonte om variabelen steeds ogenblikkelijk een beginwaarde toe te wijzen. Alhoewel C# altijd vers gedeclareerde variabelen een standaard beginwaarde zal geven, is dit niet zo in oudere programmeertalen. In sommige talen zal een variabele een volledig willekeurige beginwaarde krijgen. Gelukkig in C# is dat niet, maar geef toch maar direct steeds een waarde, al was het maar om je literals te oefenen.
 
 De standaard beginwaarde van een variabele hangt natuurlijk van het datatype af: 
 
-* Voor getallen is dat steeds de nulwaarde (dus ``0`` bij  ``int``, ``0.0`` bij ``double`` enzovoort). 
+* Voor getallen is dat steeds de nulwaarde (dus ``0`` bij  ``int``, ``0.0`` bij ``double``, enz.). 
 * Bij variabelen van het type ``bool`` is dat ``false``. 
 * Bij ``char`` is dat de literal: ``\0`` (in het volgende hoofdstuk leggen we die vreemde backslash uit). 
-* En bij tekst is dat de lege ``string``-literal: ``""`` (maar je mag ook ``String.Empty`` voor de leesbaarheid).
+* En bij tekst is dat de lege ``string``-literal: ``""`` (maar je mag ook ``String.Empty`` gebruiken).
 
 
 
@@ -172,7 +187,7 @@ int temperatuurGisteren = 20;
 temperatuurGisteren = 25;
 ```
 
-In dit voorbeeld zal er dus voor gezorgd worden dat de oude waarde van temperatuurGisteren, ``20``, overschreven zal worden met ``25``.
+In dit voorbeeld zal er voor gezorgd worden dat de oude waarde van temperatuurGisteren (``20``) overschreven zal worden met ``25``.
 
 Volgende code toont hoe je bijvoorbeeld eerst de vorige waarde kunt bewaren en dan overschrijven:
 
@@ -185,11 +200,13 @@ int temperatuurEerGisteren = temperatuurGisteren;
 //temperatuur nu overschrijven
 temperatuurGisteren = 25; 
 ```
-We hebben dus aan het einde van het programma zowel de temperatuur van eergisteren, ``20``, als die van gisteren, ``25``.
+
+We hebben aan het einde van het programma zowel de temperatuur van eergisteren (``20``), als die van gisteren (``25``).
 
 
 {% hint style='danger' %}
-Een veel gemaakte fout is variabelen meer dan één keer declareren. Dit hoeft niet én mag niet. Van zodra je een variabele declareert is deze bruikbaar in de scope (zie hoofdstuk 5) tot het einde.
+Een veel gemaakte fout is variabelen meer dan één keer declareren. Dit mag niet! Van zodra je een variabele declareert is deze bruikbaar in de scope (zie hoofdstuk 5) tot het einde. Binnen de scope van die variabele kan je geen nieuwe variabele aanmaken met dezelfde naam (zelfs niet wanneer het type anders is).
+
 Volgende code zal dus een fout geven:
 
 ```csharp

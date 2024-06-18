@@ -2,29 +2,36 @@
 ## OOP in de praktijk : DateTime
 
 
-{% hint style='warning' %}
 
-![](../assets/attention.png)
+>![](../assets/attention.png)Doe die zwembroek maar weer aan! We gaan nog eens zwemmen. 
 
-Doe die zwembroek maar weer aan! We gaan nog eens zwemmen. 
+Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar een tipje van de *klasse-ijsberg* besproken. Vreemde dingen zoals *constructors*, *static methoden*, *overerving* en arrays van objecten staan ons nog allemaal te wachten. 
 
-Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar een tipje van de klasse-ijsberg besproken. Vreemde dingen zoals *constructors*, *static methoden*, *overerving* en arrays van objecten staan ons nog allemaal te wachten. 
+Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met de ``Random`` klasse. Maar ook al met enkele speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek. Waarom zijn dit *static klassen*? Wel je kan gebruiken ze **zonder** dat je er objecten van moet aanmaken.
 
-Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met bijvoorbeeld de ``Random`` klasse, maar ook al met wat speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek die je kan gebruiken ZONDER dat je er objecten van moet aanmaken (het keyword ``static`` is daar de oorzaak van).
+Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse[^eigestruct]. Je raadt het nooit ... een klasse die toelaat om de tijd en datum als een object voor te stellen. De ``DateTime`` klasse is de ideale manier om te leren werken met objecten. 
 
-Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse, die, je raadt het nooit, toelaat om de tijd en/of datum in een object voor te stellen.
-{% endhint %}
+[^eigestruct]: Technisch gezien is DateTime een ``struct``, niet een ``class``.  Dit onderscheid is in dit handboek niet relevant. Meer informatie over ``struct`` vind je in de appendix terug.
 
+<!-- \newpage -->
 
-
-De .NET klasse ``DateTime`` is de ideale manier om te leren werken met objecten. Het is een nuttige en toegankelijk klasse (terzijde: technisch gezien is DateTime een ``struct``, niet een ``class``, maar dit onderscheid is in dit hoofdstuk niet relevant).
 
 ### DateTime objecten aanmaken
 
 Er zijn 2 manieren om ``DateTime`` objecten aan te maken:
 
-1. Door aan de klasse de huidige datum en tijd te vragen via ``DateTime.Now``. 
-2. Door manueel de datum en tijd in te stellen met het ``new`` keyword en de **klasseconstructor** (een concept dat we binnen 2 hoofdstukken uit de doeken gaan doen)
+
+```csharp
+DateTime huidigeTijd = DateTime.Now;
+DateTime specialeDag = new DateTime(2017,4,21);
+```
+
+* Lijn 1:  Door aan de klasse de huidige datum en tijd te vragen via ``DateTime.Now``. 
+* Lijn 2:  Door manueel de datum en tijd in te stellen met het ``new`` keyword en de **klasse-constructor** (een concept dat we in hoofdstuk 11 uit de doeken gaan doen)
+
+
+
+
 
 #### DateTime.Now
 
@@ -57,6 +64,9 @@ Ook is er een constructor om startdatum én -tijd mee te geven bij de objectcrea
 DateTime trouwMoment = new DateTime(2017, 4, 21, 10, 00,34 ); 
 ```
 
+<!-- \newpage -->
+
+
 ### DateTime methoden
 
 Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige methoden die je er op kan aanroepen. Visual Studio is zo vriendelijk om dit te visualiseren wanneer we de dot-operator typen achter een object:
@@ -66,23 +76,25 @@ Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige method
 
 #### Add-methoden
 
-De ingebouwde methoden beginnen allemaal met ``Add``, gevolgd door wat er moet bijgevoegd worden: ``AddDays``, ``AddHours``, ``AddMilliseconds``, ``AddMinutes``, ``AddMonths``, ``AddSeconds``, ``AddTicks``, ``AddYears``.
-
-{% hint style='tip' %}
-Een *tick* is 100 nanoseconden, oftewel 1 tien miljoenste van een seconden. Dat lijkt een erg klein getal (wat het voor ons ook is) maar voor computers is dit het soort tijdsintervals waar ze mee werken.
-{% endhint %}
+Deze methoden kan je gebruiken om een bepaalde aantal dagen, uren, minuten op te tellen bij de huidige tijd en datum van een object. De ingebouwde methoden noemen allemaal ``AddX``, waar bij X dan vervangen wordt door het soort element dat je wilt toevoegen:  ``AddDays``, ``AddHours``, ``AddMilliseconds``, ``AddMinutes``, ``AddMonths``, ``AddSeconds``, ``AddTicks``[^tick], ``AddYears``.
 
 
-Deze methoden kan je gebruiken om een bepaalde aantal dagen, uren, minuten op te tellen bij de huidige tijd en datum van een object.
+[^tick]: Een *tick* is 100 nanoseconden, oftewel 1 tien miljoenste van een seconden. Dat lijkt een erg klein getal (wat het voor ons ook is) maar voor computers is dit het soort tijdsintervals waar ze mee werken.
+
+
+
 
 Het object zal voor ons de "berekening" hiervan doen en vervolgens een **nieuw DateTime object** teruggeven dat je moet bewaren wil je er iets mee doen.
 
-In volgende voorbeeld wil ik ontdekken op welke datum de wittebroodsweken van m'n huwelijk eindigen (pakweg 5 weken na de trouwdag).
+In volgende voorbeeld wil ik ontdekken wanneer de wittebroodsweken van m'n huwelijk eindigen (pakweg 5 weken na de trouwdag).
 
 ```csharp
 DateTime eindeWitteBroodsweken = trouwMoment.AddDays(35);
 Console.WriteLine(eindeWitteBroodsweken);
 ```
+
+<!-- \newpage -->
+
 
 ### DateTime properties
 
@@ -110,7 +122,7 @@ Dat is een Friday.
 
 ### Static methoden
 
-Sommige methoden zijn ``static`` dat wil zeggen dat je ze enkel rechtstreeks op de klasse kunt aanroepen. Vaak zijn deze methoden hulpmethoden waar de individuele objecten niets aan hebben. We hebben dit reeds gebruikt, zonder het te weten, bij de ``Math`` en ``Console``-klassen. 
+Sommige methoden zijn ``static`` dat wil zeggen dat je ze enkel rechtstreeks op de klasse kunt aanroepen. Vaak zijn deze methoden hulpmethoden waar de individuele objecten niets aan hebben. We hebben dit reeds gebruikt bij de ``Math`` en ``Console``-klassen. 
 
 We behandelen ``static`` uitgebreid verderop in het boek.
 
@@ -153,26 +165,26 @@ TimeSpan verschil = vandaag - geboorteDochter;
 Console.WriteLine($"{verschil.TotalDays} dagen sinds geboorte dochter.");
 ```
 
-{% hint style='tip' %}
-Je zal de ``DateTime`` klasse in véél van je projecten kunnen gebruiken waar je iets met tijd, tijdsverschillen of datums wilt doen. We hebben de klasse in deze sectie echter geen eer aangedaan. De klasse is veel krachtiger dan we hier hebben doen uitschijnen. Het is een goede gewoonte als beginnende programmeur om steeds de documentatie van nieuwe klassen er op na te slaan. Wanneer je in je browser zoekt op "C#" gevolgd door de naam van de klasse dan zal je zo goed als zeker als eerste *hit* de officiële .NET documentatie krijgen op **docs.microsoft.com**.
-{% endhint %}
+
+Je zal de ``DateTime`` klasse in véél van je projecten kunnen gebruiken waar je iets met tijd, tijdsverschillen of datums wilt doen. We hebben de klasse in deze sectie echter geen eer aangedaan. De klasse is veel krachtiger dan ik hier doe uitschijnen. Het is een goede gewoonte als beginnende programmeur om steeds de documentatie van nieuwe klassen er op na te slaan.[^datedoc]
+
+[^datedoc]: Wanneer je in je browser zoekt op "C#" gevolgd door de naam van de klasse dan zal je zo goed als zeker als eerste *hit* de officiële .NET documentatie krijgen op [docs.microsoft.com](https://docs.microsoft.com).
 
 
 
-{% hint style='warning' %}
+<!-- \newpage -->
 
-![](../assets/care.png)
 
-Gaat het nog?! Dit was een stevig hoofdstuk he. We hebben zo maar eventjes 4 heel grote fasen doorlopen:
+>![](../assets/care.png)Gaat het nog?! Dit was een stevig hoofdstuk he. We hebben zo maar eventjes 4 heel grote fasen doorlopen:
+>
+>1. Eerst keken we hoe OOP ons kan helpen in een real-life voorbeeld, Pong. We schreven code die hier en daar herkenbaar was, maar op andere plaatsen totaal nieuw was.
+>2. Vervolgens namen we de mammoet bij de horens en bekeken we de theorie van OO, die ons vooral verwarde.
+>3. Gelukkig gingen we dan ogenblikkelijk naar de praktijk over en zagen we dat methoden en properties de kern van iedere klasse blijkt te zijn.
+>4. Als afsluiter gooiden we dan de ``DateTime`` klasse open om een voorproefje te krijgen van hoe krachtig een goedgeschreven klasse kan zijn.
+>
+>Voor je verder gaat raad ik je aan om dit alles goed te laten bezinken én maximaal de komende oefeningen te maken. Het zal de beste manier zijn om de ietwat bizarre wereld van OOP snel eigen te maken.
 
-1. Eerst keken we hoe OOP ons kan helpen in een real-life voorbeeld, Pong. We schreven code die hier en daar herkenbaar was, maar op andere plaatsen totaal nieuw was.
-2. Vervolgens namen we de mammoet bij de horens en bekeken we de theorie van OO, die ons vooral verwarde.
-3. Gelukkig gingen we dan ogenblikkelijk naar de praktijk over en zagen we dat methoden en properties de kern van iedere klasse blijkt te zijn.
-4. Als afsluiter gooiden we dan de ``DateTime`` klasse open om een voorproefje te krijgen van hoe krachtig een goedgeschreven klasse kan zijn.
 
-Voor je verder gaat raad ik je aan om dit alles goed te laten bezinken én maximaal de komende oefeningen te maken. Het zal de beste manier zijn om de ietwat bizarre wereld van OOP snel eigen te maken.
-
-{% endhint %}
 
 
 

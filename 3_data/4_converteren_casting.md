@@ -1,19 +1,20 @@
-# Werken met data 
+# Werken met data  <!--\label{ch:4}-->
 
-{% hint style='warning' %}
 
-![](../assets/attention.png)
 
-Aah, Data, een geliefkoosd personage uit Star Trek. Maar daar gaan we het niet over hebben. Het wordt tijd dat we onze werkkledij aantrekken en ons echt vuil gaan maken. 
+*Aah, Data, een geliefkoosd personage uit Star Trek.* Maar daar ga ik het niet over hebben. Het wordt tijd dat we onze werkkledij aantrekken en ons echt vuil gaan maken. 
 
-De wereld draait op data, en dus ook de meeste applicaties die wij gaan schrijven. Echter, we hebben al gezien dat C# met verschillende datatypes werkt, dus wat gebeurt er als we data van twee verschillende datatypes willen combineren?! In Star Trek resulteerde dat 50% van de tijd in een aanval van de Borg, 20% van de tijd van de Klingons en in de overige 30% in een oersaaie aflevering (Star Wars for life!). Ahum, sorry. I got carried away. Laten we eens onderzoeken hoe we data van 'vorm' kunnen veranderen. 
+De wereld draait op data, en dus ook de meeste applicaties die wij gaan schrijven. We hebben al gezien dat C# met verschillende datatypes werkt. Maar wat gebeurt er als we de inhoud van twee verschillende datatypes willen combineren?! *In Star Trek resulteerde dat 50% van de tijd in een aanval van de Borg, 20% van de tijd van de Klingons en in de overige 30% in een oersaaie aflevering (Star Wars for life!). Ahum, sorry. I got carried away.* 
 
-*May the force be with you!* Euh, ik bedoel: *Make it so!*
-{% endhint %}
+Laten we eens onderzoeken hoe we data van 'vorm' kunnen veranderen. 
+
+*May the force be with you! Euh, ik bedoel: Make it so!*
+
+## Appelen en peren
 
 
 Wanneer je de waarde van een variabele wilt toekennen aan een variabele van een ander type mag dit niet zomaar. 
-Volgende code zal bijvoorbeeld een dikke error geven:
+Volgende code zal bijvoorbeeld een dikke foutboodschap geven:
 
 
 ```csharp
@@ -33,17 +34,15 @@ Dit kan op 3 manieren:
 
 
 ## Casting
+
 Het is onmogelijk om een kommagetal aan een geheel getal toe te wijzen zonder dat er informatie verloren zal gaan. Toch willen we dit soms doen. **Van zodra we een variabele van het ene type willen toekennen aan een variabele van een ander type en er dataverlies zal plaatsvinden dan moeten we aan casting doen.**
 
 
 ### Wat is casting
-Casting heb je nodig om een variabele van een bepaald type voor een ander type te laten doorgaan. Stel dat je een complexe berekening hebt waar je werkt met verschillende types (bijvoorbeeld ``int``, ``double`` en ``float``). Door te casten voorkom je dat je vreemde resultaten krijgt. Je gaat namelijk bepaalde types even als andere types gebruiken.
 
-Het is belangrijk in te zien dat het casten van een variabele naar een ander type enkel een gevolg heeft **tijdens** het uitwerken van de expressie waarbinnen je werkt. De variabele in het geheugen zal voor eeuwig en altijd het type zijn waarin het origineel gedeclareerd werd.
+Casting heb je nodig om een variabele van een bepaald type voor een ander type te laten doorgaan. Stel dat je een complexe berekening hebt waar je werkt met verschillende datatypes. Door te casten voorkom je dat je vreemde resultaten krijgt. Je gaat namelijk bepaalde types even als andere types gebruiken.
 
-{% hint style='tip' %}
-Je dient enkel aan casting te doen wanneer je aan *narrowing* doet. **Bij narrowing gaan we een datatype omzetten naar een ander datatype dat een verlies aan data met zich zal meebrengen.** 
-{% endhint %}
+**Het is belangrijk in te zien dat het casten van een variabele naar een ander type enkel een gevolg heeft *tijdens* het uitwerken van de expressie waarbinnen je werkt.** De variabele in het geheugen zal voor eeuwig en altijd het type zijn waarin het origineel gedeclareerd werd. Je kan dus nooit het datatype van een variabele veranderen!
 
 
 Casting duid je aan door voor de variabele of literal het datatype tussen haakjes te plaatsen naar wat het omgezet moet worden:
@@ -60,10 +59,17 @@ double kommagetal = 13.8;
 int kommaNietWelkom = (int)kommagetal;
 ```
 
-Hierbij dien je aan de compiler te zeggen: "Volgende variabele die van het type ``double`` is, moet aan deze variabele van het type ``int`` toegekend worden. **Ik besef dat hierbij data verloren kan gaan (namelijk het deel na de komma), maar zet de variabele toch maar om naar het nieuwe type, ik draag alle verantwoordelijkheid voor het verlies"**.
+Door casting te gebruiken ze je eigenlijk aan de compiler 2 zaken: 
+
+1. Volgende variabele die van het type ``double`` is, moet aan deze variabele van het type ``int`` toegekend worden.
+2. **Ik besef dat hierbij data verloren kan gaan** (het deel na de komma), maar zet de variabele toch maar om naar het nieuwe type. "Ik draag de volledige verantwoordelijkheid voor de gevolgen hiervan verderop in het programma."
 
 {% hint style='tip' %}
-Het is als het ware een soort Amerikaanse reflex om te voorkomen dat de compiler later door ons kan aangeklaagd worden omdat hij uiterst belangrijke data heeft doen verloren gaan tijdens de omzetting. Via casting geven we aan dat we de compiler niet zullen aanklagen.
+Je dient enkel aan casting te doen wanneer je aan *narrowing* doet. **Bij narrowing gaan we een datatype omzetten naar een ander datatype dat een verlies aan data met zich zal meebrengen.** 
+{% endhint %}
+
+{% hint style='tip' %}
+Het is een voorzorgsmaatregel om te voorkomen dat we de compiler later verwijten dat hij belangrijke gegevens heeft verloren tijdens de omzetting. Door casting te gebruiken, geven we aan dat we de compiler niet de schuld zullen geven van dit dataverlies.
 {% endhint %}
 
 
@@ -99,6 +105,8 @@ Het resultaat in `secundaireMeting` zal `20` zijn (alles na de komma wordt wegge
 {% hint style='tip' %}
 Merk op dat `hoofdMeting` nooit van datatype is veranderd; enkel de inhoud ervan (`20.4`) werd eruit gehaald, omgezet ("gecast") naar `20` en dan aan ``secundaireMeting`` toegewezen dat enkel `int` aanvaardt.
 {% endhint %}
+
+<!-- \newpage -->
 
 
 ### Narrowing in de praktijk
@@ -162,6 +170,7 @@ Merk op dat er een subtiel verschil is tussen volgende 2 lijnen code:
 In het eerste zullen we het resultaat van de som naar ``double`` omzetten. In het tweede, door de volgorde van berekeningen door de haakjes, zullen we de casting pas doen **na de deling** en zal dus 22 in plaats van 22.5 als resultaat geven.
 {% endhint %}
 
+<!-- \newpage -->
 
 
 ### Widening
@@ -172,7 +181,7 @@ Casting is niet nodig als je aan **widening** doet: een *kleiner* type in een *g
 int hoofdMeting;
 double secundaireMeting;
 hoofdMeting = 20;
-secundaireMeting = hoofdMeting; //secundaireMeting krijgt de waarde 20.0
+secundaireMeting = hoofdMeting; //secundaireMeting krijgt 20.0
 ```
 
 Deze code zal zonder problemen werken: `secundaireMeting` zal de waarde `20.0` bevatten. De inhoud van `hoofdMeting` wordt *verbreed* naar een `double`, eenvoudigweg door er een kommagetal van te maken. 
@@ -214,17 +223,19 @@ Enkel indien je ``0`` (als ``int``) of ``0.0`` (als ``double``) ingeeft, dan kri
 {% endhint %}
 
 
-{% hint style='tip' %}
-De conversie zal zelf zo goed mogelijk de data omzetten en dus indien nodig widening of narrowing toepassen. Zeker bij het omzetten van een string naar een ander type kijk je best steeds de documentatie na om te weten wat er intern juist zal gebeuren.
 
-Je kan alle conversie-mogelijkheden bekijken op **msdn.microsoft.com/system.convert**.
-{% endhint %}
+
+De conversie zal zelf zo goed mogelijk de data omzetten en dus indien nodig widening of narrowing toepassen. Zeker bij het omzetten van een string naar een ander type kijk je best steeds de documentatie na om te weten wat er intern juist zal gebeuren.[^conversie]
+
+[^conversie]: Je kan alle conversie-mogelijkheden nalezen op [msdn.microsoft.com/system.convert](https://msdn.microsoft.com/system.convert).
+
+
 
 
 ## Parsing
 Naast conversie en casting bestaat er ook nog **parsing**.
 
-Parsing is anders dan conversie en casting. Parsing zal je in dit boek enkel nodig hebben om tekst(``string``) naar getallen om te zetten. Echter, intern zal bijna altijd ``Convert.To...`` gebruikt worden indien je een ``Parse`` methode aanroept.
+Parsing is anders dan conversie en casting. Parsing zal je in dit boek enkel nodig hebben om tekst(``string``) naar getallen om te zetten. Echter, intern zal bijna altijd een ``Convert.ToX``-methode gebruikt worden indien je een ``Parse`` methode aanroept.
 
 Ieder ingebouwd datatype in C# heeft een ``.Parse()`` methode die je kan aanroepen om **strings om te zetten naar het gewenste type**. 
 

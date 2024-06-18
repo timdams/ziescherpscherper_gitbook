@@ -1,6 +1,7 @@
-# Methoden
+# Methoden <!--\label{ch:7}-->
 
-Ene Bill Gates, je weet wel, de oprichter van een bedrijfje genaamd Microsoft zei ooit: *"I will always choose a lazy person to do a difficult job. Because, he will find an easy way to do it."*
+> *"I will always choose a lazy person to do a difficult job. Because, he will find an easy way to do it."*
+> Bill Gates, oprichter van Microsoft.
 
 Het is je misschien nog niet opgevallen, maar sinds het vorige hoofdstuk zijn we de jacht begonnen op zo weinig mogelijk code te schrijven met zoveel mogelijk rendement. Loops waren een eerste stap in de goede richting. De volgende zijn methoden! Tijd om nog luier te worden.
 
@@ -21,26 +22,27 @@ fixed (byte* p = bytes)
         //enz.
 ```
 
-Dat is aardig wat bizarre code he? En we tonen maar een stuk. Kortom: we mogen *onze beide pollekes kussen* dat methoden bestaan. Tijd om ze eens van dichterbij te bekijken!
+Dat is aardig wat bizarre code he? En ik toon maar een stuk. Kortom: we mogen blij zijn dat methoden bestaan. Tijd om ze eens van dichterbij te bekijken!
 
-{% hint style='tip' %}
-Het is heel normaal dat voorgaande code je zenuwachtig maakt. Negeer ze maar! Toch nieuwsgierig hoe wat er allemaal achter de schermen gebeurt? Voorgaande code komt uit **github.com/dotnet/runtime/blob/main/src/libraries/System.Console/src/System/ConsolePal.Windows.cs**, waar je ook alle andere broncode van de *dotnet runtime* zal terugvinden. 
-{% endhint %}
+Trouwens. Het is heel normaal dat voorgaande code je zenuwachtig maakt. Negeer ze maar![^wowzo]
 
 
+[^wowzo]: Toch nieuwsgierig hoe wat er allemaal achter de schermen gebeurt? Voorgaande code komt uit [github.com/dotnet/runtime/blob/main/src/libraries/System.Console/src/System/ConsolePal.Windows.cs](https://github.com/dotnet/runtime/blob/main/src/libraries/System.Console/src/System/ConsolePal.Windows.cs), waar je ook alle andere broncode van de *dotnet runtime* zal terugvinden. 
 
 
 ## Werking van methoden
 
-Een methode, ook vaak functie genoemd, is in C# een stuk code ('block') bestaande uit 0, 1 of meerdere statements. De methode kan herhaaldelijk opgeroepen worden, al dan niet met extra parameters, en kan ook een resultaat terug geven. Een methode kan van eender waar in je code aangeroepen worden.
+Een methode (ook wel *functie* genoemd) is in C# een blok code dat specifieke taken uitvoert. Een methode bestaat uit één of meerdere statements, kan herhaaldelijk worden aangeroepen met of zonder extra parameters, en kan een resultaat teruggeven. Methoden kunnen vanuit elk deel van je code worden aangeroepen.
 
-Je gebruikt al sinds les 1 methoden. Telkens je ``Console.WriteLine()`` bijvoorbeeld gebruikte, roep je een methode aan. **Methoden in C# zijn namelijk herkenbaar aan de ronde haakjes achteraan, al dan niet met actuele parameters tussen.** Kortom, alles wat we nu gaan zien heb je (onbewust) al gebruikt. Het grote verschil zal zijn dat we nu ook **zelf methoden** gaan definiëren, en niet enkel bestaande methoden gebruiken.
+Je gebruikt al sinds les 1 methoden. Telkens je ``Console.WriteLine()`` gebruikt, roep je een methode aan (genaamd  ``WriteLine``). 
 
-Methoden gebruiken heeft als voordeel dat je (kleine) herbruikbare stukken code kunt gebruiken en dus niet steeds deze code overal moet copy pasten. Daarnaast zullen methoden je code ook overzichtelijker maken.
+**Methoden in C# zijn herkenbaar aan de ronde haakjes achteraan, al dan niet met actuele parameters tussen.** Alles wat je nu gaat zien heb je al gebruikt. Het grote verschil zal zijn dat we nu ook **zelf methoden** gaan definiëren, en niet enkel bestaande methoden gebruiken.
+
+Methoden hebben als voordeel dat je herbruikbare stukken code kunt gebruiken en dus niet steeds deze code overal moet kopiëren en plakken. Daarnaast zullen methoden je code ook overzichtelijker maken.
 
 ### Methode syntax
 
-De basis-syntax van een methode ziet er als volgt uit (de werking van het keyword ``static`` zien we in hoofdstuk 11):
+De basis-syntax van een methode ziet er als volgt uit (de werking van het keyword ``static`` leg ik uit in hoofdstuk 11):
 
 ```csharp
 static returntype MethodeNaam(optioneel_parameters)
@@ -48,6 +50,9 @@ static returntype MethodeNaam(optioneel_parameters)
     //code van methode
 }
 ```
+
+De eerste lijn noemen we de **methode-signatuur**. Deze lijn verteld alles dat je moet weten om met de methode te werken (returntype, naam en eventuele parameters).
+
 
 Vervolgens kan je deze methode elders oproepen als volgt, indien de methode geen parameters vereist:
 
@@ -58,6 +63,7 @@ MethodeNaam();
 
 Dat is een mondvol. We gaan daarom de methoden even stapsgewijs leren kennen. Let's go!
 
+<!-- \newpage -->
 
 
 ### Een eenvoudige methode
@@ -108,11 +114,12 @@ namespace Demo1
 ```
 
 
+<!-- \newpage -->
 
 
 Volgende afbeelding toont hoe je programma doorheen de code loopt. De pijlen geven de flow aan:
 
-![Visualisatie van bovenstaande code.](../assets/4_methoden/timsoft.png)
+![Visualisatie van bovenstaande code.](../assets/4_methoden/timsoft.png)<!--{width=100%}-->
 
 ### Main is ook een methode
 
@@ -130,11 +137,12 @@ static void Main(string[] args)
 ```
 
 {% hint style='tip' %}
-``string[] args`` is een verhaal apart en zullen we in het volgende hoofdstuk bekijken. We verklappen alvast dat je via deze ``args`` opstartparameters aan je programma kan meegeven tijdens het opstarten (bijvoorbeeld ``explorer.exe google.com``) zodat je code hier iets mee kan doen.
+``string[] args`` is een verhaal apart en zullen we in het volgende hoofdstuk bekijken. Ik verklap alvast dat je via deze ``args`` opstartparameters aan je programma kan meegeven tijdens het opstarten (bijvoorbeeld ``explorer.exe google.com``) zodat je code hier iets mee kan doen.
 {% endhint %}
 
 
 
+<!-- \newpage -->
 
 
 ## Returntypes van methoden
@@ -143,21 +151,23 @@ Voorgaande methode gaf niets terug. Dat kon je zien aan het keyword **``void``**
 
 Vaak willen we echter wel dat de methode iets teruggeeft. Bijvoorbeeld het resultaat van een berekening.
 
-Het returntype van een methode geeft aan wat het type is van de data die de methode als resultaat teruggeeft bij het beëindigen ervan. Eender welk type dat je kent kan hiervoor gebruikt worden, zoals ``int``, ``string``, ``char``, ``float``, enz. Ook zelfgemaakte (of bestaande) ``enum`` datatypes kunnen als returnwaarde door het leven (en later ook objecten, wat we in hoofdstuk 10 zullen ontdekken).
+Het returntype van een methode geeft aan wat het type is van de data die de methode als resultaat teruggeeft bij het beëindigen ervan. Eender welk datatype kan hiervoor gebruikt worden (``int``, ``string``, ``char``, ``float``, enz.). Ook ``enum`` datatypes kunnen als returntype in methoden gebruikt worden (en later ook objecten, wat we in hoofdstuk 10 zullen ontdekken).
+
+### ``return`` keyword
 
 Het is belangrijk dat in je methode het resultaat ook effectief wordt teruggegeven, dit doe je met het keyword **``return``** gevolgd door de variabele die moet teruggeven worden. 
 
 Denk er dus aan dat deze variabele van het type is dat je hebt opgegeven als zijnde het returntype. Van zodra je ``return`` gebruikt zal je op die plek uit de methode 'vliegen'.
 
-Wanneer je een methode maakt die iets teruggeeft (dus ander returntype dan ``void``) is het ook de bedoeling dat je het resultaat van die methode opvangt en gebruikt. Je kan bijvoorbeeld het resultaat van de methode in een variabele bewaren. Dit vereist dat die variabele dan van hetzelfde returntype is! 
+Wanneer je een methode maakt die iets teruggeeft (dus een ander returntype dan ``void``) is het ook de bedoeling dat je het resultaat van die methode opvangt en gebruikt. Je kan bijvoorbeeld het resultaat van de methode in een variabele bewaren. Dit vereist dat die variabele dan van hetzelfde returntype is! 
 
 Volgend voorbeeld bestaat uit een methode die de naam van de auteur van je programma teruggeeft:
 
 ```csharp
-static string GetNameAuthor()
+static string VerkrijgAuteurNaam()
 {
-    string name = "Tim Dams";
-    return name;
+    string name = ;
+    return "Tim Dams";
 }
 ```
 
@@ -165,16 +175,22 @@ Een mogelijke manier om deze methode in je programma te gebruiken zou nu kunnen 
 
 
 ```csharp
-string myName = GetNameAuthor();
+string myName = VerkrijgAuteurNaam();
 ```
-
 
 ![Visualisatie van de flow.](../assets/4_methoden/return.png)
 
+Maar ook dit zal werken:
 
-{% hint style='tip' %}
-Zoals je merkt is er niet veel verschil met wat je al wist aangaande het gebruik van variabelen. Als je dus twijfelt wat methoden kunnen, beschouw ze als een soort "slimme variabelen" die finaal ook gewoon een waarde hebben, maar deze waarde kan het resultaat van een complex stuk code in de methode zijn.
-{% endhint %}
+```csharp
+Console.WriteLine(VerkrijgAuteurNaam());
+```
+
+Of verderop misschien als volgt:
+
+```csharp
+Console.WriteLine($"Auteur van dit boek: {VerkrijgAuteurNaam()}");
+```
 
 
 
@@ -182,16 +198,19 @@ Zoals je merkt is er niet veel verschil met wat je al wist aangaande het gebruik
 Je mag zowel literals als variabelen en zelfs andere methode-aanroepen plaatsen achter het ``return`` keyword. Zolang het maar om een expressie gaat die een resultaat heeft kan dit. Voorgaande methode kunnen we dus ook schrijven als:
 
 ```csharp
-static string GetNameAuthor()
+static string VerkrijgAuteurNaam()
 {
     return "Tim Dams";
 }
 ```
 {% endhint %}
 
+<!-- \newpage -->
 
 
-Hier een voorbeeld van een methode die de faculteit van 5 berekent. De oproep van de methode gebeurt vanuit de Main-methode:
+## Een uitgewerkte methode
+
+De faculteit van een getal *n* schrijven we als *n!*. Het is het product van alle positieve getallen van 1 tot en met *n*, waarbij *0!* gelijk is aan 1. Hier een voorbeeld van een methode die de faculteit van 5 berekent, *5!*. We willen dus ``1*2*3*4*5`` berekenen, wat 120 is.  De oproep van de methode gebeurt vanuit de Main-methode:
 
 ```csharp
 internal class Program
@@ -216,25 +235,38 @@ internal class Program
 
 ### ``void`` 
 
-Indien je methode niets teruggeeft wanneer de methode eindigt (bijvoorbeeld indien de methode enkel tekst op het scherm toont) dan dien je dit ook aan te geven. Hiervoor gebruik je het keyword void. Een voorbeeld:
+Indien je methode niets teruggeeft wanneer de methode eindigt (bijvoorbeeld indien de methode enkel tekst op het scherm toont) dan dien je dit ook aan te geven. Hiervoor gebruik je het keyword ``void``. 
+
+Een voorbeeld:
 
 ```csharp
-static void ShowProgramVersion()
+static void ToonVersie()
 {
-    Console.Write("The version of this program is: ");
-    Console.Write(2.16 + "\n");
+    Console.WriteLine("Dit is versie 8.31 ");
 }
 ```
 
-{% hint style='danger' %}
-Het **void** keyword geeft aan dat deze methode niets "teruggeeft" van resultaat aan de code die de methode aanriep. **Zaken naar het scherm sturen met ``Console.WriteLine()`` heeft hier niets mee te maken.** 
-{% endhint %}
+Deze methode moet je dus als volgt aanroepen:
 
+```csharp
+ToonVersie();
+```
+
+Volgende 2 manieren **werken niet** bij een methode met ``void`` als returntype:
+
+```csharp
+string result = ToonVersie(); //MAG NIET!!
+Console.WriteLine(ToonVersie()); // MAG NIET!
+```
+
+<!-- \newpage -->
 
 
 ### ``return`` 
 
-Je mag het ``return`` keyword eender waar in je methode gebruiken. Weet wel dat van zodra een statement met ``return`` wordt bereikt de methode ogenblikkelijk afsluit en het resultaat achter ``return`` teruggeeft. Soms is dit handig zoals in volgende voorbeeld:
+Je mag het ``return`` keyword eender waar in je methode gebruiken. Weet wel dat van zodra een statement met ``return`` wordt bereikt de methode ogenblikkelijk afsluit en het resultaat achter ``return`` teruggeeft. 
+
+Soms is dit handig zoals in volgende voorbeeld:
 
 ```csharp
 static string WindRichting()
@@ -259,20 +291,18 @@ static string WindRichting()
 }
 ```
 
-Merk op dat de onderste ``return "onbekend";`` nooit zal bereikt worden. Toch vereist C# dit!
+Merk op dat de onderste lijn (19) nooit zal bereikt worden. Toch vereist C# dit!
+
+<!-- \newpage -->
 
 
-{% hint style='warning' %}
-
-![](../assets/attention.png)
-Dacht je nu echt dat ik weg was?! Het is me opgevallen dat je niet altijd de foutboodschappen in VS leest. Ik blijf alvast uit jouw buurt als je zo doorgaat. Doe jezelf (en mij) dus een plezier en probeer die foutboodschappen in de toekomst te begrijpen. Er zijn er maar een handvol en bijna altijd komen ze op hetzelfde neer. Neem nou de volgende:**Not all code paths return a value**
+>![](../assets/attention.png)Dacht je nu echt dat ik weg was?! Het is me opgevallen dat je niet altijd de foutboodschappen in VS leest. Ik blijf alvast uit jouw buurt als je zo doorgaat. Doe jezelf (en mij) dus een plezier en probeer die foutboodschappen in de toekomst te begrijpen. Er zijn er maar een handvol en bijna altijd komen ze op hetzelfde neer. Neem nou de volgende:**Not all code paths return a value**
 Die ga je nog vaak tegenkomen!
 
-Bovenstaande error zal je vaak krijgen en geeft altijd aan dat er bepaalde delen binnen je methode zijn waar je kan komen zonder dat er een ``return`` optreedt. Het einde van de methode wordt met andere woorden bereikt zonder dat er iets uit de methoden terug komt (wat enkel bij ``void`` mag).
+Bovenstaande foutboodschap zal je vaak krijgen en geeft altijd aan dat er bepaalde delen binnen je methode zijn waar je kan komen zonder dat er een ``return`` optreedt. Het einde van de methode wordt met andere woorden bereikt zonder dat er iets uit de methoden terug komt (wat enkel bij ``void`` mag).
 
 Foutboodschappen hebben de neiging om gecompliceerder te klinken dan de effectieve fout die ze beschrijven. Een beetje zoals een lector die lesgeeft over iets waar hij zelf niets van begrijpt.
 
-{% endhint %}
 
 
 ## Parameters doorgeven
@@ -287,18 +317,13 @@ Indien er wel parameters nodig zijn dan geef je die mee als volgt:
 MethodeNaam(parameter1, parameter2, …);
 ```
 
-Je hebt dit ook al geregeld gebruikt. Wanneer je tekst op het scherm wilt tonen dan roep je de ``WriteLine`` methode aan en geef je 1 parameter mee, namelijk hetgeen dat op het scherm moet komen. Bij de ``Math`` bibliotheek waren er bijvoorbeeld methoden waar je 2 parameters aan kon meegeven, waarbij duidelijk was dat de volgorde belangrijk was: ``Math.Pow(6,3);`` 6 tot de 3e is niet hetzelfde als 3 tot de 6e wat je als volgt zou schrijven ``Math.Pow(3, 6);``.
+Je hebt dit ook al geregeld gebruikt. Wanneer je tekst op het scherm wilt tonen dan roep je de ``WriteLine`` methode aan en geef je 1 parameter mee, namelijk hetgeen dat op het scherm moet komen. 
 
-Parameters kunnen op 2 manieren worden doorgegeven aan een methode:
+<!-- \newpage -->
 
-1. Wanneer een parameter **by value** wordt meegegeven aan een methode, dan wordt **een kopie gemaakt van de huidige waarde** die wordt meegegeven.
-2. Wanneer echter een parameter **by reference** wordt meegegeven dan zal een pointer worden meegegeven aan de methode. Deze pointer bevat het **adres van de eigenlijke variabele** die we meegeven. Aanpassingen aan de actuele parameters zullen daardoor ook zichtbaar zijn binnen de scope van de originele variabele. Parameters *by reference* komen pas vanaf hoofdstuk 9 van pas.
-
-{% hint style='tip' %}
-Het tweede punt mag je volledig negeren als je geen flauw benul had wat er net werd gezegd. We komen hier later in de volgende hoofdstukken nog uitgebreid op terug!
-{% endhint %}
 
 ### Methoden met formele parameters
+
 Om zelf een methode te definiëren die 1 of meerdere parameters aanvaardt, dien je per parameter het datatype en een tijdelijk naam (identifier) te definiëren (*formele parameters*) in de methode-signatuur
 
 Als volgt:
@@ -311,7 +336,6 @@ static returntype MethodeNaam(type parameter1, type parameter2)
 ```
 
 Deze formele parameters zijn nu beschikbaar binnen de methode om mee te werken naar believen.
-
 
 
 Stel bijvoorbeeld dat we onze ``FaculteitVan5`` willen veralgemenen naar een methode die voor alle getallen werkt, dan zou je volgende methode kunnen schrijven:
@@ -374,7 +398,10 @@ for (int i = 1; i < 11; i++)
 
 ![Visualisatie flow.](../assets/4_methoden/fac.png)
 
-Dit zal als resultaat geven
+ 
+ <!-- \newpage -->
+
+Dit zal als resultaat geven:
 
 ```
 Faculteit van 1 is 1
@@ -394,13 +421,11 @@ Merk op dat dankzij je methode, je véél code maar één keer moet schrijven, w
 {% endhint %}
 
 
+### Volgorde van parameters
 
+De volgorde waarin je je parameters meegeeft bij de aanroep van een methode is belangrijk. De eerste variabele wordt aan de eerste parameter toegekend, enz. Het volgende voorbeeld toont dit. 
 
-#### Volgorde van actuele parameters
-
-De volgorde waarin je je parameters meegeeft bij de aanroep van een methode is belangrijk. De eerste variabele wordt aan de eerste parameter toegekend, en zo voort. 
-
-Het volgende voorbeeld toont dit. Stel dat je een methode hebt:
+Stel dat je een methode hebt:
 
 ```csharp
 static void ToonDeling(double teller, double noemer)
@@ -412,22 +437,17 @@ static void ToonDeling(double teller, double noemer)
 }
 ```
 
-Stel dat we nu in onze main volgende aanroep doen:
+Deze 2 aanroepen zullen dus een andere output geven:
 
 ```csharp
-double n = 4.2;
-double t = 5.2;
-ToonDeling(n, t);
+ToonDeling(3.5 , 2.1 );
+ToonDeling(2.1 , 3.5 );
 ```
 
-Dit zal een ander resultaat geven dan wanneer we volgende code zouden uitvoeren:
 
+Zeker wanneer je met verschillende types als formele parameters werkt is de volgorde belangrijk. Het verschil met de vorige methode is hier wel dat VS jou zal helpen wanneer je volgorde niet klopt. 
 
-```csharp
-ToonDeling(t, n);
-```
-
-Ook de volgorde is belangrijk zeker wanneer je met verschillende types als formele parameters werkt:
+Stel dat we volgende methode hebben gemaakt:
 
 ```csharp
 static void ToonInfo(string name, int age)
@@ -443,39 +463,76 @@ Deze aanroep is correct:
 ToonInfo("Tim", 37);
 ```
 
-Deze is **FOUT** en zal niet compileren:
+Maar deze is **FOUT** en zal niet compileren:
 
 
 ```csharp
-ToonInfo(37, "Tim");
+ToonInfo(37, "Tim"); //mag niet!
 ```
 
 
+### Doorgeven van parameters
+
+Parameters kunnen op 2 manieren worden doorgegeven aan een methode:
+
+1. **By value** : hierbij wordt **een kopie gemaakt van de huidige waarde**. Het is die kopie die wordt meegegeven.
+2. **by reference**: het adres (**pointer** of **reference**) naar de actuele parameter wordt meegegeven. Aanpassingen aan de actuele parameter in de methode zal daardoor ook zichtbaar zijn binnen de scope van de originele variabele. Parameters *by reference* komen pas vanaf hoofdstuk 9 van pas[^wut].
+
+
+[^wut]: Het tweede punt mag je volledig negeren als je geen flauw benul had wat er net werd gezegd. Ik kom hier later in de volgende hoofdstukken nog uitgebreid op terug!
+
+
+Het effect van manier 1 is hopelijk duidelijk: wanneer je in een methode de inhoud van een actuele parameter aanpast, dan heeft dat geen gevolg op de originele variabele die we meegaven bij de methode-aanroep!
+
+Dit zien we in dit programma:
+
+```csharp
+static void JaartjeOuder(int leeftijd)
+{
+    leeftijd++;
+    Console.WriteLine($"Hoera. Je bent {leeftijd} jaar geworden.");
+}
+static void Main(string[] args)
+{
+    int mijnLeeftijd = 40;
+    Console.WriteLine($"Je bent {mijnLeeftijd} jaar.");
+    JaartjeOuder(mijnLeeftijd);
+    Console.WriteLine($"Je bent {mijnLeeftijd} jaar.");
+}
+```
+
+In de output zien we dat ``mijnLeeftijd`` niet werd aangepast in de methode:
+
+```text
+Je bent 40 jaar.
+Hoera. Je bent 41 jaar geworden.
+Je bent 40 jaar.
+```
 
 ### Methoden nesten
 
-In het begin ga je vooral vanuit je ``main`` methoden aanroepen, maar dat is geen verplichting. Je kan ook vanuit methoden andere methoden aanroepen, en van daaruit weer andere, en zo voort. Volgende (nutteloze) programma'tje toont dit in actie:
+In het begin ga je vooral vanuit je ``Main`` methoden aanroepen, maar dat is geen verplichting. Je kan ook vanuit methoden andere methoden aanroepen. Je kan zelfs vanuit die aangeroepen methode weer andere aanroepen, enz. 
+
+Volgende (nutteloze) programma'tje toont dit in actie:
 
 ```csharp
 static void SchrijfT()
 {
-    Console.WriteLine("T");
+    Console.Write("T");
 }
 static void SchrijfI()
 {
-    Console.WriteLine("I");
+    Console.Write("I");
 }
 static void SchrijfM()
 {
-    Console.WriteLine("M");
+    Console.Write("M");
 }
 static void SchrijfNaam()
 {
     SchrijfT();
     SchrijfI();
     SchrijfM();
-    SchrijfM();
-    SchrijfI();
 }
 public static void Main()
 {
@@ -483,14 +540,16 @@ public static void Main()
 }
 ```
 
+Er verschijnt "Timmi" op het scherm.
 
-![Visualisatie van bovenstaande code zonder terugkerende pijlen.](../assets/4_methoden/mmethods.png)
+![Visualisatie van de code zonder terugkerende pijlen.](../assets/4_methoden/mmethods.png)<!--{width=70%}-->
+
 
 
 
 ### Bugs met methoden
 
-Wanneer je programma's complexer worden moet je zeker opletten dat je geen oneindige lussen creëert, zonder dat je loop-code gebruikt. Zie je de fout in volgende code?
+Wanneer je programma's complexer worden moet je zeker opletten dat je geen oneindige *methode-lussen* creëert. Zie je de fout in volgende code?
 
 ```csharp
 public static void Main()
@@ -504,13 +563,15 @@ static void SchrijfNaam()
 }
 ```
 
-Deze code heeft een methode die zichzelf aanroept, zonder dat deze ooit afsluit, waardoor we dus in een oneindige aanroep van de methode komen. Dit programma zal een leeg scherm tonen (daar er nooit aan de tweede lijn in de methode wordt geraakt) en dan crashen wanneer het werkgeheugen van de computer op is (daar de methoden nooit afsluit en telkens een kopie aanroept).
+Deze code heeft een methode die zichzelf aanroept, zonder dat deze ooit afsluit. Hierdoor komen we dus in een oneindige aanroep van de methode ``SchrijfNaam``. Dit programma zal een leeg scherm tonen (daar er nooit aan de tweede lijn in de methode wordt geraakt) en dan crashen wanneer het werkgeheugen van de computer op is.
 
 ![Deze keer zijn er bewust geen terugkerende pijlen getekend: ze zijn er niet.](../assets/4_methoden/oneindig.png)
 
-#### Lokale methoden...en waarom je ze beter niet gebruikt
+#### Lokale functies...en waarom je ze beter niet gebruikt
 
-Sinds C# 7.0 kan je methoden definiëren binnenin een andere methode. Dit noemt men *local functions* en alhoewel ze zeker hun nut hebben, is het in deze fase van C# leren **geen goed idee om lokale methoden te gebruiken**. Het is véél belangrijker dat je eerst deftig methoden leert schrijven daar sommige beginnende programmeurs soms per ongeluk een lokale methode schrijven en vervolgens ontdekken dat ze die methode nergens kunnen aanroepen (local functions zijn enkel aanroepbaar binnenin de methode waarin ze gedefinieerd werd).
+Sinds C# 7.0 kan je methoden definiëren binnenin een andere methode. Dit noemt men **lokale functies**  (*local functions*). Alhoewel ze zeker hun nut hebben, is het in deze fase van C# leren **geen goed idee om lokale functies te gebruiken**. 
+
+Het is veel belangrijker dat je eerst goed leert methoden schrijven. Beginnende programmeurs schrijven soms per ongeluk een lokale functies. Dan ontdekken ze dat ze die methode nergens kunnen aanroepen. Lokale functies zijn alleen oproepbaar binnen de methode waarin ze zijn gedefinieerd.
 
 
 Kortom, zorg dat je nooit dit schrijft!
@@ -520,19 +581,33 @@ static void Main(string[] args)
 {
     TimVindtDitNietLeuk();
 
-    static void TimVindtDitNietLeuk()
+    static void TimVindtDitNietLeuk() //NIET DOEN!
     {
         Console.WriteLine("Doe dit niet!");
     }
 }
 ```
 
+Maar wel
+
+```csharp
+static void TimVindtDitNietLeuk() //Beter!
+{
+    Console.WriteLine("Doe dit niet!");
+}
+
+static void Main(string[] args)
+{
+    TimVindtDitNietLeuk();
+}
+```
 
 
-{% hint style='warning' %}
 
-![](../assets/attention.png)
-Even ingrijpen en je wijzen op recursie zodat je code niet in je gezicht blijft ontploffen. **Recursie** is een geavanceerd programmeerconcept wat niet in dit boek wordt besproken, maar laten we het hier kort toelichten. Recursieve methoden zijn methoden die zichzelf aanroepen maar wél op een gegeven moment stoppen wanneer dat moet gebeuren. Volgend voorbeeld is een recursieve methode om de som van alle getallen tussen ``start`` en ``stop`` te berekenen:
+
+>![](../assets/attention.png) Even ingrijpen en je wijzen op recursie zodat je code niet in je gezicht blijft ontploffen. 
+
+**Recursie** is een geavanceerd programmeerconcept wat niet in dit boek wordt besproken (enkel in hoofdstuk 18 gaan we recursie nog kort ontmoeten), maar laten we het hier kort toelichten. Recursieve methoden zijn methoden die zichzelf aanroepen maar wél op een gegeven moment stoppen wanneer dat moet gebeuren. Volgend voorbeeld is een recursieve methode om de som van alle getallen tussen ``start`` en ``stop`` te berekenen:
 
 ```csharp
 static int BerekenSomRecursief(int start, int stop)
@@ -556,9 +631,9 @@ int einde = BerekenSomRecursief(1,3);
 
 ![Flow van de recursie.](../assets/4_methoden/recursie.png)
 
-{% endhint %}
 
 
+<!-- \newpage -->
 
 
 ### Commentaar aan methoden toevoegen
@@ -590,19 +665,7 @@ static int Macht(int grondtal, int exponent)
 Wanneer we nu elders de methode ``Macht`` gebruiken dan krijgen we automatische extra informatie:
 
 
-![Het is aanbevolen om je documentatie in het Engels te doen, niet zoals in dit voorbeeld dus.](../assets/4_methoden/comment.png)
+![Het is aanbevolen om je documentatie in het Engels te doen, niet zoals in dit voorbeeld dus.](../assets/4_methoden/comment.png)<!--{width=50%}-->
 
 
-#### Regions
-
-Je kan trouwens delen van je code in handige inklapbare secties zetten door deze als regions aan te duiden, als volgt:
-
-```csharp
-#region My Epic code
-Console.WriteLine("I am the greatest!");
-Console.WriteLine("Echt waar!");
-#endregion
-```
-
-Je zal vanaf dan in Visual Studio rechts van de start van de region een minnetje zien waar je op kunt klikken om de hele region tot aan ``#endregion`` in te klappen. De code zal nog steeds gecompileerd worden, maar je bladspiegel is weer wat ordelijker geworden én het ingeklapte deel zal nog steeds herkenbaar zijn door de tekst die je achter de region-start (``My Epic code`` in dit geval).
 

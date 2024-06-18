@@ -27,13 +27,13 @@ static public void DownloadAllUris(string[] urls)
     {
         Uri uri = new Uri(urls[i]);
         string result = webClient.DownloadString(uri);
-        Console.WriteLine($"{uri} gedownload. Dit is het resultaat {result}");
+        Console.WriteLine($"{uri} gedownload. Resultaat: {result}");
     }
 }
 ```
 
 {% hint style='tip' %}
-De ``WebClient`` is een handige klasse om te interageren met online zaken (websites, restful api's, webservices, enz.). Je kan er bijvoorbeeld heel makkelijk een webscraper mee maken.
+De ``WebClient``-klasse laat toe te werken met online zaken, zoals websites, restful API's, webservices, enz. Je kan er bijvoorbeeld heel makkelijk een webscraper mee maken.
 {% endhint %}
 
 
@@ -73,7 +73,7 @@ Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere ur
     {
         Uri uri = new Uri(urls[i]);
         string result = webClient.DownloadString(uri);
-        Console.WriteLine($"{uri} gedownload. Dit is het resultaat {result}");
+        Console.WriteLine($"{uri} gedownload. Resultaat: {result}");
     }
     catch (Exception ex)
     {
@@ -103,7 +103,7 @@ try
 {
     Uri uri = new Uri(urls[i]);
     string result = webClient.DownloadString(uri);
-    Console.WriteLine($"{uri} gedownload. Dit is het resultaat {result}");
+    Console.WriteLine($"{uri} gedownload. Resultaat: {result}");
 }
 catch (Exception ex)
 {

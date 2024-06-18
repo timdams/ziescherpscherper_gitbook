@@ -156,9 +156,9 @@ Reeks: {Reeks}
 
 # Pokemon met deel 2
 
-We laten de reeds bestaande properties en methoden niet meer zien in deze oplossing:
-```csharp
+Ik laat de reeds bestaande properties en methoden niet meer zien in deze oplossing:
 
+```csharp
 class Pokemon
 {
     //reeds bestaande properties en methoden

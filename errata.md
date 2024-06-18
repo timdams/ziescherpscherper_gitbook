@@ -95,30 +95,29 @@ class Persoon
 }
 ```
 
- Vervolgens wordt de hele klasse:
+Vervolgens wordt de hele klasse:
 
- ```csharp
- class Persoon
- {
-        public string Voornaam {get;set;}
-        public string Achternaam {get;set;}
-        public string VolledigeNaam
-        {
-            get
-            { 
-                    return $"{Voornaam} {Achternaam}";
-            }
+```java
+class Persoon
+{
+    public string Voornaam {get;set;}
+    public string Achternaam {get;set;}
+    public string VolledigeNaam
+    {
+        get
+        { 
+                return $"{Voornaam} {Achternaam}";
         }
-         public string Email
+    }
+        public string Email
+    {
+        get
         {
-            get
-            {
-                return $"{Voornaam}@ziescherp.be";
-            }
-     }
- }
-
- ```
+            return $"{Voornaam}@ziescherp.be";
+        }
+    }
+}
+```
 
 ## **Halverwege pagina 240:**
 
@@ -132,27 +131,28 @@ Werd herschreven als:
  
  
 ## **Bovenaan pagina 257:**
- Dit is een subtiele bug (dank Erik Speelman!). Het resetten van een object dat je meegeeft via een methode, kan niet zoals het voorbeeld toont . 
- De methode  ``VoegMetingToeEnVerwijder`` moet herschreven worden als
 
- ```csharp
- public void VoegMetingToeEnVerwijder(Meting inMeting)
- {
+Dit is een subtiele bug (dank Erik Speelman!). Het resetten van een object dat je meegeeft via een methode, kan niet zoals het voorbeeld toont.  De methode  ``VoegMetingToeEnVerwijder`` moet herschreven worden als
+
+```java
+public void VoegMetingToeEnVerwijder(Meting inMeting)
+{
+Temperatuur += inMeting.Temperatuur;
+inMeting.Temperatuur = 0;
+inMeting.OpgemetenDoor =  "";
+}
+```
+
+Ter info. Wil je wél je object kunnen resetten in de methode m.b.v. ``new`` dan zal je het ``ref``-keyword moeten gebruiken (zie appendix pagina 406). De methode wordt dan herschreven als:
+
+```java
+public void VoegMetingToeEnVerwijder(ref Meting inMeting)
+{
     Temperatuur += inMeting.Temperatuur;
     inMeting.Temperatuur = 0;
     inMeting.OpgemetenDoor =  "";
- }
- ```
-
- Ter info. Wil je wél je object kunnen resetten in de methode m.b.v. ``new`` dan zal je het ``ref``-keyword moeten gebruiken (zie appendix pagina 406). De methode wordt dan herschreven als:
-  ```csharp
- public void VoegMetingToeEnVerwijder(ref Meting inMeting)
- {
-    Temperatuur += inMeting.Temperatuur;
-    inMeting.Temperatuur = 0;
-    inMeting.OpgemetenDoor =  "";
- }
- ```
+}
+```
 
  Hier wordt de aanroep in plaats van ``m1.VoegMetingToeEnVerwijder(m2);`` dan ``m1.VoegMetingToeEnVerwijder(ref m2);``.
 

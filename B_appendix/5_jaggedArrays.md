@@ -1,7 +1,7 @@
 ## Jagged Arrays
 
 Jagged arrays (letterlijk *gekartelde arrays*) zijn arrays van arrays maar van verschillende lengte.
-In tegenstelling tot de eerdere meer-dimensionale arrays moeten de interne arrays steeds dezelfde lengte hebben, bijvoorbeld 3 bij 2 bij 4.
+In tegenstelling tot de eerdere meer-dimensionale arrays moeten de interne arrays steeds dezelfde lengte hebben, bijvoorbeeld 3 bij 2 bij 4.
 Bij jagged arrays hoeft dat dus niet:
 
 ![jagged array](../assets/5_arrays/jagged.png)
@@ -16,15 +16,15 @@ double[][]tickets;
 
 (en dus niet ``tickets[,]``)
 
-Vanaf nu kan je dan individuele arrays toewijzen aan ieder element van ```tickets``:
+Vanaf nu kan je dan individuele arrays toewijzen aan ieder element van ``tickets``:
 
 ```csharp
-tickets={
-   new double[] {3.0, 40, 24},
-   new double[] {123, 31.3 },
-   new double[] {2.1}
-
- };
+tickets=
+        {
+          new double[] {3.0, 40, 24},
+          new double[] {123, 31.3 },
+          new double[] {2.1}
+        };
 
 ```
 

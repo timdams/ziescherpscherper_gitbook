@@ -11,7 +11,7 @@ Dit is logisch: de child-klasse heeft de "fundering" nodig van z'n parent-klasse
 Volgende voorbeeld toont dit in actie:
 
 ```csharp
-class Soldaat
+internal class Soldaat
 {
    public Soldaat() 
    {
@@ -19,7 +19,7 @@ class Soldaat
    }
 }
 
-class VeldArts : Soldaat
+internal class VeldArts : Soldaat
 {
    public VeldArts()
    {
@@ -45,13 +45,15 @@ Veldarts is aangemaakt.
 
 Er wordt dus verondersteld in dit geval dat er een default constructor in de basis-klasse aanwezig is.
 
+<!-- \newpage -->
 
 
 ### Overloaded constructors en ``base()``
 
 Indien je klasse ``Soldaat`` een overloaded constructor heeft, dan wisten we al dat deze niet automatisch een default constructor heeft. Volgende code zou dus een probleem geven indien je een ``VeldArts`` wilt aanmaken via ``new VeldArts()``:
+
 ```csharp
-class Soldaat
+internal class Soldaat
 {
    public Soldaat(bool kanSchieten) 
    {
@@ -59,7 +61,7 @@ class Soldaat
    }
 }
 
-class VeldArts:Soldaat
+internal class VeldArts:Soldaat
 {
    public VeldArts()
    {
@@ -71,7 +73,7 @@ class VeldArts:Soldaat
 Wat je namelijk niet ziet bij child-klassen en hun constructors is dat er eigenlijk een impliciete aanroep naar de constructor van de parent-klasse wordt gedaan. Bij alle constructors staat er eigenlijk ``:base()`` achter, wat je ook zelf kunt schrijven:
 
 ```csharp
-class VeldArts:Soldaat
+internal class VeldArts:Soldaat
 {
    public VeldArts(): base()
    {
@@ -80,21 +82,23 @@ class VeldArts:Soldaat
 }
 ```
 
-``base()`` achter de constructor zegt eigenlijk *"roep de default constructor van de parent-klasse aan"*. Je mag hier echter ook parameters meegeven en de compiler zal dan zoeken naar een overloaded constructor in de basis-klasse die deze volgorde van parameters kan accepteren.
+Door ``base()`` achter de constructor te zetten ze je: *"roep de default constructor van de parent-klasse aan"*. Je mag hier echter ook parameters meegeven en de compiler zal dan zoeken naar een overloaded constructor in de basis-klasse die deze volgorde van parameters kan accepteren.
 
 
+<!-- \newpage -->
 
 
 We zien hier  hoe we ervoor moeten zorgen dat we terug via ``new VeldArts()`` objecten kunnen aanmaken zonder dat we de constructor(s) van ``Soldaat`` moeten aanpassen:
+
 ```csharp
-class Soldaat
+internal class Soldaat
 {
    public Soldaat(bool kanSchieten) 
    {
       //Doe soldaten dingen
    }
 }
-class VeldArts:Soldaat
+internal class VeldArts:Soldaat
 {
    public VeldArts():base(true)
    {
@@ -105,12 +109,15 @@ class VeldArts:Soldaat
 
 De default constructor van ``VeldArts`` zal de actuele parameter ``kanSchieten``  steeds op ``true`` zetten.
 
+
+
+
 Uiteraard wil je misschien kunnen meegeven bij het aanmaken van een ``VeldArts`` wat de startwaarde van ``kanSchieten`` moet zijn. Dit vereist dat je een overloaded constructor in ``VeldArts`` aanmaakt, die op zijn beurt de overloaded constructor van ``Soldaat`` aanroept. 
 
 Je schrijft dan een overloaded constructor in ``VeldArts`` bij:
 
 ```csharp
-class Soldaat
+internal class Soldaat
 {
    public Soldaat(bool kanSchieten) 
    {
@@ -118,7 +125,7 @@ class Soldaat
    }
 }
 
-class VeldArts:Soldaat
+internal class VeldArts:Soldaat
 {
    public VeldArts(bool kanSchieten): base(kanSchieten)
    {} 
@@ -132,14 +139,17 @@ class VeldArts:Soldaat
 
 Merk op hoe we de formele parameter ``kanSchieten`` doorgeven als actuele parameter aan ``base``-aanroep.
 
-Uiteraard mag je ook de default constructor aanroepen vanuit de child-constructor, alle combinaties zijn mogelijk (zolang de constructor in kwestie maar bestaat in de parent-klasse).
+<!-- \newpage -->
+
+
+Uiteraard mag je ook de default constructor aanroepen vanuit de child-constructor.  Alle combinaties zijn mogelijk, zolang de constructor in kwestie maar bestaat in de parent-klasse.
 
 
 
 Een hybride aanpak is ook mogelijk. Volgend voorbeeld toont 2 klassen, ``Huis`` en ``Gebouw`` waarbij we de constructor van ``Huis`` zodanig beschrijven dat deze bepaalde parameters "voor zich houdt" en andere als het ware doorsluist naar de aanroep van z'n parent-klasse:
 
 ```csharp
-class Gebouw
+internal class Gebouw
 {
    public int AantalVerdiepingen { get; private set; }
    public Gebouw(int verdiepingenIn)
@@ -147,12 +157,12 @@ class Gebouw
       AantalVerdiepingen = verdiepingenIn;
    }
 }
-class Huis: Gebouw
+internal class Huis: Gebouw
 {
    public bool HeeftTuintje { get; private set; };
-   public Huis(bool tuintjeIn, int verdiepingenIn): base(verdiepingenIn)
+   public Huis(bool heeftTuin, int aantalVer): base(aantalVer)
    {
-      HeeftTuintje = tuintjeIn;
+      HeeftTuintje = heeftTuin;
    }
 }
 ```
@@ -163,6 +173,7 @@ Vanaf nu kan ik een huis als volgt bouwen:
 Huis peperkoekenHuis = new Huis(true, 1);
 ```
 
+<!-- \newpage -->
 
 
 ### Volgorde van constructors
@@ -174,7 +185,8 @@ De volgorde waarin alles gebeurt in voorgaande voorbeeld is belangrijk om te beg
 Huis eenEigenHuis = new Huis(true,5);
 ```
 
-![Achter de schermen gebeurt er aardig wat bij overerving wanneer we een object aanmaken.](../assets/7_overerving/constflow.png)
+![Achter de schermen gebeurt er aardig wat bij overerving wanneer we een object aanmaken.](../assets/7_overerving/constflow.png)<!--{width=80%}-->
+
 
 
 **Start:** overloaded constructor van ``Huis`` wordt opgeroepen.
@@ -187,8 +199,6 @@ Huis eenEigenHuis = new Huis(true,5);
 
 **Einde:** Finaal keren we terug en staat er nu een gloednieuw object in de heap, wiens geheugenlocatie we kunnen toewijzen aan ``eenEigenHuis``.
 
-
-{% endhint %}
 
 
 

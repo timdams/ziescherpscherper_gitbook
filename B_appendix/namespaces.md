@@ -9,8 +9,8 @@ Wanneer je een bestaande klasse later in een nieuw project zou willen gebruiken 
 
 Je voegt het klasse bestand toe (via Add -> Existing Item.) en laat dit onaangepast.
 
-Op de locatie waar je de klasse wenst te gebruiken voeg je bovenaan een using statement toe gevolgd door de namespace van het (bv ``using ConsoleApplication1``) of
-Telkens je de klasse wenst te gebruiken dien je dit via z’n namespace op te roepen (bv ConsoleApplication1.AccountClass eenAccount = new ConsoleApplication1.AccountClass)
+Op de locatie waar je de klasse wenst te gebruiken voeg je bovenaan een using statement toe gevolgd door de namespace van het (bv. ``using ConsoleApplication1``) of
+Telkens je de klasse wenst te gebruiken dien je dit via z’n namespace op te roepen (bv. ConsoleApplication1.AccountClass eenAccount = new ConsoleApplication1.AccountClass)
 
 ### Tweede manier
 

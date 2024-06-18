@@ -1,15 +1,17 @@
 ## Expression bodied members
 
-Wanneer je methoden, constructors of properties schrijft waar **exact 1 expressie** (*1 lijn code* die een resultaat teruggeeft) nodig is dan kan je gebruik maken van de **expression bodied member syntax** (EBM). Deze is van de vorm:
+Wanneer je methoden, constructors of properties schrijft waar **exact 1 expressie** (*1 lijn code* die een resultaat teruggeeft) nodig is dan kan je gebruik maken van de **expression bodied member syntax** (EBM). 
+
+Deze is van de vorm:
 
 
 ```text
 member => expression
 ```
 
-Dankzij EBM kan je veel kortere code schrijven.
+Dankzij EBM kan je veel kortere code schrijven. 
 
-We tonen telkens een voorbeeld hoe deze origineel is en hoe deze naar EBM syntax kan omgezet worden.
+Ik toon telkens een voorbeeld hoe deze origineel is en hoe deze naar EBM syntax kan omgezet worden.
 
 ### Methoden en EBM
 
@@ -46,11 +48,13 @@ public int GeefGewicht() => 4 * 34;
 ```
 
 
+<!-- \newpage -->
 
 ### Constructors en EBM
 Ook constructors die maar 1 expressie bevatten kunnen korter nu. Origineel:
+
 ```csharp
-class Student
+internal class Student
 {
     public int Geboortejaar {get;set;}
     public Student(int geboorteJaarIn)
@@ -61,8 +65,9 @@ class Student
 ```
 
 Met EBM wordt dit:
+
 ```csharp
-class Student
+internal class Student
 {
     public int Geboortejaar {get;set;}
     public Student(int geboorteJaarIn) => Geboortejaar = geboorteJaarIn;

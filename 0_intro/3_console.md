@@ -1,7 +1,7 @@
 
 ### ReadLine: Input van de gebruiker verwerken
 
-Met de Console kan je met een handvol methoden reeds een aantal interessante dingen doen.
+In de Console kan je met een handvol methoden reeds een aantal interessante dingen doen.
 
 Zo kan je bijvoorbeeld input van de gebruiker inlezen en bewaren in een variabele als volgt:
 
@@ -32,7 +32,6 @@ Tweede lijn code:
 Je programma zou nu moeten zijn:
 
 ```csharp
-
 Console.WriteLine("Hello World!");
 Console.WriteLine("Hoi, ik ben het!");
 Console.WriteLine("Wie ben jij?!");
@@ -40,16 +39,16 @@ string result;
 result = Console.ReadLine();
 ```
 
-Start nogmaals je programma. Je zal merken dat je programma nu een cursor toont en wacht op invoer nadat het de eerste 3 lijnen tekst op het scherm heeft gezet. Je kan nu eender wat intypen en van zodra je op enter duwt gaat het programma verder. Maar aangezien lijn 5 de laatste lijn van ons algoritme is, zal je programma hierna afsluiten (en we hebben dus de gebruiker voor niets iets laten invoeren).
+Start nogmaals je programma. Je zal merken dat je programma nu een cursor toont en wacht op invoer nadat het de eerste 3 lijnen tekst op het scherm heeft gezet. Je kan nu eender wat intypen en van zodra je op enter duwt gaat het programma verder. Maar aangezien lijn 5 de laatste lijn van ons algoritme is, zal je programma hierna afsluiten. We hebben dus de gebruiker voor niets iets laten invoeren. 
 
 
-{% hint style='tip' %}
-Je kan gratis op Memrise deze cursus dagelijks instuderen, de ideale manier om snel essentiele C# begrippen voor altijd te onthouden. De cursus is beschikbaar via : [app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/](https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/).
-{% endhint %}
+<!-- \newpage -->
+
+
 
 ### Input gebruiker gebruiken
 
-Een variabele is een geheugenplekje (met een naam) waar we zaken in kunnen bewaren. In het volgende hoofdstuk gaan we zo vaak het woord variabele vertellen dat je oren en ogen er van gaan bloeden, dus trek je nu nog niet te veel aan van dit woord. We kunnen nu invoer van de gebruiker, die we hebben bewaard in de variabele ``result``, gebruiken en tonen op het scherm. 
+Een variabele is een geheugenplekje met een naam waar we zaken in kunnen bewaren. In het volgende hoofdstuk gaan we zo vaak het woord variabele gebruiken dat je oren en ogen er van gaan bloeden.  Trek je nu dus nog niet te veel aan van dit woord. We kunnen nu invoer van de gebruiker gebruiken en tonen op het scherm. De invoer hebben we bewaard in de variabele ``result`:
 
 ```csharp
 Console.WriteLine("Dag");
@@ -57,11 +56,9 @@ Console.WriteLine(result);
 Console.WriteLine("hoe gaat het met je?");
 ```
 
-In de tweede lijn hier gebruiken we de variabele ``result`` (waar de invoer van de gebruiker in bewaard wordt) als parameter in de ``WriteLine``-methode. 
+In de tweede lijn hier gebruiken we de variabele ``result`` als parameter in de ``WriteLine``-methode. 
 
 Met andere woorden: de ``WriteLine`` methode zal op het scherm tonen wat de gebruiker even daarvoor heeft ingevoerd.
-
-
 
 Je volledige programma ziet er dus nu zo uit:
 
@@ -89,13 +86,17 @@ tim
 hoe gaat het met je?
 ```
 
-{% hint style='danger' %}
-**Aanhalingsteken of niet?**
+<!-- \newpage -->
 
-Wanneer je de inhoud van een variabele wil gebruiken in een methode zoals ``WriteLine()`` dan plaats je deze zonder aanhalingsteken!
+
+
+### Aanhalingsteken of niet?
+
+Wanneer je de inhoud van een variabele wil gebruiken in een methode zoals ``WriteLine()`` dan plaats je deze zonder aanhalingstekens!
+
 Bekijk zelf eens wat het verschil wordt wanneer je volgende lijn code ``Console.Write(result);`` vervangt door ``Console.Write("result");``.
 
-De uitvoer wordt dan (merk het verschil op op lijn 5):
+De uitvoer wordt dan:
 
 ```text
 Hoi, ik ben het!
@@ -105,7 +106,9 @@ Dag
 result
 hoe gaat het met je?
 ```
-{% endhint %}
+
+We krijgen dus letterlijk de tekst "result" op het scherm in plaats van de gebruikersinvoer die we in de variabele bewaarden.
+
 
 
 
@@ -114,9 +117,9 @@ hoe gaat het met je?
 
 Naast ``WriteLine`` bestaat er ook ``Write``.
 
-De ``WriteLine``-methode zal steeds een line break (een 'enter') aan het einde van de lijn zetten zodat de cursor naar de volgende lijn springt.
+De ``WriteLine``-methode zal steeds een *line break* - een *enter* zeg maar - aan het einde van de lijn zetten zodat de cursor naar de volgende lijn springt.
 
-**De ``Write``-methode daarentegen zal geen enter aan het einde van de lijn toevoegen.** Als je dus vervolgens iets toevoegt (met een volgende ``Write`` of ``WriteLine``) **dan zal dit aan dezelfde lijn toegevoegd worden.**
+**De ``Write``-methode daarentegen zal geen enter aan het einde van de lijn toevoegen.** Als je dus vervolgens iets toevoegt met een volgende ``Write`` of ``WriteLine``, **dan zal dit aan dezelfde lijn toegevoegd worden.**
 
 Vervang daarom eens in de laatste 3 lijnen code in je project ``WriteLine`` door ``Write``:
 
@@ -135,7 +138,14 @@ tim [enter]
 Dagtimhoe gaat het met je?
 ```
 
-Wat is er "verkeerd" gelopen? Al je tekst van de laatste lijn plakt zo dicht bij elkaar? Inderdaad, we zijn spaties vergeten toe te voegen. Spaties zijn ook tekens die op scherm moeten komen (ook al zien we ze niet) en je dient dus binnen de aanhalingstekens spaties toe te voegen. Namelijk:
+Wat is er hier "verkeerd" gelopen? Al je tekst van de laatste lijn plakt zo dicht bij elkaar? 
+
+<!-- \newpage -->
+
+
+Inderdaad, ik ben spaties vergeten toe te voegen. Spaties zijn ook tekens die op scherm moeten komen - ook al zien we ze niet - en je dient dus binnen de aanhalingstekens spaties toe te voegen. 
+
+Namelijk:
 
 ```csharp
 Console.Write("Dag ");
@@ -154,9 +164,9 @@ Dag tim hoe gaat het met je?
 
 
 
-### Witregels in C#
+### Witregels in C\#
 
-C# trekt zich niets aan van **witregels die niét binnen aanhalingstekens staan** (zowel spaties, enters en tabs worden genegeerd). Met andere woorden: je kan het voorgaande programma perfect in één lange lijn code typen, zonder enters. Dit is echter niet aangeraden want het maakt je code een pak onleesbaarder.
+C# trekt zich niets aan van **witregels die niét binnen aanhalingstekens staan**. Zowel spaties, enters en tabs worden genegeerd. Met andere woorden: je kan het voorgaande programma perfect in één lange lijn code typen, zonder enters. Dit is echter niet aangeraden want het maakt je code een pak onleesbaarder.
 
 
 ![Voorgaande programma in exact 1 lijn. Cool? Ja, in sommige kringen. Dom en onleesbaar? Ook ja.](../assets/1_csharpbasics/online.png)
@@ -190,7 +200,7 @@ Console.Write("_hoe gaat het met je?");
 
 ### Zinnen aan elkaar plakken
 
-We kunnen dit allemaal nog een pak korter tonen zonder dat de code onleesbaar wordt. De plus-operator (``+``) in C# kan je namelijk gebruiken om tekst aan elkaar te plakken. De laatste 3 lijnen code kunnen dan korter geschreven worden als volgt:
+We kunnen dit allemaal nog een pak korter tonen zonder dat de code onleesbaar wordt. De plus-operator (``+``) in C# kan je namelijk gebruiken om tekst achter elkaar te *plakken*. De laatste 3 lijnen code kunnen dan korter geschreven worden als volgt:
 
 
 ```csharp
@@ -210,12 +220,23 @@ Vervangt door:
 
 
 ```csharp
-Console.Write("Dag "+ "result" + " hoe gaat het met je?");
+Console.WriteLine("Dag "+ "result" + " hoe gaat het met je?");
 ```
 
-#### Meer input vragen
+We krijgen dan altijd dezelfde output, namelijk:
 
-Als je meerdere inputs van de gebruiker wenst te bewaren dan zal je meerdere geheugenplekken (variabelen) nodig hebben. Bijvoorbeeld:
+```text
+Dag result hoe gaat het met je?
+```
+
+We tonen dus niet de inhoud van ``result``, maar gewoon de tekst "result".
+
+<!-- \newpage -->
+
+
+### Meer input vragen
+
+Als je meerdere inputs van de gebruiker wenst te bewaren zal je meerdere geheugenplekken (variabelen) nodig hebben. Bijvoorbeeld:
 
 ```csharp
 Console.WriteLine("Geef leeftijd");
@@ -226,7 +247,7 @@ string adres; //tweede variabele aanmaken
 adres = Console.ReadLine();
 ```
 
-Je mag echter ook de variabelen al vroeger aanmaken. In C# zet men de geheugenplek creatie zo dicht mogelijk bij de code waar je die plek gebruikt (zoals vorig voorbeeld), maar dat is geen verplichting. Dit mag dus ook:
+Je mag echter ook de variabelen al vroeger aanmaken. In C# zet men de geheugenplek creatie zo dicht mogelijk bij de code waar je die variabele gebruikt.  Maar dat is geen verplichting. Dit mag dus ook:
 
 
 ```csharp
@@ -239,9 +260,9 @@ adres = Console.ReadLine();
 ```
 
 {% hint style='tip' %}
-Je zal vaak ``Console.WriteLine`` moeten schrijven als je dit boek volgt. We hebben echter goed nieuws voor je: er zit een ingebouwde "snippet" in VS om sneller ``Console.WriteLine`` op het scherm te toveren. We gaan je niet langer in spanning houden...of toch... nog even. Ben je benieuwd? Spannend he!
+Je zal vaak ``Console.WriteLine`` moeten schrijven als je dit boek volgt.Ik heb echter goed nieuws voor je: er zit een ingebouwde *snippet* in VS om sneller ``Console.WriteLine`` op het scherm te toveren.Ik ga je niet langer in spanning houden...of toch... nog even. Ben je benieuwd? Spannend he!
 
-Hier gaan we: ``cw [tab] [tab]``
+Hier gaan we: **``cw [tab] [tab]``**
 
 Als je dus ``cw`` schrijft en dan twee maal op de tab-toets van je toetsenbord duwt verschijnt daar *automagisch* een verse lijn met ``Console.WriteLine();``.
 

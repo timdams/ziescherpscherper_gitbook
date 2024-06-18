@@ -1,6 +1,6 @@
-# Arrays en klassen
+# Arrays en klassen <!--\label{ch:12}-->
 
-Arrays van value types kwamen we al in hoofdstuk 8 tegen. In dit hoofdstuk tonen we dat ook arrays van objecten perfect mogelijk zijn. We weten reeds dat klassen niets meer dan zijn dan nieuwe datatypes, en dus is het ook logisch dat wat we reeds met arrays konden, we dit gewoon kunnen blijven doen, maar met objecten. 
+Arrays van value types kwamen we al in hoofdstuk 8 tegen. In dit hoofdstuk demonstreer ik dat ook arrays van objecten perfect mogelijk zijn. We weten reeds dat klassen niets meer dan zijn dan nieuwe datatypes.  Het is dus ook logisch dat wat we reeds met arrays konden, we dit  kunnen blijven doen met objecten. 
 
 **Maar**, er is één grote maar: omdat we met objecten werken moeten we rekening houden met het feit dat de individuele objecten in je array **reference** values hebben en dus mogelijk ``null`` zijn. Met andere woorden: het is van essentiëel belang dat je het hoofdstuk rond geheugenmanagement in C# goed begrijpt, want we gaan het geregeld nodig hebben.
 
@@ -20,7 +20,8 @@ Student[] mijnKlas = new Student[20];
 De ``new`` zorgt er echter enkel voor dat er een referentie naar een nieuwe array wordt teruggegeven, waar ooit 20 studenten-objecten in kunnen komen. **Maar: er staan nog géén objecten in deze array. Alle elementen in deze array zijn nu nog ``null``.**
 
 
-![De referentie naar een, nu nog, lege array is aangemaakt.](../assets/6_klassen/beginarraysit.png)
+![De referentie naar een, nu nog, lege array is aangemaakt.](../assets/6_klassen/beginarraysit.png)<!--{width=60%}-->
+
 
 Willen we nu elementen in deze array plaatsen dan moeten we dit ook expliciet doen en moeten we dus objecten aanmaken en hun referentie in de array bewaren:
 
@@ -30,7 +31,10 @@ mijnKlas[2] = new Student();
 ```
 
 
-![De situatie in het geheugen nadat 2 objecten werden aangemaakt en in de array werden geplaatst.](../assets/6_klassen/beginarraysit2.png)
+![De situatie in het geheugen nadat 2 objecten werden aangemaakt en in de array werden geplaatst.](../assets/6_klassen/beginarraysit2.png)<!--{width=60%}-->
+
+
+
 
 
 Uiteraard kan dit ook in een loop indien relevant voor de opgave. Volgende voorbeeld vult een reeds aangemaakte array met evenveel objecten als de arrays groot is: 
@@ -92,7 +96,7 @@ Let op de puntkomma helemaal achteraan. Die wordt als eens vergeten.
 Het kan niet genoeg benadrukt worden dat een goede kennis van de heap, stack en referenties essentieel is om te leren werken met arrays van objecten. Uit voorgaande stukje code zien we duidelijk dat een goed inzicht in referenties je van veel leed beschermen. Bekijk eens de eindsituatie van voorgaande code:
 
 
-![De situatie in het geheugen op het einde.](../assets/6_klassen/objeeindsit.png)
+![De situatie in het geheugen op het einde.](../assets/6_klassen/objeeindsit.png)<!--{width=63%}-->
 
 Zoals je merkt zal nu de student ``jos`` niet verwijderd worden indien we op gegeven moment schrijven ``jos = null`` daar het object nog steeds bestaat via de array. We kunnen met andere woorden op 2 manieren de student ``jos`` momenteel bereiken, via de array of via ``jos``:
 
@@ -107,10 +111,10 @@ mijnKlas[2].Naam = "Franske Vermeulen"; //we overschrijven "Joske Vermeulen"
 Ook hier kan je met ``?`` een null-check schrijven:
 
 ```csharp
-mijnKlas?[3]?.Name = "Romeo Montague ";
+mijnKlas[3]?.Name = "Romeo Montague ";
 ```
 
-Merk op dat het eerste vraagteken controleert of de array zelf niet ``null`` is. Het tweede vraagteken, na de index, is om te controleren of het element op die index niet ``null`` is (toegegeven, erg elegant is dit niet).
+Merk op dat het eerste vraagteken controleert of de array zelf niet ``null`` is. 
 
 ### Object arrays als parameters en return
 

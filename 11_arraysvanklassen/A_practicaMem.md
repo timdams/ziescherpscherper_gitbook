@@ -103,7 +103,7 @@ class BookMark
 ```
 
 {% hint style='tip' %}
-Opmerking: je mag gerust een andere browser hier zetten (bv ``iexplore.exe``). Zorg ervoor dat je het volledige path naar het uitvoerbaar bestand meegeeft. 
+Opmerking: je mag gerust een andere browser hier zetten (bv. ``iexplore.exe``). Zorg ervoor dat je het volledige path naar het uitvoerbaar bestand meegeeft. 
 {% endhint %}
 
 

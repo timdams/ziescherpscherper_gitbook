@@ -1,6 +1,6 @@
 ## Spelen met strings
 
-In deze sectie duiken we dieper in de ``String`` klasse om aan te tonen dat er tal van nuttige zaken bestaan om met strings te werken.
+In deze sectie duik ik dieper in de ``String`` klasse om aan te tonen dat er tal van nuttige zaken bestaan om met strings te werken.
 
 ### Splitsen en samenvoegen
 
@@ -18,7 +18,7 @@ for(int i = 0; i<gesplitst.Length;i++)
 }
 ```
 
-Uiteraard kan je dit dus gebruiken om op eender welk ``char`` te splitsen en dus niet enkel een ``','`` (komma).
+Uiteraard kan je dit dus gebruiken om op eender welk teken te splitsen. Je kan dus even goed splitsen op een tab (``\t``) of bijvoorbeeld een kommapunt (``;``).
 
 #### Join
 
@@ -37,7 +37,7 @@ Voorgaande methoden zijn ``static`` en moet je dus via de klasse ``String`` doen
 
 ### Tekst files uitlezen
 
-De ``System.IO`` namespace bevat tal van nuttige methoden en klassen om met bestanden te werken. Bij C# 10 heb je deze namespace automatisch, bij C# 9 en ouder moet je deze manueel toevoegen bovenaan je file: ``using System.IO;``.
+De ``System.IO`` namespace bevat tal van nuttige methoden en klassen om met bestanden te werken. Bij C# 10 heb je deze namespace automatisch, bij C# 9 en ouder moet je deze manueel toevoegen bovenaan je file: ``using System.IO;``. We gaan deze namespace nog meer uit de doeken doen in hoofdstuk 19, maar hier alvast een voorproefje.
 
 Via ``System.File.ReadAllLines()`` kunnen we een tekstbestand uitlezen. De methode geeft een array van string terug. Per lijn die eindigt met een newline (``\r\n``) zal een nieuwe string aan de array toegevoegd worden.
 
@@ -77,8 +77,6 @@ for (int i = 0; i < lines.Length; i++)
 ```
 
 
-
-
 #### CSV downloaden
 
 Vaak zal je een online bestand willen verwerken. De ``WebClient`` klasse heeft tal van manieren om met online bronnen te werken. Deze klasse bevindt zich in de ``System.Net`` namespace en vereist dus dat je bovenaan je code volgende lijn toevoegt:
@@ -113,5 +111,5 @@ for (int i = 1; i < splitted.Length; i++)
 }
 ```
 
-In dit voorbeeld gaan we er vanuit dat de eerste lijn in het bestand een "header" bevat, die we dus moeten overslaan. Daarom starten we de loop vanaf lijn 1.
+In dit voorbeeld ga ik er vanuit dat de eerste lijn in het bestand een *header* bevat, die we dus moeten overslaan. Daarom start ik de loop vanaf lijn 1.
 

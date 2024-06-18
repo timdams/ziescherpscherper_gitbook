@@ -60,7 +60,7 @@ b)	Bij CoffeeTableBooks de prijs enkel tussen 35 en 100 kan liggen
 
 ## Deel 2
 
-* Zorg ervoor dat boeken de ToString overriden zodat je boekobjecten eenvoudig via Console.WriteLine(myBoek) hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (Isbn) _ Price" (bv The Shining - Stephen King (05848152) _ 50)
+* Zorg ervoor dat boeken de ToString overriden zodat je boekobjecten eenvoudig via Console.WriteLine(myBoek) hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (Isbn) _ Price" (bv. The Shining - Stephen King (05848152) _ 50)
 * (PRO) Zorg ervoor dat de equals methode werkt op alle boeken. Boeken zijn gelijk indien ze hetzelfde Isbn nummer hebben.
 
 **Toon de werking aan van je 3 klassen:**

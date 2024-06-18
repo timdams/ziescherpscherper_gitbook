@@ -1,6 +1,6 @@
 # Appendix 2: TekstQuest
 
-De prijs voor meest sexy titel gaan we niet winnen. Maar naar de aloude traditie van de klassieke tekst-gebaseerde adventure-games zullen we als toemaatje van dit boek eenvoudig object georiënteerd framework maken dat ons toelaat snel onze eigen games te maken. De eerste versie zal gebaseerd zijn op de kennis tot en met arrays. De versie in het volgende appendix gaat een stapje verder en zal van 0 terug opbouwen, maar deze keer gebruik makend van de kennis van hoofdstukken 8 en verder. 
+De prijs voor meest sexy titel gaan we niet winnen. Maar naar de aloude traditie van de klassieke tekst-gebaseerde adventure-games zullen we als toemaatje van dit boek eenvoudig object georiënteerd framework maken dat ons toelaat snel onze eigen games te maken. De eerste versie zal gebaseerd zijn op de kennis tot en met arrays. De versie in het volgende appendix gaat een stapje verder en zal van 0 terug opbouwen, maar deze keer gebruik makend van de kennis van hoofdstuk 8 en verder. 
 
 De nadruk van deze code ligt daarbij niet tot het creëren van een perfecte imitatie, maar wel om aan te tonen dat je met de kennis uit dit boek al best ingewikkelde applicaties kan maken. We hanteren hierbij de principes van "**refactoring**": we gaan onze code steeds verbeteren op gebied van leesbaarheid en onderhoudbaarheid. Bij iedere stap zullen we dan ook extra functionaliteit toevoegen.
 
@@ -99,7 +99,7 @@ Vervolgens maken we 2D-array die onze kaart voorstelt. De array is van het type 
                     {0, 4, 0, 5}
                 };
 ```
-Linksboven beginnen we dus met een Gang, met rechts ervan een lobby, etc.
+Linksboven beginnen we dus met een Gang, met rechts ervan een lobby, enz.
 
 Plaatsen die we met een 0 (onbekend terrein) definiëren gaan we beschouwen als plaatsen waar de gebruiker niet mag komen.
 
@@ -666,7 +666,7 @@ private static void VerwerkInput(
 Als kers op de taart tonen we snel hoe je het kaartje *sexier* kan tonen op het scherm. Hier zijn echter een paar belangrijke opmerkingen aan de orde:
 
 * De code bevat enkele *hardcoded* waarden zoals het plaatsen van de cursor m.b.v. ``Console.SetCursorPosition``. Beter zou zijn als deze waarden als Magic numbers worden behandeld of on-the-fly worden berekend.
-De kaart bevat UNICODE-art met vaste grootte. Dit zal bugs geven indien onze kaart-array groter is dan de dimensies van de UNICODE-art: de art zal over de randen van de UNICODE-art getekend worden. We kunnen dit oplossen door delen van de UNICODE-art te *berekenen* (bv het aantal *lege lijnen* en de breedte van een pagina.
+De kaart bevat UNICODE-art met vaste grootte. Dit zal bugs geven indien onze kaart-array groter is dan de dimensies van de UNICODE-art: de art zal over de randen van de UNICODE-art getekend worden. We kunnen dit oplossen door delen van de UNICODE-art te *berekenen* (bv. het aantal *lege lijnen* en de breedte van een pagina.
 
 We definiëren de nieuwe Methode en voegen als eerste actie UNICODE-art toe van een kaart:
 

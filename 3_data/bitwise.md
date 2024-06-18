@@ -22,11 +22,12 @@ string binary = Convert.ToString(value, 2);
 ```
 
 ### Bitwise operator
+
 Bitwise operators in C# laten toe om de klassieke binaire bewerkingen (AND, OR, NOT, etc) die je kent uit booleanse algebra toe te passen op je variabelen.
 
 
 Stel dat we volgende twee variabelen hebben: ``int A = 60`` en ``int B = 13``. 
-Volgende operators kan je gebruiken [bron](https://www.tutorialspoint.com/csharp/csharp_bitwise_operators.htm):
+Volgende operators kan je gebruiken (bron[^bronbitwise]):
 
 |Operator|	Beschrijving|	Voorbeeld|
 |---|---|---|
@@ -38,11 +39,11 @@ Volgende operators kan je gebruiken [bron](https://www.tutorialspoint.com/csharp
 |``>>``|	Binary Right Shift Operator. The left operanden value is moved right by the number of bits specified by the right operand. (De Binaire Rechts Shift Operator. De linkse factor zijn waarde wordt naar rechts verschoven met dezelfde hoeveelheid als de waarde van de rechterfactor.) |	``A >> 2 = 15``, which is 0000 1111|
 
 
-
+[^bronbitwise]:https://www.tutorialspoint.com/csharp/csharp_bitwise_operators.htm
 
 #### Voorbeeld
 
-Een uitgewerkt voorbeeld (ook van [hier](https://www.tutorialspoint.com/csharp/csharp_bitwise_operators.htm)):
+Een uitgewerkt voorbeeld van diezelfde bron:
 
 ```csharp
 int a = 60;            /* 60 = 0011 1100 */ 

@@ -16,7 +16,7 @@ Vraag een getal aan de gebruiker (als int). Gebruik enkel bitwise operators om:
 * het getal te halveren: merk op dat dit enkel werkt voor even getallen
 * het getal van teken te veranderen
 
-Doe hetzelfde maar vraag nu aan de gebruiker een string met de binaire voorstelling van een getal (bv ``"0011"``) en zit dit eerst om naar een int. Toon telkens het resultaat zowel als int en als een binaire string voorstelling.
+Doe hetzelfde maar vraag nu aan de gebruiker een string met de binaire voorstelling van een getal (bv. ``"0011"``) en zit dit eerst om naar een int. Toon telkens het resultaat zowel als int en als een binaire string voorstelling.
 
 
 # APCenture-Job Agency
@@ -132,19 +132,19 @@ Vul de 3 klassen aan klassen om aan bovenstaand schema te voldoen:
   * Land is een ``Card``
   * Heeft een methode ``GenerateMana`` die mana zal returnen gelijk aan de ``Cost`` van het land, maar enkel indien het land zichtbaar is (``IsHidden==false``)
   * Heeft als ``Name`` altijd "Land"
-  * Zal bij de ``DrawCard`` methode zichzelf in groene tekst op het scherm zetten, namelijk z’n ``Name``, gevolgd door z’n Cost (bv ``"Land 5"``)
+  * Zal bij de ``DrawCard`` methode zichzelf in groene tekst op het scherm zetten, namelijk z’n ``Name``, gevolgd door z’n Cost (bv. ``"Land 5"``)
   * Verhoogt z’n ``Cost`` met 1 wanneer ``UpdateCost`` wordt aangeroepen
 * **``Centrale``:**
   * Centrale is een ``Card``
   * Heeft als Name altijd "Centrale"
-  * Zal bij de ``DrawCard`` methode zichzelf in geel tekst op het scherm zetten, namelijk z’n Name (bv ``"Centrale"``)
+  * Zal bij de ``DrawCard`` methode zichzelf in geel tekst op het scherm zetten, namelijk z’n Name (bv. ``"Centrale"``)
   * Heeft de interface ``IPointGenerator``
   * Zal steeds 1 punt genereren bij ``GeneratePoints`` (de parameter die wordt meegegeven wordt niet gebruikt).
 * **``Hero``:**
   * Hero is een ``Card``
   *	Heeft als ``Name`` altijd "Hero"
   * Heeft de interface ``IPointGenerator``
-  * Zal bij de ``DrawCard`` methode zichzelf in gele tekst op het scherm zetten, namelijk z’n Name, gevolgd door z’n Cost (bv ``"Hero 6"``)
+  * Zal bij de ``DrawCard`` methode zichzelf in gele tekst op het scherm zetten, namelijk z’n Name, gevolgd door z’n Cost (bv. ``"Hero 6"``)
   * Heeft een methode ``GeneratePoints`` die 1 parameter aanvaardt van het type int. Indien de parameter gelijk is aan Cost zal de methode een willekeurig getal tussen 1 en Cost teruggeven als punten. 
  
 * **``Deck``:**

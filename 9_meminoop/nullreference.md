@@ -11,7 +11,7 @@ Dit zal een fout geven. Het object ``stud1`` bevat namelijk nog geen referentie.
 
 Deze variabele bevat de waarde **``null``** . Net zoals bij value types die een default waarde hebben  als je er geen geeft (bv. 0 bij een ``int`` ), **zo bevatten reference type variabelen altijd ``null`` als standaardwaarde**. 
 
-``null`` is een waarde die je dus kan toekenen aan eender welk reference type (om aan te geven dat er nog geen referentie naar een effectief object in de variabele staat) en waar je dus ook op kan testen. 
+``null`` is een waarde die je  kan toekenen aan eender welk reference type. Je doet dit om aan te geven dat er nog geen referentie naar een effectief object in de variabele staat. Je kan dus ook op deze waarde testen. 
 
 Van zodra je een referentie naar een object (een bestaand of eentje dat je net met ``new`` hebt aangemaakt) aan een reference type variabele toewijst (met de ``=`` operator) zal de ``null`` waarde uiteraard overschreven worden.
 
@@ -22,7 +22,7 @@ Merk op dat de GC enkel op de heap werkt. Indien er in de stack dus een variabel
 
 ### NullReferenceException
 
-Een veel voorkomende foutboodschap tijdens de uitvoer van je applicatie is een ``NullReferenceException``. Deze zal optreden wanneer je code een object probeert te benaderen wiens waarde ``null`` is (een onbestaande object met andere woorden).
+Een veel voorkomende foutboodschap tijdens de uitvoer van je applicatie is een ``NullReferenceException``. Deze zal optreden wanneer je code een object probeert te benaderen wiens waarde ``null`` is (een onbestaand object met andere woorden).
 
 Laten we dit eens simuleren:
 
@@ -31,14 +31,15 @@ Student stud1 = null;
 Console.WriteLine(stud1.Name);
 ```
 
-Dit zal resulteren in volgende foutboodschap:
+Dit zal resulteren in een foutboodschap in VS bij de lijn die de uitzondering detecteert: "System.NullReferenceException: 'Object reference not set to an instance of an object'. stud1 was null".
 
-
-![NullReferenceException error in Visual Studio.](../assets/6_klassen/nullref.png)
 
 {% hint style='tip' %}
 We moeten in dit voorbeeld expliciet ``= null`` plaatsen daar Visual Studio slim genoeg is om je te waarschuwen voor eenvoudige potentiële NullReference fouten en je code anders niet zal compileren.
 {% endhint %}
+
+<!-- \newpage -->
+
 
 
 ### NullReferenceException voorkomen
@@ -76,6 +77,7 @@ Het vraagteken direct na het object geeft aan: *"Gelieve de code na dit vraagtek
 
 Bovenstaande code zal dus gewoon een lege lijn op scherm plaatsen indien ``stud1`` effectief ``null`` is, anders komt de naam op het scherm.
 
+<!-- \newpage -->
 
 
 
@@ -99,16 +101,17 @@ static Student ZoekStudent(Student[] array, string naam)
 }
 ```
 
-### Bevalling in C# met ouders
+### Bevallen in code met ouders
 
-Tijd om het voorbeeld van de *voortplanting der mensch* er nog eens bij te nemen. Beeld je nu in dat we dichter naar de realiteit willen gaan (meestal het doel van OOP) en de baby eigenschappen van beide ouders geven. Stel dat mensen een maximum lengte hebben die ze genetisch kunnen halen, aangeduid via een auto-property ``MaxLengte``. De maximale lengte van een baby is steeds de lengte van de grootste ouder (in de echte genetica is dat natuurlijk niet, zeker niet omdat er ook zeker een ``Random`` factor aanwezig is). 
+Tijd om het voorbeeld van de *voortplanting der mensch* er nog eens bij te nemen. Beeld je nu in dat we dichter naar de realiteit willen gaan (meestal toch het doel van OOP) en de baby eigenschappen van beide willen ouders geven. Stel dat mensen een maximum lengte hebben die ze genetisch kunnen halen, aangeduid via een auto-property ``MaxLengte``. De maximale lengte van een baby is steeds de lengte van de grootste ouder (in de echte genetica is dat natuurlijk niet). 
 
 De klasse ``Mens`` breiden we uit naar:
 
 ```csharp
-class Mens
+internal class Mens
 {
-    public int MaxLengte{get;set;}
+    public int MaxLengte {get; set;}
+    
     public Mens PlantVoort(Mens dePapa)
     {
         Mens baby = new Mens();
@@ -122,14 +125,18 @@ class Mens
 
 Mooi toch?!  
 
+<!-- \newpage -->
 
 
-Om het nu volledig te maken zullen we er nu nog voor zorgen dat enkel een vrouw kan voortplanten, en enkel van een man (het is een vrij klassiek wereldbeeld, maar voor deze oefening wordt het te complex als we ook alle 21e-eeuwse voortplantingswijzen moeten implementeren).  Veronderstel dat het geslacht via een enumtype (``enum Geslachten {Man, Vrouw}``) in een auto-property ``Geslacht`` wordt bewaard.  We voegen daarom bovenaan in de ``PlantVoort``-methode nog een kleine check in én return'n een leeg (``null``) object als de voortplanting faalt (we zouden ook een ``Exception`` kunnen opwerpen):
+Om het nu volledig te maken zullen we er voor zorgen dat enkel een vrouw kan voortplanten. Voorts kan ze zich enkel voortplanten met behulp van een van een man (merk op dat OOP als doel heeft de realiteit te benaderen, maar ook te vereenvoudigen naargelang het probleem).  
+
+Veronderstel dat het geslacht via een enumtype (``enum Geslachten {Man, Vrouw}``) in een auto-property ``Geslacht`` wordt bewaard.  We voegen daarom bovenaan in de ``PlantVoort``-methode nog een kleine check in én return'n een leeg (``null``) object als de voortplanting faalt (we zouden ook een ``Exception`` kunnen opwerpen):
 
 ```csharp
     public Mens PlantVoort(Mens dePapa)
     {
-        if(Geslacht == Geslachten.Vrouw && dePapa.Geslacht == Geslachten.Man)
+        if(Geslacht == Geslachten.Vrouw 
+                && dePapa.Geslacht == Geslachten.Man)
         {
             Mens baby = new Mens();
             baby.MaxLengte = MaxLengte;

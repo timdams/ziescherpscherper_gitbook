@@ -10,7 +10,7 @@
 * [Fouten in je code](0_intro/4_fouten.md)
 * [Kleuren in Console](0_intro/5_kleuren.md)
 
-## H2: De basisconcepten van C#
+## H2: De basisconcepten van CS
 
 * [De essentie van C#](1_csharpbasics/0_csharpessentials.md)
 * [Datatypes](1_csharpbasics/1_datatypes.md)
@@ -44,7 +44,7 @@
 * [Switch](4_beslissingen/2_switch.md)
 * [enum](4_beslissingen/enum.md)
 
-## H6: Herhalingen Herhalingen Herhalingen
+## H6: Loops
 
 * [Loops intro](5_herhalingen/0_loops_intro.md)
 * [While en Do While](5_herhalingen/1_while_dowhile.md)
@@ -77,7 +77,7 @@
 * [Auto-properties](8_klassen/autoprop.md)
 * [DateTime: leren werken met objecten](8_klassen/datetime.md)
 
-## H10: Geheugenmanagement, uitzonderingen en namespaces
+## H10: Geheugenbeheer
 
 * [Stack en Heap](9_meminoop/6_memorymanagement.md)
 * [Objecten en methoden](9_meminoop/6b_objectenenmethoden.md)
@@ -132,6 +132,13 @@
 * [Interfaces in de praktijk](16_interfaces/2_InterfacesInPraktijk.md)
 * [Interfaces en polymorfisme](18_IsAs/2_Polymorfisme_Interfaces.md)
 
+## H18: Bestandsverwerking
+
+* [Werken met bestanden](21_bestanden/bestandenintro.md)
+* [Schrijven en lezen](21_bestanden/schrijvenenlezen.md)
+* [FileInfo klasse](21_bestanden/fileinfo.md)
+* [Klassen serialiseren met json](21_bestanden/serialize.md)
+
 ## Conclusie
 
 * [Je hebt het gehaald](BookOnlyOOP/conclusie.md)
@@ -139,15 +146,16 @@
 
 
 
-## Appendix
+## Appendix 1: Handig om weten
 
-
-* [Nice to know stuff](B_appendix/prostuff.md)
-  * [Out en Ref parameters](B_appendix/2_outenref.md)
-  * [Operator overloading](B_appendix/8_operatoroverloading.md)
-  * [Expression bodied members](B_appendix/6_exprbody.md)
-  * [Generics](B_appendix/generics.md)
-  * [struct en record](B_appendix/struct.md)
+* [Visual Studio snippets](B_appendix/prostuff.md)
+* [Region](B_appendix/regions.md)
+* [String.Format](B_appendix/stringformat.md)
+* [Out en Ref parameters](B_appendix/2_outenref.md)
+* [Operator overloading](B_appendix/8_operatoroverloading.md)
+* [Expression bodied members](B_appendix/6_exprbody.md)
+* [Generics](B_appendix/generics.md)
+* [struct en record](B_appendix/struct.md)
 
 
 

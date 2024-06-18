@@ -136,6 +136,13 @@
 * [Interfaces in de praktijk](16_interfaces/2_InterfacesInPraktijk.md)
 * [Interfaces en polymorfisme](18_IsAs/2_Polymorfisme_Interfaces.md)
 
+## H18: Bestandsverwerking
+
+* [Werken met bestanden](21_bestanden/bestandenintro.md)
+* [Schrijven en lezen](21_bestanden/schrijvenenlezen.md)
+* [FileInfo klasse](21_bestanden/fileinfo.md)
+* [Klassen serialiseren met json](21_bestanden/serialize.md)
+
 ## Conclusie
 
 * [Je hebt het gehaald](BookOnlyOOP/conclusie.md)
@@ -150,14 +157,15 @@
 ## Appendix
 
 * [Coding guidelines](B_appendix/codingguidelines.md) 
-* [Nice to know stuff](B_appendix/prostuff.md)
-  * [Out en Ref parameters](B_appendix/2_outenref.md)
-  * [Operator overloading](B_appendix/8_operatoroverloading.md)
-  * [Expression bodied members](B_appendix/6_exprbody.md)
-  * [Generics](B_appendix/generics.md)
-  * [struct en record](B_appendix/struct.md)
-
-
-
+* [Visual Studio snippets](B_appendix/prostuff.md)
+* [Region](B_appendix/regions.md)
+* [String.Format](B_appendix/stringformat.md)
+* [Out en Ref parameters](B_appendix/2_outenref.md)
+* [Operator overloading](B_appendix/8_operatoroverloading.md)
+* [Expression bodied members](B_appendix/6_exprbody.md)
+* [Generics](B_appendix/generics.md)
+* [struct en record](B_appendix/struct.md)
+* [Werken met bestanden](21_bestanden/bestandenintro.md)
+* [Schrijven en lezen](21_bestanden/schrijvenenlezen.md)
 
 

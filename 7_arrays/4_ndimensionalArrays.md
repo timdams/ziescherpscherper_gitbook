@@ -1,5 +1,7 @@
-## Meer-dimensionale Arrays
-Voorlopig hebben we enkel met zogenaamde 1-dimensionale arrays gewerkt. Je kan echter ook meerdimensionale arrays maken. Denk maar aan een n-bij-m array om een matrix voor te stellen. Denk maar aan het voorbeeld aan de start van dit hoofdstuk waarin we de regenval gedurende 7 dagen wilden meten. Wat als we dit gedurende 4 weken wensen te doen, maar wel niet alle data in één lange array willen plaatsen? We zouden dan een 2-dimensionale array kunnen maken als volgt:
+## Meer-dimensionale arrays
+Voorlopig hebben we enkel met zogenaamde 1-dimensionale arrays gewerkt. Je kan echter ook meerdimensionale arrays maken. Denk maar aan een n-bij-m array om een matrix voor te stellen. Ik bespreek meerdimensionale arrays maar kort om de eenvoudige reden dat je die in de praktijk minder vaak zal nodig hebben.
+
+Stel je het voorbeeld aan het begin van dit hoofdstuk voor, waarin we de regenval gedurende 7 dagen wilden meten. Wat als we dit gedurende 4 weken wensen te doen, maar wel niet alle data in één lange array willen plaatsen? We zouden dan een 2-dimensionale array kunnen maken als volgt:
 
 ```csharp
 int[,] regen = 
@@ -12,11 +14,11 @@ int[,] regen =
 ```
 
 
-![Een tweedimensionale array.](../assets/5_arrays/2d.png)
+![Een tweedimensionale array.](../assets/5_arrays/2d.png)<!--{width=60%}-->
 
-{% hint style='tip' %}
-We behandelen meerdimensionale arrays maar kort om de eenvoudige reden dat je die in de praktijk minder vaak zal nodig hebben.
-{% endhint %}
+
+
+
 
 
 De arrays die we nu behandelen zullen steeds "rechthoekig" zijn. Daarmee bedoelen we dat ze steeds per rij of kolom evenveel elementen zullen bevatten als in de andere rijen of kolommen. 
@@ -48,12 +50,12 @@ short[,,] temperaturen;
 Ja, dit kan dus ook een 10-dimensionale array aanmaken. Kan handig zijn als je een fysicus bent die rond de supersnaartheorie onderzoek doet.
 
 ```csharp
-int[,,,,,,,,,] jeBentGekAlsJeHierMeeWiltWerken;
+int[,,,,,,,,,] jeBentGek;
 ```
 Ja, 11 kan ook als je meer in de M-theorie gelooft. En zelfs 26 moest de bosonische snaartheorie meer je ding zijn:
 
 ```csharp
-int[,,,,,,,,,,,,,,,,,,,,,,,,,] jeBentNogGekkerAlsJeHierMeeWiltWerken;
+int[,,,,,,,,,,,,,,,,,,,,,,,,,] jeBentNogGekker;
 ```
 
 {% endhint %}
@@ -82,9 +84,11 @@ string[,] boeken =
 
 Merk op dat we dus nu een 3 bij 4 array maken maar dat dit dus nog steeds een 2D-array is. Iedere rij bestaat uit 3 elementen. **We maken letterlijk een array van arrays**.
 
+<!-- \newpage -->
 
 
-Of bij een 3D:
+Of bij een 3D-array:
+
 ```csharp
 int[,,] temperaturen = 
     {
@@ -103,15 +107,16 @@ int[,,] temperaturen =
 Die we als volgt kunnen visualiseren:
 
 
-![De derde dimensie bestaat uit 3 2-dimensionale 2 bij 2 arrays...](../assets/5_arrays/3D.png)
+![De derde dimensie bestaat uit drie 2-dimensionale 2 bij 2 arrays...](../assets/5_arrays/3D.png)<!--{width=60%}-->
 
 {% hint style='tip' %}
 Zoals je ziet worden meerdimensionale arrays snel een kluwen van komma's, accolades en haakjes. Probeer dus je dimensies te beperken. Je zal zelden een 3 -of meer dimensionale array nodig hebben. 
 
-De regel is eenvoudig: als je een 7-dimensionale array nodig hebt, is de kans groot dat je een volledig verkeerd algoritme hebt verzonnen, of dat je nog niet aan hoofdstuk 9 bent geraakt, of dat je een topwetenschapper in CERN bent. Choose your reason!
+De regel is eenvoudig: als je een 7-dimensionale array nodig hebt, is de kans groot dat je een volledig verkeerd algoritme hebt verzonnen ... of dat je nog niet aan hoofdstuk 9 bent geraakt ... of dat je een topwetenschapper in CERN bent. *Choose your reason!*
 {% endhint %}
 
 
+<!-- \newpage -->
 
 
 Stel dat we uit de boeken-array de auteur van het derde boek wensen te tonen dan kunnen we schrijven:
@@ -129,11 +134,12 @@ En bij de temperaturen:
 ```csharp
 Console.WriteLine(temperaturen[2, 0, 1]);
 ```
-Zal ``27`` terug geven: we vragen van de laatste array (``[2]``), daarbinnenin de eerste array (rij ``[0]``) en daarvan het tweede (kolom ``[1]``) element.
+
+Dit zal ``27`` teruggeven. We vragen van de laatste array (``[2]``), daarbinnenin de eerste array (rij ``[0]``) en daarvan het tweede element(kolom ``[1]``).
 
 ### Lengte van iedere dimensie in een n-dimensionale matrix
 
-Indien je de lengte opvraagt van een meer-dimensionale array dan krijg je de som van iedere lengte van iedere dimensie. Dit is logisch: in het geheugen van een computer worden arrays altijd als 1 dimensionale arrays voorgesteld. Onze ``boeken`` array zal bijvoorbeeld dus lengte 12 hebben (3*4) en ``temperaturen`` toevallig ook (3x2x2). 
+Indien je de lengte opvraagt van een meer-dimensionale array dan krijg je de som van iedere lengte van iedere dimensie. Dit is logisch: in het geheugen van een computer worden arrays altijd als 1 dimensionale arrays voorgesteld. De ``boeken`` array zal lengte 12 hebben (3*4) en ``temperaturen`` toevallig ook (3x2x2). 
 
 Je kan echter de lengte van iedere aparte dimensie te weten komen met de ``.GetLength()`` methode die iedere array heeft. Als parameter geef je de dimensie mee waarvan je de lengte wenst:
 

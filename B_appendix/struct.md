@@ -5,7 +5,7 @@
 Sinds C# 9.0 is het ook mogelijk om zogenaamde ``record``-klassen te maken. Erg vaak schrijf je klassen die niet meer moeten doen dan wat data eenmalig wegschrijven en onthouden,  dat je dan vervolgens via readonly getters kunt uitlezen, zoals:
 
 ```csharp
-public class Student
+internal class Student
 {
     public Student(string naam, int geboorteJaarIn, bool isIngeschreven)
     {
@@ -41,4 +41,4 @@ Student eenNieuweStudent = new Student
             };
 ```
 
-Er zijn nog tal van extra's die je krijgt met ``record``s (o.a. eenvoudig objecten vergelijken) maar die gaan we niet bespreken. 
+Er zijn nog tal van extra's die je krijgt met ``record``s (o.a. eenvoudig objecten vergelijken) maar die ga ik niet bespreken. 

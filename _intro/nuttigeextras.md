@@ -1,8 +1,8 @@
 # Nuttige extra's
 
-Er werden 2 Memrise cursussen aangemaakt speciaal voor dit handboek.  **Opgelet: je kan je enkel via de browser inschrijven op niet-spreektaal-cursussen. De app toont enkel spreektaalcursussen**. Gebruik deze app om dagelijks 5 minuten je C# kennis te drillen:
-  * [Deel 1](https://app.memrise.com/course/6382184/zie-scherp-scherper-programmeren-in-c-deel-1/)
-  * [Deel 2](https://app.memrise.com/course/6383638/zie-scherp-scherper-programmeren-in-c-deel-2/) 
+Er werden een quizlet cursus speciaal voor dit handboek gemaakt. Gebruik deze app om dagelijks 5 minuten je C# kennis te drillen:
+  * [quizlet.com/join/mqzQCGJCF](https://quizlet.com/join/mqzQCGJCF)
+
 
 # Boeken
 

@@ -142,7 +142,7 @@ Bijvoorbeeld:
   * ``mutsnummer`` (``int``)
   * ``isDoelman`` (``bool``)
   * ``isReserve``(``bool``)
-  * ``reeks`` (``string``, bv "Cadet")
+  * ``reeks`` (``string``, bv. "Cadet")
 
 Methoden: ``GooiBal``, ``Watertrappen``, ``StelIn``
 
@@ -152,7 +152,7 @@ De methode ``StelIn`` zou dan zou kunnen aangeroepen worden:
 speler1.StelIn("Tim", 5, false, true, "tweedeklas");
 ```
 
-Wanneer de methoden worden aangeroepen zal er een tekst (mbv Console.WriteLine in de methode) op het scherm verschijnen die bv zegt ``Ik (Jos) gooi de bal``. Waarbij de naam van de speler in kwestie uit het Naam instantievariabele wordt gebruikt om mee getoond te worden.
+Wanneer de methoden worden aangeroepen zal er een tekst (mbv. Console.WriteLine in de methode) op het scherm verschijnen die bv. zegt ``Ik (Jos) gooi de bal``. Waarbij de naam van de speler in kwestie uit het Naam instantievariabele wordt gebruikt om mee getoond te worden.
 
 Maak vervolgens een console-applicatie aan waarin je de werking van de klasse aantoont. Maar in de applicatie een aantal speler-objecten aan, vervolgens stel je hun properties in. Vervolgens roep je enkele methoden van de spelers aan en toon je via (Console.WriteLine) ook de properties van de individuele spelerobjecten.
 

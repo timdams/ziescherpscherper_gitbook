@@ -4,7 +4,7 @@ Het type ``string`` is niet meer dan een arrays van karakters, ``char[]``. Het i
 
 ### String naar char array
 
- Om een ``string`` per karakter te bewerken is het aanbevolen om deze naar een *char-array* om te zetten (en nadien terug naar een string). Dit kan gebruikmakend van ``.ToCharArray()`` als volgt:
+Om de aparte karakters van een ``string`` te bewerken zet je deze best om naar een *char-array* . Dit kan gebruikmakend van ``.ToCharArray()`` als volgt:
 
 ```csharp
 string origineleZin = "Ik ben Tom";
@@ -12,11 +12,11 @@ char[] karakters = origineleZin.ToCharArray();
 karakters[8] = 'i';
 ```
 
-De array zal nu het volgende bevatten:``Ik ben Tim``.
+De array zal nu het volgende bevatten:``Ik ben Tim``. Willen je dit nu terug als ``string``, dan lees je snel verder!
 
 ### Char array naar string
 
-Ook de omgekeerde weg is mogelijk. De werking is iets anders en maakt gebruik van ``new string()``, let vooral op hoe we de char array doorgeven als argument bij het aanmaken van een nieuwe ``string`` in lijn 3:
+Ook de omgekeerde weg is mogelijk. De werking is iets anders en maakt gebruik van ``new string()``. Let vooral op hoe we de char array doorgeven als argument bij het aanmaken van een nieuwe ``string`` in lijn 3:
 
 ```csharp
 char[] alleKarakters = {'h', 'a', 'l', 'l', 'o'};
@@ -51,11 +51,11 @@ int index = boek.IndexOf("ben");
 Console.WriteLine(index); 
 ```
 
-Er zal ``3`` verschijnen, daar "ben" start op positie 3 ("ik" staat op positie 0 en 1, gevolgd door een spatie op positie 2). Indien de string niet gevonden werd, zal ``index`` de waarde -1 krijgen.
+Er zal ``3`` verschijnen op scherm. De substring "ben" start op positie 3. "ik" staat op positie 0 en 1, gevolgd door een spatie op positie 2. Indien de string niet gevonden werd, zal ``index`` de waarde -1 krijgen.
 
 #### Trim
 
-``Trim()`` verwijdert alle onnodige spaties en andere onzichtbare tekens vooraan en achteraan de string. Deze methode geeft de opgekuiste string terug als resultaat, je moet deze dus bewaren. In het volgende voorbeeld overschrijven we de originele string met z'n opgekuiste versie:
+``Trim()`` verwijdert alle onnodige spaties en andere onzichtbare tekens vooraan en achteraan de string. Deze methode geeft de opgekuiste string terug als resultaat. Dit resultaat moet je dus bewaren als je er nog iets mee wilt doen. In het volgende voorbeeld overschrijven we de originele string met z'n opgekuiste versie:
 
 ```csharp
 string boek = "   Ik ben Reinhardt   ";
@@ -71,6 +71,8 @@ Dit zal de output op het scherm zijn (de spaties achteraan op lijn 1 zie je niet
    Ik ben Reinhardt   
 Ik ben Reinhardt
 ```
+
+
 
 #### ToUpper en ToLower
 
@@ -94,7 +96,7 @@ ik ben reinhardt
 
 #### Replace
 
-``Replace(string old, string news)`` zal in de string alle substrings die gelijk zijn aan ``old`` vervangen door de meegegeven ``news`` string en deze nieuwe string als resultaat teruggeven. 
+``Replace(string old, string news)`` zal in de string alle substrings die gelijk zijn aan ``old`` vervangen door de meegegeven ``news`` string. Vervolgens zal de nieuwe string als resultaat worden teruggeven. 
 
 Volgende voorbeeld toont dit en zal "Mercy" vervangen door "Reinhardt":
 
@@ -136,14 +138,15 @@ Output op het scherm:
 Ik Mercy
 ```
 
-In voorgaande voorbeeld vertelden we de methode *"verwijder alles vanaf het element met index 3 (de ``b``) en dit gedurende 4 tekens (dus tot en mét de spatie na ``ben``)"*.
+In voorgaande voorbeeld gaven we de methode ``Remove`` de opdracht: *"verwijder alles vanaf het element met index 3 (de ``b``) en dit gedurende 4 tekens (dus tot en mét de spatie na ``ben``)"*.
 
+<!-- \newpage -->
 
 
 #### Split
 
 {% hint style='tip' %}
-Volgende twee methoden zijn ``static`` en moet je  via de klasse ``String`` doen en niet via de objecten zelf. We leggen in hoofdstuk 11 uit waarom dat is.
+Volgende twee methoden zijn ``static`` en moet je  via de klasse ``String`` doen en niet via de objecten zelf. Ik leg in hoofdstuk 11 uit waarom dat is.
 {% endhint %}
 
  De ``Split`` methode laat toe een string te splitsen op een bepaald teken. Het resultaat is steeds een **array van strings**.
@@ -158,7 +161,7 @@ for(int i = 0; i<gesplitst.Length;i++)
 }
 ```
 
-Uiteraard kan je dit dus gebruiken om op eender welk ``char`` te splitsen en dus niet enkel een ``','`` (komma).
+Uiteraard kan je dit gebruiken om op eender welk ``char`` te splitsen. 
 
 #### Join
 

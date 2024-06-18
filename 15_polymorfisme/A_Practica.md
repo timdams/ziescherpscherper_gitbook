@@ -15,7 +15,7 @@ Bekijk de vraag en het goedgekeurde antwoord op [volgende pagina](https://stacko
 
 Kan je de manager aanpassen zodat deze niet met ``card1`` en ``card2`` werkt, maar met een ``List<Card>``.
 
-Voeg zelf enkele kaarten toe en verzin ook enkele afgeleide ``Card``-types, bv ``Land`` en ``Artifact``.
+Voeg zelf enkele kaarten toe en verzin ook enkele afgeleide ``Card``-types, bv. ``Land`` en ``Artifact``.
 
 # Mapmaker
 

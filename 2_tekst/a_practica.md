@@ -43,12 +43,12 @@ long cdriveinbytes = DriveInfo.GetDrives()[0].AvailableFreeSpace;
 long totalsize = DriveInfo.GetDrives()[0].TotalSize;  
 ```
 
-De 0 tussen rechte haakjes is de index van welke schijf je informatie wenst. 0 is de eerste harde schijf, 1 de tweede, enzovoort. 
+De 0 tussen rechte haakjes is de index van welke schijf je informatie wenst. 0 is de eerste harde schijf, 1 de tweede, enz. 
 
 Vraag aan de gebruiker het nummer van de harde schijf waar meer informatie over moet getoond worden. 
 
 {% hint style='danger' %}
-Sta toe dat de gebruiker "1" voor de eerste harde schijf mag gebruiken, "2" voor de tweede, enzovoort. Je zal dus in code nog manueel 1 moeten aftrekken van de invoer van de gebruiken.
+Sta toe dat de gebruiker "1" voor de eerste harde schijf mag gebruiken, "2" voor de tweede, enz. Je zal dus in code nog manueel 1 moeten aftrekken van de invoer van de gebruiken.
 Bv:
 
 ```csharp

@@ -1,15 +1,15 @@
-## Eigen exceptions maken dankzij overerving
+## Zelf exceptions maken
 
 We zijn ondertussen al gewend aan het opvangen van uitzonderingen met behulp van ``try`` en ``catch``. Ook bij exception handling wordt overerving toegepast. De uitzonderingen die we opvangen zijn steeds objecten van het type ``Exception`` of van een afgeleide klasse. Denk maar aan de ``NullReferenceException`` klasse die werd overgeërfd van ``Exception``. 
 
 {% hint style='tip' %}
-Dat wil dus zeggen dat ``Exception``s ook maar "gewone klassen" zijn en dus ook aan alle andere regels binnen C# moeten voldoen. Zo ondersteunen ze polymorfisme (*sooooon!*), kan je ze in arrays plaatsen, enz.
+Dat wil zeggen dat ``Exception``s ook maar "gewone klassen" zijn en dus ook aan alle andere regels binnen C# moeten voldoen. Zo ondersteunen ze polymorfisme (*sooooon!*), kan je ze in arrays plaatsen, enz.
 {% endhint %}
 
 
-Het is dus ook logisch dat je in je code **(al dan niet zelfgemaakte) uitzonderingen** kunt maken en opwerpen, zodat deze elders opgevangen worden. Je kan hierbij zelf exceptions maken (zie volgende sectie) of gewoon gebruik maken van een bestaande Exception-klasse.
+Bijgevolg is het logisch dat je in je code **uitzonderingen zelf kunt maken en opwerpen**. Vervolgens kan je deze elders opvangen. 
 
-Een voorbeeld van een bestaand ``Exception`` type gebruiken:
+Een voorbeeld van een bestaand ``Exception`` type gebruiken. We gaan zelf een ``Exception`` object aanmaken (met ``new``) en dit vervolgens opwerpen wanneer we een uitzondering opmerken.  In dit geval wanneer ``getal`` de waarde ``0`` heeft: 
 
 ```csharp
 static int ResultaatBerekening(int getal)
@@ -49,7 +49,7 @@ De lijn ``throw new DivideByZeroException("BOEM. ZWART GAT!");`` zorgt er dus vo
 Je kan ook eigen klassen overerven van ``Exception`` zodat je eigen uitzonderingen kan maken. Je maakt hiervoor gewoon een nieuwe klasse aan die je laat overerven van de Exception-klasse. Een voorbeeld:
 
 ```csharp
-class Timception: Exception
+internal class Timception: Exception
 {
     public override string ToString()
     {

@@ -4,7 +4,7 @@ Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen a
 
 ### List aanmaken
 
-De klasse ``List<>`` is een zogenaamde generieke klasse (meer hierover in de appendix). Tussen de ``< >``tekens plaatsen we het datatype dat de lijst zal moeten gaan bevatten. Bijvoorbeeld:
+De klasse ``List<>`` is een *generieke* klasse. Tussen de ``< >``tekens plaatsen we het datatype dat de lijst zal moeten gaan bevatten. Bijvoorbeeld:
 
 ```csharp
 List<int> alleGetallen = new List<int>();
@@ -16,12 +16,17 @@ List<string[]> listOfStringarrays = new List<string[]>();
 **Zoals je ziet hoeven we bij het aanmaken van een ``List`` geen begingrootte mee te geven, wat we wel bij arrays moeten doen. Dit is één van de voordelen van ``List``: ze groeien mee.**
 
 {% hint style='tip' %}
-In dit boek behandelen we het concept generieke klassen niet. Generieke klassen oftewel **generic classes** zijn een handig concept om je klassen nog multifunctioneler te maken doordat we zullen toelaten dat bepaalde datatypes niet hardcoded in onze klasse moet gezet worden. ``List<>`` is zo'n eerste voorbeeld, maar er zijn er tal van anderen én je kan ook zelf dergelijke klassen schrijven. Bekijk zeker de appendix indien je dit interesseert.
+In dit boek behandel ik het concept generieke klassen enkel in de appendix. 
+
+Generieke klassen oftewel **generic classes** zijn een handig concept om je klassen nog multifunctioneler te maken doordat we zullen toelaten dat bepaalde datatypes niet hardcoded in onze klasse moet gezet worden. ``List<>`` is zo'n eerste voorbeeld, maar er zijn er tal van anderen én je kan ook zelf dergelijke klassen schrijven. Bekijk zeker de appendix indien je dit interesseert.
+
 {% endhint %}
 
 {% hint style='tip' %}
 De generieke ``List<>`` klasse bevindt zich in de ``System.Collections.Generic`` namespace. Je dient deze namespace dus als ``using`` bovenaan toe te voegen wil je deze klasse kunnen gebruiken in C# 9.0 en ouder.
 {% endhint %}
+
+<!-- \newpage -->
 
 
 ### Elementen toevoegen
@@ -70,6 +75,9 @@ List<Pokemon> pokedex = new List<Pokemon>()
 
 {% endhint %}
 
+<!-- \newpage -->
+
+
 
 ### Elementen indexeren
 
@@ -79,6 +87,7 @@ List<Pokemon> pokedex = new List<Pokemon>()
 Console.WriteLine(mijnPersonages[3]);
 mijnPersonages[2] = "Torbjorn";
 ```
+
 
 
 
@@ -106,11 +115,12 @@ Interessante methoden en properties voorts zijn:
 Let op met het gebruik van ``IndexOf`` en objecten. Deze methode zal controleren of de referentie dezelfde is van een bepaald object en daar de index van teruggeven. Je kan deze methode dus wel degelijk met arrays van objecten gebruiken, maar je zal enkel je gewenste object terugvinden indien je reeds een referentie naar het object hebt en dit meegeeft als parameter.
 {% endhint %}
 
+<!-- \newpage -->
 
 
 ### Een wereld met OOP: Pong list
 
-Ikzelf ben fan van List. Het maakt je code vaak leesbaarder dan arrays en geeft je de optie om dynamisch groeiende (en krimpende) arrays te hebben, zonder dat je daar veel *boilerplate* code voor moet schrijven. Herinner je onze Pong-code waarin we 100 balletjes op het scherm lieten vliegen?
+Ikzelf ben fan van List. Het maakt je code vaak leesbaarder dan arrays. Voorts geeft het je de optie om dynamisch groeiende (en krimpende) arrays te hebben, zonder dat je daar veel *boilerplate* code voor moet schrijven. Herinner je onze Pong-code waarin we 100 balletjes op het scherm lieten vliegen?
 
 ```csharp
 const int AANTAL_BALLETJES = 100;
@@ -140,6 +150,8 @@ while (true)
 }
 ```
 
+<!-- \newpage -->
+
 Vooral de code in de ``while`` wordt nu leesbaarder dankzij ``List<Balletje>`` (we gaan ook ineens gebruik maken van onze nieuwe default constructor die de random startwaarde instelde):
 
 ```csharp
@@ -164,3 +176,9 @@ while (true)
     Console.Clear();
 }
 ```
+
+Deze code zou je aan iemand die geen C# kan kunnen tonen en met een beetje geluk zal die de code begrijpen. Dat is het fijne van hogere programmeertalen zoals C#: ze zijn veel leesbaarder dan talen die *dichter tegen het metaal* zitten, zoals C en C++. 
+
+Als leuke extra bij C# is dat het een erg levende taal is. Jaarlijks komen er nog nieuwe concepten bij. Meestal zijn die ietwat obscuur, maar vaak maken ze de code wel een pak leesbaarder dan ervoor. Alhoewel ik graag werk met arrays, zorgen Lists er bijvoorbeeld voor dat we veel minder met vierkante haakjes moeten werken én verstoppen ze een hoop code om  bijvoorbeeld lijsten te doen groeien en krimpen.
+
+ Dit verstoppen kan uiteraard soms een probleem zijn indien je hoog-performante code moet schrijven. Aan de andere kant: denk je dat jij *betere* code kunt schrijven dan de ontwikkelaars van de ``Add``-methode bij ``List``?

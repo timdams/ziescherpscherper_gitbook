@@ -20,7 +20,7 @@ Maak een eenvoudig programma dat 2 enclaves en 2 stadsenclaves aanmaakt. De gebr
 
 # Dictionary
 
-Maak nu een dictionary aan: ``Dictionary<string, Enclave>``. De string is de naam van de enclave (bv "Antwerpen"). Merk op dat je zowel ``Enclave`` als ``StadsEnclave`` objecten aan deze lijst kunt toevoegen.
+Maak nu een dictionary aan: ``Dictionary<string, Enclave>``. De string is de naam van de enclave (bv. "Antwerpen"). Merk op dat je zowel ``Enclave`` als ``StadsEnclave`` objecten aan deze lijst kunt toevoegen.
 
 De gebruiker kan nu naast de werking van daarnet ook volgende zaken doen
 1. Een nieuwe enclave of stadsenclave aanmaken en deze een naam geven. Zo wordt deze in de dictionary bewaard
