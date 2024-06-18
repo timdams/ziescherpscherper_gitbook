@@ -163,7 +163,7 @@ De layout van VS kan je volledig naar je hand zetten. Je kan ieder (deel-)venste
 
 De code in Program.cs die VS voor je heeft gemaakt is reeds een werkend programma. Erg nuttig is het helaas nog niet. Je kan de code compileren en uitvoeren door op de groene driehoek bovenaan te klikken:
 
-![Het programma uitvoeren.](../assets/0_intro/startprogram.PNG)<!--{width=45%}-->
+![Het programma uitvoeren.](../assets/0_intro/startprogram.PNG)<!--{width=40%}-->
 
 
 Als alles goed gaat krijg je nu "Hello World!" te zien en wat extra informatie omtrent het programma dat net werd uitgevoerd:

@@ -30,12 +30,11 @@ internal class SithLord
 ```csharp
 SithLord palpatine = new SithLord();
 Console.WriteLine(palpatine.sithName); //zal niet compileren!
+```
 
 We willen echter wel van buiten uit het energie-level van een sithLord kunnen instellen. Maar ook hier hetzelfde probleem: wat als we de energie-level op -1000 instellen? Terwijl energie nooit onder 0 mag gaan.
 
 **Properties lossen dit probleem op.**
-
-
 
 
 ### 2 soorten properties

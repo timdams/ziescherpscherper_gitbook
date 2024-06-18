@@ -243,10 +243,6 @@ Dit is de volledige code om 2 balletjes te hebben. Hoe mooi is dat?!
 
 
 
-![Een artistieke benadering van hoe Pong er vroeger uitzag.](../assets/pongtim.png)<!--{width=30%}-->
-
-<!-- \newpage -->
-
 
 
 

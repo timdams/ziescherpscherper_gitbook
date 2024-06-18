@@ -36,7 +36,7 @@ Een backslash in een char of string-literal geeft aan dat het volgende teken als
 
 ### Veel gebruikte escape chars
 
-Er zijn verschillende escape characters in C# toegelaten. We lijsten hier de belangrijkste op[^escapover]:
+Er zijn verschillende escape characters in C# toegelaten. We lijsten hier de belangrijkste[^escapover] op:
 
 ```text
 \'      //de apostrof zoals zonet besproken.
@@ -48,7 +48,7 @@ Er zijn verschillende escape characters in C# toegelaten. We lijsten hier de bel
 \uxxxx  //een teken met als hexadecimale UNICODE waarde xxxx.
 ```
 
-[^escapeover]: Voor een totaal overzicht kijk eens op [docs.microsoft.com/dotnet/csharp/programming-guide/strings](https://docs.microsoft.com/dotnet/csharp/programming-guide/strings/).
+[^escapover]: Voor een totaal overzicht kijk eens op [docs.microsoft.com/dotnet/csharp/programming-guide/strings](https://docs.microsoft.com/dotnet/csharp/programming-guide/strings/).
 
 <!-- \newpage -->
 

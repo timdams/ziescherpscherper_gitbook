@@ -82,7 +82,7 @@ catch
 
 Indien er nu een uitzondering optreedt dan zal de tekst "Verkeerde invoer" getoond worden. Vervolgens gaat het programma verder met de code die mogelijk na het ``catch``-blok staat.
 
-[^elegant]Merk op dat dit probleem eleganter kan opgelost worden met ``TryParse`` wat in het appendix wordt uitgelegd.
+[^elegant]: Merk op dat dit probleem eleganter kan opgelost worden met ``TryParse`` wat in het appendix wordt uitgelegd.
 
 
 ### Een exception genereren met ``throw``
