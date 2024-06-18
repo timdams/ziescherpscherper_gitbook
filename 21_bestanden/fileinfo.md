@@ -11,9 +11,9 @@ We kunnen deze klasse gebruiken door eerst een object te instantiëren, waarbij 
 FileInfo fileInfo = new FileInfo(pathNaarBestand);
 ```
 
-::: tip
+{% hint style='tip' %}
 Er is uiteraard ook een ``DirectoryInfo`` klasse met een soortgelijke werking, die we verderop bespreken.
-:::
+{% endhint %}
 
 ### Meer informatie over een bestand
 
@@ -169,10 +169,10 @@ static void ToonFoldersEnBestanden(string path)
 
 De eerste ``foreach`` lijst de bestanden op. De tweede loop zal de folders tonen en ook zichzelf *recursief aanroepen*.
 
-::: tip
+{% hint style='tip' %}
 Een klassieke fout bij recursie is een methode schrijven zonder **stopvoorwaarde**. Gelukkig hebben we dat probleem hier niet: de methode stopt met zichzelf aanroepen als er geen subfolders meer zijn in de huidige folder.  
 
 Pas wel op: als je deze methode uitvoert op bijvoorbeeld "c:", zal er waarschijnlijk heel veel tekst op je scherm verschijnen. Dat kan lang duren.
 
-:::
+{% endhint %}
 

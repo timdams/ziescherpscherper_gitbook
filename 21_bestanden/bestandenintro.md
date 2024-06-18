@@ -2,9 +2,12 @@
 
 Op vraag van velen is het nu tijd om één van de meest gebruikte .NET namespaces te bekijken: **System.IO**[^sysio]. 
 
-::: tip
+{% hint style='tip' %}
 Vergeet zeker niet bovenaan je code **``using System.IO;``** toe te voegen indien je ook maar één voorbeeld uit dit hoofdstuk wilt kunnen maken.
-:::
+{% endhint %}
+
+
+
 
 De System.IO namespace is een zeer uitgebreide bibliotheek die alle methoden bevat die je nodig hebt om input en output (I/O) operaties te verrichten. Dit betekent dat je met behulp van deze namespace bestanden en folders (ook wel *mappen* of *directories* genoemd) kunt uitlezen, schrijven, maken en verwijderen, en zo voort.
 
@@ -22,7 +25,7 @@ Het zal je met andere woorden toelaten om toegang te krijgen tot, onder andere, 
 * **Niet altijd de juiste gebruikersrechten hebben**  om bepaalde I/O bewerkingen uit te voeren. Dit hangt af van de rechten die je gecompileerde programma heeft binnen het besturingssysteem. Zorg ervoor dat je controleert of je voldoende rechten hebt voordat je probeert een bestand te lezen of te schrijven.
 
 
-::: danger
+{% hint style='danger' %}
 
 **Enkele tips voor je begint**
 
@@ -31,7 +34,7 @@ Om de voorgaande waarschuwing te benadrukken, nog 2 belangrijke tips:
 1. **Back-ups**: Backups maken is altijd belangrijk. Maar de voorbije 17 hoofdstukken heb je normaal gezien nooit code geschreven die effectief zaken kon kapot maken op je computer. Daar komt dus vanaf nu verandering in. Tijd dus voor die wekelijkse backup!
 2. **Try-catch gebruiken**: Eigenlijk hebben we voorlopig maar beperkt aan *exception handling* moeten doen. 99% van de tijd wisten we heel goed welke uitzonderingen konden optreden en schreven we onze code er naar. Echter, vanaf nu zal je programma ook zaken benaderen *buiten het programma*. Tot aan dit hoofdstuk was enkel de gebruikersinput iets dat van buiten kwam. We waren meestal zelf de eindgebruiker, en gingen uit van foutloze invoer (*ik weet het, naïef*). Bestanden luisteren echter niet zo goed. Het kan dus goed zijn dat een bestand toch niet op die plaats staat waar je dacht dat het stond, of dat je toch niet de juiste rechten hebt. Kortom,**exception handling zal vanaf nu essentieel worden**.
 
-:::
+{% endhint %}
 
 ## Bestands- en folderlocaties
 
@@ -49,18 +52,18 @@ c:\temp\
 
 In C# zullen deze paths altijd als ``string``  worden verwerkt. 
 
-::: warning
+{% hint style='danger' %}
 
 Let er op dat een path **niet hoofdlettergevoelig** is. Je kan dus geen 2 bestanden met de naam "mijnData.txt" en "MijnData.TXT" in dezelfde folder hebben. Zowel Windows als Mac OS hebben een niet hoofdlettergevoelige bestandsstructuur.
 
-:::
+{% endhint %}
 
 
-::: warning
+{% hint style='danger' %}
 
 Bij MacOS werkt men met *forward slashes* in plaats van *backward slashes*. 
 
-:::
+{% endhint %}
 
 ### Bestandslocatie zonder path
 
@@ -157,9 +160,9 @@ if(Directory.Exists(tempPath))
 }
 ```
 
-::: tip
+{% hint style='tip' %}
 Om de voorbeeldcode in dit hoofdstuk behapbaar te houden, zullen we niet telkens overal deze controle doen.
-:::
+{% endhint %}
 
 ### Folder of bestand aanmaken
 

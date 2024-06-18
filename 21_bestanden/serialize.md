@@ -4,9 +4,9 @@ Uiteraard weet je nu genoeg om informatie uit je klassen naar een bestand te sch
 
 Telkens een introductie begint zoals de vorige paragraaf, dan weet je dat er een betere oplossing is. Inderdaad, er zit in C# een ingebakken manier om objecten te **serialiseren** naar een bestand. Het woord serialiseren dekt de lading: we gaan de inhoud van een object in serie, achter elkaar bewaren en wegschrijven.  Uiteraard zullen we ook het omgekeerde proces bekijken, namelijk **deserialiseren**. 
 
-::: tip
+{% hint style='tip' %}
 Waarom wil je objecten kunnen serialiseren naar een bestand? Eenvoudig: het laat je toe om de huidige staat van je programma naar een bestand weg te schrijven en later terug op te halen. Je maakt letterlijk een *savepoint* van je programma en geeft je gebruiker de mogelijkheid om op een later moment vanaf dat punt verder te werken.
-:::
+{% endhint %}
 
 
 ###  JSON
@@ -33,7 +33,7 @@ Het **JSON**-bestandsformaat (JavaScript Object Notation) combineert het beste v
 
 
 
-::: tip
+{% hint style='tip' %}
 JSON is de spirituele opvolger van XML. Alhoewel dit bestandsformaat nog steeds populair is, zien we toch dat meer en meer applicaties met JSON beginnen werken. XML-bestanden zijn door de grote hoeveelheid tags net iets minder leesbaar dan JSON-bestanden. Zeg nu zelf:
 
 ```json
@@ -44,7 +44,7 @@ JSON is de spirituele opvolger van XML. Alhoewel dit bestandsformaat nog steeds 
 </student>
 ```
 
-:::
+{% endhint %}
 
 Met JSON kun je complexe datastructuren representeren zoals arrays en geneste objecten (denk maar aan associaties). Bovendien maakt JSON gebruik van een sleutel-waarde-notatie, wat bijdraagt aan de leesbaarheid. Hier is een meer geavanceerd voorbeeld waarbij we **vierkante haken gebruiken om een array van data te beschrijven**:
 
@@ -120,9 +120,9 @@ Als we het bestand in een teksteditor zouden openen dan zouden we volgende ``str
 {"Naam":"Barry","Leeftijd":25,"Uitgeschreven":true}
 ```
 
-::: tip
+{% hint style='tip' %}
 Je zal  in veel documentatie en online bronnen vaak zien dat men een andere namespace gebruikt om met JSON-bestanden te werken in C#. Tot recent was de ``Newtonsoft.Json`` namespace de geijkte manier. Deze bibliotheek is door een externe firma, Newtonsoft, ontwikkelt (merk op dat het volledig opensource is!) De .NET ontwikkelaars hebben echter veel tijd en moeite in *hun* ``System.Text.Json``namespace gestoken, waardoor er nu een ingebouwde .NET oplossing is. Hierdoor is het aangeraden om nu te werken met de Microsoft oplossing, deze kan quasi alles wat de Newtonsoft-oplossing kan en het zal niet lang meer duren voor het meer zal kunnen.
-:::
+{% endhint %}
 
 
 ### Deserialiseren in C# naar JSON
@@ -141,9 +141,9 @@ Student ingeladen = JsonSerializer.Deserialize<Student>(jsonText);
 
 Soms zijn er zaken in een klasse die niet direct als JSON kunnen worden geserialiseerd. Denk aan private instantievariabelen en read-only properties. Deze zaken zijn niet beschikbaar voor de buitenwereld. In dergelijke gevallen kunnen we het serialisatiegedrag aanpassen door attributen te gebruiken.
 
-::: tip
+{% hint style='tip' %}
 Attributen zijn kleine codeblokjes die worden toegevoegd aan onze klasse om bepaalde eigenschappen van de klasse aan te passen. Bijvoorbeeld, we kunnen een attribuut gebruiken om een property te laten overslaan bij het serialiseren. Attributen zijn herkenbaar aan de tekst tussen vierkante haken boven een klasse-element. Merk op dat attributen niéts met arrays te maken hebben. Ze zijn een C# manier om je code als het ware meta-informatie te geven die door de compiler of andere bibliotheken kan gebruikt worden.
-:::
+{% endhint %}
 
 
 #### JsonIgnore
@@ -210,11 +210,11 @@ Beeld je in dat we nog een methode hebben die de leeftijd geregeld zal verandere
 {"Naam":"Barry","leeftijd":20}
 ```
 
-::: tip
+{% hint style='tip' %}
 
 Er zijn nog tal van attributen om het serialisatiegedrag te verbeteren. Deze zijn vaak echter een stuk complexer en worden daarom niet in dit basis handboek behandeld. Opgelet: controleer steeds goed of je de juiste attributen hebt opgezocht. Je zal op het internet zowel ``Newtonsoft.Json`` als ``System.Text.Json`` attributen vinden, en beide zijn vaak nét niet hetzelfde.
 
-:::
+{% endhint %}
 
 <!-- \newpage -->
 

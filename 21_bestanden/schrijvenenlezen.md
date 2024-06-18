@@ -213,12 +213,12 @@ using (BinaryReader reader = new BinaryReader(fs))
 
 Merk op dat we deze keer de modus ``FileMode.Open`` hanteren bij het openen van het bestand.
 
-::: warning
+{% hint style='danger' %}
 
 Test gerust eens wat er zou gebeuren als je een van de ``Read``-methode van volgorde zou veranderen. Meestal zal je een uitzondering krijgen omdat de methoden de in te lezen bytes niet begrijpen en kunnen omzetten naar het verwachte datatype.
 
 Als we in het voorgaande voorbeeld lijn 4 en 5 zouden omwisselen dan crasht onze applicatie met een ``EndOfStreamException``.
-:::
+{% endhint %}
 
 <!-- \newpage -->
 
@@ -244,18 +244,17 @@ Dit geeft volgende output:
 04 42 6F 6E 64 07 00 00 00 01
 ```
 
-::: tip
+{% hint style='tip' %}
 De eerste byte (``04``) geeft de lengte van de string aan die volgt, 4 dus. De volgende 4 bytes, ``42 6F 6E 64`` zijn de Unicode waarden voor de letters "b, o, n , d".
 Vervolgens hebben we 4 byes om het getal 7 voor te stellen (``07 00 00 00``). Finaal hebben we nog de byte-waarde ``01`` die de ``bool`` op ``true`` voorstelt.
-:::
+{% endhint %}
 
 
-::: tip
-
+{% hint style='tip' %}
 Vond je het vreemd dat 7 binair als ``07 00 00 00`` werd voorgesteld? 
 
 Dit komt doordat het getal 7 wordt opgeslagen als een 4-byte **little-endian** getal. In little-endian-notatie wordt de minst significante byte (**least significant byte** of LSB) eerst opgeslagen. Voor het getal 7 betekent dit dat de hexadecimale waarde 07 in de eerste byte komt, gevolgd door drie nullen omdat de overige bytes geen bijdrage leveren aan de waarde van het getal.
 
 Als we daarentegen het getal 1000 willen voorstellen,  ``3E8`` hexadecimaal, die we in little-endian volgorde opslaan als ``E8 03 00 00``. Hier wordt de LSB ``E8`` (de laagste byte) als eerste byte opgeslagen, gevolgd door ``03`` en daarna twee nullen om de 4-byte structuur te vervolledigen, aangezien 3E8 in 32-bits binaire vorm wordt opgeslagen.
 
-:::
+{% endhint %}
