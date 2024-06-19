@@ -156,7 +156,6 @@
 
 ## Appendix
 
-* [Coding guidelines](B_appendix/codingguidelines.md) 
 * [Visual Studio snippets](B_appendix/prostuff.md)
 * [Region](B_appendix/regions.md)
 * [String.Format](B_appendix/stringformat.md)
@@ -165,7 +164,5 @@
 * [Expression bodied members](B_appendix/6_exprbody.md)
 * [Generics](B_appendix/generics.md)
 * [struct en record](B_appendix/struct.md)
-* [Werken met bestanden](21_bestanden/bestandenintro.md)
-* [Schrijven en lezen](21_bestanden/schrijvenenlezen.md)
 
 
