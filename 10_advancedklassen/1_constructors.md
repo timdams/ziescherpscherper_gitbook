@@ -77,7 +77,6 @@ internal class Student
 {
     public int UurVanInschrijven {private set; get;}
 }
-
 ```
 
 We willen telkens een Student-object wordt aangemaakt bijhouden op welk uur van de dag dit plaatsvond. Eerst schrijven de default constructor, deze ziet er als volgt uit:

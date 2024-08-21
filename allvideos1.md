@@ -41,6 +41,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Math-library en berekeningen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3819340c-9222-4814-b1e7-ac3d009788cb)
 * [Afronden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c4dfd175-47ec-4b1a-af7a-ac3d009afb99)
 * [Random](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b3c83c9c-5e84-45b8-949b-ac3d00a41820)
+* [Debuggen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=37dc025a-d40e-4610-8d00-ac3f00a2923b)
 
 ## Hoofdstuk 5 - Beslissingen
 
