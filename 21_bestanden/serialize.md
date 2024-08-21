@@ -99,7 +99,7 @@ public class Student
 }
 ```
 
-3. **Serialiseer de klasse**: Met behulp van de ``static`` klasse **``JsonSerializer``** kunnen we nu eenvoudig een object omzetten naar zµn JSON-voorstelling, van het type ```string``. Je roept gewoon de ``Serialize`` methode aan en geeft het te serialiseren object mee als argument:
+3. **Serialiseer de klasse**: Met behulp van de ``static`` klasse **``JsonSerializer``** kunnen we nu eenvoudig een object omzetten naar zµn JSON-voorstelling, van het type ``string``. Je roept gewoon de ``Serialize`` methode aan en geeft het te serialiseren object mee als argument:
 
 ```csharp
 var student = new Student 
