@@ -226,3 +226,6 @@
 * [struct en record](B_appendix/struct.md)
 
 
+## Coding guidelines
+
+* [Afspraken](B_appendix/boete.md)
