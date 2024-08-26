@@ -1,4 +1,6 @@
-## Kennisclips hoofdstuk 8 - Arrays
+## Meer weten
+
+### Kennisclips
 
 * [Arrays](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d1801903-4bd3-4004-b1cb-ac4f00d3cfdf)
 * [Arrays en geheugen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1a57ab27-bb21-4bd8-8b37-ac4f00d3cf97)
@@ -8,3 +10,13 @@
 * [Arrays en methoden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4f1a0fd6-697b-42d5-b44a-ac560097b2aa)
 * [Startup parameters](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e362cd28-07a3-4d55-94cc-ac590085d8db)
 * [Meer-dimensionale arrays](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9dea3f48-d5b9-4469-823c-ac590085d881)
+
+
+### Oefeningen
+
+* [Oefeningen](https://apwt.gitbook.io/ziescherp-oefeningen/h7-methoden/b_practicasamen)
+* [Quizlet](https://quizlet.com/be/918628060/zie-scherp-scherper-hoofdstuk-08-flash-cards/)
+
+### Quizlet flashcards
+
+[Gecombineerde oefeningen H1 tot H8](https://apwt.gitbook.io/ziescherp-oefeningen/alles-samen-h1-tot-h8/readme2)

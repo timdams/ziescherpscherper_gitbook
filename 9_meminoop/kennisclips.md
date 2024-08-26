@@ -1,4 +1,6 @@
-## Kennisclips hoofdstuk 10 - Geheugenmanagement, uitzonderingen en namespaces
+## Meer weten
+
+### Kennisclips
 
 * [Stack vs heap](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4774ee4d-a695-4b3c-8adf-aeae008a1229)
 * [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9117b52-7306-4e92-bf24-acb100b10697)
@@ -10,3 +12,15 @@
 * [Podcast: namespaces en using](https://anchor.fm/tim-dams/episodes/Namespaces-en-using-e1e3pe9)
 * [Werken met exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f0d75032-e9bc-46e8-9a36-acb400b24318)
 * [Hoe de pokemon klasse werkt](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=245f5d03-dbe4-49d9-b9e9-ab720084b984)
+
+
+### Oefeningen
+
+
+[Oefeningen](https://apwt.gitbook.io/ziescherp-oefeningen/h10-geheugenmanagement-uitzonderingen-en-namespaces/a_poke1)
+
+
+### Quizlet flashcards
+
+
+[Quizlet](https://quizlet.com/be/918632155/zie-scherp-scherper-hoofdstuk-10-flash-cards/)

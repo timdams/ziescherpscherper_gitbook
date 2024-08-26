@@ -1,4 +1,7 @@
-## Kennisclips hoofdstuk 9 - Object Oriented Programming
+## Meer weten
+
+### Kennisclips
+
 
 * [OOP in actie - de intro voor de intro](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f71ee5ef-5e80-4c34-afda-acc200a986b9)
 * [OOP, klassen en objecten...what's it all about?!](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=628acdda-bcc3-4de5-8b0e-acc200a98688)
@@ -12,3 +15,12 @@
 * [Demo: Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
 * [Demo: auto-properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
 * [De DateTime klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bab1597f-4907-40ae-8723-acb00095e421)
+
+### Oefeningen
+
+
+[Oefeningen](https://apwt.gitbook.io/ziescherp-oefeningen/h9-object-oriented-programming/a_practica)
+
+### Quizlet flashcards
+
+[Quizlet](https://quizlet.com/be/918631776/zie-scherp-scherper-hoofdstuk-09-flash-cards/)

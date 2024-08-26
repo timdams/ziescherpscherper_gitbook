@@ -1,4 +1,6 @@
-## Kennisclip Hoofdstuk 1 - De eerste stappen
+## Meer weten
+
+### Kennisclips
 
 * [Introductie tot C#](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f517d032-35b9-4c9f-ba91-ac33007cd2a6)
 * [Werken met VS](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=49110395-048c-4792-810b-af030090a520)
@@ -9,3 +11,11 @@
 * [Werken met kleuren in console](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a0446be7-b8f2-4ce7-ba76-abe30094107e)
 * [VS Howto: alles over solutions en project](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8cad985c-3546-44a8-8303-af1c00ce5953)
 * [VS Howto: IntelliCode uitschakelen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5b062697-fc35-44ee-8f2e-af1c013b47d7)
+
+### Oefeningen
+
+[Oefeningen](https://apwt.gitbook.io/ziescherp-oefeningen/h1-de-eerste-stappen/a_practica)
+
+### Quizlet flashcards
+
+[Quizlet](https://quizlet.com/be/918617842/zie-scherp-scherper-hoofdstuk-01-flash-cards/)
