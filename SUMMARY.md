@@ -206,3 +206,13 @@
 ## Coding guidelines
 
 * [Afspraken](B_appendix/boete.md)
+* [Minpunten voor: Compileert niet](B_appendix/boetes/compileertniet.md)
+* [Minpunten voor: Klassen in 1 bestand](B_appendix/boetes/klassenfile.md)
+* [Minpunten voor: Redundante code](B_appendix/boetes/redundant.md)
+* [Minpunten voor: Bladspiegel](B_appendix/boetes/bladspiegel.md)
+* [Minpunten voor: Naamgeving](B_appendix/boetes/naamgeving.md)
+* [Minpunten voor: goto, break en continue](B_appendix/boetes/goto.md)
+* [Minpunten voor: Linq gebruiken](B_appendix/boetes/linq.md)
+* [Minpunten voor: Methoden in methoden](B_appendix/boetes/method.md)
+* [Minpunten voor: Toplevel statements](B_appendix/boetes/toplevel.md)
+
