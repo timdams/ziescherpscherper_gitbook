@@ -2,6 +2,8 @@
 
 ##	Gebruik van goto, break en continue (-3 punt)
 
+*(-3 punten)*
+
 Zonder in debat te gaan. ``goto`` willen we nooit zien. Simpel.
 ``break`` is enkel toegestaan in een ``switch`` om een case af te sluiten.
 

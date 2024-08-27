@@ -1,9 +1,11 @@
-##	Naamgeving van methoden en variabelen niet conform conventies (-2 punt)
+##	Naamgeving van methoden en variabelen niet conform conventies 
 
-Zorg dat je methoden, variabelen en klassen (sem 2) de juiste naamgeving hanteren. 
+*(-2 punten)*
 
-* Camel Casing: bv. groteHond
-* Duidelijk: geen x, boe, meuh of i (enkel bij looptellers mogen we i,j, x en y zien).
+Zorg dat je methoden, variabelen en klassen (sem 2) de juiste naamgeving hanteren, namelijk
+
+* Camel Casing: bv. ``groteHond``
+* Duidelijk: geen ``x``, ``boe``, ``meuh`` of ``i`` (enkel bij looptellers mogen we i,j, x en y zien).
 * Gewone variabelen starten met een kleine letter.
 * Methoden starten steeds met een hoofdletter.
 * Private (h9 en verder) zaken starten met kleine letter.
@@ -11,8 +13,14 @@ Zorg dat je methoden, variabelen en klassen (sem 2) de juiste naamgeving hantere
 
 [Volgende pagina geeft een goed overzicht.](https://github.com/ktaranov/naming-convention/blob/master/C%23 Coding Standards and Naming Conventions.md)
 
-##	Naamgeving niet consistent (-1 punt)
+##	Naamgeving niet consistent 
 
-We hebben er geen probleem mee dat je al je methoden en variabelen Engelse of Nederlandse namen geeft. Maar wees wel consistent: ga ofwel "full Dutch" oftewel "full English". 
+*(-2 punten)*
 
-Ter zijde: onze DuoLingo skillz zijn beperkt. Gelieve dus géén andere talen te gebruiken.
+We hebben er geen probleem mee dat je al je methoden en variabelen Engelse of Nederlandse namen geeft. Maar wees wel consistent: ga ofwel *full Dutch* oftewel *full English*. 
+
+
+
+{% hint style='tip' %}
+Ter zijde: onze DuoLingo *skillz* zijn beperkt. Gelieve dus géén andere talen te gebruiken.
+{% endhint %}
