@@ -8,8 +8,8 @@ Iedere methode definieer je (t.e.m. hoofdstuk 8) op hetzelfde niveau in het "Pro
 
 Schrijf dus niet:
 
-![WRONG!](../assets/boete/methodinmethod1.png)
+![WRONG!](../../assets/boete/methodinmethod1.png)
 
 Maar wel:
 
-![Mooi zo](../assets/boete/methodinmethod2.png)
+![Mooi zo](../../assets/boete/methodinmethod2.png)

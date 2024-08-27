@@ -7,4 +7,4 @@ Is de layout van je code *all over the place*?  Zorg dat al je code mooi uitgeli
 
 Tip: in Visual Studio kan je eenvoudig je bladspiegel juist zetten via het menu => Edit => Advanced => Format document. 
 
-![](../assets/boete/bladspiegel.png)
+![](../../assets/boete/bladspiegel.png)
