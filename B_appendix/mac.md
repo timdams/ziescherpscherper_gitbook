@@ -5,11 +5,13 @@ Volgende (in opbouw) gids overloopt hoe je Visual Studio Code kunt installeren o
 
 De stappen met **(eenmalig)** achter moet je maar 1 keer doen tijdens installatie. Al de rest heb je nodig telkens je een nieuw project begint.
 
-### Installeer VS Code for Mac (eenmalig)
+### Installatie en configuratie 
+
+#### Installeer VS Code for Mac (eenmalig)
 
 Volg de Installation stappen (1 tot 6) op [deze pagina](https://code.visualstudio.com/docs/setup/mac).
 
-### Installeer C# Dev Kit extension (eenmalig)
+#### Installeer C# Dev Kit extension (eenmalig)
 
 Klik op extensions ![](../assets/mac/image1.png) en zoek op c#.
 
@@ -17,7 +19,7 @@ Installeer: ![](../assets/mac/image2.png)
 
 Na installatie sluit VS Code.
 
-### Installeer .NET 8 (eenmalig)
+#### Installeer .NET 8 (eenmalig)
 
 Surf naar [deze pagina](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
@@ -26,7 +28,7 @@ Surf naar [deze pagina](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 Download en installeer de juiste macOS installer (afhankelijk van je processortype).
 
 
-# Andere output (eenmalig)
+#### Andere output (eenmalig)
 
 Druk command+, (komma) om naar de settings te gaan.
 
@@ -38,7 +40,9 @@ En pas Debug:Console instelling aan naar **externalTerminal**
 
 Mooi zo. Je bent klaar om C# applicaties te maken!
 
-# New project maken:
+### Werken met VS Code
+
+#### Een nieuw project/solution aanmaken:
 
 Command+SHIFT+P en kies .NET New Project:
 
@@ -86,13 +90,13 @@ Ready to program:
 
 ![](../assets/mac/image18.png)
 
-# Code compileren+uitvoeren
+#### Code compileren en uitvoeren
 
 Optie 1: druk op F5.
 
 Optie 2: druk op playknop rechtsboven ![](../assets/mac/image19.png)}
 
-# Code debuggen
+#### Code debuggen
 
 Zet eerst gewenste breakpoint (rode bolletje) vlak naast de lijnnummers:
 
