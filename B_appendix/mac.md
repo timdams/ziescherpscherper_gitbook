@@ -1,58 +1,106 @@
-### Visual Studio Installeren voor Mac
-
-Om te beginnen met het ontwikkelen van native, cross-platform .NET-apps op macOS, installeert u Visual Studio voor Mac volgens de onderstaande stappen.
-
-#### Vereisten
-* Een Mac met macOS High Sierra 10.13 of hoger.
-Om Xamarin apps voor iOS of macOS te bouwen, heeft u ook nodig:
-* Xcode 10.0 of hoger. De laatste stabiele versie wordt meestal aanbevolen.
-* Een Apple ID. Als je nog geen Apple ID hebt kun je een nieuwe aanmaken op https://appleid.apple.com. U hebt een Apple ID nodig om Xcode te kunnen installeren en aanmelden.
-
-#### Installatie Instructies
-
-Download het installatieprogramma van de Visual Studio voor Mac [downloadpagina](https://visualstudio.microsoft.com/vs/mac/).
-
- {height:30%} 
-![](1_ZieScherp_VSMac_Install.png)
-![1_ZieScherp_VSMac_Install](/assets/mac/0.png)
-
-Zodra de download voltooid is, klikt u op VisualStudioforMacInstaller.dmg om het installatieprogramma te mounten, en vervolgens voert u het uit door te dubbelklikken op het pijllogo:
- {height:30%} 
-![](/assets/mac/1.png)
-
-Er kan een waarschuwing verschijnen dat de toepassing van het Internet wordt gedownload. Klik op Openen.
-
-Wacht terwijl het installatieprogramma uw systeem controleert:
- {height:30%} 
-![](5_ZieScherp_VSMac_Install_VS_InstallerCheck.png)
-![5_ZieScherp_VSMac_Install_VS_InstallerCheck](/assets/mac/2.png)
+## Visual Studio Code op Mac configureren 
 
 
-Er verschijnt een waarschuwing waarin u wordt gevraagd de privacy- en licentievoorwaarden te accepteren. Volg de koppelingen om ze te lezen en druk op Doorgaan als u akkoord gaat:
- {height:30%} 
-![](6_ZieScherp_VSMac_Install_VS_TC.png)
-![6_ZieScherp_VSMac_Install_VS_TC](/assets/mac/3.png)
+Volgende (in opbouw) gids overloopt hoe je Visual Studio Code kunt installeren op Mac zodat je er C# applicaties in kunt ontwikkelen.
 
-De lijst met beschikbare workloads wordt weergegeven. Selecteer de componenten die u wenst te gebruiken:
+De stappen met **(eenmalig)** achter moet je maar 1 keer doen tijdens installatie. Al de rest heb je nodig telkens je een nieuw project begint.
 
-Het is belangrijk bij de installatie dat je minimaal volgende zaken selecteert:
-* de **.NET Core**  workload.
-Uiteraard ben je vrij om meerdere zaken te installeren.
- {height:30%} 
-![](7_ZieScherp_VSMac_Install_VS_SelectComponents.png)
-![7_ZieScherp_VSMac_Install_VS_SelectComponents](/assets/mac/4.png)
+### Installeer VS Code for Mac (eenmalig)
 
-Nadat u uw selecties hebt gemaakt, drukt u op de knop Install.
+Volg de Installation stappen (1 tot 6) op [deze pagina](https://code.visualstudio.com/docs/setup/mac).
 
-Het installatieprogramma toont de voortgang bij het downloaden en installeren van Visual Studio voor Mac en de geselecteerde workloads. U wordt gevraagd uw wachtwoord in te voeren om de voor de installatie benodigde rechten te verlenen:
- {height:30%} 
-![](8_ZieScherp_VSMac_Install_VS_InstallingComponents.png)
-![8_ZieScherp_VSMac_Install_VS_InstallingComponents](/assets/mac/5.png)
+### Installeer C# Dev Kit extension (eenmalig)
 
-Na de installatie zal Visual Studio voor Mac u vragen om uw installatie te personaliseren door u aan te melden en de keyboard shortcuts te selecteren die u wilt gebruiken:
- {height:30%} 
-![](9_ZieScherp_VSMac_Config_VS_signIn.png)
-![9_ZieScherp_VSMac_Config_VS_signIn](/assets/mac/6.png)
- {height:30%} 
-![](9_ZieScherp_VSMac_Config_VS_IDE_keyboard_shortcut.png)
-![9_ZieScherp_VSMac_Config_VS_IDE_keyboard_shortcut](/assets/mac/7.png)
+Klik op extensions ![](../assets/mac/image1.png) en zoek op c#.
+
+Installeer: ![](../assets/mac/image2.png)
+
+Na installatie sluit VS Code.
+
+### Installeer .NET 8 (eenmalig)
+
+Surf naar [deze pagina](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+
+![](../assets/mac/image6.png)
+
+Download en installeer de juiste macOS installer (afhankelijk van je processortype).
+
+
+# Andere output (eenmalig)
+
+Druk command+, (komma) om naar de settings te gaan.
+
+Ga naar Extensions-\> C#-\> Debugger
+
+En pas Debug:Console instelling aan naar **externalTerminal**
+
+![](../assets/mac/image7.png)
+
+Mooi zo. Je bent klaar om C# applicaties te maken!
+
+# New project maken:
+
+Command+SHIFT+P en kies .NET New Project:
+
+![](../assets/mac/image8.png)
+
+Dan Console App:
+
+![](../assets/mac/image9.png)
+
+Kies folder waar de solution moet komen.
+
+Geef de solution een naam:
+
+![](../assets/mac/image10.png)
+
+Kies "create project":
+
+![](../assets/mac/image11.png)
+
+Je mag dit vertrouwen:
+
+![](../assets/mac/image12.png)
+
+In explorer (linkerzijde) zie je je project (klik ![](../assets/mac/image13.png)  als je geen explorer balk ziet):
+
+![](../assets/mac/image14.png)
+
+Open de Program.cs file:
+
+![](../assets/mac/image15.png)
+
+
+
+**OPGELET:** we moeten nog 1 ding doen voor we kunnen beginnen.
+
+Klik met je muis op de eerste lijn code (``// See https://aka.ms/new-console-template for more information``) zodat je cursor er staat. Er zou nu aan de linkerzijde een geel lampje moeten verschijnen:
+
+![](../assets/mac/image16.png)
+
+Klik op gele lampje en kies ``Convert to program.main style program``:
+
+![](../assets/mac/image17.png)
+
+Ready to program:
+
+![](../assets/mac/image18.png)
+
+# Code compileren+uitvoeren
+
+Optie 1: druk op F5.
+
+Optie 2: druk op playknop rechtsboven ![](../assets/mac/image19.png)}
+
+# Code debuggen
+
+Zet eerst gewenste breakpoint (rode bolletje) vlak naast de lijnnummers:
+
+![](../assets/mac/image20.png)
+
+Klik rechtsboven op het kleine pijltje naast de "play"knop:
+
+![](../assets/mac/image21.png)
+
+En kies "debug project associated with the file":
+

@@ -33,6 +33,12 @@ Het is belangrijk bij de installatie dat je zeker de **.NET desktop development*
 In dit boek zullen we dus steeds werken met *Visual Studio Community 2022*. Niet met **Visual Studio Code**. Visual Studio code is een zogenaamde lightweight versie van VS die echter zeker ook z'n voordelen heeft. Zo is VS Code makkelijk uitbreidbaar, snel, en compact. Visual Studio vindt dankzij VS Code eindelijk ook z'n weg op andere platformen dan enkel die van Microsoft. Je kan de laatste versie ervan downloaden op: [code.visualstudio.com](http://code.visualstudio.com).
 {% endhint %}
 
+{% hint style='warning' %}
+Helaas heeft Microsoft besloten om in augustus 2024 Visual Studio Community voor Mac niet meer aan te bieden. Hierdoor zijn Mac-gebruikers genoodzaakt om wél te werken met Visual Studio Code. Je dient dan wel de C# Dev Kit extension te installeren.
+
+In de appendix van dit boek wordt uitgelegd hoe je dit doet.
+{% endhint %}
+
 <!-- \newpage -->
 
 

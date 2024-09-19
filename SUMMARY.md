@@ -193,8 +193,10 @@
 
 ## Appendix
 
+
 * [Visual Studio snippets](B_appendix/prostuff.md)
-* [Region](B_appendix/regions.md)
+* [VS Code for Mac installeren](B_appendix/mac.md)
+* [Regions](B_appendix/regions.md)
 * [String.Format](B_appendix/stringformat.md)
 * [Out en Ref parameters](B_appendix/2_outenref.md)
 * [Operator overloading](B_appendix/8_operatoroverloading.md)

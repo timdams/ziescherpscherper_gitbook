@@ -25,7 +25,6 @@ tickets=
           new double[] {123, 31.3 },
           new double[] {2.1}
         };
-
 ```
 
 Zoals je kan zien moeten de interne arrays dus niet de zelfde grootte hebben.
