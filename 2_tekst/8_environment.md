@@ -26,7 +26,8 @@ Vervolgens zou je dan de inhoud van die variabelen kunnen gebruiken om bijvoorbe
 ```csharp
 Console.WriteLine($"Je computernaam is {pcname}");
 Console.WriteLine($"Dit programma gebruikt {memory} byte geheugen");
-Console.WriteLine($"En je usernaam is {Environment.UserName}");
+Console.WriteLine($"En je gebruikersnaam is {Environment.UserName}");
+Console.WriteLine($"Je hebt {proccount} processoren. 64bit OS? {is64bit}.")
 ```
 
 In de laatste lijn code tonen we dat je uiteraard ook rechtstreeks de variabelen uit ``Environment`` in je string interpolatie kunt gebruiken en dus niet met een *tussenvariabele* moet werken.

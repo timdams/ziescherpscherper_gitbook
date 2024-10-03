@@ -4,7 +4,7 @@ Ieder teken dat je op je toetsenbord kunt intypen is een ``char``. Je toetsenbor
 
 Voordat we leren hoe je in C# input van het toetsenbord uitleest, moeten we begrijpen hoe al die tekens in een computer worden voorgesteld. Dit gebeurt via de UNICODE standaard. Lang geleden was er de ASCII-standaard, die bepaalde welk teken bij welke hexadecimale waarde hoorde. Iedereen die ASCII volgde, kon zo berichten met die tekens naar elkaar sturen.
 
-UNICODE volgt de ASCII-standaard op. Door de verdere digitalisering van de wereld bleek de ASCII-standaard als snel te klein. ASCII kan maar 128 karakters voorstellen, via 7 bits. Dit is weinig vergeleken met de meer dan 1 miljoen tekens in UNICODE, die een 16-bit (UTF-16) voorstelling gebruikt. Er is ook een 32-bit voorstelling mogelijk (UTF-32).
+UNICODE volgt de ASCII-standaard op. Door de verdere digitalisering van de wereld bleek de ASCII-standaard al snel te klein. ASCII kan maar 128 karakters voorstellen, via 7 bits. Dit is weinig vergeleken met de meer dan 1 miljoen tekens in UNICODE, die een 16-bit (UTF-16) voorstelling gebruikt. Er is ook een 32-bit voorstelling mogelijk (UTF-32).
 
 UNICODE bevat ook de eerste 128 tekens van ASCII. Daardoor zijn beide standaarden compatibel. Dankzij UNICODE kunnen we nu wereldwijd elke smiley, letter, en pictogram op dezelfde manier delen. Voor statistiekliefhebbers: er zijn 1.111.998 UNICODE tekens mogelijk. In versie 15.1, uitgebracht in september 2023, zijn daarvan 149.813 tekens gedefinieerd. Er is dus nog ruimte over.
 

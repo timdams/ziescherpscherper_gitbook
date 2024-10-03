@@ -74,7 +74,7 @@ Ook het getal Pi (``3.141...``) is beschikbaar in de Math-bibliotheek. Het witte
 
 
 ```csharp
-public const double PI;
+const double PI= 3.141...;
 ```
 
 Je kan deze als volgt gebruiken in berekeningen zoals
