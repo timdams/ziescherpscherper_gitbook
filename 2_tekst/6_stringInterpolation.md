@@ -93,7 +93,7 @@ Console.WriteLine($"3 maal 9 is {3*9}");
 
 
 
-#### Mooier formatteren
+### Strings mooier formatteren
 
 Bij string interpolation kan je ook extra informatie meegeven hoe het resultaat juist weergegeven moet worden. Dit noemen we *formatteren*. Je geeft dit aan door na de expressie, binnen de accolades, een dubbelpunt te plaatsen gevolgd door de manier waarop moet geformatteerd worden.
 
@@ -111,9 +111,9 @@ Merk op dat bij string formattering er **afgerond** wordt, en dus niet *afgekapt
 
 Nog enkele nuttige vormen:
 
-* D5: toon een geheel getal als een 5 cijfer getal. ``123`` wordt ``00123``. Maar ``123456`` zal volledig getoond worden. De ``Dx`` formattering werkt enkel op gehele getallen.
-* E2: wetenschappelijke notatie met 2 cijfers precisie (``12000000`` wordt ``1,20E+007`` *"1 komma 2 maal tien tot de zevende"*)
-* C: geldbedrag. ``12,34`` wordt € 12,34. Het teken en het aantal beduidende cijfers is van de landinstellingen van de pc waarop je code wordt uitgevoerd. Het euro teken zal mogelijk als een ``?`` getoond worden. In de volgende sectie tonen we hoe je dit kan oplossen.
+* ``D5``: toon een geheel getal als een 5 cijfer getal. ``123`` wordt ``00123``. Maar ``123456`` zal volledig getoond worden. De ``Dx`` formattering werkt enkel op gehele getallen. Uiteraard zijn er dus ook andere varianten zoals ``D2``, etc.
+* ``E2``: wetenschappelijke notatie met 2 cijfers precisie (``12000000`` wordt ``1,20E+007`` *"1 komma 2 maal tien tot de zevende"*). Ook hier hoeft het getal niet 2 te zijn, maar geef je dus via het getal aan tot hoeveel cijfers na de komma je wilt tonen.
+* ``C``: geldbedrag. ``12,34`` wordt € 12,34. Het teken en het aantal beduidende cijfers is van de landinstellingen van de pc waarop je code wordt uitgevoerd. Het euro teken zal mogelijk als een ``?`` getoond worden. In de volgende sectie tonen we hoe je dit kan oplossen.
 
 Alle overige format specifiers kan je in de documentatie opzoeken[^formatdoc].
 
