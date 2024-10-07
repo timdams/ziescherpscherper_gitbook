@@ -93,7 +93,7 @@ Console.WriteLine($"3 maal 9 is {3*9}");
 
 
 
-### Strings mooier formatteren
+## Strings mooier formatteren
 
 Bij string interpolation kan je ook extra informatie meegeven hoe het resultaat juist weergegeven moet worden. Dit noemen we *formatteren*. Je geeft dit aan door na de expressie, binnen de accolades, een dubbelpunt te plaatsen gevolgd door de manier waarop moet geformatteerd worden.
 
@@ -122,7 +122,7 @@ Alle overige format specifiers kan je in de documentatie opzoeken[^formatdoc].
 <!-- \newpage -->
 
 
-#### Formateren met een masker
+### Formateren met een masker
 
 Een andere eenvoudige manier om strings te formatteren is door middel van een masker bestaande uit 0'n. Dit ziet er als volgt uit:
 
