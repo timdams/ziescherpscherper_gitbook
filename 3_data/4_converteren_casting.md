@@ -35,7 +35,10 @@ Dit kan op 3 manieren:
 
 ## Casting
 
-Het is onmogelijk om een kommagetal aan een geheel getal toe te wijzen zonder dat er informatie verloren zal gaan. Toch willen we dit soms doen. **Van zodra we een variabele van het ene type willen toekennen aan een variabele van een ander type en er dataverlies zal plaatsvinden dan moeten we aan casting doen.**
+Het is onmogelijk om een kommagetal aan een geheel getal toe te wijzen zonder dat er informatie verloren zal gaan. Toch willen we dit soms doen. **Van zodra we een numerieke variabele van het ene type willen toekennen aan een variabele van een ander numeriek type en er dataverlies zal plaatsvinden dan moeten we aan casting doen.**
+
+
+![Casting](../assets/1_csharpbasics/castingnum.png)<!--{width=60%}-->
 
 
 ### Wat is casting
@@ -197,12 +200,43 @@ secundaireMeting = (double) hoofdMeting;
 
 
 
+## Parsing en ``.ToString()``
+Naast casting bestaat er ook nog **parsing**.
+
+Parsing wordt gebruikt om tekst(``string``) naar een ander datatype om te zetten (op voorwaarde dat dit kan). Ieder ingebouwd datatype in C# heeft een ``.Parse()`` methode die je kan aanroepen om **strings om te zetten naar het gewenste type**. 
+
+Voorbeeld van parsing:
+
+```csharp
+int numVal = Int32.Parse("-105");
+Console.WriteLine(numVal);
+```
+
+Gebruik parsing enkel wanneer je:
+
+1. een ``string`` hebt waarvan je weet dat deze altijd van een specifieke vorm zal zijn die omgezet kan worden naar een ander datatype, bv. een ``int``, dan kan je ``Int32.Parse()`` gebruiken.
+2. input van de gebruiker vraagt (bv. via ``Console.ReadLine``) en niet 100% zeker bent dat deze een getal zal bevatten, gebruik dan ``Int32.TryParse()`` (meer info in de appendix).
+
+De omgekeerde weg: eender welk datatype omzetten naar een ``string``, doe je met de ToSTring-methode die ieder datatype ingebouwd heeft. Deze methode wordt automatisch aangeroepen wanneer je een variabele van een ander datatype in een string wilt steken, inclusief wanneer je deze in een ``Console.WriteLine()``-statement gebruikt. Toch kan het handig zijn te weten dat je deze methode ook manueel kan aanroepen:
+
+```csharp
+int getal = 5;
+string getalAlsString = getal.ToString();
+```
+
+![Parsing: enkel voor strings.](../assets/1_csharpbasics/pars.png)<!--{width=60%}-->
+
+
 ## Conversie
-Casting is de 'oldschool' manier van data omzetten die vooral zeer nuttig is daar deze compacte code geeft en ook werkt in andere C#-gerelateerde programmeertalen zoals C, C++ en Java. 
 
-Echter, .NET heeft ook ingebouwde conversie-methoden die je kunnen helpen om data van het ene type naar het andere te brengen. Het nadeel is dat ze iets meer typwerk (en dus meer code) vereisen dan bij casting. 
+Casting en parsing zijn de 'oldschool' manieren van data omzetten die vooral zeer nuttig is daar deze compacte code geeft en ook werkt in andere C#-gerelateerde programmeertalen zoals C, C++ en Java. 
 
-Al deze methoden zitten binnen de **Convert**-bibliotheek van .NET.
+Echter, .NET heeft ook ingebouwde conversie-methoden die je kunnen helpen om data van het ene type naar het andere te brengen. Het nadeel is dat ze iets meer typwerk (en dus meer code) vereisen dan bij casting én dat het geheel een zwarte doos is waarvan je niet weet wat er juist gebeurt. Je zal dus niet weten of er aan parsing of casting wordt gedaan. Het is leuk om te gebruiken, maar je moet wel weten wat je doet.
+
+![Gebruik Convert.To pas wanneer je goed het vershcil tussen parsing en casting begrijpt](../assets/1_csharpbasics/convertdoos.png)<!--{width=60%}-->
+
+Al deze methoden zitten binnen de **Convert**-bibliotheek van .NET. Hou er wel rekening mee dat deze manier van werken iets meer processorkracht vraagt dan casting. In applicaties waar je dus véél data moet omzetten, kan dit een verschil maken (denk aan een game die 60 keer per seconde moet berekenen of een object geraakt wordt door een kogel).
+
 
 Het gebruik hiervan is zeer eenvoudig. Enkele voorbeelden:
 
@@ -220,6 +254,11 @@ Je plaatst tussen de ronde haakjes de variabele of literal die je wenst te conve
 **``Convert.ToBoolean``** verdient extra aandacht: Wanneer je een getal, eender welk, aan deze methode meegeeft zal deze altijd naar ``True`` geconverteerd worden.
 
 Enkel indien je ``0`` (als ``int``) of ``0.0`` (als ``double``) ingeeft, dan krijg je ``False``. In quasi alle andere gevallen krijg je ``True``.
+
+Omgekeerd, een ``bool`` naar een ``int`` converteren zal enkel werken met de respectievelijke ``Convert.ToInt32()`` methode én dus niet via casting.
+
+![bool kan enkel met de Convert.To-bibliotheek](../assets/1_csharpbasics/convbool.png)<!--{width=60%}-->
+
 {% endhint %}
 
 
@@ -229,24 +268,10 @@ De conversie zal zelf zo goed mogelijk de data omzetten en dus indien nodig wide
 
 [^conversie]: Je kan alle conversie-mogelijkheden nalezen op [msdn.microsoft.com/system.convert](https://msdn.microsoft.com/system.convert).
 
+## Casting, conversie of parsing?
 
+Toegegeven, het is verleidelijk om vanaf nu alles met behulp van de Convert.To-methoden te doen. Het is immers eenvoudiger en je hoeft niet na te denken over narrowing of widening. Besef echter dat andere talen mogelijk enkel parsing en casting ondersteunen en dat je dus best deze methoden ook onder de knie hebt. 
 
+Volgende tabel geeft een overzicht van wanneer je best welke methode gebruikt:
 
-## Parsing
-Naast conversie en casting bestaat er ook nog **parsing**.
-
-Parsing is anders dan conversie en casting. Parsing zal je in dit boek enkel nodig hebben om tekst(``string``) naar getallen om te zetten. Echter, intern zal bijna altijd een ``Convert.ToX``-methode gebruikt worden indien je een ``Parse`` methode aanroept.
-
-Ieder ingebouwd datatype in C# heeft een ``.Parse()`` methode die je kan aanroepen om **strings om te zetten naar het gewenste type**. 
-
-Voorbeeld van parsing:
-
-```csharp
-int numVal = Int32.Parse("-105");
-Console.WriteLine(numVal);
-```
-
-Gebruik parsing enkel wanneer je:
-
-1. een ``string`` hebt waarvan je weet dat deze altijd van een specifieke vorm zal zijn die omgezet kan worden naar een ander datatype, bv. een ``int``, dan kan je ``Int32.Parse()`` gebruiken.
-2. input van de gebruiker vraagt (bv. via ``Console.ReadLine``) en niet 100% zeker bent dat deze een getal zal bevatten, gebruik dan ``Int32.TryParse()`` (meer info in de appendix).
+![Alle verschillende omzettingen samengevat in een handig overzicht.](../assets/1_csharpbasics/convertpars.png)<!--{width=60%}-->
