@@ -42,6 +42,7 @@
 * [Casting, conversie en parsing](3_data/4_converteren_casting.md)
 * [Input verwerken en omzetten](3_data/4b_inputconverten.md)
 * [Math-library en berekeningen](3_data/4c_math.md)
+* [Over afronden](3_data/4d_afronden.md)
 * [Random](3_data/random.md)
 * [Debuggen](3_data/5_debuggen.md)
 * [Meer weten](3_data/kennisclips.md)

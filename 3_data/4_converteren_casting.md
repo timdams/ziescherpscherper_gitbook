@@ -249,6 +249,11 @@ int andereLeeftijd = Convert.ToInt32(anderGetal); //double to int
 ```
 
 Je plaatst tussen de ronde haakjes de variabele of literal die je wenst te converteren naar een ander type. Merk op dat naar een ``int`` converteren met ``.ToInt32()`` moet gebeuren. Om naar een ``short`` te converteren is dit met behulp van ``.ToInt16()``.
+
+De conversie zal zelf zo goed mogelijk de data omzetten en dus indien nodig widening of narrowing toepassen. Zeker bij het omzetten van een string naar een ander type kijk je best steeds de documentatie na om te weten wat er intern juist zal gebeuren.[^conversie]
+
+[^conversie]: Je kan alle conversie-mogelijkheden nalezen op [msdn.microsoft.com/system.convert](https://msdn.microsoft.com/system.convert).
+
  
 {% hint style='tip' %}
 **``Convert.ToBoolean``** verdient extra aandacht: Wanneer je een getal, eender welk, aan deze methode meegeeft zal deze altijd naar ``True`` geconverteerd worden.
@@ -261,12 +266,13 @@ Omgekeerd, een ``bool`` naar een ``int`` converteren zal enkel werken met de res
 
 {% endhint %}
 
+{% hint style='warning' %}
+Lees zeker de volgende sectie omtrent afronden, want de ``Convert.ToX``-methoden zullen je soms verrassen wanneer je bijvoorbeeld een ``double`` naar een ``int`` omzet.
+
+{% endhint %}
 
 
 
-De conversie zal zelf zo goed mogelijk de data omzetten en dus indien nodig widening of narrowing toepassen. Zeker bij het omzetten van een string naar een ander type kijk je best steeds de documentatie na om te weten wat er intern juist zal gebeuren.[^conversie]
-
-[^conversie]: Je kan alle conversie-mogelijkheden nalezen op [msdn.microsoft.com/system.convert](https://msdn.microsoft.com/system.convert).
 
 ## Casting, conversie of parsing?
 
