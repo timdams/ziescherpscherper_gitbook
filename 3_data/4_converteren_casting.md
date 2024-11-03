@@ -62,7 +62,7 @@ double kommagetal = 13.8;
 int kommaNietWelkom = (int)kommagetal;
 ```
 
-Door casting te gebruiken ze je eigenlijk aan de compiler 2 zaken: 
+Door casting te gebruiken zeg je eigenlijk aan de compiler 2 zaken: 
 
 1. Volgende variabele die van het type ``double`` is, moet aan deze variabele van het type ``int`` toegekend worden.
 2. **Ik besef dat hierbij data verloren kan gaan** (het deel na de komma), maar zet de variabele toch maar om naar het nieuwe type. "Ik draag de volledige verantwoordelijkheid voor de gevolgen hiervan verderop in het programma."
@@ -217,7 +217,7 @@ Gebruik parsing enkel wanneer je:
 1. een ``string`` hebt waarvan je weet dat deze altijd van een specifieke vorm zal zijn die omgezet kan worden naar een ander datatype, bv. een ``int``, dan kan je ``Int32.Parse()`` gebruiken.
 2. input van de gebruiker vraagt (bv. via ``Console.ReadLine``) en niet 100% zeker bent dat deze een getal zal bevatten, gebruik dan ``Int32.TryParse()`` (meer info in de appendix).
 
-De omgekeerde weg: eender welk datatype omzetten naar een ``string``, doe je met de ToSTring-methode die ieder datatype ingebouwd heeft. Deze methode wordt automatisch aangeroepen wanneer je een variabele van een ander datatype in een string wilt steken, inclusief wanneer je deze in een ``Console.WriteLine()``-statement gebruikt. Toch kan het handig zijn te weten dat je deze methode ook manueel kan aanroepen:
+De omgekeerde weg: eender welk datatype omzetten naar een ``string``, doe je met de ``ToString``-methode die ieder datatype ingebouwd heeft. Deze methode wordt automatisch aangeroepen wanneer je een variabele van een ander datatype in een string wilt steken, inclusief wanneer je deze in een ``Console.WriteLine()``-statement gebruikt. Toch kan het handig zijn te weten dat je deze methode ook manueel kan aanroepen:
 
 ```csharp
 int getal = 5;
