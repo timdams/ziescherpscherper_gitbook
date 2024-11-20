@@ -34,7 +34,7 @@ Daarnaast zullen we in hoofdstuk 9 een speciale loopvariant leren kennen wanneer
 
 * **``foreach``**: een leesbaardere manier van loopen, die vooral nuttig is wanneer je met objecten werkt.
 
-De 3 categorieën loops die we net bespraken kunnen in principe met eender welk looptype in C# geschreven worden. Toch raad ik je aan om vanaf nu steeds wel dooracht na te denken welk looptype het best bij je probleem past. Samengevat kan je het volgende zeggen:
+De 3 categorieën loops die we net bespraken kunnen in principe met eender welk looptype in C# geschreven worden. Toch raad ik je aan om vanaf nu steeds wel doordacht na te denken welk looptype het best bij je probleem past. Samengevat kan je het volgende zeggen:
 
 | Looptype          | Definite loop | Indefinite loop | Oneindige loop |
 | ----------------- | :-----------------: | :-----------------: | :-----------------: |
