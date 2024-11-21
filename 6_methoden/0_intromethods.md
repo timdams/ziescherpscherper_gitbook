@@ -166,7 +166,6 @@ Volgend voorbeeld bestaat uit een methode die de naam van de auteur van je progr
 ```csharp
 static string VerkrijgAuteurNaam()
 {
-    string name = ;
     return "Tim Dams";
 }
 ```
