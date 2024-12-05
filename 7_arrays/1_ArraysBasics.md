@@ -170,7 +170,7 @@ Ook hier geldt dat de lengte vanaf dan vastligt en niet meer kan veranderen.
 {% endhint %}
 
 {% hint style='danger' %}
-Er is een essentieel verschil tussen manier 1 en 3. Wanneer je bij de sectie "Geheugengebruik bij arrays" zal je dit ontdekken. Spoiler: in manier 1 wordt er nooit een array aangemaakt. In manier 2 wél.
+Er is een essentieel verschil tussen manier 1 en 3. Wanneer je bij de sectie "Geheugengebruik bij arrays" bent zal je dit ontdekken. *Spoiler*: in manier 1 wordt er nooit een array aangemaakt in de eerste lijn. In manier 3 wél, dankzij het ``new`` keyword.
 {% endhint %}
 
 <!-- \newpage -->
