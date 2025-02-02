@@ -2,6 +2,17 @@
 
 # Welkom
 
+{% hint style='danger' %}
+Ben je een leerkracht middelbaar of hoger onderwijs? Gebruik je dit handboek in je lessen (of als voorbereiding er op)? Graag krijg ik meer inzicht op wie je bent en hoe je dit boek gebruikt. Vul daarom even deze korte enquête in:
+[Hier zo!](https://forms.office.com/Pages/ResponsePage.aspx?id=PM_YMxQvwEia1l0oJVM2c4aMAk4NbYhHgqINmEfA8iBUQTc0NUhLN0Q1WTNGMjlSNllWRDRMQzlHTi4u)
+
+Alvast bedankt!
+
+PS Niet bang zijn, het boek blijft voor eeuwig en altijd gratis beschikbaar, ongeacht uw antwoorden :)
+{% endhint %}
+
+Je vraagt je misschien af waarom dit allemaal verteld wordt? Waarom wordt deze geschiedenisles gegeven? De reden is heel eenvoudig. Je gaat zeker geregeld zaken op het internet willen opzoeken tijdens het (leren) programmeren en zal dan ook vaker op artikels stuiten met de oude(re) naamgeving en dan mogelijks niet kunnen volgen. 
+
 
 Zo, je hebt besloten om C# te leren? Je bent hier aan het juiste adres. Dit boek is ontstaan als handboek voor de opleidingen professionele bachelor elektronica-ict en toegepaste informatica van de AP Hogeschool. Ondertussen wordt het ook in tal van andere hogescholen en middelbare scholen gebruikt. Ik ga je op een laagdrempelige manier leren programmeren in C#, waarbij geen voorkennis vereist is.
 
