@@ -178,7 +178,7 @@ Balletje bal1 = new Balletje();
 bal1.X = 20;
 bal1.Y = 20;
 bal1.VX = 2;
-bal1.VX = 1;
+bal1.VY = 1;
 ```
 
 Ok, interessant. Die ``new`` heb je al gezien wanneer je met ``Random`` ging werken en de code erna is ook nog begrijpbaar: we stellen eigenschappen van het nieuwe ``bal1`` object in. En nu komt het! Kijk hoe eenvoudig onze volledig ``main`` nu is geworden:
