@@ -7,7 +7,7 @@
 
 Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar een tipje van de *klasse-ijsberg* besproken. Vreemde dingen zoals *constructors*, *static methoden*, *overerving* en arrays van objecten staan ons nog allemaal te wachten. 
 
-Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met de ``Random`` klasse. Maar ook al met enkele speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek. Waarom zijn dit *static klassen*? Wel je kan gebruiken ze **zonder** dat je er objecten van moet aanmaken.
+Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met de ``Random`` klasse. Maar ook al met enkele speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek. Waarom zijn dit *static klassen*? Wel, je kan ze gebruiken **zonder** dat je er objecten van moet aanmaken.
 
 Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse[^eigestruct]. Je raadt het nooit ... een klasse die toelaat om de tijd en datum als een object voor te stellen. De ``DateTime`` klasse is de ideale manier om te leren werken met objecten. 
 

@@ -13,7 +13,7 @@ Maar uiteindelijk blijf je wel met slechte code zitten en een gouden regel in pr
 
 Veel fouten in je code zijn het gevolg van:
 
-* **Het aanroepen van data die er niet is** : bijvoorbeeld een bestand dat werd verplaatst of hernoemd . Of wat denk van het wegvallen van het wifi-signaal net wanneer je programma iets van een online database nodig heeft.
+* **Het aanroepen van data die er niet is** : bijvoorbeeld een bestand dat werd verplaatst of hernoemd . Of wat denk je van het wegvallen van het wifi-signaal net wanneer je programma iets van een online database nodig heeft.
 * **Foute invoer door de gebruiker** : denk aan de gebruiker die een letter invoert terwijl het programma een getal verwacht.
 * **Programmeerfouten** : de ontwikkelaar gebruikt een object dat nog niet met de ``new`` operator werd geïnitialiseerd. Of bijvoorbeeld een deling door nul in een wiskundige berekening.
 

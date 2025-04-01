@@ -20,7 +20,7 @@ internal class Student
 {
     public Student(string bijnaamIn)
     {
-        bijNaam = bijnaamIn;
+        BijNaam = bijnaamIn;
     }
     public string BijNaam { get; private set;}
 }
@@ -239,7 +239,7 @@ Dit hangt natuurlijk af van de soort klasse dat je maakt. Een constructor is min
 internal class Breuk
 {
     public int Noemer {get; private set;}
-    private int Teller {get; private set;}
+    public int Teller {get; private set;}
     public double BerekenBreuk()
     {
         return (double)Teller/Noemer;
@@ -300,7 +300,7 @@ internal class Breuk
         Teller = tellerIn;
         Noemer = noemerIn
     }    
-    private int Teller {get; private set;}
+    public int Teller {get; private set;}
 
     private int noemer;
     public int Noemer 

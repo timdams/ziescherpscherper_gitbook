@@ -368,7 +368,7 @@ level1.BeginLevel();
 
 Wat dus niet mag zijn **klassen** met namen zoals ``level1``, ``level2``, enz. Vermoedelijk hebben deze klasse 90% gelijkaardige code en is er dus een probleem met wat we de *architectuur* van je code noemen. Of duidelijker: je snapt niet wat het verschil is tussen klassen en objecten!
 
-Objecten met namen zoals ``level1`` en ``level2`` zijn wél dus toegestaan, daar ze dan vermoedelijk allemaal van het type ``Level`` zijn. **Maar opgelet: als je variabelen hebt die genummerd zijn (bv. ``bal1``, ``bal2``, enz.) dan is de kans groot dat je eigenlijk een array van objecten nodig hebt** (wat ik in hoofdstuk 8 zal uitleggen).
+Objecten met namen zoals ``level1`` en ``level2`` zijn wél dus toegestaan, daar ze dan vermoedelijk allemaal van het type ``Level`` zijn. **Maar opgelet: als je variabelen hebt die genummerd zijn (bv. ``bal1``, ``bal2``, enz.) dan is de kans groot dat je eigenlijk een array van objecten nodig hebt** (wat ik in hoofdstuk 12 zal uitleggen).
 
 
 
