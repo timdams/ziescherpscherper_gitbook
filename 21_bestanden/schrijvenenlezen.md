@@ -32,7 +32,7 @@ string regel;
 
 while ((regel = reader.ReadLine()) != null)
 {
-    Console.WriteLine(line);  
+    Console.WriteLine(regel);  
 }
 ```
 
