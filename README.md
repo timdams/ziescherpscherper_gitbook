@@ -1,6 +1,6 @@
 <!-- \frontmatter -->
 
-# Welkom
+# Welkom graduaat pro
 
 {% hint style='danger' %}
 Ben je een leerkracht middelbaar of hoger onderwijs? Gebruik je dit handboek in je lessen (of als voorbereiding er op)? Graag krijg ik meer inzicht op wie je bent en hoe je dit boek gebruikt. Vul daarom even deze korte enquête in:
