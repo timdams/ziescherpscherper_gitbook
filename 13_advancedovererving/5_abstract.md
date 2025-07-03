@@ -142,7 +142,7 @@ Wanneer je een abstracte property maakt dien je ogenblikkelijk aan te geven of h
 
 ### Een wereld met OOP: Pong en ``abstract``
 
-Dankzij ``abstract`` kunnen we nu een meer algemene klasse maken in Pong. Beeld je in dat je naast balltjes ook andere zaken op het csherm wilt tonen. Echter, niet alles moet als een gek over het scherm vliegen én is op de koop toe niet noodzakelijk een *child* van de ``Balletje``-klasse. 
+Dankzij ``abstract`` kunnen we nu een meer algemene klasse maken in Pong. Beeld je in dat je naast balletjes ook andere zaken op het scherm wilt tonen. Echter, niet alles moet als een gek over het scherm vliegen én is op de koop toe niet noodzakelijk een *child* van de ``Balletje``-klasse. 
 
 We definiëren daarom een klasse die alle zaken zal voorstellen die "op het scherm" moeten getoond worden. Omdat we niet weten **HOE** die zaken getoond worden, zal dit een abstracte klasse worden waarbij we de ``TekenOpScherm``-methode bewust niet implementeren:
 
@@ -158,7 +158,7 @@ internal abstract class SpelObject
 We kunnen nu ons klasse ``Balletje`` hier van laten overerven en veranderen volgende zaken:
 
 * We halen de ``X`` en ``Y`` properties uit de klasse (daar de parent deze al heeft gedefiniëerd).
-* We veranderen ``TekenOpScherm`` van een ``virtual`` naar een ``override`` versie, daar we nu de abstrate methode van de parent **moeten** implementeren.  Merk op dat dit geen invloed heeft op de child-klassen van ``Balletje``, die zullen nog steeds in staat zijn om de ``Update``-versie van ``Balletje`` te override'n.
+* We veranderen ``TekenOpScherm`` van een ``virtual`` naar een ``override`` versie, daar we nu de abstracte methode van de parent **moeten** implementeren.  Merk op dat dit geen invloed heeft op de child-klassen van ``Balletje``, die zullen nog steeds in staat zijn om de ``Update``-versie van ``Balletje`` te override'n.
 
 ```csharp
 internal class Balletje:SpelObject

@@ -164,7 +164,7 @@ public override bool Equals(Object o)
 ```
 
 {% hint style='tip' %}
-De lijn ``Student temp = (Student)o;`` zal het ``object o`` casten naar een ``Student``. Doe je dit niet dan kan je niet aan de interne Student-variabelen van het ``object o``. Dit concept, **polymorfisme** (zie nog steeds hoofdstuk 16....We komen dichter!).
+De lijn ``Student temp = (Student)o;`` zal het ``object o`` casten naar een ``Student``. Doe je dit niet dan kan je niet aan de interne Student-variabelen van het ``object o``. Dit concept noemen we **polymorfisme** (zie nog steeds hoofdstuk 16....We komen dichter!).
 {% endhint %}
 
 

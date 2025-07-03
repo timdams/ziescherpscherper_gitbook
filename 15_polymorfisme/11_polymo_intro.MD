@@ -100,7 +100,7 @@ Polymorfisme is een heel krachtig concept. Door een referentie naar een object t
 
 ### Een wereld met OOP: Pong polymorfisme
 
-Ik hadd al een klein tipje van de sluier gelicht toen ik overerving introduceerde in Pong. Met de hulp van overving konden we plots veel toffere balletjes ontwikkelen zoals het ``CentreerBalletje``. Wel, met de hulp van polymorfisme kan dit op de koop toe zonder dat we ons hoofdprogramma moeten aanpassen. In principe kunnen we nog steeds werken met ``List<Balletje>``, maar maakt het niet uit wat voor balletjes we er in plaatsen: polymorfisme zal de boel draaidende houden. 
+Ik had al een klein tipje van de sluier gelicht toen ik overerving introduceerde in Pong. Met de hulp van overerving konden we plots veel toffere balletjes ontwikkelen zoals het ``CentreerBalletje``. Wel, met de hulp van polymorfisme kan dit op de koop toe zonder dat we ons hoofdprogramma moeten aanpassen. In principe kunnen we nog steeds werken met ``List<Balletje>``, maar maakt het niet uit wat voor balletjes we er in plaatsen: polymorfisme zal de boel draaiende houden. 
 
 Beeld je in dat we naast ``CentreerBalletje`` ook nog de klassen ``InstabielBalletje`` (dat op random momenten z'n vectoren op 0 zet) en ``TeleportBalletje`` (dat elke 10 *ticks* naar een random plek op het scherm *teleporteert*) hebben. De code om deze balletjes te instantiëren en in de lijst te plaatsen wordt verrassend eenvoudig:
 

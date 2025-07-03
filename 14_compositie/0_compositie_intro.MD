@@ -22,7 +22,7 @@ Overerving konden we detecteren door de "is een"-relatie. **Een associatie daare
 Je hoort ook ogenblikkelijk of het om een "heeft één" of "heeft meerdere"-relatie gaat. In het tweede geval (*heeft meerdere*) wil dit zeggen dat het omliggende object **een array van het interne object** in zich heeft. Wederom het voorbeeld van het boek: een boek heeft meerdere pagina's. Dus in de klasse ``Boek`` zullen we een object van het type ``Pagina[]`` of ``List<Pagina>`` tegenkomen.
 
 {% hint style='danger' %}
-Een klassieke fout is overerving gebruiken wanneer je bijvoorbeeld de relatie tussen een boek en z'n pagina's wilt aanduiden. Een boek is géén pagina, ook niet omgekeerd. Er is dus geen sprake van overerving. Een boek HEEFT een pagina (of meerdere). Er dus sprake van een associati, namelijk aggregatie (je kan pagina's uit een boek scheuren en deze nog steeds doorgeven aan iemand anders).
+Een klassieke fout is overerving gebruiken wanneer je bijvoorbeeld de relatie tussen een boek en z'n pagina's wilt aanduiden. Een boek is géén pagina, ook niet omgekeerd. Er is dus geen sprake van overerving. Een boek HEEFT een pagina (of meerdere). Er is dus sprake van een associatie, namelijk aggregatie (je kan pagina's uit een boek scheuren en deze nog steeds doorgeven aan iemand anders).
 {% endhint %}
 
 
@@ -287,7 +287,7 @@ Dit heeft als voordeel dat we de ``Insert`` methode van de ``List``-klasse kunne
 zieScherper.AllePaginas.Insert(new Pagina(), 5);   
 ```
 
-Dit voorbeeld met ``List`` is vanuit OOP-standpunt **geen goede oplossing**. Het vereist namelijk dat programmeurs die jouw klasse ``Boek`` gebruikenweten dat intern met een ``List`` wordt gewerkt. 
+Dit voorbeeld met ``List`` is vanuit OOP-standpunt **geen goede oplossing**. Het vereist namelijk dat programmeurs die jouw klasse ``Boek`` gebruiken, weten dat intern met een ``List`` wordt gewerkt. 
 
 We willen echter zo goed mogelijk een **blackbox** creëren, conform het abstractie-principe, die van buiten duidelijk en eenvoudig in gebruik is. Het is daarom beter om alsnog aan je ``Boek`` klasse een ``Insert`` methode toe te voegen. Dit geeft als extra verbetering dat we daarmee de ``set`` van onze lijst van pagina's ``private`` kunnen houden:
 
