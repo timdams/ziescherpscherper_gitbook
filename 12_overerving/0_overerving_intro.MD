@@ -68,7 +68,7 @@ En als we het voorbeeld van de mens en z'n voorgangers nemen dan zou een vereenv
 
 ## Overerving in C\#
 
-Overving in C# duid je aan met behulp van het dubbele punt(:) bij de klassedefinitie, als volgt:
+Overerving in C# duid je aan met behulp van het dubbele punt(:) bij de klassedefinitie, als volgt:
 
 ```csharp
 internal class Paard : Dier
