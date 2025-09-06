@@ -8,7 +8,8 @@
 ## H1: De eerste stappen
 
 * [Introductie tot C#](0_intro/0_intrototcs.md)
-* [Werken met Visual Studio](0_intro/1_werkenmetvs.md) 
+* [Werken met Visual Studio](0_intro/1_werkenmetvs.md)
+* [A.I. even parkeren](0_intro/1_killai.md) 
 * [Je eerste programma](0_intro/2_firstprogram.md)
 * [Input verwerken met ReadLine](0_intro/3_console.md)
 * [Fouten in je code](0_intro/4_fouten.md)

@@ -79,19 +79,5 @@ Het voorgaande voorbeeld toont ook ineens aan waarom methoden helpen om je code 
 <!-- \newpage -->
 
 
-### IntelliCode
 
-Sinds Visual Studio 2022 heeft IntelliSense een ongelooflijk krachtig broertje bijgekregen, genaamd  IntelliCode. Deze tool zal ervoor zorgen dat je nog betere aanbevelingen krijgt van VS terwijl je aan het typen bent. Het gaat soms zo ver dat het lijkt alsof IntelliCode in je hoofd kan kijken en perfect kan voorspellen wat je wilt typen. **Let hier echter goed voor op**: de aanbevelingen zijn meestal erg accuraat, maar:
-
-1. Ze zorgen ervoor dat je zelf minder moet typen en daardoor ook mogelijk jezelf niet genoeg traint. Zeker als beginnende programmeur. Ik raad je eigenlijk aan om IntelliCode uit te schakelen (via het Tools&Options menu-item). Waarom? Laten we de analogie van het leren fietsen er nog eens bijhalen. Wat IntelliCode eigenlijk doet is je af en toe optillen en enkele meters hoger op de berg plaatsen. Handig, dat wel, maar je traint je fietsbenen natuurlijk niet.
-2. De aanbevelingen zijn natuurlijk soms gewoon fout of bevatten bugs die later bijvoorbeeld door hackers kunnen misbruikt worden. Of wat te denken van aanbevelingen die op zich wel zullen werken, maar wel 10x zoveel geheugen vereisen? Kortom, **wees steeds kritisch over de aanbevelingen van IntelliCode**
-
-IntelliCode zal ook IntelliSense verbeteren door de belangrijkste, meest gebruikte methoden bovenaan te zetten. Je zal echter IntelliCode vooral herkennen wanneer er plots een hele lijn code verschijnt in het lichtgrijs. Je kan dit uitschakelen door onderaan op het kleine paarse lampje met Engelse sleutel te klikken en dan beide "Show..."-opties uit te schakelen.
-
-
-![Je hebt een vergrootglas nodig om IntelliCode af te zetten...](../assets/4_methoden/codeai.png)
-
-{% hint style='danger' %}
-Github Copilot project is zelfs nog krachtiger en komt dus met een nog grotere disclaimer: **beginnende programmeurs, laat dit soort tools beter nog even links liggen!** Je leert ook niet hoofdrekenen door vanaf dag 1 met een zakrekenmachine aan de slag te gaan.
-{% endhint %}
 

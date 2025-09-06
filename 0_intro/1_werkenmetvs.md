@@ -25,6 +25,8 @@ Het hart van Visual Studio bestaat uit de compiler die ik hiervoor besprak. De c
 
 In dit boek zullen de voorbeelden steeds met de **Community** editie van VS gemaakt zijn. Je kan deze gratis downloaden en installeren via [visualstudio.microsoft.com/vs](http://visualstudio.microsoft.com/vs).
 
+![Kies zeker de community versie!](../assets/0_intro/comkeuze.png)
+
 Het is belangrijk bij de installatie dat je zeker de **.NET desktop development** workload kiest. Uiteraard ben je vrij om meerdere zaken te installeren.
 
 ![In dit boek zullen we enkel met de .NET desktop development workload werken.](../assets/0_intro/vsinstallerchoice.png)
