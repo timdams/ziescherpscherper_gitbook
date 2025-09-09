@@ -1,5 +1,7 @@
 ## Programmeren met A.I.
 
+**OPGELET: dit hoofdstuk is in opbouw en nog niet klaar**
+
 We hebben nu al enkele hoofdstukken A.I. angstvallig in de stal gelaten. Laten we dat wilde, krachtige beest eens buitenlaten en in een omheind veldje zetten. In deze gloednieuwe sectie wil ik je enkele handvaten geven hoe je A.I. kunt gebruiken de komende maanden, in je avontuur om de beste C# programmeur ooit te worden.
 
 We zullen enkele typische prompts bespreken die je kan gebruiken, waarbij we willen benadrukken dat:
