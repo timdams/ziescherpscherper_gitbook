@@ -46,6 +46,7 @@
 * [Over afronden](3_data/4d_afronden.md)
 * [Random](3_data/random.md)
 * [Debuggen](3_data/5_debuggen.md)
+* [Programmeren met A.I.](3_data/ai.md)
 * [Meer weten](3_data/kennisclips.md)
 
 

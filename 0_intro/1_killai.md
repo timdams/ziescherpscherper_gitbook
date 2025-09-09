@@ -11,6 +11,8 @@ In deze nieuwe sectie gaan we daarom twee zaken doen:
 
 Voor we in IntelliCode en Copilot duiken willen we toch nog één keer waarschuwen omtrent A.I. nu al omarmen: je leert ook niet hoofdrekenen door vanaf dag 1 met een zakrekenmachine aan de slag te gaan.
 
+In hoofdstuk 4 zullen we uitleggen hoe je wél op een verantwoorde manier A.I. kan gebruiken om je code te verbeteren, maar dan wel nadat je de basis onder de knie hebt.
+
 
 ### IntelliCode
 
