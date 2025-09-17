@@ -15,9 +15,9 @@ Het zal wel duidelijk zijn dat er één type prompt is die je als beginnende pro
 
 En dus volgt hier **de verboden prompt**:
 
-```text
-Schrijf de C# oplossing voor deze opgave: [gevolgd door de opgave].
-```
+
+>Schrijf de C# oplossing voor deze opgave: [gevolgd door de opgave].
+
 
 Doe het gerust eens met een oefening die ja al hebt gemaakt. Zeker de oefeningen van de eerste hoofdstukken zullen vaak perfect zijn. 
 
@@ -25,17 +25,17 @@ Doe het gerust eens met een oefening die ja al hebt gemaakt. Zeker de oefeningen
 
 De leukste prompt die je kan gebruiken is de zoek-de-fout-prompt. Hierbij vraag je A.I. om een oplossing te schrijven, maar met opzet fouten in te bouwen. Vervolgens moet jij deze fouten opsporen en verbeteren. Dit is een uitstekende oefening om je kennis te testen en te verdiepen. Het is hierbij belangrijk dat je benadrukt dat de A.I. de fouten niet aanduidt, maar dat jij ze moet vinden.
 
-```text
-Schrijf de C# oplossing voor deze opgave: "Vraag aan de gebruiker zijn naam. Toon de naam, gevolgd door de zin 'wat een mooie naam!'."
 
-Zorg ervoor dat er minstens drie fouten in de code zitten die een beginnende programmeur zou kunnen maken. Geef geen uitleg, alleen de code. Ik zal de fouten vervolgens proberen te vinden en te corrigeren.
-```
+>Schrijf de C# oplossing voor deze opgave: "Vraag aan de gebruiker zijn naam. Toon de naam, gevolgd door de zin 'wat een mooie naam!'."
+>
+>Zorg ervoor dat er minstens drie fouten in de code zitten die een beginnende programmeur zou kunnen maken. Geef geen uitleg, alleen de code. Ik zal de fouten vervolgens proberen te vinden en te corrigeren.
+
 
 Zeker voor de beginnende hoofdstukken kan het geen kwaad dat je toevoegt dat alle zogenaamde *boilerplate code* (zoals de `using` statements, de `namespace`, de `class Program` en de `static void Main`) niet getoond moet worden bij het zoeken naar fouten. Zo kan je je focussen op het échte probleem. Voeg daarom dit nog toe aan je prompt:
 
-```text
-Je hoeft de boilerplate code (zoals de using statements, de namespace, de class Program en de static void Main) niet te tonen.
-```
+
+>Je hoeft de boilerplate code (zoals de using statements, de namespace, de class Program en de static void Main) niet te tonen.
+
 
 ### Vergelijkings-prompt
 
