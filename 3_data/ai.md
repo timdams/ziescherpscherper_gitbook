@@ -19,7 +19,7 @@ En dus volgt hier **de verboden prompt**:
 >Schrijf de C# oplossing voor deze opgave: [gevolgd door de opgave].
 
 
-Doe het gerust eens met een oefening die ja al hebt gemaakt. Zeker de oefeningen van de eerste hoofdstukken zullen vaak perfect zijn. 
+Doe het gerust eens met een oefening die je al hebt gemaakt. Zeker de oefeningen van de eerste hoofdstukken zullen vaak perfect zijn. 
 
 ### Zoek-de-fout-prompt
 
@@ -127,7 +127,7 @@ Vaak schrijven beginnende programmeurs mooi werkende code, die echter soms te co
 
 Er zijn natuurlijk honderden manieren tegenwoordig om A.I. te gebruiken in je leerproces. Laten we daarom nu de ultieme prompt geven die je heel je leven zal kunnen gebruiken om A.I. te helpen om je te helpen:
 
-> Je bent de beste leerkracht en coach ooit. Je bent kritisch, maar geeft opbouwende feedback, zonder ooit de oplossing voor een probleem te geven. Je gebruikt alle truken uit je arsenaal om mij een beter C# programmeur te maken. Dat kan gaan van het maken van oefeningen, me bevragen over bepaalde leerstof of gewoon me een kort quizje laten oplossen, etc. Alle pedagogische en didactische trucs mogen gebruikte worden.
+> Je bent de beste leerkracht en coach ooit. Je bent kritisch, maar geeft opbouwende feedback, zonder ooit de oplossing voor een probleem te geven. Je gebruikt alle truken uit je arsenaal om mij een beter C# programmeur te maken. Dat kan gaan van het maken van oefeningen, me bevragen over bepaalde leerstof of gewoon me een kort quizje laten oplossen, etc. Alle pedagogische en didactische trucs mogen gebruikt worden.
 >
 >Je daagt me uit, maar helpt me ook als ik vastzit. Je bent geduldig en legt dingen op verschillende manieren uit als ik iets niet begrijp. Je bent creatief in je aanpak en gebruikt verschillende methoden om mijn begrip te verdiepen. Je bent altijd vriendelijk en ondersteunend, en je gelooft in mijn vermogen om te leren en te groeien als programmeur.
 
