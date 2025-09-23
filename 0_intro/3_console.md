@@ -6,26 +6,41 @@ In de Console kan je met een handvol methoden reeds een aantal interessante ding
 Zo kan je bijvoorbeeld input van de gebruiker inlezen en bewaren in een variabele als volgt:
 
 ```csharp
+Console.WriteLine("Geef je naam?");
 string result;
 result = Console.ReadLine();
 ```
 
 Wat gebeurt er hier juist?
 
-De eerste lijn code: 
+De tweede lijn code: 
 
 * Concreet zeggen we hiermee aan de compiler: maak in het geheugen een plekje vrij waar enkel data van het type string in mag bewaard worden (wat deze zin exact betekent komt later. Onthoud nu dat geheugen van het type ``string`` enkel "tekst" kan bevatten).
 * Noem deze geheugenplek ``result`` zodat we deze later makkelijk kunnen in en uitlezen.
 
 
 
-Tweede lijn code:
+Derde lijn code:
 
 * Vervolgens roepen we de ``ReadLine`` methode aan. Deze methode zal de invoer van de gebruiker van het toetsenbord uitlezen tot de gebruiker op enter drukt.
 * Het resultaat van de ingevoerde tekst wordt bewaard in de variabele ``result``.
 
 {% hint style='tip' %}
 **Merk op dat de toekenning in C# van rechts naar links gebeurt.** Vandaar dat ``result`` dus links van de toekenning (``=``) staat en de waarde krijgt van het gedeelte rechts ervan.
+{% endhint %}
+
+{% hint style='tip' %}
+In het voorbeeld bewaren we het resultaat in ``result``, maar dat moet niet zo noemen. In dit voorbeeld vragen we 2 zaken en bewaren deze in 2 aparte variabelen:
+
+```csharp
+Console.WriteLine("Geef je naam?");
+string naam;
+naam = Console.ReadLine();
+Console.WriteLine("Geef de naam van je mama?");
+string naamMama;
+naamMama = Console.ReadLine();
+```
+
 {% endhint %}
 
 
