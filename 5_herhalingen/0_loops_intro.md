@@ -44,7 +44,7 @@ De 3 categorieën loops die we net bespraken kunnen in principe met eender welk 
 
 Deze tabel suggereert dat we met ``while`` en ``do while`` meer kunnen, wat ook zo is. Je zal echter gauw ontdekken dat je vaak terugvalt op code met een  ``for`` omdat:
 
-1. Deze compatere code oplevert.
+1. Deze compactere code oplevert.
 2. Veel problemen met een definite loop kunnen opgelost worden. 
 
 
