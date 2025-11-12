@@ -540,7 +540,7 @@ public static void Main()
 }
 ```
 
-Er verschijnt "Timmi" op het scherm.
+Er verschijnt "Tim" op het scherm.
 
 ![Visualisatie van de code zonder terugkerende pijlen.](../assets/4_methoden/mmethods.png)<!--{width=70%}-->
 
