@@ -199,7 +199,8 @@ Je mag zowel literals als variabelen en zelfs andere methode-aanroepen plaatsen 
 ```csharp
 static string VerkrijgAuteurNaam()
 {
-    return "Tim Dams";
+    string naam= "Tim Dams";
+    return naam;
 }
 ```
 {% endhint %}
