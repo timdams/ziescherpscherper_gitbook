@@ -55,7 +55,7 @@ De programmeur van de toekomst zal béter moeten zijn dan Copilot, ChatGPT *and 
 
 Indien je niet ingelogd bent rechtsboven dan zal Copilot niets doen. Da's eenvoudig. Ben je toch ingelogd - bijvoorbeeld om de tool op gepaste en bewuste momenten te gebruiken- dan kan je via de knop linksboven er op klikken en kiezen voor settings. Vervolgens kan je 2 zaken doen:
 
-a. Beide opties hier uitschakelen.
-b. Doorklikken op Options... en vervolgens ook daar alle opties uitschakelen.
+1. Beide opties hier uitschakelen.
+2. Doorklikken op Options... en vervolgens ook daar alle opties uitschakelen.
 
 ![Probeer aan de verleiding te weerstaan en schakel CoPiot voorlopig gewoon uit. Simpel!](../assets/0_intro/copaf.png)
