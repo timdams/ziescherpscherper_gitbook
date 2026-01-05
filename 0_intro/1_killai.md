@@ -27,7 +27,7 @@ In hoofdstuk 4 zullen we uitleggen hoe je wél op een verantwoorde manier A.I. k
 ### IntelliCode
 
 
-Sinds Visual Studio 2022 heeft IntelliSense (zie hoofdstuk 7) een ongelooflijk krachtig broertje bijgekregen, genaamd  IntelliCode. Deze tool zal ervoor zorgen dat je nog betere aanbevelingen krijgt van VS terwijl je aan het typen bent. Het gaat soms zo ver dat het lijkt alsof IntelliCode in je hoofd kan kijken en perfect kan voorspellen wat je wilt typen. 
+Sinds Visual Studio 2022 heeft IntelliSense (zie hoofdstuk 7) een ongelooflijk krachtig broertje bijgekregen, genaamd  **IntelliCode**. Deze tool zal ervoor zorgen dat je nog betere aanbevelingen krijgt van VS terwijl je aan het typen bent. Het gaat soms zo ver dat het lijkt alsof IntelliCode in je hoofd kan kijken en perfect kan voorspellen wat je wilt typen. 
 
 Wanneer je commentaar in je code schrijft en dan verder werkt dan zal IntelliCode aan de hand van je eerdere tekst code tonen die je mogelijk wou typen. Als je vervolgens op tab duwt zal de lichtgrijze tekst voor je getypt worden. Handig, knap...maar soms ook totaal verkeerde code. Wees dus erg kritisch hiermee.
 
@@ -35,17 +35,11 @@ Wanneer je commentaar in je code schrijft en dan verder werkt dan zal IntelliCod
 
 #### IntelliCode uitschakelen
 
-Je kan IntelliCode op 2 manieren uitschakelen:
+Je kan IntelliCode uitzetten door via het menu bovenaan kiezen voor Tools, dan Options. Vervolgens zoek je naar "IntelliCode". Klik links op de sectie IntelliCode en schakel zeker volgende opties uit:
 
-**Manier 1:**
-
-Door onderaan links op het kleine paarse lampje met Engelse sleutel te klikken en dan beide "Show..."-opties uit te schakelen.
-
-![Je hebt een vergrootglas nodig om IntelliCode af te zetten...](../assets/4_methoden/codeai.png)
-
-**Manier 2:**
-
-Via het menu bovenaan kiezen voor Tools, dan Options. Vervolgens zoek je naar "IntelliCode". Klik links op de sectie IntelliCode en schakel alle opties uit daar.
+* Onder Code Completions -> General: Copilot Completions (Single and multi-Line completions from Copilot )
+* Onder Code Completions -> General: IntelliCode (Whole-Line) Completions
+* Onder IntelliCode -> General: C# suggestions
 
 ![Let goed op: bij updates wordt IntelliCode soms terug ingeschakeld. Het kan dus geen kwaad deze opties na iedere update even te controleren.](../assets/0_intro/intcodeuit.png)
 

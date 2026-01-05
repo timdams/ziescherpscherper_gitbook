@@ -11,7 +11,7 @@ status: canon
 ## Kennismaken met C\# en Visual Studio
 
 
-Je gaat in dit boek leren programmeren met Microsoft Visual Studio 2022, een softwarepakket waar ook een gratis community versie voor bestaat. Microsoft Visual Studio (vanaf nu **VS**) is een pakket dat een groot deel van de tools samenvoegt die een programmeur nodig heeft. Zo zit er een onder andere een debugger, code editor en compiler in.
+Je gaat in dit boek leren programmeren met Microsoft Visual Studio 2026, een softwarepakket waar ook een gratis community versie voor bestaat. Microsoft Visual Studio (vanaf nu **VS**) is een pakket dat een groot deel van de tools samenvoegt die een programmeur nodig heeft. Zo zit er een onder andere een debugger, code editor en compiler in.
 
 VS is een zogenaamde **IDE ("Integrated Development Environment")** en is op maat gemaakt om in C# geschreven applicaties te ontwikkelen. Je bent echter verre van verplicht om enkel C# applicaties in VS te ontwikkelen. Je kan gerust VB.NET, TypeScript, Python en andere talen gebruiken. Ook vice versa ben je niet verplicht om VS te gebruiken om te ontwikkelen. Je kan zelfs in notepad code schrijven en vervolgens compileren. Er bestaan zelfs online C# programmeer omgevingen, zoals **dotnetfiddle.net**.
 
@@ -41,13 +41,11 @@ Het is belangrijk bij de installatie dat je zeker de **.NET desktop development*
 ![In dit boek zullen we enkel met de .NET desktop development workload werken.](../assets/0_intro/vsinstallerchoice.png)
 
 {% hint style='tip' %}
-In dit boek zullen we dus steeds werken met *Visual Studio Community 2022*. Niet met **Visual Studio Code**. Visual Studio code is een zogenaamde lightweight versie van VS die echter zeker ook z'n voordelen heeft. Zo is VS Code makkelijk uitbreidbaar, snel, en compact. Visual Studio vindt dankzij VS Code eindelijk ook z'n weg op andere platformen dan enkel die van Microsoft. Je kan de laatste versie ervan downloaden op: [code.visualstudio.com](http://code.visualstudio.com).
+In dit boek zullen we dus steeds werken met *Visual Studio Community 2026*. Niet met **Visual Studio Code**. Visual Studio code is een zogenaamde lightweight versie van VS die echter zeker ook z'n voordelen heeft. Zo is VS Code makkelijk uitbreidbaar, snel, en compact. Visual Studio vindt dankzij VS Code eindelijk ook z'n weg op andere platformen dan enkel die van Microsoft. Je kan de laatste versie ervan downloaden op: [code.visualstudio.com](http://code.visualstudio.com).
 {% endhint %}
 
 {% hint style='warning' %}
-Helaas heeft Microsoft besloten om in augustus 2024 Visual Studio Community voor Mac niet meer aan te bieden. Hierdoor zijn Mac-gebruikers genoodzaakt om wél te werken met Visual Studio Code. Je dient dan wel de C# Dev Kit extension te installeren.
-
-In de appendix van dit boek wordt uitgelegd hoe je dit doet.
+Helaas heeft Microsoft besloten om in augustus 2024 Visual Studio Community voor Mac niet meer aan te bieden. Hierdoor zijn Mac-gebruikers genoodzaakt om met een andere IDE te werken, zoals Visual Studio Code of JetBrains Rider. Helaas zal deze cursus niet verder ingaan op deze alternatieven (je kan overwegen Windows via Bootcamp, Parallels of een virtuele machine te gebruiken indien je met Visual Studio wilt werken).
 {% endhint %}
 
 <!-- \newpage -->
@@ -60,22 +58,6 @@ Als alles goed is geïnstalleerd kan je Visual Studio starten via het start-menu
 !["We are going on an adventure!" (Bron: Bilbo Baggins)](../assets/0_intro/startvs.png)<!--{width=30%}-->
 
 
-
-
-De allereerste keer dat je VS opstart krijg je 2 extra schermen te zien:
-
-* Het "sign in" scherm mag je overslaan. Kies "Not now, maybe later".
-* Op het volgende scherm kies je best als "Development settings" voor **Visual C#**. Vervolgens kan je je kleurenthema kiezen. Dit heeft geen invloed op de manier van werken.
-
-
-
-
->![](../assets/neotim.png)<!--{width=10%}--> Dark is uiteraard het coolste thema om in te coderen. Je voelt je ogenblikkelijk Neo uit The Matrix. Het nadeel van dit thema is dat het veel meer inkt verbruikt indien je screenshots in een boek zoals dit wilt plaatsen. 
-
-De keuze voor Development Setting kan je naar "Visual C#" veranderen, maar General is even goed (je zal geen verschil merken in eerste instantie). Je kan dit achteraf nog aanpassen in VS via "Tools" in de menubalk, dan "Import and Export Settings" en kiezen voor "Import and Export Settings Wizard".
-
-
-![Je kan dit nadien ook altijd nog aanpassen. En zelfs personaliseren tot de vreemdste kleur- en lettertypecombinaties.](../assets/0_intro/vstheme.png)<!--{width=30%}-->
 
 
 <!-- \newpage -->
@@ -103,13 +85,14 @@ Het "New Project" venster dat nu verschijnt geeft je hopelijk al een glimp van d
 
 
 
-In dit boek zal je altijd het Project Type "**Console App**" gebruiken (ZONDER .NET Framework achteraan). Je vindt deze normaal bovenaan de lijst terug, maar kunt deze ook via het zoekveld bovenaan terugvinden. Zoek gewoon naa - je raadt het nooit -  *console*. **Let er op dat je een klein groen C# icoontje ziet staan bij het zwarte icoon van de Console app.** Ook andere talen ondersteunen console applicaties, maar wij gaan natuurlijk met C# aan het werk.
+In dit boek zal je altijd het Project Type "**Console App**" gebruiken (ZONDER .NET Framework achteraan). Je vindt deze normaal bovenaan de lijst terug, maar kunt deze ook via het zoekveld bovenaan terugvinden. Zoek gewoon naar *console*. **Let er op dat je een klein groen C# icoontje ziet staan bij het zwarte icoon van de Console app.** Ook andere talen ondersteunen console applicaties, maar wij gaan natuurlijk met C# aan het werk.
 
 
 ![Kies voor C#, niet Visual Basic (VB). Dank bij voorbaat!](../assets/0_intro/opgeletc.png)<!--{width=70%}-->
 
-
+{% hint style='tip' %}
 Een console applicatie is een programma dat alle uitvoer naar een zogenaamde *console* stuurt, een shell. Je kan met andere woorden enkel tekst als uitvoer genereren. Multimedia elementen zoals afbeeldingen, geluid en video zijn dus uit den boze.
+{% endhint %}
 
 **Kies dit type en klik 'Next'.**
 
@@ -155,8 +138,11 @@ Eens kijken wat we allemaal zien in VS na het aanmaken van een nieuw programma..
 
 
 * Je kan meerdere bestanden tegelijkertijd openen in VS. Ieder bestand zal z'n eigen **tab** krijgen. De actieve tab is het bestand wiens inhoud je in het hoofdgedeelte eronder te zien krijgt. Merk op dat enkel open bestanden een tab krijgen. Je kan deze tabbladen ook "lostrekken" om bijvoorbeeld enkel dat tabblad op een ander scherm te plaatsen.
-* De "**solution explorer**" aan de rechterzijde toont alle bestanden en elementen die tot het huidige project behoren. Als we dus later nieuwe bestanden toevoegen, dan kan je die hier zien en openen. Verwijder hier géén bestanden zonder dat je zeker weet wat je aan het doen bent!
+* Wie zijn heel prominent aan de rechterzijde de A.I. assistent klaar staan om je te helpen (**Copilot**). Je mag deze direct wegklikken (via het kruisje rechtsboven). We zullen deze straks permanent uitschakelen. 
+* De "**solution explorer**" is wat we nodig hebben. Deze toont alle bestanden en elementen die tot het huidige project behoren. Als we dus later nieuwe bestanden toevoegen, dan kan je die hier zien en openen. Verwijder hier géén bestanden zonder dat je zeker weet wat je aan het doen bent!
 
+
+![VS IDE overzicht maar nu zonder CoPilot.](../assets/0_intro/vside2.png)<!--{width=75%}-->
 
 {% hint style='danger' %}
 Indien je een nieuw project hebt aangemaakt en de code die je te zien krijgt lijkt in de verste verte niet op de code die je hierboven ziet dan heb je vermoedelijk een verkeerd projecttype of taal gekozen. Of je hebt de *"Do not use top-level statements"* checkbox niet aangeduid.  
