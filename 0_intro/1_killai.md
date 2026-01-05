@@ -1,3 +1,13 @@
+---
+id: id_intronoai
+bron: handboek
+type: theorie
+module: 1
+onderwerpen: [intellicode, intellisense, ai, chatgpt]
+niveau: basis
+status: canon
+---
+
 ## A.I. even parkeren
 
 Sinds enkele jaren wordt de wereld overspoeld door ChatGPT & friends. De impact hiervan op de wereld valt niet weg te steken, en zeker ook niet op het beroep van ontwikkelaars. Het is dan ook logisch dat Visual Studio A.I. gestuurde tools heeft ingebouwd om het leven te vereenvoudigen. **MAAR: als beginnende programmeur zijn deze tools niet altijd aanbevolen.** Mijn advies is daarom om, zeker in de eerste hoofdstukken van dit boek, te leren programmeren ZONDER deze hulpmiddelen. 

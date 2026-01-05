@@ -1,3 +1,14 @@
+---
+id: id_introcs
+bron: handboek
+type: theorie
+module: 1
+onderwerpen: [algortime, geschiedenis, compiler,.NET]
+niveau: basis
+status: canon
+---
+
+
 <!-- \mainmatter -->
 
 # De eerste stappen <!--\label{ch:1}-->

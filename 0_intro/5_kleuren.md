@@ -1,3 +1,12 @@
+---
+id: id_kleuren
+bron: handboek
+type: theorie
+module:
+onderwerpen: [consolecolor, resetcolor]
+niveau: basis
+status: canon
+---
 
 ## Kleuren in console
 

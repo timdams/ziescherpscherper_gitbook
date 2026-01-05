@@ -1,3 +1,12 @@
+---
+id: id_firstprogram
+bron: handboek
+type: theorie
+module:
+onderwerpen: [write, writeline, readline, console]
+niveau: basis
+status: canon
+---
 
 ## Console-applicaties
 

@@ -1,3 +1,12 @@
+---
+id: id_errors
+bron: handboek
+type: theorie
+module:
+onderwerpen: [fouten]
+niveau: basis
+status: canon
+---
 
 ## Fouten oplossen
 

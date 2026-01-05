@@ -1,3 +1,12 @@
+---
+id: id_console
+bron: handboek
+type: theorie
+module:
+onderwerpen: [write, writeline, readline, console, input,witregels, concatenatie]
+niveau: basis
+status: canon
+---
 
 ### ReadLine: Input van de gebruiker verwerken
 

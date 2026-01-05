@@ -1,3 +1,12 @@
+---
+id: id_visualstudio
+bron: handboek
+type: theorie
+module:
+onderwerpen: [visual studio]
+niveau: basis
+status: canon
+---
 
 ## Kennismaken met C\# en Visual Studio
 
