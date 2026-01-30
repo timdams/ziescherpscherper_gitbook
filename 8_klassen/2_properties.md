@@ -420,3 +420,10 @@ De regels zijn niet in steen gebeiteld, maar ruwweg kan je stellen dat:
 
 
 
+
+{% hint style='info' %}
+**Nieuw in C# 14: Het `field` keyword**
+
+Vroeger was je verplicht om full properties te schrijven als je validatie wou toevoegen. Sinds C# 14 kan dit veel korter met het `field` keyword.
+[Lees er meer over in de appendix](../B_appendix/field_keyword.md)
+{% endhint %}
