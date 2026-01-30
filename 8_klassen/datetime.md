@@ -1,123 +1,94 @@
 
-## OOP in de praktijk : DateTime
+## OOP in de praktijk: DateTime
 
+Gefeliciteerd! Je hebt de basis van klassen, objecten, fields en properties onder de knie.
+Om te bewijzen dat je nu "C# spreekt", gaan we kijken naar een ingebouwde klasse die je constant zal gebruiken: `DateTime`.
 
+Vroeger was dit magie. Nu kan je snappen hoe het werkt:
+* Het is een **klasse** (struct eigenlijk, maar dat negeren we even).
+* Het heeft **properties** (zoals `Year`, `Month`).
+* Het heeft **methoden** (zoals `AddDays()`).
 
->![](../assets/attention.png)Doe die zwembroek maar weer aan! We gaan nog eens zwemmen. 
+Laten we er eens mee spelen.
 
-Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar een tipje van de *klasse-ijsberg* besproken. Vreemde dingen zoals *constructors*, *static methoden*, *overerving* en arrays van objecten staan ons nog allemaal te wachten. 
+### Een DateTime maken
+Er zijn twee hoofdmanieren om aan een datum te geraken:
 
-Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met de ``Random`` klasse. Maar ook al met enkele speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek. Waarom zijn dit *static klassen*? Wel, je kan ze gebruiken **zonder** dat je er objecten van moet aanmaken.
+#### 1. De "Nu" knop (Static Property)
+Wil je de datum van dit eigenste moment?
+```csharp
+DateTime nu = DateTime.Now;
+Console.WriteLine(nu);
+```
+`DateTime.Now` is een **static property**. Je hoeft geen `new` te doen, het is een "globale" waarde die altijd beschikbaar is.
 
-Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse[^eigestruct]. Je raadt het nooit ... een klasse die toelaat om de tijd en datum als een object voor te stellen. De ``DateTime`` klasse is de ideale manier om te leren werken met objecten. 
+#### 2. Een specifieke datum (De Constructor)
+Wil je werken met je verjaardag? Dan moet je een **specifiek object** maken met `new`.
 
-[^eigestruct]: Technisch gezien is DateTime een ``struct``, niet een ``class``.  Dit onderscheid is in dit handboek niet relevant. Meer informatie over ``struct`` vind je in de appendix terug.
+```csharp
+// jaar, maand, dag
+DateTime verjaardag = new DateTime(1990, 5, 20); 
+
+// jaar, maand, dag, uur, minuut, seconde
+DateTime apollo11 = new DateTime(1969, 7, 20, 20, 17, 0);
+```
 
 <!-- \newpage -->
 
 
-### DateTime objecten aanmaken
-
-Er zijn 2 manieren om ``DateTime`` objecten aan te maken:
 
 
-```csharp
-DateTime huidigeTijd = DateTime.Now;
-DateTime specialeDag = new DateTime(2017,4,21);
-```
-
-* Lijn 1:  Door aan de klasse de huidige datum en tijd te vragen via ``DateTime.Now``. 
-* Lijn 2:  Door manueel de datum en tijd in te stellen met het ``new`` keyword en de **klasse-constructor** (een concept dat we in hoofdstuk 11 uit de doeken gaan doen)
+<!-- \newpage -->
 
 
+### Methoden en de Grote Valkuil
 
-
-
-#### DateTime.Now
-
-Volgend voorbeeld toont hoe we een object kunnen maken dat de huidige datum tijd van het systeem bevat. Vervolgens printen we dit op het scherm:
+Je kan met datums rekenen. "Hoe laat is het binnen 5 uur?", "Welke dag was het 1000 dagen geleden?".
+Hiervoor gebruiken we methoden zoals `AddDays`, `AddHours`, enz.
 
 ```csharp
-DateTime currentTime = DateTime.Now;
-Console.WriteLine(currentTime);
+DateTime vandaag = DateTime.Now;
+DateTime deadline = vandaag.AddDays(7);
+Console.WriteLine(deadline);
 ```
 
-{% hint style='tip' %}
-``DateTime.Now`` is een zogenaamde **static property** wat verderop in het boek zal uitgelegd worden. 
+{% hint style='danger' %}
+**OPGELET: HET IS ONVERANDERLIJK (IMMUTABLE)!**
+
+Een veelgemaakte fout bij beginners is dit:
+```csharp
+DateTime mijnVerjaardag = new DateTime(1990, 1, 1);
+mijnVerjaardag.AddYears(1); // FOUT! Dit doet niets met mijnVerjaardag!
+Console.WriteLine(mijnVerjaardag.Year); // Nog steeds 1990
+```
+
+`DateTime` objecten zijn **immutable**. Ze kunnen nooit veranderen.
+Methoden zoals `AddYears` passen het object *niet* aan, maar **geven een nieuw object terug**.
+
+**Juiste manier:**
+```csharp
+mijnVerjaardag = mijnVerjaardag.AddYears(1); // VANG HET RESULTAAT OP!
+```
 {% endhint %}
 
-
-#### Met constructor en ``new``
-
-De constructor van een klasse laat toe om bij het maken van een nieuw object, beginwaarden voor bepaalde instantievariabelen of properties mee te geven. De ``DateTime`` klasse heeft meerdere constructors gedefiniëerd zodat je bijvoorbeeld een object kan aanmaken dat bij de start reeds de geboortedatum van de auteur bevat:
-
-
-
-```csharp
-DateTime verjaardag = new DateTime(1981, 3, 18); //jaar, maand, dag
-```
-
-Ook is er een constructor om startdatum én -tijd mee te geven bij de objectcreatie:
-
-```csharp
-//Volgorde: jaar, maand, dag, uur, minuten, seconden
-DateTime trouwMoment = new DateTime(2017, 4, 21, 10, 00,34 ); 
-```
-
 <!-- \newpage -->
 
 
-### DateTime methoden
+### Properties (Alleen lezen)
 
-Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige methoden die je er op kan aanroepen. Visual Studio is zo vriendelijk om dit te visualiseren wanneer we de dot-operator typen achter een object:
+Herinner je de **Get-Only Properties** van het vorige hoofdstuk? `DateTime` zit er vol mee.
+Je kan wel vragen welk jaar het is (`.Year`), maar je kan het jaar niet zomaar aanpassen (`.Year = 2050` werkt niet).
 
-![Iedere kubus stelt een methode voor. Iedere Engelse sleutel een property.](../assets/6_klassen/datemethods.png)
-
-
-#### Add-methoden
-
-Deze methoden kan je gebruiken om een bepaalde aantal dagen, uren, minuten op te tellen bij de huidige tijd en datum van een object. De ingebouwde methoden noemen allemaal ``AddX``, waar bij X dan vervangen wordt door het soort element dat je wilt toevoegen:  ``AddDays``, ``AddHours``, ``AddMilliseconds``, ``AddMinutes``, ``AddMonths``, ``AddSeconds``, ``AddTicks``[^tick], ``AddYears``.
-
-
-[^tick]: Een *tick* is 100 nanoseconden, oftewel 1 tien miljoenste van een seconden. Dat lijkt een erg klein getal (wat het voor ons ook is) maar voor computers is dit het soort tijdsintervals waar ze mee werken.
-
-
-
-
-Het object zal voor ons de "berekening" hiervan doen en vervolgens een **nieuw DateTime object** teruggeven dat je moet bewaren wil je er iets mee doen.
-
-In volgende voorbeeld wil ik ontdekken wanneer de wittebroodsweken van m'n huwelijk eindigen (pakweg 5 weken na de trouwdag).
+Enkele nuttige:
+* `Year`, `Month`, `Day`
+* `Hour`, `Minute`, `Second`
+* `DayOfWeek` (Geeft `Monday`, `Tuesday`...)
+* `DayOfYear` (1 tot 366)
 
 ```csharp
-DateTime eindeWitteBroodsweken = trouwMoment.AddDays(35);
-Console.WriteLine(eindeWitteBroodsweken);
-```
-
-<!-- \newpage -->
-
-
-### DateTime properties
-
-Dit hoofdstuk heeft al aardig wat woorden verspild aan properties, en uiteraard heeft ook de ``DateTime`` klasse een hele hoop interessante properties die toelaten om de interne staat van een ``DateTime`` object te bewerken of uit te lezen.
-
-Enkele nuttige properties van ``DateTime`` zijn: ``Date``, ``Day``, ``DayOfWeek``, ``DayOfYear``, ``Hour``, ``Millisecond``, ``Minute``, ``Month``, ``Second``, ``Ticks``, ``TimeOfDay``, ``Today``, ``UtcNow``, ``Year``.
-
-
-**Alle properties van DateTime zijn read-only** en hebben dus een private setter die we niet kunnen gebruiken.
-
-Een voorbeeld:
-
-```csharp
-Console.WriteLine($"Einde in maand nr: {eindeWitteBroodsweken.Month}.");
-Console.WriteLine($"Dat is een {eindeWitteBroodsweken.DayOfWeek}.");
-```
-
-Dit geeft op het scherm: 
-
-
-```text
-Je wittebroodsweken eindigen in maand nummer: 5.
-Dat is een Friday.
+DateTime nu = DateTime.Now;
+Console.WriteLine($"Het is vandaag: {nu.DayOfWeek}");
+Console.WriteLine($"Dag nummer {nu.DayOfYear} van het jaar.");
 ```
 
 ### Static methoden
@@ -175,12 +146,15 @@ Je zal de ``DateTime`` klasse in véél van je projecten kunnen gebruiken waar j
 <!-- \newpage -->
 
 
->![](../assets/care.png)Gaat het nog?! Dit was een stevig hoofdstuk he. We hebben zo maar eventjes 4 heel grote fasen doorlopen:
+>![](../assets/care.png)Oef, we zijn er!
 >
->1. Eerst keken we hoe OOP ons kan helpen in een real-life voorbeeld, Pong. We schreven code die hier en daar herkenbaar was, maar op andere plaatsen totaal nieuw was.
->2. Vervolgens namen we de mammoet bij de horens en bekeken we de theorie van OO, die ons vooral verwarde.
->3. Gelukkig gingen we dan ogenblikkelijk naar de praktijk over en zagen we dat methoden en properties de kern van iedere klasse blijkt te zijn.
->4. Als afsluiter gooiden we dan de ``DateTime`` klasse open om een voorproefje te krijgen van hoe krachtig een goedgeschreven klasse kan zijn.
+>We hebben de basis van Object Georiënteerd Programmeren gelegd.
+>
+>1.  **De Klasse**: De blauwdruk / het 3D-printer bestand.
+>2.  **Het Object**: De effectieve instantie in het geheugen (gebouwd met `new`).
+>3.  **Fields of instantievariabelen**: De geheime interne data (private).
+>4.  **Properties**: De poortwachters (public) om die data veilig te beheren.
+>5.  **Methoden**: Het gedrag van het object.
 >
 >Voor je verder gaat raad ik je aan om dit alles goed te laten bezinken én maximaal de komende oefeningen te maken. Het zal de beste manier zijn om de ietwat bizarre wereld van OOP snel eigen te maken.
 

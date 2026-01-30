@@ -1,13 +1,14 @@
 
 ### De anatomie van een klasse
 
-Ik zal nu enkele basisconcepten van klassen en objecten toelichten aan de hand van praktische voorbeelden.
+Laten we stap voor stap een klasse opbouwen en kijken wat de onderdelen zijn.
 
-#### Object methoden
+#### Object methoden (Gedrag)
 
-Stel dat we een klasse willen maken die ons toelaat om objecten te maken die verschillende mensen voorstellen. We willen aan iedere mens kunnen zeggen "Praat eens".
+Stel dat we een klasse `Mens` maken. We willen dat deze mensen iets kunnen **doen**, bv. praten.
+Gedrag vertalen we in C# naar **methoden**. We voegen daarom een methode `Praat()` toe aan onze klass:
 
-We maken een nieuwe klasse ``Mens`` en plaatsen in de klasse een methode ``Praat``:
+
 
 ```csharp
 internal class Mens
@@ -38,36 +39,22 @@ Er zal twee maal ``Ik ben een mens!`` op het scherm verschijnen. Waarbij ``joske
 <!-- \newpage -->
 
 
-#### Access modifiers
+#### Access modifiers (Wie mag waar aan?)
 
-De **access modifier** geeft aan hoe zichtbaar een bepaald deel van de klasse en de klasse zelf is. Wanneer je niet wilt dat "van buiten" een bepaalde methode kan aangeroepen worden, dan dien je deze als ``private`` in te stellen. Wil je dit net wel dat moet je er expliciet ``public`` of ``internal`` voor zetten.
+De keywords `public` en `private` noemen we **access modifiers**. Ze bepalen de toegang:
 
-Test in de voorgaande klasse eens wat gebeurt wanneer je ``public`` vervangt door ``private``. Inderdaad, je zal de methode ``Praat`` niet meer op de objecten kunnen aanroepen.
+* **`public`**:  "Open". Iedereen (ook code buiten de klasse) mag deze methode gebruiken.
+* **`private`**: "Privé". Enkel code **binnenin de klasse zelf** mag dit gebruiken.
 
 {% hint style='tip' %}
-**Wanneer je geen access modifier voor een methode of klasse zet in C# dan zal deze als ``private`` beschouwd worden.** Dit geldt voor alle zaken waar je access modifiers voor kan zetten: niets ervoor zetten wil zeggen ``private``.
+**Geen modifier = `private`**
+Als je niets voor een methode of variabele zet, maakt C# het automatisch `private`.
+`void DoeIets()` schrijven is dus hetzelfde als `private void DoeIets()`.
 
-Volgende twee methoden-signaturen zijn dus identiek:
-
-```csharp
-private void NiemandMagDitGebruiken()
-{
-    //...
-}
-
-void NiemandMagDitGebruiken()
-{
-    //...
-}
-```
-
-**Het is een héél slechte gewoonte om géén access modifiers voor iedere methode te zetten. Maak er dus een gewoonte van dit steeds ogenblikkelijk te doen.**
+**Goede afspraak:** Schrijf **altijd** expliciet `private` of `public`. Zo is er nooit verwarring.
 {% endhint %}
 
-
-
-
-Test volgende klasse eens, kan je de methode ``VertelGeheim`` vanuit de Main op ``joske`` aanroepen?
+Test volgende klasse eens. Kan je `VertelGeheim` aanroepen op `joske`?
 
 ```csharp
 internal class Mens
@@ -84,31 +71,24 @@ internal class Mens
 }
 ```
 
-{% hint style='tip' %}
-Access modifiers hebben een volgorde van de mate waarin ze beschermen. Aan het ene uiterste heb je ``private`` en aan de andere kant ``public``. Daartussen zitten er nog enkele andere, allemaal met hun specifieke bestaansreden. 
-
-
-Klassen zijn ofwel ``public`` oftewel ``internal``. Indien je niets voor de klasse zet dan is deze  ``internal``. Concreet wil dit zeggen dat een ``internal`` klasse enkel binnen het huidige project (de *assembly*) kunt gebruiken.
-
-
-Onderdelen (hoofdzakelijk methoden en datavelden) in een klasse kunnen volgende modifiers hebben:
-
-* ``private``: het meest beschermdend. Enkel zichtbaar in de klasse zelf. Dit is de standaardwaarde als je geen access modifier expliciet schrijft.
-* ``protected``: enkel zichtbaar voor overgeërfde klassen (zie hoofdstuk 16).
-* ``public`` : het meest open. Iedereen kan hier aan...en dat raden we ten stelligste af.
-
-Er zijn er nog enkele andere (``protected internal``, ``private internal`` en ``file``), maar die bespreken we niet in dit boek.
-{% endhint %}
+Het antwoord is nee. De regel `joske.VertelGeheim();` zal een rode kriebellijn geven. De methode is privé en mag niet van buitenaf aangeroepen worden.
 
 
 
-#### Reden van private
+#### Waarom Private? (Encapsulatie mag je vergeten)
 
-Waarom zou je bepaalde zaken ``private`` maken? 
+"Waarom zou ik iets maken dat ik niet mag gebruiken?", vraag je je misschien af.
 
-De code binnenin een klasse kan overal aan binnen de klasse zelf. Stel dat je dus een erg complexe publieke methode hebt, en je wil deze opsplitsen in meerdere delen, dan ga je die andere delen ``private`` maken. Dit voorkomt dat programmeurs die je klasse later gebruiken, stukken code aanroepen die helemaal niet bedoeld zijn om rechtstreeks aan te roepen.
+Dit heeft te maken met **veiligheid** en **complexiteit**.
+Stel dat je een methode `StartAuto()` hebt. Intern moet die methode misschien 10 stappen doen: 
+1. `InjecteerBrandstof()`
+2. `VonkBougies()`
+3. `DraaiStartMotor()`
 
-Volgende voorbeeld toont hoe je binnenin een klasse andere zaken van de klasse kunt aanroepen: we roepen in de methode ``Praat`` de methode ``VertelGeheim`` aan. Dit kan want ``private`` geldt enkel voor de buitenwereld van de klasse, maar dus niet voor de code binnen de ``Praat``-methode zelf.
+Je wil niet dat een bestuurder (de gebruiker van jouw klasse) per ongeluk `VonkBougies()` aanroept terwijl de motor al draait. Dus maak je die innerlijke stappen `private`. De bestuurder mag enkel aan de veilige, publieke knop `StartAuto()`.
+
+**De klasse `Mens` gebruikt z'n eigen methoden**
+Binnenin de klasse zelf mag je natuurlijk wel alles gebruiken. Kijk maar:
 
 ```csharp
 internal class Mens
@@ -116,7 +96,7 @@ internal class Mens
     public void Praat()
     {
         Console.WriteLine("Ik ben een mens!");
-        VertelGeheim();
+        VertelGeheim(); // DIT MAG! We zitten binnenin de klasse.
     }
 
     private void VertelGeheim()
@@ -126,21 +106,7 @@ internal class Mens
 }
 ```
 
-Als we nu elders een object laten praten als volgt:
-
-```csharp
-Mens rachid = new Mens();
-rachid.Praat();
-```
-
-Dan zal de uitvoer worden:
-
-
-```text
-Ik ben een mens!
-Ik ben verliefd op Anneke
-```
-
+Als we nu `joske.Praat()` aanroepen, zal Joske zelf zijn geheim verklappen.
 {% hint style='tip' %}
 Met behulp van de **dot-operator** (``.``) kunnen we aan alle informatie die ons object aanbiedt aan de buitenwereld. Ook dit zag je reeds toen je een ``Random``-object hadden: we konden maar een handvol zaken aanroepen op zo'n object, waaronder de ``Next`` methode.
 {% endhint %}
@@ -150,13 +116,12 @@ Met behulp van de **dot-operator** (``.``) kunnen we aan alle informatie die ons
 Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verliefd zijn op Anneke. Dit is niet het smurfendorp met maar 1 meisje! Dit gaan we verderop oplossen. *Stay tuned!*
 
 
-#### Instantievariabelen
+#### Instantievariabelen (fields)
 
-Voorlopig doen alle objecten van het type ``Mens`` hetzelfde. Ze kunnen praten en zeggen hetzelfde.
+Methoden zijn het **gedrag**. Maar objecten hebben ook een **geheugen**. Ze moeten dingen kunnen onthouden.
+Hiervoor gebruiken we **Fields** (ook wel datavelden of instantievariabelen genoemd).
 
-We weten echter dat objecten ook een interne staat hebben die per object individueel is (we zagen dit reeds toen we balletjes over het scherm lieten botsen: ieder balletje onthield z'n eigen richtingsvector en positie). Dit kunnen we dankzij **instantievariabelen** (ook wel **datavelden** of **datafields** genoemd) oplossen. Dit zullen variabelen zijn waarin zaken kunnen bewaard worden die verschillen per object.
-
-Stel je voor dat we onze mensen een geboortejaar willen geven. Ieder object zal zelf in een instantievariabele bijhouden wanneer ze geboren zijn (het vertellen van geheimen zullen we verderop behandelen):
+Een field is een variabele die **in de klasse** staat, maar **buiten de methoden**.
 
 ```csharp
 internal class Mens
@@ -193,83 +158,33 @@ Dit zijn geen officiële regels, maar afspraken die veel programmeurs onderling 
 
 
 
->![](../assets/gotopolice.png)Wat?! Ik ben hier niet voor jou? Omdat je geen ``goto`` hebt gebruikt?! Flink hoor. Maar daarvoor ben ik hier niet. Ik zag je wel denken: "Als ik nu die instantievariabele ook eens ``public`` maak." Niet doen. Simpel! **Instantievariabele mogen NOOIT ``public`` gezet worden.** 
+>![](../assets/gotopolice.png)Hola! Stop! Ik zag u denken: "Als ik dat field gewoon `public` maak, ben ik van al dat gezeur af."
 >
->De C# standaard laat dit weliswaar toe, maar dit is één van de slechtste programmeerdingen die je kan doen. Wil je toch de interne staat van een object kunnen aanpassen dan gaan we dat via **properties** en **methoden** kunnen doen, wat we zo meteen gaan uitleggen. Zie dat ik hier niet te vaak tussenbeide moet komen. Dank!
+> **Fields/instantievariabelen zet je ALTIJD private.**
+>
+> "Waarom?", hoor ik u vragen. Wel, stel dat je `public int geboorteJaar` maakt. Dan kan iemand anders in zijn code schrijven: `joske.geboorteJaar = -500;`.
+> Een mens geboren in het jaar -500? Dat klopt niet.
+> Door het field `private` te houden, en een methode `VeranderGeboortejaar` te maken, kunnen we controleren of de waarde wel klopt!
 
-<!-- \newpage -->
-
-
-Ok, we zullen maar luisteren naar meneer de agent. Stel nu dat we een verjongingsstraal hebben. Hiermee kunnen we het geboortejaar van de mensen steeds met 1 jaar kunnen verhogen. We maken ze met andere woorden telkens een jaartje jonger!
-
-```csharp
-internal class Mens
-{
-    private int geboorteJaar = 1970;
-    public void Praat()
-    {
-        Console.WriteLine("Ik ben een mens! ");
-        Console.WriteLine($"Ik ben geboren in {geboorteJaar}.");
-    }
-    public void StartVerjongingskuur()
-    {
-        Console.WriteLine("Jeuj. Ik word jonger!");
-        geboorteJaar++;
-    }
-}
-```
-Zoals al gezegd: **Ieder object zal z'n eigen geboortejaar hebben.**
-
-Die laatste opmerking is een kernconcept van OOP: ieder object heeft z'n eigen interne staat die kan aangepast worden individueel van de andere objecten van hetzelfde type. We zullen dit testen in volgende voorbeeld waarin we 2 objecten maken en enkel 1 ervan verjongen. Kijk wat er gebeurt:
-
-```csharp
-Mens elvis = new Mens();
-Mens bono = new Mens();
-elvis.StartVerjongingskuur();
-elvis.Praat();
-bono.Praat();
-```
-
-
-Als je voorgaande code zou uitvoeren zal je zien dat het geboortejaar van Elvis verhoogd en niet die van Bono wanneer we ``StartVerjongingskuur`` aanroepen. Zoals het hoort!
-
-De uitvoer zal zijn:
-
-
-```text
-Jeuj. Ik word jonger!
-Ik ben een mens! 
-Ik ben geboren in 1971.
-Ik ben een mens! 
-Ik ben geboren in 1970.
-```
-
-<!-- \newpage -->
-
-
-
->![](../assets/care.png)"Ja maar, nu pas je toch het geboortejaar van buiten aan via een methode, ook al gaf je aan dat dit niet de bedoeling was want dan zou je Adil ogenblikkelijk erg jong kunnen maken."
-
-Correct. Maar dat was dus maar een voorbeeld. De hoofdreden dat we instantievariabelen niet zomaar ``public`` mogen maken is om te voorkomen dat de buitenwereld instantievariabelen waarden geeft die de werking van de klasse zouden stuk maken. Stel je voor dat je dit kon doen: ``adil.geboortejaar = -12000;``
-
-Dit kan nefaste gevolgen hebben voor de klasse.
-
-Daarom gaan we de toegang tot instantievariabelen als het ware controleren door deze enkel via properties en methoden toe te laten. We zouden dan bijvoorbeeld het volgende kunnen doen:
+Kijk maar:
 
 ```csharp
 internal class Mens
 {
     private int geboorteJaar = 1970;
 
-    public void VeranderGeboortejaar(int geboorteJaarIn)
+    public void VeranderGeboortejaar(int nieuwJaar)
     {
-        if(geboorteJaarIn >= 1900)
-            geboorteJaar = geboorteJaarIn;
+        // We beschermen ons field!
+        if(nieuwJaar > 1900 && nieuwJaar < 2030)
+        {
+            geboorteJaar = nieuwJaar;
+        }
     }
-    //...
 ```
 
-Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variabele kan geven. In dit voorbeeld  kunnen mensen dus niet voor het jaar 1900 geboren zijn. **Objecten zijn verantwoordelijk voor zichzelf** en moeten zichzelf dus ook beschermen zodat de buitenwereld niets met hen doet dat hun eigen werking om zeep helpt.
+Zo bepalen wij (de klasse) de regels. De buitenwereld moet zich eraan houden.
+Verderop in dit boek leren we **Properties**, wat dé C#-manier is om dit nog makkelijker te doen. Maar het principe blijft hetzelfde: Bescherm je data!
 
 
 <!-- \newpage -->
@@ -348,28 +263,30 @@ Ik ben verliefd op Phoebe.
 >![](../assets/attention.png)Veel beginnende programmeurs maken fouten op het correct kunnen onderscheiden wat de klassen en wat de objecten in hun opgave juist zijn. Het is altijd belangrijk te begrijpen dat een klasse weliswaar beschrijft hoe alle objecten van dat type werken, maar op zich gaat die beschrijving steeds over 1 object uit de verzameling. *Say what now?!*
 
 
-### Klasse ``Studenten`` of ``Student``?
+### Veelgemaakte naamgevingsfouten
 
-Als je een klasse ``Student`` hebt, dan zal deze eigenschappen hebben zoals ``Punten``, ``Naam`` en ``Geboortejaar``.  Als je een klasse ``Studenten`` daarentegen hebt, dan is dit vermoedelijk een klasse die beschrijft hoe een groep studenten moet werken in je applicatie. Mogelijk zal je dan properties hebben zoals ``KlasNaam``, ``AantalAfwezigen``, enz. Kortom, eigenschappen over de groep, niet over 1 student.
+Beginners maken vaak fouten tegen de namen van hun klassen. Hier zijn twee regels:
 
-#### ``Level`` of ``Level1``?
+**1. Het Meervoud-Probleem (`Student` vs `Studenten`)**
+Een klasse is een blauwdruk voor **één** ding.
+* FOUT: `class Studenten { ... }` 
+* JUIST: `class Student { ... }`
 
-Een andere veelgemaakte fout is klassen te schrijven die maar exact één object kan en moet creëren. Dit soort klasse noemt een *singleton*. Stel je voor dat je een spel maakt waarin verschillende levels zijn. Een logische keuze zou dan zijn om een klasse ``Level`` te maken (niét ``Levels``) die properties heeft zoals ``MoeilijkheidsGraad``, ``HeeftGeheimeGrotten``, ``AantalVijanden``, enz.
+Later in je code zal je dan een *lijst* maken van het type `Student`. Maar de klasse zelf beschrijft er maar eentje.
 
-<!-- \newpage -->
+**2. Het Nummer-Probleem (`Level1`, `Level2`)**
+Stel, je maakt een game met levels.
+* FOUT: `class Level1`, `class Level2`, `class Level3`...
+* JUIST: `class Level` 
 
-
-Vervolgens kunnen we dan instanties maken: *1 object stelt 1 level in het spel voor*. De speler kan dan van level naar level gaan en de code start dan bijvoorbeeld telkens de ``BeginLevel`` methode:
-
+Je maakt één klasse `Level` (met een field `int LevelNummer` of `string Naam`). En daarna maak je zoveel objecten als je wil:
 ```csharp
-Level level1 = new Level();
-level1.BeginLevel();
+Level grot = new Level();
+Level strand = new Level();
+Level vulkaan = new Level();
 ```
 
-Wat dus niet mag zijn **klassen** met namen zoals ``level1``, ``level2``, enz. Vermoedelijk hebben deze klasse 90% gelijkaardige code en is er dus een probleem met wat we de *architectuur* van je code noemen. Of duidelijker: je snapt niet wat het verschil is tussen klassen en objecten!
-
-Objecten met namen zoals ``level1`` en ``level2`` zijn wél dus toegestaan, daar ze dan vermoedelijk allemaal van het type ``Level`` zijn. **Maar opgelet: als je variabelen hebt die genummerd zijn (bv. ``bal1``, ``bal2``, enz.) dan is de kans groot dat je eigenlijk een array van objecten nodig hebt** (wat ik in hoofdstuk 12 zal uitleggen).
-
+Als je merkt dat je `Klasse1`, `Klasse2` aan het typen bent... Stop! Je hebt waarschijnlijk **één klasse** nodig, en **meerdere objecten**.
 
 
 
