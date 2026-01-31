@@ -1,80 +1,109 @@
-### De kracht van Auto-Properties
+### Auto-properties
 
-Zoals we in het vorige hoofdstuk zagen, zijn **Auto-Properties** de kortere versie van properties, ideaal voor situaties zonder extra validatie-regels.
+Automatische eigenschappen (**automatic properties**, *auto-implemented properties*, soms ook *autoprops* genoemd) laten toe om snel properties te schrijven zonder dat we de achterliggende instantievariabele moeten beschrijven.
+
+Een auto-property herken je aan het feit dat ze een pak korter zijn qua code, omdat er veel meer (onzichtbaar) achter de schermen wordt opgelost:
 
 ```csharp
 public string Voornaam { get; set; }
 ```
 
-Dit ene regeltje code bespaart ons het typen van een private field en een heleboel accolades.
-Maar vergis je niet: **C# doet dat typwerk stiekem toch voor jou.** Bij het compileren maakt C# zelf een onzichtbaar private field aan dat de data bewaart.
+Heel vaak wil je heel eenvoudige variabelen aan de buitenwereld van je klasse beschikbaar stellen. Omdat je instantievariabelen echter niet ``public`` mag maken, moeten we dus properties gebruiken die niets anders doen dan als doorgeefluik fungeren. auto-properties doen dit voor ons: het zijn vereenvoudigde full properties waarbij de achterliggende instantievariabele onzichtbaar voor ons is. Je kan echter bij auto-properties ook geen verdere controle op de in-of uitvoer doen.
 
-### Wanneer gebruiken?
-De vuistregel is simpel:
-* **Start altijd met Auto-Properties.** (Sneller, leesbaarder).
-* **Upgrade naar Full Properties** pas als je logica nodig hebt (zoals validatie of berekeningen).
+Zo kan je eenvoudig de volgende klasse ``Persoon`` herschrijven met behulp van auto-properties. De originele klasse mét full properties:
+
+```csharp
+internal class Person
+{
+    private string voornaam;
+    public string Voornaam
+    {
+        get { return voornaam; }
+        set { voornaam = value; }
+    }
+
+    private int geboorteJaar;
+    public int Geboortejaar
+    {
+        get { return geboorteJaar; }
+        set { geboorteJaar = value; }
+    }
+}
+```
+
+De herschreven klasse met auto-properties wordt: 
+
+```csharp
+internal class Person
+{
+    public string Voornaam { get; set; }
+    public int Geboortejaar { get; set; }
+}
+```
+
+Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse aanzienlijk korter en dus eenvoudiger om te lezen. **De private instantievariabelen zijn niét meer aanwezig.** C# gaat die voor z'n rekening nemen. Alle code zal dus via de properties moeten gaan.
+
+**Het is belangrijk te benadrukken dat de achterliggende instantievariabele onzichtbaar is in auto-properties en onmogelijk kan gebruikt worden. Alles gebeurt via de auto-property, altijd.** Je hebt dus enkel een soort publieke variabele. Maar wel eentje  die conform de afspraken is ("maak geen instantievariabelen publiek!"). Gebruik dit dus enkel wanneer je 100% zeker bent dat de auto-property geen waarden kan krijgen die de interne werking van je klasse kan verstoren.
 
 {% hint style='tip' %}
-**Visual Studio Tip**:
-Je hoeft niet bang te zijn voor die upgrade. Als je later beslist dat `Voornaam` toch niet leeg mag zijn:
-1. Zet je cursor op de naam van de property (`Voornaam`).
-2. Druk `Ctrl + .` (of klik op de lamp/schroevendraaier).
-3. Kies **"Convert to full property"**.
+Vaak zal je nieuwe klassen eerst met auto-properties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig auto-properties vervangen door full properties.
+
+Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan vooraan op de schroevendraaier en kies "Convert to full property".
 
 **Opgelet**: Merk op dat de syntax die VS gebruikt om een full property te schrijven anders is dan wat ik hier uitleg. Wanneer je VS laat doen krijg je een oplossing met allerlei ``=>`` tekens. Dit is heet **Expression Bodied Member syntax (EBM)**. Ik behandel deze nieuwere C# syntax in de appendix.
 {% endhint %}
 
 
 
-### Auto-Properties initialiseren
+### Nut auto-properties? 
 
-Wat als we willen dat een property standaard een bepaalde waarde heeft?
-Bij fields deden we dit: `private int score = 100;`.
-Bij auto-properties kan dit ook direct:
+Merk op dat je auto-properties dus enkel kan gebruiken indien er geen extra logica in de property (bij de ``set`` of ``get``) aanwezig moet zijn.
 
-```csharp
-public int Score { get; set; } = 100;
-public string Huisdier { get; set; } = "Kat";
-```
-
-Elk nieuw object dat je maakt, zal nu starten met 100 punten en een kat. Simpel!
-
-
-### Read-Only varianten (Dieper graven)
-
-We zagen al de **private set**. Maar er is nog een variant: de **pure read-only** auto-property.
-
-#### 1. Private Set (Aanpasbaar door de klasse)
-De buitenwereld kan enkel lezen. De klasse zelf kan de waarde aanpassen (via methoden).
+Stel dat je bij de setter van geboorteJaar wil controleren op een negatieve waarde, dan zal je dit zoals voorheen moeten schrijven en kan dit niet met een automatic property:
 
 ```csharp
-// Kan aangepast worden door methoden als 'LevelUp()' of 'Reset()'
-public int HuidigLevel { get; private set; } 
+set
+{
+    if( value > 0)
+        geboorteJaar = value;
+}
 ```
+**Voorgaande property kan dus *NIET* herschreven worden met een automatic property.** auto-properties zijn vooral handig om snel klassen in elkaar te knutselen, zonder je zorgen te moeten maken om andere vereisten. Vaak zal een klasse in het begin met auto-properties gevuld worden. Naarmate je project vordert zullen die auto-properties meer en meer omgezet worden in full properties. 
 
-#### 2. Get Only (Immutable / Onveranderlijk)
-Als je de `set` volledig weglaat bij een auto-property, ontstaat er iets speciaals.
+<!-- \newpage -->
+
+
+### Beginwaarden van auto-properties
+
+Je mag auto-properties beginwaarden geven door de waarde achter de property te schrijven, als volgt:
+
 
 ```csharp
-// Kan NOOIT meer veranderen na het aanmaken!
-public string GeboortePlaats { get; } = "Hasselt";
+public int Geboortejaar {get;set;} = 2002;
 ```
 
-Een **Get-Only** auto-property kan je **enkel** een waarde geven:
-1. Met een initializer (zoals hierboven).
-2. Of in de **constructor** (zie volgende hoofdstukken).
+Al je objecten zullen nu als geboortejaar 2002 hebben wanneer ze geïnstantieerd worden.
 
-Eens het object bestaat, zit deze waarde muurvast. Zelfs de eigen klasse kan het niet meer aanpassen via methoden. Dit is geweldig voor data die echt nooit mag veranderen (zoals een ID-nummer of geboorteplaats).
 
-{% hint style='info' %}
-Dit concept noemt men **Immutability** (onveranderlijkheid). Het maakt je code robuuster omdat je zeker weet: "Eens dit object bestaat, blijft deze data voor altijd zo".
+### Alleen-lezen auto-properties
+
+Je kan auto-properties ook gebruiken om bijvoorbeeld een read-only property met private setter te definiëren. Als volgt:
+
+
+```csharp
+public string Voornaam { get; private set; }
+```
+
+Een andere manier die ook kan wanneer we enkel een read-only property nodig hebben, is als volgt:
+
+
+```csharp
+public string Voornaam { get; } = "Tim";
+```
+
+Hierbij zijn we dan wel verplicht om ogenblikkelijk deze property een beginwaarde te geven, daar we deze op geen enkele andere manier nog kunnen aanpassen. 
+
+{% hint style='tip' %}
+Als je in Visual Studio in je code ``prop`` typt en vervolgens twee keer de tabtoets indrukt dan verschijnt al de nodige code voor een automatic property. 
+Via ``propg`` gevolgd door twee maal de tabtoets krijg je een auto-property met private setter.
 {% endhint %}
-
-### Samenvatting
-
-| Type | Syntax | Wie mag het aanpassen? |
-| :--- | :--- | :--- |
-| **Full Property** | `get { ... } set { ... }` | Iedereen (via logica) |
-| **Auto Property** | `get; set;` | Iedereen (direct) |
-| **Private Set** | `get; private set;` | Enkel de klasse zelf |
-| **Get Only** | `get;` | **Niemand** (behalve constructor) |

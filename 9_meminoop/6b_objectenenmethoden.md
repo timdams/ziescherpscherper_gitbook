@@ -1,86 +1,136 @@
 ## Objecten en methoden
 
-Wat betekent dit nu voor methoden?
-Als je een object meegeeft aan een methode, geef je **een kopie van de sleutel** mee.
-De methode krijgt dus toegang tot **jouw huis** (het object in de Heap).
+### Objecten als actuele parameters
 
-Als de methode iets verandert in het huis (bv. de muren schilderen), **dan is dat permanent**. Als jij later met jouw sleutel binnenkomt, zijn de muren geschilderd.
+Klassen zijn "gewoon" nieuwe datatypes. Alle regels die we dus al kenden in verband met het doorgeven van variabelen als parameters in een methoden blijven gelden voor de meeste klassen (behalve ``static`` klassen die we in volgend hoofdstuk zullen aanpakken).
 
-#### Voorbeeld: De Schildersmethode
+**Het enige verschil is dat we objecten by reference meegeven aan methoden**. Aanpassingen aan het object in de methode zal dus betekenen dat je het originele object aanpast dat aan de methode werd meegegeven, net zoals we bij arrays zagen. Hier moet je dus zeker rekening mee houden. 
+
+Stel dat we volgende klasse hebben waarin we temperatuurmetingen willen opslaan, alsook wie de meting heeft gedaan:
 
 ```csharp
-void VerfHuis(Huis huisOmTeVerven)
+internal class Meting
 {
-    huisOmTeVerven.Kleur = "Roze"; // Permanente wijziging!
+    public int Temperatuur { get; set; }
+    public string OpgemetenDoor { get; set; }
 }
 ```
 
-Het gebruik:
+We voegen vervolgens een methode aan de klasse toe die ons toelaat om deze meting op het scherm te tonen in een bepaalde kleur. 
 
 ```csharp
-Huis mijnHuis = new Huis { Kleur = "Wit" };
-VerfHuis(mijnHuis);
-
-Console.WriteLine(mijnHuis.Kleur); // Roze!
-```
-
-Dit is het grote verschil met value types (zoals `int`).
-* Bij `int` geef je een fotokopie van het getal. De methode kan op de kopie krabbelen, dat boeit jou niet.
-* Bij `object` geef je de sleutel. De methode kan je hele inboedel veranderen.
-
-{% hint style='warning' %}
-**Let op voor onbedoelde neveneffecten (side effects).**
-Als je een object aan een methode geeft, weet dan dat die methode je object kan aanpassen zonder dat je het direct ziet in de aanroep.
-{% endhint %}
-
-
-### Objecten maken Objecten (The Factory)
-
-Methoden kunnen ook nieuwe objecten **maken** en teruggeven.
-Denk aan een autofabriek. Je geeft specificaties (parameters) en je krijgt een sleutel van een nieuwe auto terug (return value).
-
-```csharp
-public Auto MaakSportwagen(string kleur)
+public void ToonMetingInKleur (ConsoleColor kleur)
 {
-    Auto nieuweAuto = new Auto();
-    nieuweAuto.Kleur = kleur;
-    nieuweAuto.Pk = 500;
-    return nieuweAuto; // Geef de SLEUTEL terug
+    Console.ForegroundColor = kleur;
+    Console.WriteLine($"{Temperatuur} graden C gemeten door: {OpgemetenDoor}");
+    Console.ResetColor();
 }
 ```
 
-Het gebruik:
+Het gebruik van deze klasse zou er als volgt kunnen uitzien:
+
 ```csharp
-Auto mijnDroom = fabriek.MaakSportwagen("Rood");
+Meting m1 = new Meting();
+m1.Temperatuur = 26; 
+m1.OpgemetenDoor = "Lieven Scheire";
+Meting m2 = new Meting();
+m2.Temperatuur = 34; 
+m2.OpgemetenDoor = "Ann Dooms";
+
+m1.ToonMetingInKleur(ConsoleColor.Red);
+m2.ToonMetingInKleur(ConsoleColor.Pink);
 ```
 
-###  Objecten die zichzelf maken
+<!-- \newpage -->
 
-Een klasse kan dus zelfs methoden bevatten die nieuwe objecten van *zichzelf* teruggeven.
-Denk aan celdeling of voorplanting.
+
+### Objecten in methoden aanpassen
+
+Je kan ook methoden schrijven die meegegeven objecten aanpassen daar we deze **by reference** doorsturen. Een voorbeeld waarin een meting als parameter meegeven en toevoegen aan een andere meting, waarna we de originele meting "resetten":
 
 ```csharp
-internal class Mens
+public void VoegMetingToeEnVerwijder(Meting inMeting)
 {
-    public string Naam { get; set; }
+    Temperatuur += inMeting.Temperatuur;
+    inMeting.Temperatuur = 0;
+    inMeting.OpgemetenDoor =  "";
+}
+```
 
-    public Mens KrijgKindje(string naamKind)
+We zouden deze methode als volgt kunnen gebruiken (ervan uitgaande dat we 2 objecten ``m1`` en ``m2`` van het type ``Meting`` hebben):
+
+```csharp
+m1.Temperatuur = 26; 
+m1.OpgemetenDoor = "Lieven Scheire";
+m2.Temperatuur = 5; 
+m2.OpgemetenDoor = "Lieven Scheire";
+m1.VoegMetingToeEnVerwijder(m2);
+Console.WriteLine($"{m1.Temperatuur} en {m2.Temperatuur});
+```
+
+Dit zal resulteren in volgende output:
+
+
+```text
+31 en 0
+```
+
+
+### Objecten als resultaat
+
+Weer hetzelfde verhaal: ook klassen mogen het resultaat van een methoden zijn. Stel dat we een nieuw meting object willen maken dat de dubbele temperatuur bevat van het object waarop de methode wordt aangeroepen:
+
+```csharp
+public Meting GenereerRandomMeting()
+{
+    Meting result = new Meting();
+    result.Temperatuur = Temperatuur * 2;
+    result.OpgemetenDoor = $"{OpgemetenDoor} Junior";
+    return result;
+}
+```
+
+
+
+Deze methode kan je dan als volgt gebruiken:
+
+```csharp
+m1.Temperatuur = 26; 
+m1.OpgemetenDoor = "Lieven Scheire";
+Meting m3 = m1.GenereerRandomMeting();
+```
+
+Het object ``m3`` zal een temperatuur van ``52`` bevatten en zijn opgemeten door ``Lieven Scheire Junior``.
+
+### Bevallen in code
+
+In voorgaande voorbeeld zagen we reeds dat objecten dus objecten van het eigen type kunnen teruggeven. Laten we dat voorbeeld eens doortrekken naar hoe de bevalling van een kind in C# zou gebeuren.
+
+Baby's zijn kleine mensjes. Het is dan ook logisch dat mensen een methode ``PlantVoort`` hebben (we houden geen rekening met het geslacht). Volgende klasse ``Mens`` is dus perfect mogelijk:
+
+```csharp
+class Mens
+{
+    public Mens PlantVoort()
     {
-        Mens baby = new Mens();
-        baby.Naam = naamKind;
-        return baby;
+        return new Mens();
     }
 }
 ```
 
-En dan de magie van het leven in code:
+Vervolgens kunnen we het volgende doen:
 
 ```csharp
-Mens mama = new Mens { Naam = "Alice" };
-Mens baby = mama.KrijgKindje("Bob");
-
-Console.WriteLine($"Mama heet {mama.Naam} en kindje heet {baby.Naam}");
+Mens oermoeder = new Mens();
+Mens dochter;
+Mens kleindochter;
+dochter =  oermoeder.PlantVoort();
+kleindochter = dochter.PlantVoort();
 ```
 
-Dit principe (methoden die objecten teruggeven) is de basis voor veel geavanceerde design patterns die je later zal leren.
+Het is een interessante oefening om deze code eens uit te tekenen in de stack en heap inclusief de verschillende referenties. 
+
+{% hint style='tip' %}
+Ik ga voorgaande code over enkele pagina's nog uitbreiden om een meer realistisch *voortplantingsscenario* te hebben (sommige zinnen verwacht je nooit te zullen schrijven in je leven... *I was wrong*).
+{% endhint %}
 

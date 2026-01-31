@@ -1,44 +1,61 @@
 
-## Klassen zijn eigen Datatypes
+## OOP in C\#
 
-In het begin van dit boek leerde je werken met basis datatypes zoals `int`, `string`, `bool` en `double`. 
-Je liep echter al snel tegen de limieten van deze eenvoudige blokjes aan. Wat als je een "Student" wil bewaren? Die bestaat uit een naam (string), een leeftijd (int) en punten (array).
+In C# kunnen we geen objecten aanmaken zonder eerst een klasse te definiëren. Een klasse beschrijft de algemene eigenschappen (properties en instantievariabelen) en het gedrag (methoden) van die objecten.
 
-**Met klassen mag je je eigen, complexe datatypes ontwerpen.**
 
-Telkens je een klasse definiëert (bv. `class Auto`), voeg je eigenlijk een nieuw woord toe aan C#. Vanaf dan kan je variabelen maken van dat type, net zoals je vroeger `int` of `string` gebruikte.
+### Klasse maken
 
-### Hoe ziet zo'n klasse eruit?
-
-Een klasse is de **blauwdruk**. Het beschrijft wat jouw nieuwe datatype allemaal "heeft" en "kan".
-
-De meest eenvoudige vorm:
+Een klasse heeft minimaal de volgende vorm:
 
 ```csharp
-class Auto
+class ClassName
 {
-   // Hier komen straks properties (data) en methoden (gedrag)
+
 }
 ```
 
 {% hint style='danger' %}
-De naam die je een klasse geeft moet voldoen aan de identifier regels uit hoofdstuk 2. Het is een sterke conventie om **klassenamen altijd met een Hoofdletter te laten beginnen** (PascalCase).
+De naam die je een klasse geeft moet voldoen aan de identifier regels uit hoofdstuk 2. Het is echter een goede gewoonte om **klassenamen altijd met een hoofdletter te laten beginnen**.
 {% endhint %}
+
+
+
+Volgende code beschrijft de klasse ``Auto`` in C#
+
+```csharp
+class Auto
+{
+
+}
+```
+
+Binnen het codeblock dat bij deze klasse hoort zullen we verderop dan de werking via properties en methoden beschrijven.
 
 ### Klassen in Visual Studio toevoegen
 
-Hoewel je code voor een klasse eender waar kan schrijven, is er een gouden regel in C#: **Elke klasse krijgt zijn eigen bestand**.
+Je kan "eender waar" een klasse aanmaken in een project, maar het is een goede gewoonte om per klasse **een apart bestand** te gebruiken. Dit kan op 2 manieren.
 
-1. Klik in **Solution Explorer** rechts op je projectnaam.
-2. Kies **Add > Class...**
-3. Geef het bestand de naam van je klasse (bv. `Auto.cs`).
+Manier 1:
 
-![Sneltoets: Shift+Alt+C](../assets/6_klassen/addclass.png)
+* In de solution Explorer, rechterklik op je project.
+* Kies "Add".
+* Kies "Class..".
+* Geef een goede naam voor je klasse.
 
-Je zal zien dat Visual Studio er `internal class Auto` van maakt. Trek je niets aan van die `internal`, dat betekent gewoon "enkel zichtbaar binnen dit project". Dat is voorlopig prima.
+<!-- \newpage -->
 
-### Objecten maken: De `new` knop
 
+Manier 2:
+
+* Klik in de menubalk bovenaan op "Project".
+* Kies "Add class..." .
+
+![Manier 2 is de snelste. Tip: of maak een eigen toetsenbord shortcut, dat is nog sneller natuurlijk.](../assets/6_klassen/addclass.png)
+
+Je zal zien dat nieuw toegevoegde klassen in Visual Studio ook nog het keyword ``internal`` voor ``class`` krijgen. Dit is een zogenaamde **access modifier** en leg ik zo meteen uit.
+
+### Objecten aanmaken
 
 Je kan nu objecten aanmaken van de klasse die je hebt gedefinieerd. Dit kan op alle plaatsen in je code waar je in het verleden ook al variabelen kon declareren, bijvoorbeeld in een methode of je ``Main``-methode.
 
@@ -59,44 +76,73 @@ Let goed op dat je dus op de juiste plekken dit alles doet:
 <!-- \newpage -->
 
 
+### De ``new`` operator
 
+In het volgende hoofdstuk leg ik uit wat er allemaal gebeurt in het geheugen wanneer we een object met ``new`` aanmaken. Het is echter nu al belangrijk te beseffen dat objecten niet kunnen gemaakt worden zonder ``new``. 
 
+De ``new`` operator vereist dat je aangeeft van welke klasse (het type) je een object wilt aanmaken, gevolgd door ronde haakjes. Bijvoorbeeld:
 
-Nu je klasse (de blauwdruk) klaar is, kan je objecten (de echte dingen) gaan maken. 
+```csharp
+new Student();
+```
 
-Herinner je de vergelijking met een **3D-printer**:
-* De **klasse** (`Auto.cs`) is het digitale 3D-bestand. Dit doet op zichzelf niets.
-* De **`new`** operator is de knop "Print". Hiermee maak je een tastbaar object in het computergeheugen.
+Deze lijn code doet niets nuttig. We roepen hier weliswaar een constructor aan (zie verder) die het object in het geheugen zal aanmaken. Vervolgens geeft ``new`` een adres terug waar het object zich bevindt. We doen nog niets met dit adres. 
+
+Het is dit adres dat we vervolgens kunnen bewaren in een variabele die links van de toekenningsoperator (``=``) staat:
+
+```csharp
+Student hetEersteStudentObject = new Student();
+```
+
+Test eens wat er gebeurt als je volgende code probeert te compileren:
 
 ```csharp
 Auto mijnEersteAuto = new Auto();
+Auto mijnAndereAuto;
+Console.WriteLine(mijnEersteAuto);
+Console.WriteLine(mijnAndereAuto);
 ```
 
-Wat gebeurt hier?
-1. `Auto mijnEersteAuto`: We maken een variabele die ruimte voorziet om (een verwijzing naar) een Auto te bewaren.
-2. `new Auto()`: We bouwen effectief een nieuw Auto-object in het geheugen.
-3. `=`: We koppelen de variabele aan dat nieuwe object.
+Je zal een ``"Use of unassigned local variable mijnAndereAuto"`` foutboodschap krijgen. Inderaad, je hebt nog geen object aangemaakt met ``new`` en ``mijnAndereAuto`` is dus voorlopig een lege doos (**het heeft de waarde ``null``**).
 
-### De valkuil van de lege doos (`null`)
-
-Wat als we de `new` vergeten?
+{% hint style='warning' %}
+Dit concept is dus fundamenteel verschillend van de klassieke *valuetypes* die we al kenden (``int``, ``double``, enz.). Daar zal volgende code wél werken:
 
 ```csharp
-Auto mijnDroomAuto; // Nog geen new gedaan!
-// Console.WriteLine(mijnDroomAuto); // FOUT!
+int balans;
+Console.WriteLine(balans);
 ```
 
-In tegenstelling tot een `int` (die stiekem 0 is), is een variabele van een klasse **leeg** als je er niets insteekt. In C# noemen we dit **`null`**.
-Probeer je een lege doos te gebruiken? Dan krijg je de beruchte, veelvoorkomende rode tekst: `NullReferenceException`. 
+{% endhint %}
 
-Onthoud dus: **Geen object zonder new!**
 
->![](../assets/care.png)Het blijft ingewikkeld hoor.
+<!-- \newpage -->
+
+
+### Klassen zijn gewoon nieuwe datatypes
+
+In hoofdstuk 2 leerden we dat er allerlei datatypes bestaan. We maakten vervolgens variabelen aan van een bepaald datatype zodat deze variabele als inhoud enkel zaken kon bevatten van dat ene datatype. 
+
+Zo leerden we toen volgende categorieën van datatypes:
+
+* **Valuetypes** zoals ``int``, ``char`` en ``bool``.
+* Het **``enum``** keyword liet ons toe om een nieuw datatype te maken dat maar een eindig aantal mogelijke waarden (values) kon hebben. Intern bewaarden variabelen van zo'n enum-datatype hun waarde als een ``int``.
+* **Arrays** waren het laatste soort datatypes. Je ontdekte dat je arrays kon maken van eender welk datatype (valuetypes en enums).
+
+**Wel nu, klassen zijn niet meer dan een nieuw soort datatypes**. Kortom: telkens je een klasse aanmaakt, kunnen we in dat project variabelen en arrays aanmaken met dat datatype. We noemen variabelen die een klasse als datatype hebben **objecten**.
+
+Het grote verschil dat deze objecten zullen hebben is dat ze vaak veel complexer zijn dan de eerdere datatypes die we kennen:
+
+* Ze zullen meerdere "waarden" tegelijk kunnen bewaren (een ``int`` variabele kan maar één waarde tegelijkertijd in zich hebben).
+* Ze zullen methoden hebben die we kunnen aanroepen om het object *voor ons te laten werken*.
+
+
+
+>![](../assets/care.png)Het blijft ingewikkeld hoor. Heel boeiend om de theorie van een speer te leren, maar ik denk dat ik toch beter een paar keer met een speer naar een mammoet werp om echt te voelen wat OOP is. 
 >
->Zie het zo: Je kan geen huis bewonen als je enkel het bouwplan (de klasse) hebt. Je moet het eerst bouwen (`new`).
+>Ik onthoud nu alvast **"klassen zijn gewoon een nieuwe vorm van complexere datatypes"** dan diegene die ik totnogtoe heb geleerd? Ok?
 >
->En als je variabelen gewoon containers zijn? Dan is een `int` doos nooit leeg, er zit altijd minstens een 0 in. Maar een `Auto` doos? Die is standaard écht leeg (`null`) tot je er een auto in parkeert.
-
+>**Correct. Er verandert dus niet veel. Enkel je variabelen worden krachtiger!**
 
 
 

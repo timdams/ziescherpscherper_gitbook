@@ -116,12 +116,9 @@ while (true)
 
 Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekend 21e eeuws trucje om je punt te maken. 
 
-Wanneer we Pong met het OOP paradigma willen aanpakken, gaan we de code anders organiseren. In plaats van losse variabelen (`x`, `y`, `vx`, `vy`) die overal rondzwerven, gaan we deze **samenvoegen** in een logisch geheel.
-We maken een eigen, nieuw type: een `Balletje`.
+Wanneer we Pong met het OOP paradigma willen aanpakken dan is het de bedoeling dat we werken met klassen en objecten. 
 
-Dit gaan we doen met een **klasse**. Zie dit als het ontwerpen van een nieuw soort variabele die je zelf mag samenstellen.
-
-Hier is hoe zo'n klasse eruit ziet. Let vooral op hoe we de variabelen van daarnet nu **binnenin** de klasse plaatsen:
+Net zoals aan de start van dit boek ga ik je ook nu even in het diepe gedeelte van het bad gooien. Wees niet bang, ik zal je er tijdig uithalen!  Je zal versteld staan hoeveel code je eigenlijk zult herkennen.
 
 Om Pong in OOP te maken hebben we eerst een klasse nodig waarin we ons balletje gaan beschrijven, zonder dat we al een balletje hebben. En dat ziet er zo uit:
 
@@ -163,15 +160,10 @@ internal class Balletje
 De code voor een nieuwe klasse schrijf je best in een apart bestand in je project. Klik bovenaan in de menu balk op "Project" en kies dan "Add class...". Geef het bestand de naam "Balletje.cs". 
 {% endhint %}
 
-Op het eerste zicht lijkt dit misschien gewoon "extra werk". We hebben de code van daarnet in een blok `class Balletje` gestoken.
 
-Merk 2 nieuwe dingen op:
-1. De variabelen hebben nu `{ get; set; }` achter hun naam. Dit noemen we **Properties** (eigenschappen). Waarom we dit doen, leggen we later uit. Voorlopig mag je aannemen: dit zijn gewoon de variabelen van ons balletje die we van buitenaf mogen aanpassen.
-2. De methoden (`Update` en `TekenOpScherm`) staan nu **ook** in die klasse.
+Bijna alle code van zonet hebben we hier geïntegreerd in een ``class Balletje``, maar er zit duidelijk een nieuw sausje over. Vooral aan het begin zien we onze 4 variabelen terugkomen in een nieuw kleedje: namelijk als eigenschappen oftewel *properties* (herkenbaar aan de ``get`` en ``set`` keywords). 
 
-Dit is de essentie: **We hebben data (positie, snelheid) en gedrag (bewegen, tekenen) samengevoegd in één blauwdruk.**
-
-Let ook op het essentiële woordje ``class`` bovenaan, daar draait alles natuurlijk om: **klassen en objecten**. 
+Maar al bij al lijkt de code grotendeels op wat we al kenden. En dat is goed nieuws. OOP gooit de vorige hoofdstukken niet in de vuilbak, het gaat als het ware een extra laag over het geheel leggen. Let ook op het essentiële woordje ``class`` bovenaan, daar draait alles natuurlijk om: **klassen en objecten**. 
 
 {% hint style='tip' %}
 Een klasse is een blauwdruk van een bepaalde soort 'dingen' of objecten. Objecten zijn de "echte" dingen die werken volgens de beschrijving van de klasse. Ja ik heb zonet 2x hetzelfde verteld, maar het is essentiëel dat je het verschil tussen de termen **klasse** en **object** goed begrijpt. 
@@ -313,15 +305,14 @@ Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's e
 
 Volgende 2 definities druk je best af op een grote poster die je boven je bed hangt:
 
-* **De Klasse (Class)**: De **blauwdruk** of het recept. Het beschrijft wat voor "ding" we gaan maken. (Bv: "Een Auto heeft 4 wielen en kan rijden").
-* **Het Object**: Het daadwerkelijke **ding** dat we gemaakt hebben volgens die blauwdruk. (Bv: "Mijn rode Toyota die nu op de oprit staat").
+* **Een klasse** is als een **blauwdruk** (of prototype) dat het gedrag en toestand beschrijft van alle objecten van deze klasse.
+* Een individueel **object** is een **instantie** van een klasse en heeft een eigen *toestand*, *gedrag* en *identiteit*.
 
-We noemen een object ook wel eens een **instantie** van een klasse.
+Objecten zijn instanties met een eigen levenscyclus die wordt gekenmerkt door:
 
-Ieder object heeft zijn eigen unieke bestaan:
-* **Gedrag**: Wat kan het doen? (Beschreven door de **methoden**).
-* **Toestand**: Hoe ziet het er nu uit? (Beschreven door de **properties** of eigenschappen).
-* **Identiteit**: Het is een uniek ding, los van andere objecten.
+* **Gedrag**: deze wordt beschreven door de **methoden** in de klasse.
+* **Toestand**: deze kan wijzigen door zijn eigen gedrag, of door externe impulsen en wordt bepaald door **datavelden** die beschreven staan in de klasse (properties en instantievariabelen). 
+* **Identiteit** : een unieke naam van object zodat andere objecten ermee kunnen interageren.
 
 {% hint style='tip' %}
 Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in een straat zal gebouwd worden. Het plan is de *klasse*. De effectieve huizen die we bouwen aan de hand van dit plan zijn de instanties of objecten van deze klasse. Ieder huis heeft een eigen toestand (ander type bakstenen, wel of geen zonnepannelen) en gedrag (rolluiken gaan open als de zon opkomt).
@@ -393,6 +384,10 @@ Steve Jobs, de oprichter van Apple, was een fervent fan van OOP. In een intervie
 
 Vooral die laatste zin verdient het om nog eens in vet herhaald te worden: **"They encapsulate complexity, and the interfaces to that complexity are high level."**
 
+### Objecten in de woorden van Bill Gates
+En, omdat het vloeken in de kerk is om Steve Jobs in een C# boek aan het woord te laten, hier wat Microsoft-oprichter Bill Gates over OOP te zeggen had:
+
+*"Another trick in software is to avoid rewriting the software by using a piece that’s already been written, so called component approach which the latest term for this in the most advanced form is what’s called Object Oriented Programming."*
 
 
 <!-- \newpage -->
