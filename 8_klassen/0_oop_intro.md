@@ -384,14 +384,6 @@ Steve Jobs, de oprichter van Apple, was een fervent fan van OOP. In een intervie
 
 Vooral die laatste zin verdient het om nog eens in vet herhaald te worden: **"They encapsulate complexity, and the interfaces to that complexity are high level."**
 
-### Objecten in de woorden van Bill Gates
-En, omdat het vloeken in de kerk is om Steve Jobs in een C# boek aan het woord te laten, hier wat Microsoft-oprichter Bill Gates over OOP te zeggen had:
-
-*"Another trick in software is to avoid rewriting the software by using a piece that’s already been written, so called component approach which the latest term for this in the most advanced form is what’s called Object Oriented Programming."*
-
-
-<!-- \newpage -->
-
 
 >![](../assets/attention.png)Ik zie dat je gereedsschapkist al aardig gevuld is. Zoals je misschien al gemerkt hebt aan deze sectie, zullen we vanaf nu ook geregeld minder "praktische" en eerder "filosofische" zaken tegenkomen. Maar wees gerust, je zal toch een grotere gereedsschapkist nodig hebben. Echter, net zoals een voorman niet alleen moet kunnen metsen en timmeren, maar ook stabiliteitsplannen begrijpen, zal ook jij moeten begrijpen wat de grotere ideeën achter bepaalde concepten zijn.
 >
