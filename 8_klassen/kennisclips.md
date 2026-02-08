@@ -2,7 +2,7 @@
 
 ### Tutor prompt
 
-* [Tutor prompt om jezelf via generative AI te begeleiden](8_klassen/tutor_prompt.md)
+* [Tutor prompt om jezelf via generative AI te begeleiden](https://gist.github.com/timdams/9ba43c295652ae8050546cb1abbc6cc8)
 
 ### Kennisclips
 
