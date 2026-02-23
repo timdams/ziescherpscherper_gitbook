@@ -45,14 +45,22 @@ Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse
 
 **Het is belangrijk te benadrukken dat de achterliggende instantievariabele onzichtbaar is in auto-properties en onmogelijk kan gebruikt worden. Alles gebeurt via de auto-property, altijd.** Je hebt dus enkel een soort publieke variabele. Maar wel eentje  die conform de afspraken is ("maak geen instantievariabelen publiek!"). Gebruik dit dus enkel wanneer je 100% zeker bent dat de auto-property geen waarden kan krijgen die de interne werking van je klasse kan verstoren.
 
-{% hint style='tip' %}
+{% hint style='warning' %}
 Vaak zal je nieuwe klassen eerst met auto-properties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig auto-properties vervangen door full properties.
 
 Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan vooraan op de schroevendraaier en kies "Convert to full property".
 
 **Opgelet**: Merk op dat de syntax die VS gebruikt om een full property te schrijven anders is dan wat ik hier uitleg. Wanneer je VS laat doen krijg je een oplossing met allerlei ``=>`` tekens. Dit is heet **Expression Bodied Member syntax (EBM)**. Ik behandel deze nieuwere C# syntax in de appendix.
+
 {% endhint %}
 
+{% hint style='tip' %}
+Wil je toch je autoproperties omzetten naar full properties volgens de "klassieke" syntax die we hier uitleggen, ga dan naar je instellingen.
+Tools->Options->Text Editor->C#->Code Style->General->Expression Preferences->Use expression body for accessors and properties.
+
+![](../assets/6_klassen/propToFull.png)
+
+{% endhint %}
 
 
 ### Nut auto-properties? 
