@@ -56,7 +56,7 @@ Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan
 
 {% hint style='tip' %}
 Wil je toch je autoproperties omzetten naar full properties volgens de "klassieke" syntax die we hier uitleggen, ga dan naar je instellingen.
-Tools->Options->Text Editor->C#->Code Style->General->Expression Preferences->Use expression body for accessors and properties.
+Tools->Options->Text Editor->C#->Code Style->General->Expression Preferences. Zet daar de items *Use expression body for accessors* en *Use expression body for properties* op "Never".
 
 ![](../assets/6_klassen/propToFull.png)
 
