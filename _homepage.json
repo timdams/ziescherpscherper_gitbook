@@ -1,0 +1,43 @@
+{
+  "name": "ziescherpscherper_gitbook",
+  "tech": "Python",
+  "techDetail": "Python",
+  "branch": "main",
+  "lastCommit": "2026-02-23",
+  "lastCommitMsg": "beter",
+  "lastCommitHash": "5137063",
+  "hasGit": true,
+  "remote": "https://github.com/timdams/ziescherpscherper_gitbook",
+  "tag": null,
+  "recentCommits": [
+    {
+      "hash": "5137063",
+      "msg": "beter"
+    },
+    {
+      "hash": "16bec8d",
+      "msg": "autoprop goed"
+    },
+    {
+      "hash": "2396486",
+      "msg": "beter link"
+    },
+    {
+      "hash": "08af2a4",
+      "msg": "tutor prompt"
+    },
+    {
+      "hash": "eca0c4b",
+      "msg": "Revert \"h9 en h10 gemini\""
+    }
+  ],
+  "workspace": null,
+  "noteFiles": [],
+  "path": "cursus\\ziescherpscherper_gitbook",
+  "desc": "<!-- \\frontmatter -->",
+  "category": "Toetsing",
+  "status": "cursus",
+  "tags": [],
+  "aiSummary": null,
+  "customNotes": null
+}
