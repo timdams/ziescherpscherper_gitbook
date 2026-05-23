@@ -5,7 +5,9 @@
 Opgelet, de volgende kennisclip(s) zijn een experiment waarbij ik een combinatie van A.I. en eigen input heb gebruikt om ze te maken. Feedback zeer welkom!
 
 * [Bestandsverwerking intro](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4abb4fd1-d8e8-4bf9-9069-b45300951d91)
+* [Lezen en schrijven](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=245ee4d1-8a4f-4d7a-8b23-b4530103b293)
 * [FileInfo](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa02d630-a851-4f70-9b8a-b45300afe62d)
+
 
 ### Oefeningen
 
