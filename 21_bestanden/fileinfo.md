@@ -39,7 +39,7 @@ FileInfo info = new FileInfo("bondData.dat");
 if (info.Exists)
 {
     Console.WriteLine($"Bestandsnaam: {info.Name}");
-    Console.WriteLine($"Bestandsgrootte: {info.Length}/1024 kB");
+    Console.WriteLine($"Bestandsgrootte: {info.Length/1024} kB");
 }
 ```
 
